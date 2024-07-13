@@ -1,5 +1,5 @@
 {
-  "name": "@jr/components",
+  "name": "@janribka/components",
   "version": "0.0.0",
   "private": false,
   "author": "Jan Ribka",
@@ -17,8 +17,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/JanRibka/jr",
-    "directory": "packages/jr-components"
+    "url": "https://github.com/JanRibka/janribka",
+    "directory": "packages/janribka-components"
   },
   "bugs": {
     "url": "https://github.com/JanRibka/jr/issues"
