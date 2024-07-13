@@ -1,6 +1,8 @@
-import { type ReactNode } from "react";
+import "./styles.css";
 
-export function Card({
+import type { ReactNode } from "react";
+
+function Card({
   title,
   children,
   href,
@@ -28,3 +30,5 @@ export function Card({
     </a>
   );
 }
+
+export default Card;
