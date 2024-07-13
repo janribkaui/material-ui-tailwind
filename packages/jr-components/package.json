@@ -1,0 +1,43 @@
+{
+  "name": "@jr/components",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Jan Ribka",
+  "description": "React components library for my projects",
+  "main": "./src/index.ts",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "react-components",
+    "library",
+    "jr",
+    "jan ribka",
+    "radix-ui",
+    "material design"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JanRibka/jr",
+    "directory": "packages/jr-components"
+  },
+  "bugs": {
+    "url": "https://github.com/JanRibka/jr/issues"
+  },
+  "homepage": "https://github.com/JanRibka/jr#readme",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "release": "pnpm build && pnpm version --no-git && pnpm publish --access public"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "tsup": "^8.1.0"
+  },
+  "engines": {
+    "node": ">=16.13.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "React Library",
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES2023",
+    "lib": ["ES2020", "DOM"],
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "types": ["node", "react"],
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "noErrorTruncation": false,
+    "allowJs": false,
+    "paths": {
+      "@jr-components": ["./packages/jr-components/src"]
+    }
+  },
+  "exclude": ["**/.*/", "**/build", "**/node_modules"]
+}
