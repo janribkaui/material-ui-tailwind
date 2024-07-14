@@ -73,8 +73,8 @@ importers:
         specifier: ^7.24.7
         version: 7.24.7(@babel/core@7.24.8)
       '@janribka/components':
-        specifier: ^0.0.0
-        version: 0.0.0
+        specifier: ^0.0.1
+        version: 0.0.1(@babel/core@7.24.8)
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -144,9 +144,6 @@ importers:
 
   packages/janribka-components:
     dependencies:
-      '@babel/plugin-transform-runtime':
-        specifier: ^7.24.7
-        version: 7.24.7(@babel/core@7.24.8)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -166,25 +163,6 @@ importers:
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
-
-  packages/jr-components:
-    dependencies:
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-      typescript:
-        specifier: ^5.5.3
-        version: 5.5.3
-    devDependencies:
-      '@types/node':
-        specifier: ^20.14.10
-        version: 20.14.10
-      '@types/react':
-        specifier: ^18.3.3
-        version: 18.3.3
-      tsup:
-        specifier: ^8.1.0
-        version: 8.1.0(postcss@8.4.35)(typescript@5.5.3)
 
   packages/ui:
     dependencies:
@@ -607,8 +585,8 @@ packages:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
 
-  '@janribka/components@0.0.0':
-    resolution: {integrity: sha512-B3UK3DyDpV+Bk5/+3FsSFZF2kChViEhMviokqjH0nRbDU8+ES4tSaxAWp4vEBACOrevEA2VTkrBkPFBlqm8NLQ==}
+  '@janribka/components@0.0.1':
+    resolution: {integrity: sha512-lukUmNFZQlp7ThEIzW3/jfBLmQMZO2xCebCCde7nm19Rhhr4lSmO9CmWEhNRBa86h6jUkb7q+ZhyL43j2ARY1w==}
     engines: {node: '>=16.13.0'}
 
   '@jridgewell/gen-mapping@0.3.3':
@@ -3314,10 +3292,13 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@janribka/components@0.0.0':
+  '@janribka/components@0.0.1(@babel/core@7.24.8)':
     dependencies:
+      '@babel/plugin-transform-runtime': 7.24.7(@babel/core@7.24.8)
       react: 18.3.1
-      typescript: 5.5.3
+    transitivePeerDependencies:
+      - '@babel/core'
+      - supports-color
 
   '@jridgewell/gen-mapping@0.3.3':
     dependencies:

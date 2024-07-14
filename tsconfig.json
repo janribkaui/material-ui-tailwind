@@ -16,6 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "noErrorTruncation": false,
     "allowJs": false,
+    "declaration": true,
     "paths": {
       "@jr-components": ["./packages/jr-components/src"]
     }

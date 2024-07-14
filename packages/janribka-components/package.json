@@ -1,6 +1,6 @@
 {
   "name": "@janribka/components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "author": "Jan Ribka",
   "description": "React components library for my projects",
@@ -31,14 +31,15 @@
   },
   "homepage": "https://github.com/JanRibka/janrribka#readme",
   "scripts": {
-    "build": "rimraf dist && tsup src/index.ts src/**/index.ts --format cjs,esm --dts --splitting --outDir dist",
-    "postbuild": "node ../../scripts/generate-exports.mjs",
+    "prebuild": "rimraf dist",
+    "build": "tsup && pnpm build:exports && pnpm build:copy-files",
+    "build:exports": "node ../../scripts/generate-exports.mjs",
+    "build:copy-files": "node ../../scripts/copy-files.mjs",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
     "release": "pnpm build && pnpm version --no-git && pnpm publish --access public"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.24.7",
     "react": "^18.3.1"
   },
   "devDependencies": {
