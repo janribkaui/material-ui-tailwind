@@ -1,5 +1,7 @@
-import Image from "next/image";
-import { Card } from "@repo/ui/card";
+import Image from 'next/image';
+
+import { Button } from '@janribka/components';
+import { Card } from '@repo/ui/card';
 
 function Gradient({
   conic,
@@ -51,6 +53,7 @@ export default function Page(): JSX.Element {
           examples/with-tailwind -&nbsp;
           <code className="font-mono font-bold">web</code>
         </p>
+        <Button />
         <div className="fixed bottom-0 left-0 flex items-end justify-center w-full h-48 bg-gradient-to-t from-black via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
             className="flex gap-2 p-8 pointer-events-none place-items-center lg:pointer-events-auto lg:p-0"
