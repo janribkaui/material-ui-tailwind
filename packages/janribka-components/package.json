@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/JanRibka/janribka/issues"
   },
-  "homepage": "https://github.com/JanRibka/janrribka#readme",
+  "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsup && pnpm build:exports && pnpm build:copy-files",
