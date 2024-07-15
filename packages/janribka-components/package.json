@@ -1,6 +1,6 @@
 {
   "name": "@janribka/components",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "author": "Jan Ribka",
   "description": "React components library for my projects",
@@ -40,7 +40,7 @@
     "build:copy-files": "node ../../scripts/copy-files.mjs",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
-    "release": "pnpm version --no-git && pnpm publish --access public"
+    "release": "pnpm version --no-git && pnpm publish dist --access public"
   },
   "dependencies": {
     "react": "^18.3.1"
