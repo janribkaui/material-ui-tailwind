@@ -40,7 +40,7 @@
     "build:copy-files": "node ../../scripts/copy-files.mjs",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
-    "release": "pnpm version --no-git && pnpm publish dist --access public"
+    "release": "pnpm version --no-git && pnpm publish --access public"
   },
   "dependencies": {
     "react": "^18.3.1"
