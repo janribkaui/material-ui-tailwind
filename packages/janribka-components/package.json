@@ -1,14 +1,14 @@
 {
   "name": "@janribka/components",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": false,
   "author": "Jan Ribka",
   "description": "React components library for my projects",
-  "main": "./src/index.ts",
   "license": "MIT",
   "type": "module",
+  "main": "./dist/index.js",
   "files": [
-    "dist/**/*"
+    "dist/**"
   ],
   "exports": {
     ".": "./dist/index.js",
