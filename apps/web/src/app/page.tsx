@@ -1,7 +1,7 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import { Button } from '@janribka/components';
-import { Card } from '@repo/ui/card';
+import Button from "@janribka/components/Button";
+import { Card } from "@repo/ui/card";
 
 function Gradient({
   conic,

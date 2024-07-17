@@ -34,13 +34,17 @@
   },
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "tsup && pnpm build:exports && pnpm build:copy-files",
-    "build:exports": "node ../../scripts/generate-exports.mjs",
-    "build:copy-files": "node ../../scripts/copy-files.mjs",
+    "prebuild": "rimraf build tsconfig.build.tsbuildinfo",
+    "build": "pnpm build:modern && pnpm build:node && pnpm build:stable && pnpm build:types && pnpm build:copy-files",
+    "build:modern": "node ../../scripts/build.mjs modern",
+    "build:node": "node ../../scripts/build.mjs node",
+    "build:stable": "node ../../scripts/build.mjs stable",
+    "build:types": "node ../../scripts/buildTypes.mjs",
+    "build:copy-files": "node ../../scripts/copyFiles.mjs",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
-    "release": "pnpm version --no-git && pnpm publish --access public"
+    "release": "pnpm version --no-git && pnpm publish --access public",
+    "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "react": "^18.3.1"

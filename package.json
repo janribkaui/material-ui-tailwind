@@ -9,13 +9,41 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.24.9",
+    "@babel/node": "^7.24.8",
+    "@babel/plugin-transform-react-constant-elements": "^7.24.7",
+    "@babel/plugin-transform-runtime": "^7.24.7",
+    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@babel/register": "^7.24.6",
+    "@types/node": "^20.14.11",
+    "@types/react": "^18.3.3",
+    "@types/yargs": "^17.0.32",
+    "babel-loader": "^9.1.3",
+    "babel-plugin-istanbul": "^7.0.0",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "babel-plugin-optimize-clsx": "^2.6.2",
+    "babel-plugin-react-remove-properties": "^0.3.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "chalk": "^5.3.0",
+    "cpy-cli": "^5.0.0",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "turbo": "^2.0.6"
+    "rimraf": "^6.0.1",
+    "turbo": "^2.0.6",
+    "yargs": "^17.7.2"
   },
   "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
   },
-  "name": "with-tailwind"
+  "name": "with-tailwind",
+  "dependencies": {
+    "execa": "^9.3.0"
+  }
 }

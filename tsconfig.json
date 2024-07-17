@@ -1,6 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "React Library",
+  "types": ["node", "react"],
   "compilerOptions": {
     "module": "ESNext",
     "target": "ES2023",
@@ -16,9 +17,9 @@
     "allowSyntheticDefaultImports": true,
     "noErrorTruncation": false,
     "allowJs": false,
-    "declaration": true,
     "paths": {
-      "@jr-components": ["./packages/jr-components/src"]
+      "@janribka-components": ["./packages/janribka-components/src"],
+      "@janribka-types": ["./packages/janribka-types"]
     }
   },
   "exclude": ["**/.*/", "**/build", "**/node_modules"]

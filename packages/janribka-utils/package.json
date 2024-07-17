@@ -1,0 +1,55 @@
+{
+  "name": "@janribka/utils",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Jan Ribka",
+  "description": "Utility functions for react components",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "files": [
+    "dist/**"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./Button": "./dist/Button/index.js"
+  },
+  "keywords": [
+    "react",
+    "react-components",
+    "janribka",
+    "utils"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JanRibka/janribka",
+    "directory": "packages/janribka-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/JanRibka/janribka/issues"
+  },
+  "homepage": "https://github.com/JanRibka/janribka#readme",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsup && pnpm build:exports",
+    "build:exports": "node ../../scripts/generate-exports.mjs",
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit",
+    "release": "pnpm version --no-git && pnpm publish --access public"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "react": "^18.3.1",
+    "tailwind-merge": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">=16.13.0"
+  }
+}
