@@ -99,9 +99,6 @@ importers:
 
   apps/docs:
     dependencies:
-      '@repo/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
       next:
         specifier: ^14.2.3
         version: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -154,9 +151,6 @@ importers:
       '@janribka/components':
         specifier: ^0.0.8
         version: 0.0.8
-      '@repo/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
       next:
         specifier: ^14.2.3
         version: 14.2.3(@babel/core@7.24.9)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -223,9 +217,15 @@ importers:
 
   packages/janribka-components:
     dependencies:
+      '@janribka/types':
+        specifier: workspace:^
+        version: link:../janribka-types/build
       react:
         specifier: ^18.3.1
         version: 18.3.1
+      react-dom:
+        specifier: ^17.0.0 || ^18.0.0 || ^19.0.0
+        version: 18.2.0(react@18.3.1)
     devDependencies:
       '@types/node':
         specifier: ^20.14.10
@@ -242,6 +242,7 @@ importers:
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
+    publishDirectory: build
 
   packages/janribka-types:
     devDependencies:
@@ -255,31 +256,23 @@ importers:
 
   packages/janribka-utils:
     dependencies:
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
-      tailwind-merge:
-        specifier: ^2.4.0
-        version: 2.4.0
     devDependencies:
+      '@types/mocha':
+        specifier: ^10.0.7
+        version: 10.0.7
       '@types/node':
         specifier: ^20.14.10
         version: 20.14.10
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
-      rimraf:
-        specifier: ^6.0.1
-        version: 6.0.1
-      tsup:
-        specifier: ^8.1.0
-        version: 8.1.0(postcss@8.4.35)(typescript@5.5.3)
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
+    publishDirectory: build
 
   packages/ui:
     dependencies:
@@ -1448,6 +1441,9 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
+  '@types/mocha@10.0.7':
+    resolution: {integrity: sha512-GN8yJ1mNTcFcah/wKEFIJckJx9iJLoMSzWcfRRuxz/Jk+U6KQNnml+etbtxFK8lPjzOw3zp4Ha/kjSst9fsHYw==}
+
   '@types/node@20.11.24':
     resolution: {integrity: sha512-Kza43ewS3xoLgCEpQrsT+xRo/EJej1y0kVYGiLFE1NEODXGzTfwiC6tXTLMQskn1X4/Rjlh0MQUvx9W+L9long==}
 
@@ -1971,10 +1967,6 @@ packages:
 
   clone-deep@4.0.1:
     resolution: {integrity: sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==}
-    engines: {node: '>=6'}
-
-  clsx@2.1.1:
-    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
 
   color-convert@1.9.3:
@@ -3951,9 +3943,6 @@ packages:
     resolution: {integrity: sha512-L1dapNV6vu2s/4Sputv8xGsCdAVlb5nRDMFU/E27D44l5U6cw1g0dGd45uLc+OXjNMmF4ntiMdCimzcjFKQI8Q==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  tailwind-merge@2.4.0:
-    resolution: {integrity: sha512-49AwoOQNKdqKPd9CViyH5wJoSKsCDjUlzL8DxuGp3P1FsGY36NJDAa18jLZcaHAUUuTj+JB8IAo8zWgBNvBF7A==}
-
   tailwindcss@3.4.1:
     resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
     engines: {node: '>=14.0.0'}
@@ -5594,6 +5583,8 @@ snapshots:
 
   '@types/json5@0.0.29': {}
 
+  '@types/mocha@10.0.7': {}
+
   '@types/node@20.11.24':
     dependencies:
       undici-types: 5.26.5
@@ -6263,8 +6254,6 @@ snapshots:
       is-plain-object: 2.0.4
       kind-of: 6.0.3
       shallow-clone: 3.0.1
-
-  clsx@2.1.1: {}
 
   color-convert@1.9.3:
     dependencies:
@@ -7991,6 +7980,12 @@ snapshots:
       react: 18.2.0
       scheduler: 0.23.0
 
+  react-dom@18.2.0(react@18.3.1):
+    dependencies:
+      loose-envify: 1.4.0
+      react: 18.3.1
+      scheduler: 0.23.0
+
   react-is@16.13.1: {}
 
   react@18.2.0:
@@ -8414,8 +8409,6 @@ snapshots:
     dependencies:
       '@pkgr/utils': 2.4.2
       tslib: 2.6.2
-
-  tailwind-merge@2.4.0: {}
 
   tailwindcss@3.4.1:
     dependencies:

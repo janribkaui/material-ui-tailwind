@@ -33,7 +33,7 @@
     "prebuild": "rimraf build",
     "build": "mkdir build && cpy index.d.ts build/ && cpy OverridableComponentAugmentation.ts build/ && pnpm build:copy-files",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
-    "release": "pnpm version --no-git && pnpm publish --access public",
+    "release": "pnpm build && pnpm version --no-git && pnpm publish --access public",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
     "typescript": "tsc -p tsconfig.json"
