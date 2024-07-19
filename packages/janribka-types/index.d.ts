@@ -1,4 +1,6 @@
-import * as React from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-types */
+import type * as React from "react";
 
 // disable automatic export
 export {};
@@ -22,7 +24,7 @@ export type ConsistentWith<DecorationTargetProps, InjectedProps> = {
  * all the props to {component} except the {InjectedProps} and will accept
  * additional {AdditionalProps}
  */
-export type PropInjector<InjectedProps, AdditionalProps = object> = <
+export type PropInjector<InjectedProps, AdditionalProps = {}> = <
   C extends React.JSXElementConstructor<
     ConsistentWith<React.ComponentProps<C>, InjectedProps>
   >,
@@ -57,7 +59,7 @@ export type DistributiveOmit<T, K extends keyof any> = T extends any
  */
 export type OverridableStringUnion<
   T extends string | number,
-  U = object,
+  U = {},
 > = GenerateStringUnion<Overwrite<Record<T, true>, U>>;
 
 /**
@@ -143,7 +145,7 @@ export type DefaultComponentProps<M extends OverridableTypeMap> =
 export type BaseProps<M extends OverridableTypeMap> = M['props'];
 
 export interface OverridableTypeMap {
-  props: object;
+  props: {};
   defaultComponent: React.ElementType;
 }
 

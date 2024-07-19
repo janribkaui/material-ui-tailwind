@@ -1,7 +1,12 @@
 {
+  "name": "@janribka/turborepo",
+  "version": "0.0.0-alpha.0",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "preinstall": "npx only-allow pnpm",
+    "deduplicate": "pnpm dedupe",
+    "benchmark:browser": "pnpm --filter benchmark browser",
+    "build": "turbo build --ignore docs",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "type-check": "turbo type-check",
@@ -38,12 +43,13 @@
     "turbo": "^2.0.6",
     "yargs": "^17.7.2"
   },
-  "packageManager": "pnpm@8.15.6",
+  "packageManager": "pnpm@9.5.0",
   "engines": {
+    "pnpm": "9.5.0",
     "node": ">=18"
   },
-  "name": "with-tailwind",
   "dependencies": {
-    "execa": "^9.3.0"
+    "execa": "^9.3.0",
+    "typescript": "^5.5.3"
   }
 }

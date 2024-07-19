@@ -1,14 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "React Library",
-  "types": ["node", "react"],
   "compilerOptions": {
     "module": "ESNext",
-    "target": "ES2023",
+    // aligning with Node18 recommendation: https://www.npmjs.com/package/@tsconfig/node18
+    "target": "ES2022",
     "lib": ["ES2020", "DOM"],
     "jsx": "preserve",
     "moduleResolution": "node",
-    "types": ["node", "react"],
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noEmit": true,
@@ -18,9 +17,13 @@
     "noErrorTruncation": false,
     "allowJs": false,
     "paths": {
-      "@janribka-components": ["./packages/janribka-components/src"],
-      "@janribka-types": ["./packages/janribka-types"]
-    }
+      // "@janribka/components": ["./packages/janribka-components/src"],
+      // "@janribka/components/*": ["./packages/janribka-components/src/*"],
+      // "@janribka/types": ["./packages/janribka-types"],
+      // "@janribka/utils": ["./packages/janribka-utils/src"]
+    },
+    // Otherwise we get react-native typings which conflict with dom.lib.
+    "types": ["node", "react"]
   },
   "exclude": ["**/.*/", "**/build", "**/node_modules"]
 }

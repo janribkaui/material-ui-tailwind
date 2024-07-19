@@ -1,49 +1,54 @@
-const { resolve } = require("node:path");
-
-const project = resolve(process.cwd(), "tsconfig.json");
-
-/*
- * This is a custom ESLint configuration for use a library
- * that utilizes React.
- *
- * This config extends the Vercel Engineering Style Guide.
- * For more information, see https://github.com/vercel/style-guide
- *
- */
-
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
+  env: {
+    node: true,
+  },
+  parser: "@typescript-eslint/parser",
   extends: [
-    "@vercel/style-guide/eslint/browser",
-    "@vercel/style-guide/eslint/typescript",
-    "@vercel/style-guide/eslint/react",
-  ].map(require.resolve),
-  parserOptions: {
-    project,
-  },
-  globals: {
-    JSX: true,
-  },
-  settings: {
-    "import/resolver": {
-      typescript: {
-        project,
-      },
-      node: {
-        extensions: [".mjs", ".js", ".jsx", ".ts", ".tsx"],
-      },
-    },
-  },
-  ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js", "**/*.css"],
-  // add rules configurations here
-  rules: {
-    "import/no-default-export": "off",
-  },
-  overrides: [
-    {
-      files: ["*.config.js"],
-      env: {
-        node: true,
-      },
-    },
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "prettier",
   ],
+  plugins: ["@typescript-eslint"],
+  parserOptions: {
+    sourceType: "module",
+    ecmaVersion: "latest",
+  },
+  rules: {
+    "@typescript-eslint/no-non-null-assertion": "off",
+    camelcase: "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        selector: "variable",
+        format: ["PascalCase", "camelCase", "UPPER_CASE"],
+        leadingUnderscore: "forbid",
+        modifiers: ["global"],
+      },
+      {
+        selector: "variable",
+        format: ["camelCase"],
+        leadingUnderscore: "allow",
+        modifiers: ["const"],
+      },
+      {
+        selector: "function",
+        format: ["camelCase"],
+        leadingUnderscore: "forbid",
+      },
+      {
+        selector: "interface",
+        format: ["PascalCase"],
+        custom: {
+          regex: "^I[A-Z]",
+          match: false,
+        },
+      },
+      {
+        selector: "class",
+        format: ["PascalCase"],
+      },
+    ],
+  },
 };

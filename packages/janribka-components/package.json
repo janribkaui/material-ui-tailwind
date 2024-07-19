@@ -5,7 +5,6 @@
   "author": "Jan Ribka",
   "description": "React components library for my projects",
   "license": "MIT",
-  "type": "module",
   "main": "./src/index.ts",
   "keywords": [
     "react",
@@ -40,7 +39,8 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "@janribka/types": "workspace:^"
+    "@janribka/types": "workspace:^",
+    "@janribka/utils": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",

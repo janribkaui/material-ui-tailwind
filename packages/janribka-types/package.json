@@ -10,10 +10,6 @@
     "index.d.ts",
     "OverridableComponentAugmentation.ts"
   ],
-  "exports": {
-    ".": "./dist/index.js",
-    "./Button": "./dist/Button/index.js"
-  },
   "keywords": [
     "react",
     "react-components",
@@ -30,9 +26,9 @@
   },
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
-    "prebuild": "rimraf build",
     "build": "mkdir build && cpy index.d.ts build/ && cpy OverridableComponentAugmentation.ts build/ && pnpm build:copy-files",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
+    "prebuild": "rimraf build",
     "release": "pnpm build && pnpm version --no-git && pnpm publish --access public",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
@@ -48,11 +44,15 @@
     "@types/react": "^18.3.3"
   },
   "peerDependencies": {
-    "@types/react": "^18.0.0 || ^19.0.0"
+    "@types/react": "^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "peerDependenciesMeta": {
     "@types/react": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "typescript": "^5.5.3"
   }
 }

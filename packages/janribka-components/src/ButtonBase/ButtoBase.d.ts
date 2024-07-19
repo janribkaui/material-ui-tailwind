@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { ButtonBaseClasses } from './buttonBaseClasses';
+
 export interface ButtonBaseOwnProps {
   /**
    * A ref for imperative actions.
@@ -61,11 +63,7 @@ export interface ButtonBaseOwnProps {
    * Callback fired when the component is focused with a keyboard.
    * We trigger a `onFocus` callback too.
    */
-  onFocusVisible?: React.FocusEventHandler<any>;
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx?: SxProps<Theme>;
+  onFocusVisible?: React.FocusEventHandler<any>;  
   /**
    * @default 0
    */
