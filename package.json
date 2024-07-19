@@ -40,6 +40,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "rimraf": "^6.0.1",
+    "tsc": "^2.0.4",
     "turbo": "^2.0.6",
     "yargs": "^17.7.2"
   },
