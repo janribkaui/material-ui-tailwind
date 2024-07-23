@@ -38,21 +38,22 @@
     "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "react": "^18.3.1",
     "@janribka/types": "workspace:^",
     "@janribka/utils": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
+    "react": "19.0.0-rc-f6cce072-20240723",
+    "react-dom": "19.0.0-rc-f6cce072-20240723",
     "rimraf": "^6.0.1",
     "tsup": "^8.1.0",
     "typescript": "^5.5.3"
   },
   "peerDependencies": {
-    "@types/react": "^17.0.0 || ^18.0.0 || ^19.0.0",
-    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
+    "@types/react": "^18.0.0 || ^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "peerDependenciesMeta": {
     "@types/react": {

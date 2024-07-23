@@ -19,8 +19,9 @@
     "paths": {
       "@janribka/components": ["./packages/janribka-components/src"],
       "@janribka/components/*": ["./packages/janribka-components/src/*"],
-      "@janribka/types": ["./packages/janribka-types"],
-      "@janribka/utils": ["./packages/janribka-utils/src"]
+      "@janribka/types": ["./packages/janribka-types/"],
+      "@janribka/utils": ["./packages/janribka-utils/src"],
+      "@janribka/utils/*": ["./packages/janribka-utils/src/*"]
     },
     // Otherwise we get react-native typings which conflict with dom.lib.
     "types": ["node", "react"]

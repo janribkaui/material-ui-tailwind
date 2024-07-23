@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { DistributiveOmit } from "@janribka/types";
+import { DistributiveOmit } from '@janribka/types';
 
-import { StyledComponentProps } from "./styles";
+import { StyledComponentProps } from './styles';
 
 export { StyledComponentProps };
 
@@ -17,12 +17,10 @@ export { StyledComponentProps };
 export type InternalStandardProps<
   ComponentProps,
   Removals extends keyof ComponentProps = never,
-> = DistributiveOmit<ComponentProps, "classes" | Removals> &
+> = DistributiveOmit<ComponentProps, 'classes' | Removals> &
   // each component declares it's classes in a separate interface for proper JSDoc
   StyledComponentProps<never> & {
-    ref?: ComponentProps extends { ref?: infer RefType }
-      ? RefType
-      : React.Ref<unknown>;
+    ref?: ComponentProps extends { ref?: infer RefType } ? RefType : React.Ref<unknown>;
     // TODO: Remove implicit props. Up to each component.
     className?: string;
     style?: React.CSSProperties;

@@ -1,4 +1,4 @@
-import { expectType } from "@janribka/types";
+import { expectType } from '@janribka/types';
 
 function expectTypeTypes() {
   // it rejects assignability to `any`

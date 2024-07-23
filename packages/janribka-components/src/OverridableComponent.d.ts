@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { DistributiveOmit } from "@janribka/types";
+import { DistributiveOmit } from '@janribka/types';
 
-import { StyledComponentProps } from "./styles";
+import { StyledComponentProps } from './styles';
 
 /**
  * A component whose root component can be controlled via a `component` prop.
@@ -21,7 +21,7 @@ export interface OverridableComponent<TypeMap extends OverridableTypeMap> {
        * Either a string to use a HTML element or a component.
        */
       component: RootComponent;
-    } & OverrideProps<TypeMap, RootComponent>
+    } & OverrideProps<TypeMap, RootComponent>,
   ): React.JSX.Element | null;
   (props: DefaultComponentProps<TypeMap>): React.JSX.Element | null;
 }

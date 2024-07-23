@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/ban-types */
-import type * as React from "react";
+import * as React from 'react';
 
 // disable automatic export
 export {};
@@ -25,11 +23,9 @@ export type ConsistentWith<DecorationTargetProps, InjectedProps> = {
  * additional {AdditionalProps}
  */
 export type PropInjector<InjectedProps, AdditionalProps = {}> = <
-  C extends React.JSXElementConstructor<
-    ConsistentWith<React.ComponentProps<C>, InjectedProps>
-  >,
+  C extends React.JSXElementConstructor<ConsistentWith<React.ComponentProps<C>, InjectedProps>>,
 >(
-  component: C
+  component: C,
 ) => React.JSXElementConstructor<
   DistributiveOmit<
     React.JSX.LibraryManagedAttributes<C, React.ComponentProps<C>>,
@@ -44,9 +40,7 @@ export type PropInjector<InjectedProps, AdditionalProps = {}> = <
  *
  * @internal
  */
-export type DistributiveOmit<T, K extends keyof any> = T extends any
-  ? Omit<T, K>
-  : never;
+export type DistributiveOmit<T, K extends keyof any> = T extends any ? Omit<T, K> : never;
 
 /**
  * Generate a set of string literal types with the given default record `T` and
@@ -57,10 +51,9 @@ export type DistributiveOmit<T, K extends keyof any> = T extends any
  *
  * @internal
  */
-export type OverridableStringUnion<
-  T extends string | number,
-  U = {},
-> = GenerateStringUnion<Overwrite<Record<T, true>, U>>;
+export type OverridableStringUnion<T extends string | number, U = {}> = GenerateStringUnion<
+  Overwrite<Record<T, true>, U>
+>;
 
 /**
  * Like `T & U`, but using the value types from `U` where their properties overlap.
@@ -91,9 +84,7 @@ export type IfEquals<T, U, Y = unknown, N = never> =
  * This means `typeof value` is not identical to `number | string`
  * @param actual
  */
-export function expectType<Expected, Actual>(
-  actual: IfEquals<Actual, Expected, Actual>
-): void;
+export function expectType<Expected, Actual>(actual: IfEquals<Actual, Expected, Actual>): void;
 
 /**
  * A component whose root component can be controlled via a `component` prop.
@@ -112,7 +103,7 @@ export interface OverridableComponent<M extends OverridableTypeMap> {
        * Either a string to use a HTML element or a component.
        */
       component: C;
-    } & OverrideProps<M, C>
+    } & OverrideProps<M, C>,
   ): React.JSX.Element | null;
   (props: DefaultComponentProps<M>): React.JSX.Element | null;
   propTypes?: any;

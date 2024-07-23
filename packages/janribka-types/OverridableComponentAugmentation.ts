@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import * as React from "react";
+import * as React from 'react';
 
-declare module "@janribka/types" {
+declare module '@janribka/types' {
   /**
    * A component whose root component can be controlled via a `component` prop.
    *
@@ -15,7 +14,7 @@ declare module "@janribka/types" {
          * Either a string to use a HTML element or a component.
          */
         component: C;
-      } & OverridePropsVer2<M, C>
+      } & OverridePropsVer2<M, C>,
     ): React.JSX.Element;
     (props: DefaultComponentPropsVer2<M>): React.JSX.Element;
     propTypes?: any;
