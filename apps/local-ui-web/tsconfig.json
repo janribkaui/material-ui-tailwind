@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowImportingTsExtensions": true
+  },
+  "references": [
+    {
+      "path": "../../packages/janribka-components/tsconfig.build.json"
+    }
+  ]
+}
