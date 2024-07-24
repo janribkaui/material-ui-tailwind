@@ -1,7 +1,5 @@
-// import { ClassValue, clsx } from "clsx";
-// import { twMerge } from "tailwind-merge";
-
-import { deflate } from "zlib";
+import { ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 /**
  * Merges multiple class names together.
@@ -9,14 +7,8 @@ import { deflate } from "zlib";
  * @param {ClassValue[]} inputs - The class names to merge.
  * @returns {string} The merged class names.
  */
-// const mergeStyles = (...inputs: ClassValue[]): string => {
-//   return twMerge(clsx(inputs));
-// };
-
-// export default mergeStyles;
-
-const mergeStyles = () => {
-  return "";
+const mergeStyles = (...inputs: ClassValue[]): string => {
+  return twMerge(clsx(inputs));
 };
 
 export default mergeStyles;

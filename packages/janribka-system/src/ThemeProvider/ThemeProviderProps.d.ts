@@ -15,10 +15,10 @@ export interface ThemeProviderProps<Theme = DefaultTheme> {
   theme: Partial<Theme>;
 }
 
-/**
- * This component makes the `theme` available down the React tree.
- * It should preferably be used at **the root of your component tree**.
- */
-export default function ThemeProvider<T = DefaultTheme>(
-  props: ThemeProviderProps<T>,
-): React.ReactElement<ThemeProviderProps<T>>;
+// /**
+//  * This component makes the `theme` available down the React tree.
+//  * It should preferably be used at **the root of your component tree**.
+//  */
+// export default function ThemeProvider<T = DefaultTheme>(
+//   props: ThemeProviderProps<T>,
+// ): React.ReactElement<ThemeProviderProps<T>>;

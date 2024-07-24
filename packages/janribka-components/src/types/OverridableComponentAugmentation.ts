@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { DistributiveOmit } from "@janribka/";
+import { DistributiveOmit } from '@janribka/types';
 
-declare module "@janribka/components/OverridableComponent" {
+declare module '@janribka/components/OverridableComponent' {
   /**
    * A component whose root component can be controlled via a `component` prop.
    *
@@ -16,7 +16,7 @@ declare module "@janribka/components/OverridableComponent" {
          * Either a string to use a HTML element or a component.
          */
         component: DefaultComponent;
-      } & OverridePropsVer2<TypeMap, DefaultComponent>
+      } & OverridePropsVer2<TypeMap, DefaultComponent>,
     ): React.JSX.Element;
     (props: DefaultComponentPropsVer2<TypeMap>): React.JSX.Element;
   }

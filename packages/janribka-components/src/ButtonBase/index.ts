@@ -1,4 +1,7 @@
-export { default } from './ButtonBaseProps';
+'use client';
+export { default } from './ButtonBase';
+
+export { default as ButtonBaseProps } from './ButtonBaseProps';
 export * from './ButtonBaseProps';
 
 export { default as buttonBaseClasses } from './buttonBaseClasses';

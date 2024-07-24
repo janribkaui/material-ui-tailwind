@@ -7,6 +7,8 @@ import {
   useTheme as usePrivateTheme,
 } from '@janribka/private-theming';
 
+import DefaultPropsProvider from '../DefaultPropsProvider';
+import RtlProvider from '../RtlProvider/RtlProvider';
 import useThemeWithoutDefault from '../useThemeWithoutDefault';
 import { ThemeProviderProps } from './ThemeProviderProps';
 
@@ -71,7 +73,15 @@ function ThemeProvider(props: ThemeProviderProps) {
   const privateTheme = useThemeScoping(themeId, upperPrivateTheme, localTheme, true);
   const rtlValue = engineTheme.direction === 'rtl';
 
-  return <JrThemeProvider theme={}></JrThemeProvider>;
+  return (
+    <JrThemeProvider theme={privateTheme}>
+      {/* <StyledEngineThemeContext.Provider value={engineTheme}> */}
+      <RtlProvider value={rtlValue}>
+        <DefaultPropsProvider value={engineTheme?.components} />
+      </RtlProvider>
+      {/* </StyledEngineThemeContext.Provider> */}
+    </JrThemeProvider>
+  );
 }
 
 export default ThemeProvider;

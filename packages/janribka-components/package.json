@@ -38,15 +38,19 @@
     "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
+    "@janribka/styles": "workspace:^",
     "@janribka/types": "workspace:^",
     "@janribka/utils": "workspace:*"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.24.7",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "react": "19.0.0-rc-f6cce072-20240723",
     "react-dom": "19.0.0-rc-f6cce072-20240723",
     "rimraf": "^6.0.1",
+    "tailwind-variants": "^0.2.1",
+    "tailwindcss": "^3.4.6",
     "tsup": "^8.1.0",
     "typescript": "^5.5.3"
   },

@@ -25,7 +25,9 @@
       "@janribka/system": ["./packages/janribka-system/src"],
       "@janribka/system/*": ["./packages/janribka-system/src/*"],
       "@janribka/private-theming": ["./packages/janribka-private-theming/src"],
-      "@janribka/private-theming/*": ["./packages/janribka-private-theming/src/*"]
+      "@janribka/private-theming/*": ["./packages/janribka-private-theming/src/*"],
+      "@janribka/styles": ["./packages/mui-styles/src"],
+      "@janribka/styles/*": ["./packages/mui-styles/src/*"]
     },
     // Otherwise we get react-native typings which conflict with dom.lib.
     "types": ["node", "react"]

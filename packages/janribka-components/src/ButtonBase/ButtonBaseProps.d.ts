@@ -116,7 +116,7 @@ export type ExtendButtonBase<TypeMap extends OverridableTypeMap> = ((
  *
  * - [ButtonBase API](https://next.mui.com/material-ui/api/button-base/)
  */
-declare const ButtonBase: ExtendButtonBase<ButtonBaseTypeMap>;
+// declare const ButtonBase: ExtendButtonBase<ButtonBaseTypeMap>;
 
 export type ButtonBaseProps<
   RootComponent extends React.ElementType = ButtonBaseTypeMap['defaultComponent'],
@@ -129,4 +129,4 @@ export interface ButtonBaseActions {
   focusVisible(): void;
 }
 
-export default ButtonBase;
+// export default ButtonBase;

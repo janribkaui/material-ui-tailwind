@@ -100,6 +100,9 @@ importers:
         specifier: 19.0.0-rc-f6cce072-20240723
         version: 19.0.0-rc-f6cce072-20240723(react@19.0.0-rc-f6cce072-20240723)
     devDependencies:
+      '@janribka/components':
+        specifier: workspace:^
+        version: link:../../packages/janribka-components/build
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -136,6 +139,9 @@ importers:
 
   packages/janribka-components:
     dependencies:
+      '@janribka/styles':
+        specifier: workspace:^
+        version: link:../janribka-styles/build
       '@janribka/types':
         specifier: workspace:^
         version: link:../janribka-types/build
@@ -143,6 +149,9 @@ importers:
         specifier: workspace:*
         version: link:../janribka-utils/build
     devDependencies:
+      '@babel/runtime':
+        specifier: ^7.24.7
+        version: 7.24.8
       '@types/node':
         specifier: ^20.14.10
         version: 20.14.11
@@ -158,6 +167,12 @@ importers:
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
+      tailwind-variants:
+        specifier: ^0.2.1
+        version: 0.2.1(tailwindcss@3.4.6)
+      tailwindcss:
+        specifier: ^3.4.6
+        version: 3.4.6
       tsup:
         specifier: ^8.1.0
         version: 8.2.1(jiti@1.21.6)(postcss@8.4.39)(typescript@5.5.3)(yaml@2.4.5)
@@ -190,6 +205,13 @@ importers:
       react:
         specifier: 19.0.0-rc-f6cce072-20240723
         version: 19.0.0-rc-f6cce072-20240723
+    publishDirectory: build
+
+  packages/janribka-styles:
+    devDependencies:
+      tailwindcss:
+        specifier: ^3.4.6
+        version: 3.4.6
     publishDirectory: build
 
   packages/janribka-system:
@@ -247,6 +269,12 @@ importers:
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      tailwind-merge:
+        specifier: ^2.4.0
+        version: 2.4.0
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -2085,6 +2113,10 @@ packages:
   clone@1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
+
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
 
   cmd-shim@6.0.3:
     resolution: {integrity: sha512-FMabTRlc5t5zjdenF6mS0MBeFZm0XqHqeOkcskKFb/LYCcRQ5fVgLOHVc4Lq9CqABd9zhjwPjMBCJvMCziSVtA==}
@@ -4525,6 +4557,15 @@ packages:
   table@6.8.2:
     resolution: {integrity: sha512-w2sfv80nrAh2VCbqR5AK27wswXhqcck2AhfnNW76beQXskGZ1V12GwS//yYVa3d3fcvAip2OUnbDAjW2k3v9fA==}
     engines: {node: '>=10.0.0'}
+
+  tailwind-merge@2.4.0:
+    resolution: {integrity: sha512-49AwoOQNKdqKPd9CViyH5wJoSKsCDjUlzL8DxuGp3P1FsGY36NJDAa18jLZcaHAUUuTj+JB8IAo8zWgBNvBF7A==}
+
+  tailwind-variants@0.2.1:
+    resolution: {integrity: sha512-2xmhAf4UIc3PijOUcJPA1LP4AbxhpcHuHM2C26xM0k81r0maAO6uoUSHl3APmvHZcY5cZCY/bYuJdfFa4eGoaw==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
+    peerDependencies:
+      tailwindcss: '*'
 
   tailwindcss@3.4.6:
     resolution: {integrity: sha512-1uRHzPB+Vzu57ocybfZ4jh5Q3SdlH7XW23J5sQoM9LhE9eIOlzxer/3XPSsycvih3rboRsvt0QCmzSrqyOYUIA==}
@@ -7032,6 +7073,8 @@ snapshots:
       shallow-clone: 3.0.1
 
   clone@1.0.4: {}
+
+  clsx@2.1.1: {}
 
   cmd-shim@6.0.3: {}
 
@@ -9866,6 +9909,13 @@ snapshots:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+
+  tailwind-merge@2.4.0: {}
+
+  tailwind-variants@0.2.1(tailwindcss@3.4.6):
+    dependencies:
+      tailwind-merge: 2.4.0
+      tailwindcss: 3.4.6
 
   tailwindcss@3.4.6:
     dependencies:
