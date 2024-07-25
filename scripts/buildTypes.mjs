@@ -1,11 +1,11 @@
-import chalk from "chalk";
-import glob from "fast-glob";
-import fse from "fs-extra";
-import path from "path";
-import yargs from "yargs";
-import { $ } from "execa";
+import chalk from 'chalk';
+import glob from 'fast-glob';
+import fse from 'fs-extra';
+import path from 'path';
+import yargs from 'yargs';
+import { $ } from 'execa';
 
-const $$ = $({ stdio: "inherit" });
+const $$ = $({ stdio: 'inherit' });
 
 /**
  * Fixes a wrong import path caused by https://github.com/microsoft/TypeScript/issues/39117
@@ -13,26 +13,26 @@ const $$ = $({ stdio: "inherit" });
  * @param {string} importPath - POSIX path
  */
 function rewriteImportPath(importPath) {
-  const coreSrcPath = path.posix.join("..", "mui-material", "src");
+  const coreSrcPath = path.posix.join('..', 'mui-material', 'src');
   if (importPath.startsWith(coreSrcPath)) {
-    return importPath.replace(coreSrcPath, "@mui/material");
+    return importPath.replace(coreSrcPath, '@mui/material');
   }
 
-  const stylesSrcPath = path.posix.join("..", "mui-styles", "src");
+  const stylesSrcPath = path.posix.join('..', 'mui-styles', 'src');
   if (importPath.startsWith(stylesSrcPath)) {
-    return importPath.replace(stylesSrcPath, "@mui/styles");
+    return importPath.replace(stylesSrcPath, '@mui/styles');
   }
 
-  const systemSrcPath = path.posix.join("..", "mui-system", "src");
+  const systemSrcPath = path.posix.join('..', 'mui-system', 'src');
   if (importPath.startsWith(systemSrcPath)) {
-    return importPath.replace(systemSrcPath, "@mui/system");
+    return importPath.replace(systemSrcPath, '@mui/system');
   }
 
   throw new Error(`Don't know where to rewrite '${importPath}' to`);
 }
 
 async function rewriteImportPaths(declarationFile, publishDir) {
-  const code = await fse.readFile(declarationFile, { encoding: "utf8" });
+  const code = await fse.readFile(declarationFile, { encoding: 'utf8' });
   const basename = path.basename(declarationFile);
 
   if (
@@ -44,8 +44,8 @@ async function rewriteImportPaths(declarationFile, publishDir) {
       [
         `${declarationFile} imports from 'prop-types', this is wrong.`,
         "It's likely missing a cast to any on the propTypes declaration:",
-        "ComponentName.propTypes = { /* prop */ } as any;",
-      ].join("\n")
+        'ComponentName.propTypes = { /* prop */ } as any;',
+      ].join('\n'),
     );
   }
 
@@ -65,32 +65,23 @@ async function rewriteImportPaths(declarationFile, publishDir) {
     // In filesystem semantics `@mui/material` is a relative path.
     // But when resolving imports these specifiers are considered "bare specifiers" and work differently.
     // We're only interested in imports that are considered "relative path imports".
-    const isBareImportSpecifier = !importPath.startsWith(".");
+    const isBareImportSpecifier = !importPath.startsWith('.');
     if (!isBareImportSpecifier) {
       const resolvedImport = path.resolve(declarationFile, importPath);
-      const importPathFromPublishDir = path.relative(
-        publishDir,
-        resolvedImport
-      );
-      const isImportReachableWhenPublished =
-        !importPathFromPublishDir.startsWith(".");
+      const importPathFromPublishDir = path.relative(publishDir, resolvedImport);
+      const isImportReachableWhenPublished = !importPathFromPublishDir.startsWith('.');
 
       if (!isImportReachableWhenPublished) {
         try {
           const fixedImportPath = rewriteImportPath(
             // ensure relative POSIX path
-            importPathFromPublishDir.replace(/\\/g, "/")
+            importPathFromPublishDir.replace(/\\/g, '/'),
           );
           const originalImportType = importTypeMatch[0];
-          const fixedImportType = importTypeMatch[0].replace(
-            importPath,
-            fixedImportPath
-          );
+          const fixedImportType = importTypeMatch[0].replace(importPath, fixedImportPath);
 
           // Make it easy to visually scan for the created lines.
-          changes.push(
-            `-${chalk.bgRed(originalImportType)}\n+${chalk.bgGreen(fixedImportType)}`
-          );
+          changes.push(`-${chalk.bgRed(originalImportType)}\n+${chalk.bgGreen(fixedImportType)}`);
           fixedCode = fixedCode.replace(originalImportType, fixedImportType);
         } catch (error) {
           throw new Error(`${declarationFile}: ${error}`);
@@ -110,19 +101,19 @@ async function rewriteImportPaths(declarationFile, publishDir) {
 async function main() {
   const packageRoot = process.cwd();
 
-  const tsconfigPath = path.join(packageRoot, "tsconfig.build.json");
+  const tsconfigPath = path.join(packageRoot, 'tsconfig.build.json');
   if (!fse.existsSync(tsconfigPath)) {
     throw new Error(
-      "Unable to find a tsconfig to build this project. " +
+      'Unable to find a tsconfig to build this project. ' +
         `The package root needs to contain a 'tsconfig.build.json'. ` +
-        `The package root is '${packageRoot}'`
+        `The package root is '${packageRoot}'`,
     );
   }
-
+  console.log('tsconfigPath', tsconfigPath);
   await $$`pnpm tsc -b ${tsconfigPath}`;
 
-  const publishDir = path.join(packageRoot, "build");
-  const declarationFiles = await glob("**/*.d.ts", {
+  const publishDir = path.join(packageRoot, 'build');
+  const declarationFiles = await glob('**/*.d.ts', {
     absolute: true,
     cwd: publishDir,
   });
@@ -138,9 +129,7 @@ async function main() {
         const rewrites = await rewriteImportPaths(declarationFile, publishDir);
         if (rewrites.length > 0) {
           // eslint-disable-next-line no-console -- Verbose logging
-          console.log(
-            `${chalk.bgYellow`FIXED`} '${declarationFile}':\n${rewrites.join("\n")}`
-          );
+          console.log(`${chalk.bgYellow`FIXED`} '${declarationFile}':\n${rewrites.join('\n')}`);
           rewrittenTally += 1;
         } else {
           // eslint-disable-next-line no-console -- Verbose logging
@@ -151,20 +140,18 @@ async function main() {
         errorTally += 1;
         process.exitCode = 1;
       }
-    })
+    }),
   );
 
   // eslint-disable-next-line no-console -- Verbose logging
-  console.log(
-    `Fixed: ${rewrittenTally}\nFailed: ${errorTally}\nTotal: ${declarationFiles.length}`
-  );
+  console.log(`Fixed: ${rewrittenTally}\nFailed: ${errorTally}\nTotal: ${declarationFiles.length}`);
 }
 
 yargs(process.argv.slice(2))
   .command({
-    command: "$0",
+    command: '$0',
     description:
-      "Builds a project with a fix for https://github.com/microsoft/TypeScript/issues/39117",
+      'Builds a project with a fix for https://github.com/microsoft/TypeScript/issues/39117',
     handler: main,
   })
   .help()

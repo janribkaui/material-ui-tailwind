@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
+    "build:all": "pnpm build",
     "build": "pnpm build:modern && pnpm build:node && pnpm build:stable && pnpm build:types && pnpm build:copy-files",
     "build:modern": "node ../../scripts/build.mjs modern",
     "build:node": "node ../../scripts/build.mjs node",
