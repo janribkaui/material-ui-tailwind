@@ -10,7 +10,7 @@
     "outDir": "build",
     "rootDir": "./src"
   },
-  "include": ["./src/**/*.ts"],
+  "include": ["./src/**/*.{ts, tsx}"],
   "exclude": ["src/**/*.spec.ts*", "src/**/*.test.ts*"],
   "references": [{ "path": "../janribka-system/tsconfig.build.json" }]
 }

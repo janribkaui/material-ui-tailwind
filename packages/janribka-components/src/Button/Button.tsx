@@ -39,17 +39,17 @@ const Button = function Button(props: ButtonProps) {
   // const classes = useUtilityClasses(ownerState);
 
   // Icons
-  const startIcon = startIconProp && (
-    <ButtonStartIcon className={classes.startIcon} ownerState={ownerState}>
-      {startIconProp}
-    </ButtonStartIcon>
-  );
+  // const startIcon = startIconProp && (
+  //   <ButtonStartIcon className={classes.startIcon} ownerState={ownerState}>
+  //     {startIconProp}
+  //   </ButtonStartIcon>
+  // );
 
-  const endIcon = endIconProp && (
-    <ButtonEndIcon className={classes.endIcon} ownerState={ownerState}>
-      {endIconProp}
-    </ButtonEndIcon>
-  );
+  // const endIcon = endIconProp && (
+  //   <ButtonEndIcon className={classes.endIcon} ownerState={ownerState}>
+  //     {endIconProp}
+  //   </ButtonEndIcon>
+  // );
 
   return (
     <ButtonBase
@@ -64,9 +64,9 @@ const Button = function Button(props: ButtonProps) {
       {...restProps}
       //   classes={classes}
     >
-      {startIcon}
+      {/* {startIcon} */}
       {children}
-      {endIcon}
+      {/* {endIcon} */}
     </ButtonBase>
   );
 };
