@@ -7,7 +7,7 @@ import { OverridableComponent, OverridableTypeMap, OverrideProps } from '../Over
 // import { Theme } from '../styles';
 import { ButtonClasses } from './buttonClasses';
 
-export interface ButtonPropsVariantOverrides {}
+ export interface ButtonPropsVariantOverrides {}
 
 export interface ButtonPropsColorOverrides {}
 

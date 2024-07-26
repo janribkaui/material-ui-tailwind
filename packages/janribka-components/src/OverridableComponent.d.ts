@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { DistributiveOmit } from '@janribka/types';
 
-import { StyledComponentProps } from './styles';
+import { StyledComponentProps } from './styles/baseProps';
 
 /**
  * A component whose root component can be controlled via a `component` prop.
