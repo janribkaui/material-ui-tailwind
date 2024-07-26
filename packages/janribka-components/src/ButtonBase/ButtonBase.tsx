@@ -9,23 +9,13 @@ import useForkRef from '@janribka/utils/useForkRef';
 
 import useLazyRipple from '../useLazyRipple/useLazyRipple';
 import { ButtonBaseProps } from './ButtonBaseProps';
+import TouchRipple from './TouchRipple';
 
-// const useUtilityClasses = (ownerState) => {
-//   const { disabled, focusVisible, focusVisibleClassName, classes } = ownerState;
-
-//   const slots = {
-//     root: ['root', disabled && 'disabled', focusVisible && 'focusVisible'],
-//   };
-
-//   const composedClasses = composeClasses(slots, getButtonBaseUtilityClass, classes);
-
-//   if (focusVisible && focusVisibleClassName) {
-//     composedClasses.root += ` ${focusVisibleClassName}`;
-//   }
-
-//   return composedClasses;
-// };
-
+/**
+ * `ButtonBase` contains as few styles as possible.
+ * It aims to be a simple building block for creating a button.
+ * It contains a load of style reset and some focus/ripple logic.
+ */
 const ButtonBase = function ButtonBase(props: ButtonBaseProps) {
   // Props
   const {
@@ -110,14 +100,6 @@ const ButtonBase = function ButtonBase(props: ButtonBaseProps) {
   }
 
   // Handlers
-  const isNonNativeButton = () => {
-    const button = buttonRef.current;
-    return (
-      // component && component !== 'button' && button && !(button.tagName === 'A' && button.href)
-      false
-    );
-  };
-
   const handleMouseDown = useRippleHandler('start', onMouseDown);
   const handleContextMenu = useRippleHandler('stop', onContextMenu);
   const handleDragLeave = useRippleHandler('stop', onDragLeave);
@@ -165,6 +147,13 @@ const ButtonBase = function ButtonBase(props: ButtonBaseProps) {
       onFocus(event);
     }
   });
+
+  const isNonNativeButton = () => {
+    const button = buttonRef.current;
+    return (
+      component && component !== 'button' && !(button?.tagName === 'A' && (button as any).href)
+    );
+  };
 
   const handleKeyDown = useEventCallback((event: React.KeyboardEvent<HTMLButtonElement>) => {
     // Check if key is already down to avoid repeats being counted as multiple activations
@@ -223,66 +212,63 @@ const ButtonBase = function ButtonBase(props: ButtonBaseProps) {
   // Props
   let ComponentProp = component;
 
-  // if (ComponentProp === 'button' && (restProps.href || restProps.to)) {
-  //   ComponentProp = LinkComponent;
-  // }
+  if (ComponentProp === 'button' && ((restProps as any).href || (restProps as any).to)) {
+    ComponentProp = LinkComponent;
+  }
 
-  const buttonProps = {};
+  const buttonProps: ButtonBaseProps = {};
 
-  // if (ComponentProp === 'button') {
-  //   buttonProps.type = type === undefined ? 'button' : type;
-  //   buttonProps.disabled = disabled;
-  // } else {
-  //   if (!restProps.href && !restProps.to) {
-  //     buttonProps.role = 'button';
-  //   }
-  //   if (disabled) {
-  //     buttonProps['aria-disabled'] = disabled;
-  //   }
-  // }
+  if (ComponentProp === 'button') {
+    buttonProps.type = type === undefined ? 'button' : type;
+    buttonProps.disabled = disabled;
+  } else {
+    if (!(restProps as any).href && !(restProps as any).to) {
+      buttonProps.role = 'button';
+    }
+    if (disabled) {
+      buttonProps['aria-disabled'] = disabled;
+    }
+  }
 
-  const ownerState = {
-    ...props,
-    centerRipple,
-    component,
-    disabled,
-    disableRipple,
-    disableTouchRipple,
-    focusRipple,
-    tabIndex,
-    focusVisible,
-  };
+  // Class names
+  const buttonBaseClassName = mergeStyles(
+    'inline-flex',
+    'items-center',
+    'justify-center',
+    'relative',
+    'box-border',
+    'bg-transparent',
+    'outline-0',
+    'border-0',
+    'm-0',
+    'rounded-none',
+    'p-0',
+    'cursor-pointer',
+    'select-none',
+    'align-middle',
+    'appearance-none',
+    'no-underline',
+    'text-inherit',
+    'border-none',
+    'disabled:pointer-events-none disabled:cursor-default',
+    className,
+  );
 
-  // Classes
-  // const classes = useUtilityClasses(ownerState);
+  //
+  React.useImperativeHandle(
+    action,
+    () => ({
+      focusVisible: () => {
+        setFocusVisible(true);
+        buttonRef.current?.focus();
+      },
+    }),
+    [],
+  );
 
   return (
     <button
-      // as={ComponentProp}
-      // className={clsx(classes.root, className)}
-      className={mergeStyles(
-        'inline-flex',
-        'items-center',
-        'justify-center',
-        'relative',
-        'box-border',
-        'bg-transparent',
-        'outline-0',
-        'border-0',
-        'm-0',
-        'rounded-none',
-        'p-0',
-        'cursor-pointer',
-        'select-none',
-        'align-middle',
-        'appearance-none',
-        'no-underline',
-        'text-inherit',
-        'border-none',
-        'disabled:pointer-events-none disabled:cursor-default',
-        className,
-      )}
-      // ownerState={ownerState}
+      className={buttonBaseClassName}
       onBlur={handleBlur}
       onClick={onClick}
       onContextMenu={handleContextMenu}
@@ -303,6 +289,9 @@ const ButtonBase = function ButtonBase(props: ButtonBaseProps) {
       {...restProps}
     >
       {children}
+      {enableTouchRipple ? (
+        <TouchRipple ref={handleRippleRef} center={centerRipple} {...TouchRippleProps} />
+      ) : null}
     </button>
   );
 };

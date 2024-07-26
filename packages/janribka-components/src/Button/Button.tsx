@@ -1,5 +1,14 @@
+'use client';
+import * as React from 'react';
+
+import mergeStyles from '@janribka/utils/mergeStyles';
+
 import ButtonBase from '../ButtonBase';
+import ButtonGroupButtonContext from '../ButtonGroup/ButtonGroupButtonContext';
+import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
 import { ButtonProps } from './ButtonProps';
+import endIconVariants from './endIconVariants copy';
+import startIconVariants from './startIconVariants';
 
 const Button = function Button(props: ButtonProps) {
   // Props
@@ -21,52 +30,35 @@ const Button = function Button(props: ButtonProps) {
     ref,
     ...restProps
   } = props;
+  const contextProps = React.useContext(ButtonGroupContext);
 
-  const ownerState = {
-    ...props,
-    color,
-    component,
-    disabled,
-    disableElevation,
-    disableFocusRipple,
-    fullWidth,
-    size,
-    type,
-    variant,
-  };
+  // Class names
+  const buttonGroupButtonContextPositionClassName = React.useContext(ButtonGroupButtonContext);
+  const positionClassName = buttonGroupButtonContextPositionClassName || '';
 
-  // Classes
-  // const classes = useUtilityClasses(ownerState);
+  // Icons;
+  const startIcon = startIconProp && (
+    <span className={startIconVariants({ size: size })}>{startIconProp}</span>
+  );
 
-  // Icons
-  // const startIcon = startIconProp && (
-  //   <ButtonStartIcon className={classes.startIcon} ownerState={ownerState}>
-  //     {startIconProp}
-  //   </ButtonStartIcon>
-  // );
-
-  // const endIcon = endIconProp && (
-  //   <ButtonEndIcon className={classes.endIcon} ownerState={ownerState}>
-  //     {endIconProp}
-  //   </ButtonEndIcon>
-  // );
+  const endIcon = endIconProp && (
+    <span className={endIconVariants({ size: size })}>{endIconProp}</span>
+  );
 
   return (
     <ButtonBase
-      //   ownerState={ownerState}
-      //   className={clsx(contextProps.className, classes.root, className, positionClassName)}
+      className={mergeStyles(contextProps.className, classes.root, className, positionClassName)}
       component={component}
       disabled={disabled}
       focusRipple={!disableFocusRipple}
-      //   focusVisibleClassName={clsx(classes.focusVisible, focusVisibleClassName)}
+      focusVisibleClassName={mergeStyles(classes.focusVisible, focusVisibleClassName)}
       ref={ref}
       type={type}
       {...restProps}
-      //   classes={classes}
     >
-      {/* {startIcon} */}
+      {startIcon}
       {children}
-      {/* {endIcon} */}
+      {endIcon}
     </ButtonBase>
   );
 };

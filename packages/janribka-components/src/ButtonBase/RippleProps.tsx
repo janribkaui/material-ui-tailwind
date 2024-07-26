@@ -14,7 +14,7 @@ type RippleProps = {
   /**
    * @ignore - injected from TransitionGroup
    */
-  onExited: () => void;
+  onExited?: () => void;
   /**
    * If `true`, the ripple pulsates, typically indicating the keyboard focus state of an element.
    */

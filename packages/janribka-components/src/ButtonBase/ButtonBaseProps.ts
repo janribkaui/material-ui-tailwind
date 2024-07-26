@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { OverridableComponent, OverridableTypeMap, OverrideProps } from '../OverridableComponent';
 import { ButtonBaseClasses } from './buttonBaseClasses';
-import { TouchRippleActions, TouchRippleProps } from './TouchRipple';
+import { TouchRippleActions, TouchRippleProps } from './TouchRippleProps';
 
 export interface ButtonBaseOwnProps {
   /**
@@ -103,21 +103,6 @@ export type ExtendButtonBase<TypeMap extends OverridableTypeMap> = ((
 ) => React.JSX.Element) &
   OverridableComponent<ExtendButtonBaseTypeMap<TypeMap>>;
 
-/**
- * `ButtonBase` contains as few styles as possible.
- * It aims to be a simple building block for creating a button.
- * It contains a load of style reset and some focus/ripple logic.
- *
- * Demos:
- *
- * - [Button](https://next.mui.com/material-ui/react-button/)
- *
- * API:
- *
- * - [ButtonBase API](https://next.mui.com/material-ui/api/button-base/)
- */
-// declare const ButtonBase: ExtendButtonBase<ButtonBaseTypeMap>;
-
 export type ButtonBaseProps<
   RootComponent extends React.ElementType = ButtonBaseTypeMap['defaultComponent'],
   AdditionalProps = {},
@@ -128,5 +113,3 @@ export type ButtonBaseProps<
 export interface ButtonBaseActions {
   focusVisible(): void;
 }
-
-// export default ButtonBase;

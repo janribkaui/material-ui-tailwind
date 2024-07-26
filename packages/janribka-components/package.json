@@ -38,12 +38,14 @@
   "dependencies": {
     "@janribka/styles": "workspace:^",
     "@janribka/types": "workspace:^",
-    "@janribka/utils": "workspace:*"
+    "@janribka/utils": "workspace:*",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
     "@babel/runtime": "^7.24.7",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
+    "@types/react-transition-group": "^4.4.10",
     "react": "19.0.0-rc-f6cce072-20240723",
     "react-dom": "19.0.0-rc-f6cce072-20240723",
     "rimraf": "^6.0.1",

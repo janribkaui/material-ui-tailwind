@@ -11,3 +11,5 @@ export { default as unstable_useEventCallback } from './useEventCallback';
 export { default as unstable_isFocusVisible } from './isFocusVisible';
 export { default as internal_resolveProps } from './resolveProps';
 export { default as unstable_ClassNameGenerator } from './ClassNameGenerator';
+export { default as unstable_useTimeout, Timeout as unstable_Timeout } from './useTimeout';
+export { default as unstable_useOnMount } from './useOnMount';
