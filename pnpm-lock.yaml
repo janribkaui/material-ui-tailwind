@@ -90,6 +90,9 @@ importers:
       stylelint-processor-styled-components:
         specifier: ^1.10.0
         version: 1.10.0
+      tsup:
+        specifier: ^8.1.0
+        version: 8.2.1(jiti@1.21.6)(postcss@8.4.39)(typescript@5.5.3)(yaml@2.4.5)
 
   apps/local-ui-web:
     dependencies:
@@ -173,9 +176,6 @@ importers:
       tailwindcss:
         specifier: ^3.4.6
         version: 3.4.6
-      tsup:
-        specifier: ^8.1.0
-        version: 8.2.1(jiti@1.21.6)(postcss@8.4.39)(typescript@5.5.3)(yaml@2.4.5)
       typescript:
         specifier: ^5.5.3
         version: 5.5.3

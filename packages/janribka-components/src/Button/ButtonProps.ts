@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { DistributiveOmit, OverridableStringUnion } from '@janribka/types';
 
-import { ExtendButtonBase, ExtendButtonBaseTypeMap } from '../ButtonBase';
+import { ExtendButtonBase, ExtendButtonBaseTypeMap } from '../ButtonBase/ButtonBaseProps';
 import { OverridableComponent, OverridableTypeMap, OverrideProps } from '../OverridableComponent';
 // import { Theme } from '../styles';
 import { ButtonClasses } from './buttonClasses';
