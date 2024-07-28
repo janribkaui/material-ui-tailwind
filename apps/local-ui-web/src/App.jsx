@@ -1,9 +1,9 @@
-import ButtonBase from '@janribka/components/ButtonBase';
+import Button from '@janribka/components/Button';
 
 function App() {
   return (
     <>
-      <ButtonBase>Button</ButtonBase>
+      <Button>Button</Button>
     </>
   );
 }

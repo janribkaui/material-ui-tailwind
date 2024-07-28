@@ -7,6 +7,7 @@ import ButtonBase from '../ButtonBase';
 import ButtonGroupButtonContext from '../ButtonGroup/ButtonGroupButtonContext';
 import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
 import { ButtonProps } from './ButtonProps';
+import buttonVariants from './buttonVariants';
 import endIconVariants from './endIconVariants copy';
 import startIconVariants from './startIconVariants';
 
@@ -47,11 +48,18 @@ const Button = function Button(props: ButtonProps) {
 
   return (
     <ButtonBase
-      className={mergeStyles(contextProps.className, classes.root, className, positionClassName)}
+      // className={mergeStyles(contextProps.className, classes.root, className, positionClassName)}
+      className={mergeStyles(
+        buttonVariants({}),
+        contextProps.className,
+        className,
+        positionClassName,
+      )}
       component={component}
       disabled={disabled}
       focusRipple={!disableFocusRipple}
-      focusVisibleClassName={mergeStyles(classes.focusVisible, focusVisibleClassName)}
+      focusVisibleClassName={mergeStyles(focusVisibleClassName)}
+      // focusVisibleClassName={mergeStyles(classes.focusVisible, focusVisibleClassName)}
       ref={ref}
       type={type}
       {...restProps}

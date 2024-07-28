@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
-    "build:production": "pnpm build:clean-build && tsup && pnpm build:copy-files",
+    "build": "pnpm build:clean-build && tsup && pnpm build:copy-files",
     "build:development": "pnpm build:clean-build && tsup --sourcemap && pnpm build:copy-files",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
     "build:clean-build": "rimraf build tsconfig.build.tsbuildinfo",
