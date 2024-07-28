@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
-    "build": "mkdir build && cpy index.d.ts build/ && cpy OverridableComponentAugmentation.ts build/ && pnpm build:copy-files",
+    "build": "tsup && cpy OverridableComponentAugmentation.ts build/ && pnpm build:copy-files",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
     "prebuild": "rimraf build",
     "release": "pnpm build && pnpm version --no-git && pnpm publish --access public",

@@ -7,5 +7,5 @@ export default defineConfig({
   minify: false,
   splitting: false,
   outDir: 'build',
-  external: ['react', '@janribka/types'],
+  external: ['react'],
 });
