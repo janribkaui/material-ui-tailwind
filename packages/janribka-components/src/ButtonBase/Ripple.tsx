@@ -50,10 +50,10 @@ const RippleStyled = styled.span`
   $.animation-visible {
     animation-name: ${enterKeyframe};
     animation-duration: ${DURATION}ms;
-    animation-timing-function: ${({ theme }) => theme.transitions.easing.easeInOut};
+    animation-timing-function: ease-in-out;
   }
   $.animation-pulsate {
-    animation-duration: ${({ theme }) => theme.transitions.duration.shortest}ms;
+    animation-duration: ${DURATION}ms;
   }
 `;
 
@@ -61,13 +61,13 @@ const RippleChildStyled = styled.span`
   &.animation-leaving {
     animation-name: ${exitKeyframe};
     animation-duration: ${DURATION}ms;
-    animation-timing-function: ${({ theme }) => theme.transitions.easing.easeInOut};
+    animation-timing-function: ease-in-out;
   }
 
   &.animation-pulsate {
     animation-name: ${pulsateKeyframe};
     animation-duration: 2500ms;
-    animation-timing-function: ${({ theme }) => theme.transitions.easing.easeInOut};
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-delay: 200ms;
   }
