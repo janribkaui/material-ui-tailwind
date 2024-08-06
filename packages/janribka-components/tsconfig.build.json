@@ -11,6 +11,6 @@
     "rootDir": "./src"
   },
   "include": ["src/**/*.ts*"],
-  "exclude": ["src/**/*.spec.ts*", "src/**/*.test.ts*"],
-  "references": [{ "path": "../janribka-utils/tsconfig.build.json" }]
+  "exclude": ["src/**/*.spec.ts*", "src/**/*.test.ts*"]
+  // "references": [{ "path": "../janribka-utils/tsconfig.build.json" }]
 }

@@ -6,7 +6,6 @@ import mergeStyles from '@janribka/utils/mergeStyles';
 import useTimeout from '@janribka/utils/useTimeout';
 
 import Ripple from './Ripple';
-import RippleProps from './RippleProps';
 import { TouchRippleProps } from './TouchRippleProps';
 
 const DURATION = 550;
