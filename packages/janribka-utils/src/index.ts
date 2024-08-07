@@ -1,4 +1,7 @@
+export { default as deepmerge } from './deepmerge';
+export { isPlainObject } from './deepmerge';
 export { default as mergeStyles } from './mergeStyles';
+export { default as unstable_capitalize } from './capitalize';
 export { default as unstable_generateUtilityClass } from './generateUtilityClass';
 export { isGlobalState as unstable_isGlobalState } from './generateUtilityClass';
 export * from './generateUtilityClass';

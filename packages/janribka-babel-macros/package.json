@@ -1,0 +1,39 @@
+{
+  "name": "@janribka/internal-babel-macros",
+  "version": "0.0.0",
+  "author": "Jan Ribka",
+  "description": "KanRibka Babel macros. This is an internal package not meant for general use.",
+  "license": "MIT",
+  "main": "./JRError.macro.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JanRibka/janribka.git",
+    "directory": "packages/janribka-babel-macros"
+  },
+  "bugs": {
+    "url": "https://github.com/JanRibka/janribka/issues"
+  },
+  "scripts": {
+    "release": "pnpm version --no-git && pnpm publish --access public"
+  },
+  "dependencies": {
+    "@babel/helper-module-imports": "^7.24.7",
+    "@babel/runtime": "^7.25.0",
+    "babel-plugin-macros": "^3.1.0"
+  },
+  "devDependencies": {
+    "@janribka/internal-babel-macros": "workspace:*",
+    "@types/babel-plugin-macros": "^3.1.3",
+    "@types/node": "^22.1.0"
+  },
+  "peerDependencies": {
+    "@janribka/utils": "^0.0.0"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@janribka/private-theming": "workspace:^",
+    "@janribka/styled-engine": "workspace:*",
     "@janribka/types": "workspace:^",
     "@janribka/utils": "workspace:^"
   },

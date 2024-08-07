@@ -22,12 +22,16 @@
       "@janribka/types": ["./packages/janribka-types/"],
       "@janribka/utils": ["./packages/janribka-utils/src"],
       "@janribka/utils/*": ["./packages/janribka-utils/src/*"],
+      "@janribka/styled-engine": ["./packages/janribka-styled-engine/src"],
+      "@janribka/styled-engine/*": ["./packages/janribka-styled-engine/src/*"],
       "@janribka/system": ["./packages/janribka-system/src"],
       "@janribka/system/*": ["./packages/janribka-system/src/*"],
       "@janribka/private-theming": ["./packages/janribka-private-theming/src"],
       "@janribka/private-theming/*": ["./packages/janribka-private-theming/src/*"],
-      "@janribka/styles": ["./packages/mui-styles/src"],
-      "@janribka/styles/*": ["./packages/mui-styles/src/*"]
+      "@janribka/styles": ["./packages/janribka-styles/src"],
+      "@janribka/styles/*": ["./packages/janribka-styles/src/*"],
+      "@janribka/internal-test-utils": ["./packages-internal/test-utils/src"],
+      "@janribka/internal-test-utils/*": ["./packages-internal/test-utils/src/*"]
     },
     // Otherwise we get react-native typings which conflict with dom.lib.
     "types": ["node", "react"]
