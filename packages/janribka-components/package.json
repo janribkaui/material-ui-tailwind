@@ -42,6 +42,7 @@
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
+    "@janribka/internal-babel-macros": "workspace:^",
     "@babel/runtime": "^7.24.7",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",

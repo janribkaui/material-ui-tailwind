@@ -183,6 +183,9 @@ importers:
       '@babel/runtime':
         specifier: ^7.24.7
         version: 7.24.8
+      '@janribka/internal-babel-macros':
+        specifier: workspace:^
+        version: link:../janribka-babel-macros
       '@types/node':
         specifier: ^20.14.10
         version: 20.14.11

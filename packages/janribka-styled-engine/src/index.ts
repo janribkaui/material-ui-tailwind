@@ -3,7 +3,7 @@
 import emStyled, { FilteringStyledOptions } from '@emotion/styled';
 
 export { JRStyledComponent, SerializedStyles, CreateJRStyled } from './props';
-export type { CSSInterpolation } from './props';
+export type { CSSInterpolation, Interpolation } from './props';
 
 export default function styled(tag: any, options: FilteringStyledOptions<any, string>) {
   const stylesFactory = emStyled(tag, options);
