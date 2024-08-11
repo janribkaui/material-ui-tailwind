@@ -7,7 +7,7 @@ import GlobalStyles, { GlobalStylesProps } from '../GlobalStyles';
 import { Theme } from '../styles/createTheme';
 import useTheme from '../styles/useTheme';
 
-export { css, keyframes } from '@mui/system';
+export { css, keyframes } from '@janribka/system';
 
 export { default as styled } from '../styles/styled';
 

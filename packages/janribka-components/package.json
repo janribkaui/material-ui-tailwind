@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@janribka/styles": "workspace:^",
+    "@janribka/system": "workspace:*",
     "@janribka/types": "workspace:^",
     "@janribka/utils": "workspace:*",
     "react-transition-group": "^4.4.5"

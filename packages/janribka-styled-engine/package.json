@@ -33,6 +33,7 @@
     "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
+    "@emotion/cache": "11.13.1",
     "react": "^18.3.1",
     "csstype": "^3.1.3"
   },

@@ -1,12 +1,15 @@
+// disable automatic export
+export {};
+
 export { DefaultTheme } from '@janribka/private-theming';
 
 export {
-  //   css,
-  //   keyframes,
-  //   StyledEngineProvider,
+  css,
+  keyframes,
+  StyledEngineProvider,
   Interpolation,
   CSSInterpolation,
-  //   CSSObject,
+  CSSObject,
 } from '@janribka/styled-engine';
 
 export { default as ThemeProvider } from './ThemeProvider';
@@ -17,3 +20,8 @@ export * from './useThemeWithoutDefault';
 
 // export { default as RtlProvider } from './RtlProvider';
 // export * from './RtlProvider';
+
+export * from './colorManipulator';
+
+export { default as createTheme } from './createTheme';
+export * from './createTheme';

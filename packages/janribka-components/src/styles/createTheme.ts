@@ -1,27 +1,29 @@
 import JRError from '@janribka/internal-babel-macros/JRError.macro';
 import systemCreateTheme from '@janribka/system/createTheme';
 import deepmerge from '@janribka/utils/deepmerge';
+
 // import styleFunctionSx, {
 //   unstable_defaultSxConfig as defaultSxConfig,
 // } from '@mui/system/styleFunctionSx';
-import generateUtilityClass from '@mui/utils/generateUtilityClass';
-
-import createMixins from './createMixins';
+// import generateUtilityClass from '@mui/utils/generateUtilityClass';
+// import createMixins from './createMixins';
 import createPalette from './createPalette';
-import createTransitions from './createTransitions';
-import createTypography from './createTypography';
-import shadows from './shadows';
-import zIndex from './zIndex';
+import { ThemeOptions } from './createThemeProps';
 
-function createTheme(options = {}, ...args) {
+// import createTransitions from './createTransitions';
+// import createTypography from './createTypography';
+// import shadows from './shadows';
+// import zIndex from './zIndex';
+
+function createTheme(options: ThemeOptions = {}, ...args) {
   const {
-    breakpoints: breakpointsInput,
-    mixins: mixinsInput = {},
-    spacing: spacingInput,
+    // breakpoints: breakpointsInput,
+    // mixins: mixinsInput = {},
+    // spacing: spacingInput,
     palette: paletteInput = {},
     transitions: transitionsInput = {},
-    typography: typographyInput = {},
-    shape: shapeInput,
+    // typography: typographyInput = {},
+    // shape: shapeInput,
     ...other
   } = options;
 

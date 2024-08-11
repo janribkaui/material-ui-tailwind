@@ -3,7 +3,7 @@
 import emStyled, { FilteringStyledOptions } from '@emotion/styled';
 
 export { JRStyledComponent, SerializedStyles, CreateJRStyled } from './props';
-export type { CSSInterpolation, Interpolation } from './props';
+export type { CSSInterpolation, Interpolation, CSSObject } from './props';
 
 export default function styled(tag: any, options: FilteringStyledOptions<any, string>) {
   const stylesFactory = emStyled(tag, options);
@@ -40,3 +40,7 @@ export const internal_processStyles = (
     (tag as any).__emotion_styles = processor((tag as any).__emotion_styles);
   }
 };
+
+export { ThemeContext, keyframes, css } from '@emotion/react';
+export { default as StyledEngineProvider } from './StyledEngineProvider';
+export { default as GlobalStyles } from './GlobalStyles';
