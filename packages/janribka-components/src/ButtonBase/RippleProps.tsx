@@ -1,7 +1,3 @@
-import React from 'react';
-
-import { InternalStandardProps as StandardProps } from '../types/baseProps';
-
 type RippleProps = {
   /**
    * Override or extend the styles applied to the component.

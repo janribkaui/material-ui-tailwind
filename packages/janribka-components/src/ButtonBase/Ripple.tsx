@@ -1,9 +1,10 @@
 'use client';
+
 import * as React from 'react';
-import styled, { keyframes } from 'styled-components';
 
 import mergeStyles from '@janribka/utils/mergeStyles';
 
+import { keyframes, styled } from '../zero-styled';
 import { rippleChildVariants } from './rippleChildVariants';
 import RippleProps from './RippleProps';
 import { rippleVariants } from './rippleVariants';
@@ -50,10 +51,10 @@ const RippleStyled = styled.span`
   $.animation-visible {
     animation-name: ${enterKeyframe};
     animation-duration: ${DURATION}ms;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ${({ theme }) => theme.transitions.easing.easeInOut};
   }
   $.animation-pulsate {
-    animation-duration: ${DURATION}ms;
+    animation-duration: ${({ theme }) => theme.transitions.duration.shorter}ms;
   }
 `;
 
@@ -61,13 +62,13 @@ const RippleChildStyled = styled.span`
   &.animation-leaving {
     animation-name: ${exitKeyframe};
     animation-duration: ${DURATION}ms;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ${({ theme }) => theme.transitions.easing.easeInOut};
   }
 
   &.animation-pulsate {
     animation-name: ${pulsateKeyframe};
     animation-duration: 2500ms;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ${({ theme }) => theme.transitions.easing.easeInOut};
     animation-iteration-count: infinite;
     animation-delay: 200ms;
   }

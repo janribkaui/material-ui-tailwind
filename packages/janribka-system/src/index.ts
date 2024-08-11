@@ -23,5 +23,8 @@ export * from './useThemeWithoutDefault';
 
 export * from './colorManipulator';
 
+export { default as createStyled } from './createStyled';
+export * from './createStyled';
+
 export { default as createTheme } from './createTheme';
 export * from './createTheme';

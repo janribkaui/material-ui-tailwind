@@ -1,5 +1,5 @@
 import JRError from '@janribka/internal-babel-macros/JRError.macro';
-import systemCreateTheme from '@janribka/system/createTheme';
+import systemCreateTheme, { Theme } from '@janribka/system/createTheme';
 import deepmerge from '@janribka/utils/deepmerge';
 
 // import styleFunctionSx, {
@@ -15,7 +15,7 @@ import { ThemeOptions } from './createThemeProps';
 // import shadows from './shadows';
 // import zIndex from './zIndex';
 
-function createTheme(options: ThemeOptions = {}, ...args) {
+function createTheme(options: ThemeOptions = {}, ...args: Theme[]) {
   const {
     // breakpoints: breakpointsInput,
     // mixins: mixinsInput = {},
@@ -27,9 +27,9 @@ function createTheme(options: ThemeOptions = {}, ...args) {
     ...other
   } = options;
 
-  if (options.vars) {
-    throw new MuiError(
-      'MUI: `vars` is a private field used for CSS variables support.\n' +
+  if ((options as any).vars) {
+    throw new JRError(
+      'JR: `vars` is a private field used for CSS variables support.\n' +
         'Please use another name.',
     );
   }
@@ -37,21 +37,21 @@ function createTheme(options: ThemeOptions = {}, ...args) {
   const palette = createPalette(paletteInput);
   const systemTheme = systemCreateTheme(options);
 
-  let muiTheme = deepmerge(systemTheme, {
-    mixins: createMixins(systemTheme.breakpoints, mixinsInput),
+  let theme = deepmerge(systemTheme, {
+    // mixins: createMixins(systemTheme.breakpoints, mixinsInput),
     palette,
     // Don't use [...shadows] until you've verified its transpiled code is not invoking the iterator protocol.
-    shadows: shadows.slice(),
-    typography: createTypography(palette, typographyInput),
-    transitions: createTransitions(transitionsInput),
-    zIndex: { ...zIndex },
+    // shadows: shadows.slice(),
+    // typography: createTypography(palette, typographyInput),
+    // transitions: createTransitions(transitionsInput),
+    // zIndex: { ...zIndex },
   });
 
-  muiTheme = deepmerge(muiTheme, other);
-  muiTheme = args.reduce((acc, argument) => deepmerge(acc, argument), muiTheme);
+  theme = deepmerge(theme, other);
+  theme = args.reduce((acc, argument) => deepmerge(acc, argument), theme);
 
   if (process.env.NODE_ENV !== 'production') {
-    // TODO v6: Refactor to use globalStateClassesMapping from @mui/utils once `readOnly` state class is used in Rating component.
+    // TODO v6: Refactor to use globalStateClassesMapping from @janribka/utils once `readOnly` state class is used in Rating component.
     const stateClasses = [
       'active',
       'checked',
@@ -65,75 +65,75 @@ function createTheme(options: ThemeOptions = {}, ...args) {
       'selected',
     ];
 
-    const traverse = (node, component) => {
-      let key;
+    // const traverse = (node, component) => {
+    //   let key;
 
-      // eslint-disable-next-line guard-for-in
-      for (key in node) {
-        const child = node[key];
-        if (stateClasses.indexOf(key) !== -1 && Object.keys(child).length > 0) {
-          if (process.env.NODE_ENV !== 'production') {
-            const stateClass = generateUtilityClass('', key);
-            console.error(
-              [
-                `MUI: The \`${component}\` component increases ` +
-                  `the CSS specificity of the \`${key}\` internal state.`,
-                'You can not override it like this: ',
-                JSON.stringify(node, null, 2),
-                '',
-                `Instead, you need to use the '&.${stateClass}' syntax:`,
-                JSON.stringify(
-                  {
-                    root: {
-                      [`&.${stateClass}`]: child,
-                    },
-                  },
-                  null,
-                  2,
-                ),
-                '',
-                'https://mui.com/r/state-classes-guide',
-              ].join('\n'),
-            );
-          }
-          // Remove the style to prevent global conflicts.
-          node[key] = {};
-        }
-      }
-    };
+    //   // eslint-disable-next-line guard-for-in
+    //   for (key in node) {
+    //     const child = node[key];
+    //     // if (stateClasses.indexOf(key) !== -1 && Object.keys(child).length > 0) {
+    //     //   if (process.env.NODE_ENV !== 'production') {
+    //     //     const stateClass = generateUtilityClass('', key);
+    //     //     console.error(
+    //     //       [
+    //     //         `JR: The \`${component}\` component increases ` +
+    //     //           `the CSS specificity of the \`${key}\` internal state.`,
+    //     //         'You can not override it like this: ',
+    //     //         JSON.stringify(node, null, 2),
+    //     //         '',
+    //     //         `Instead, you need to use the '&.${stateClass}' syntax:`,
+    //     //         JSON.stringify(
+    //     //           {
+    //     //             root: {
+    //     //               [`&.${stateClass}`]: child,
+    //     //             },
+    //     //           },
+    //     //           null,
+    //     //           2,
+    //     //         ),
+    //     //         '',
+    //     //         'https://mui.com/r/state-classes-guide',
+    //     //       ].join('\n'),
+    //     //     );
+    //     //   }
+    //       // Remove the style to prevent global conflicts.
+    //       node[key] = {};
+    //     }
+    //   }
+    // };
 
-    Object.keys(muiTheme.components).forEach((component) => {
-      const styleOverrides = muiTheme.components[component].styleOverrides;
+    // Object.keys(theme.components).forEach((component) => {
+    //   const styleOverrides = theme.components[component].styleOverrides;
 
-      if (styleOverrides && component.indexOf('Mui') === 0) {
-        traverse(styleOverrides, component);
-      }
-    });
+    //   if (styleOverrides && component.indexOf('Mui') === 0) {
+    //     traverse(styleOverrides, component);
+    //   }
+    // });
   }
 
-  muiTheme.unstable_sxConfig = {
-    ...defaultSxConfig,
-    ...other?.unstable_sxConfig,
-  };
-  muiTheme.unstable_sx = function sx(props) {
-    return styleFunctionSx({
-      sx: props,
-      theme: this,
-    });
-  };
+  // theme.unstable_sxConfig = {
+  //   ...defaultSxConfig,
+  //   ...other?.unstable_sxConfig,
+  // };
+  // theme.unstable_sx = function sx(props) {
+  //   return styleFunctionSx({
+  //     sx: props,
+  //     theme: this,
+  //   });
+  // };
 
-  return muiTheme;
+  return theme;
 }
 
 let warnedOnce = false;
 
-export function createMuiTheme(...args) {
+export function createMuiTheme(...args: Theme[]) {
   if (process.env.NODE_ENV !== 'production') {
     if (!warnedOnce) {
       warnedOnce = true;
       console.error(
         [
-          'MUI: the createMuiTheme function was renamed to createTheme.',
+          'JR: the createMuiTheme function was renamed to createTheme.',
           '',
           "You should use `import { createTheme } from '@mui/material/styles'`",
         ].join('\n'),

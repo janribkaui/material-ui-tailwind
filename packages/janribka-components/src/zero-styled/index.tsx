@@ -4,7 +4,7 @@ import { Interpolation } from '@janribka/system';
 
 // import { extendSxProp } from '@janribka/system/styleFunctionSx';
 import GlobalStyles, { GlobalStylesProps } from '../GlobalStyles';
-import { Theme } from '../styles/createTheme';
+import { Theme } from '../styles/createThemeProps';
 import useTheme from '../styles/useTheme';
 
 export { css, keyframes } from '@janribka/system';
@@ -18,7 +18,7 @@ export function globalCss(styles: Interpolation<{ theme: Theme }>) {
       <GlobalStyles
         styles={
           (typeof styles === 'function'
-            ? (theme) => styles({ theme, ...props })
+            ? (theme: Theme) => styles({ theme, ...props })
             : styles) as GlobalStylesProps['styles']
         }
       />
