@@ -1,3 +1,5 @@
+import { Transitions, TransitionsOptions } from '../createTransitions';
+
 export type Direction = 'ltr' | 'rtl';
 
 export interface ThemeOptions {
@@ -8,7 +10,7 @@ export interface ThemeOptions {
   palette?: Record<string, any>;
   // shadows?: unknown;
   //   spacing?: SpacingOptions;
-  transitions?: unknown;
+  transitions?: TransitionsOptions;
   //   components?: Record<string, any>;
   //   typography?: unknown;
   //   zIndex?: Record<string, number>;
@@ -22,7 +24,7 @@ export interface Theme {
   palette: Record<string, any> & { mode: 'light' | 'dark' };
   // shadows?: unknown;
   // spacing: Spacing;
-  transitions?: unknown;
+  transitions?: Transitions;
   // components?: Record<string, any>;
   // typography?: unknown;
   // zIndex?: unknown;

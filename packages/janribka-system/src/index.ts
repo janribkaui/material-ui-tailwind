@@ -28,3 +28,8 @@ export * from './createStyled';
 
 export { default as createTheme } from './createTheme';
 export * from './createTheme';
+
+export { default } from './createTransitions';
+export * from './createTransitions';
+
+export { Duration, Easing, Transitions, TransitionsOptions } from './createTransitions';

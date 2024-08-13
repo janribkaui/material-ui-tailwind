@@ -1,5 +1,9 @@
 import { Theme as SystemTheme, ThemeOptions as SystemThemeOptions } from '@janribka/system';
 
+import {
+  Transitions,
+  TransitionsOptions,
+} from '../../../janribka-system/src/createTransitions/createTransitionsProps';
 import { Palette, PaletteOptions } from './createPaletteProps';
 
 export interface ThemeOptions extends Omit<SystemThemeOptions, 'zIndex'> {
@@ -7,7 +11,7 @@ export interface ThemeOptions extends Omit<SystemThemeOptions, 'zIndex'> {
   // components?: Components<Omit<Theme, 'components'>>;
   palette?: PaletteOptions;
   // shadows?: Shadows;
-  // transitions?: TransitionsOptions;
+  transitions?: TransitionsOptions;
   // typography?: TypographyOptions | ((palette: Palette) => TypographyOptions);
   // zIndex?: ZIndexOptions;
   // unstable_strictMode?: boolean;
@@ -18,7 +22,7 @@ interface BaseTheme extends SystemTheme {
   // mixins: Mixins;
   palette: Palette;
   // shadows: Shadows;
-  // transitions: Transitions;
+  transitions: Transitions;
   // typography: Typography;
   // zIndex: ZIndex;
   // unstable_strictMode?: boolean;

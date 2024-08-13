@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../janribka-system/src/createTransitions/createTransitionsProps.ts"],
   "compilerOptions": {
     "moduleResolution": "Bundler"
   },

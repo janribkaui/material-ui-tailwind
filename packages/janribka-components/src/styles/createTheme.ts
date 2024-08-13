@@ -9,8 +9,8 @@ import deepmerge from '@janribka/utils/deepmerge';
 // import createMixins from './createMixins';
 import createPalette from './createPalette';
 import { ThemeOptions } from './createThemeProps';
+import createTransitions from './createTransitions';
 
-// import createTransitions from './createTransitions';
 // import createTypography from './createTypography';
 // import shadows from './shadows';
 // import zIndex from './zIndex';
@@ -43,7 +43,7 @@ function createTheme(options: ThemeOptions = {}, ...args: Theme[]) {
     // Don't use [...shadows] until you've verified its transpiled code is not invoking the iterator protocol.
     // shadows: shadows.slice(),
     // typography: createTypography(palette, typographyInput),
-    // transitions: createTransitions(transitionsInput),
+    transitions: createTransitions(transitionsInput),
     // zIndex: { ...zIndex },
   });
 
@@ -127,7 +127,7 @@ function createTheme(options: ThemeOptions = {}, ...args: Theme[]) {
 
 let warnedOnce = false;
 
-export function createMuiTheme(...args: Theme[]) {
+export function createMuiTheme(options?: ThemeOptions, ...args: Theme[]) {
   if (process.env.NODE_ENV !== 'production') {
     if (!warnedOnce) {
       warnedOnce = true;
@@ -141,7 +141,7 @@ export function createMuiTheme(...args: Theme[]) {
     }
   }
 
-  return createTheme(...args);
+  return createTheme(options, ...args);
 }
 
 export default createTheme;
