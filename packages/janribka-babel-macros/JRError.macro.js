@@ -97,7 +97,7 @@ function jrError({ references, babel, config, source }) {
     const newExpressionPath = babelPath.parentPath;
     if (!newExpressionPath.isNewExpression()) {
       throw new MacroError(
-        'Encountered `JRError` outside of a "new expression" i.e. `new JRError()`. Use `throw new MuiError(message)` over `throw MuiError(message)`.',
+        'Encountered `JRError` outside of a "new expression" i.e. `new JRError()`. Use `throw new JRError(message)` over `throw JRError(message)`.',
       );
     }
 
@@ -132,21 +132,21 @@ function jrError({ references, babel, config, source }) {
       if (isBareImportSourceIdentifier) {
         // Input: import JRError from '@janribka/internal-babel-macros/JRError.macro'
         // Outputs:
-        // import { formatJRErrorMessage } from '@mui/utils';
+        // import { formatJRErrorMessage } from '@janribka/utils';
         formatJRErrorMessageIdentifier = helperModuleImports.addDefault(
           babelPath,
-          '@janribka/utils/formatMuiErrorMessage',
-          { nameHint: '_formatMuiErrorMessage' },
+          '@janribka/utils/formatJRErrorMessage',
+          { nameHint: '_formatJrErrorMessage' },
         );
       } else {
-        throw new Error('Only package imports from @mui/internal-babel-macros are supported');
+        throw new Error('Only package imports from @janribka/internal-babel-macros are supported');
       }
     }
 
     // Outputs:
-    // formatMuiErrorMessage(ERROR_CODE, adj, noun)
+    // formatJrErrorMessage(ERROR_CODE, adj, noun)
     const prodMessage = babel.types.callExpression(
-      babel.types.cloneDeep(formatMuiErrorMessageIdentifier),
+      babel.types.cloneDeep(formatJRErrorMessageIdentifier),
       [babel.types.numericLiteral(errorCode), ...errorMessageExpressions],
     );
 
@@ -184,6 +184,6 @@ function jrError({ references, babel, config, source }) {
   return { keepImports: false };
 }
 
-module.exports = createMacro(muiError, {
+module.exports = createMacro(jrError, {
   configName: 'jrError',
 });

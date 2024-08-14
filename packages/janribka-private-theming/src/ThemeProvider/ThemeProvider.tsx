@@ -18,7 +18,7 @@ function mergeOuterLocalTheme(
       if (!mergedTheme) {
         console.error(
           [
-            'MUI: You should return an object from your theme function, i.e.',
+            'JR: You should return an object from your theme function, i.e.',
             '<ThemeProvider theme={() => ({})} />',
           ].join('\n'),
         );
@@ -36,7 +36,9 @@ function mergeOuterLocalTheme(
  * It makes the `theme` available down the React tree thanks to React context.
  * This component should preferably be used at **the root of your component tree**.
  */
-function ThemeProvider(props: ThemeProviderProps) {
+function ThemeProvider<T = DefaultTheme>(
+  props: ThemeProviderProps<T>,
+): React.ReactElement<ThemeProviderProps<T>> {
   const { children, theme: localTheme } = props;
   const outerTheme = useTheme();
 
@@ -44,7 +46,7 @@ function ThemeProvider(props: ThemeProviderProps) {
     if (outerTheme === null && typeof localTheme === 'function') {
       console.error(
         [
-          'MUI: You are providing a theme function prop to the ThemeProvider component:',
+          'JR: You are providing a theme function prop to the ThemeProvider component:',
           '<ThemeProvider theme={outerTheme => outerTheme} />',
           '',
           'However, no outer theme is present.',

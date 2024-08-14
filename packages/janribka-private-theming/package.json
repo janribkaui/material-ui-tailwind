@@ -22,19 +22,17 @@
   },
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
-    "build": "pnpm build:modern && pnpm build:node && pnpm build:stable && pnpm build:copy-files",
-    "build:modern": "node ../../scripts/build.mjs modern",
-    "build:node": "node ../../scripts/build.mjs node",
-    "build:stable": "node ../../scripts/build.mjs stable",
+    "build": "tsup && pnpm build:copy-files",
+    "build:development": "pnpm build:clean-build && tsup --sourcemap && pnpm build:copy-files",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
-    "prebuild": "rimraf build tsconfig.build.tsbuildinfo",
+    "build:clean-build": "rimraf build tsconfig.build.tsbuildinfo",
+    "prebuild": "rimraf build",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
     "release": "pnpm version --no-git && pnpm publish --access public",
     "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@babel/runtime": "^7.24.7",
     "@janribka/utils": "workspace:^"
   },
   "devDependencies": {

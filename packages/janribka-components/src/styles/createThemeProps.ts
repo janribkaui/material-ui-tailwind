@@ -4,6 +4,7 @@ import {
   Transitions,
   TransitionsOptions,
 } from '../../../janribka-system/src/createTransitions/createTransitionsProps';
+import { Components } from './components';
 import { Palette, PaletteOptions } from './createPaletteProps';
 
 export interface ThemeOptions extends Omit<SystemThemeOptions, 'zIndex'> {
@@ -35,7 +36,7 @@ export {};
  * Our [TypeScript guide on theme customization](https://mui.com/material-ui/guides/typescript/#customization-of-theme) explains in detail how you would add custom properties.
  */
 export interface Theme extends BaseTheme {
-  // components?: Components<BaseTheme>;
+  components?: Components<BaseTheme>;
   // unstable_sx: (props: SxProps<Theme>) => CSSObject;
   // unstable_sxConfig: SxConfig;
 }

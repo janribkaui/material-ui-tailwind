@@ -6,6 +6,7 @@ import {
   ThemeProvider as JrThemeProvider,
   useTheme as usePrivateTheme,
 } from '@janribka/private-theming';
+import { ThemeContext as StyledEngineThemeContext } from '@janribka/styled-engine';
 
 import DefaultPropsProvider from '../DefaultPropsProvider';
 import RtlProvider from '../RtlProvider/RtlProvider';
@@ -75,11 +76,11 @@ function ThemeProvider(props: ThemeProviderProps) {
 
   return (
     <JrThemeProvider theme={privateTheme}>
-      {/* <StyledEngineThemeContext.Provider value={engineTheme}> */}
-      <RtlProvider value={rtlValue}>
-        <DefaultPropsProvider value={engineTheme?.components} />
-      </RtlProvider>
-      {/* </StyledEngineThemeContext.Provider> */}
+      <StyledEngineThemeContext.Provider value={engineTheme}>
+        <RtlProvider value={rtlValue}>
+          <DefaultPropsProvider value={engineTheme?.components} />
+        </RtlProvider>
+      </StyledEngineThemeContext.Provider>
     </JrThemeProvider>
   );
 }

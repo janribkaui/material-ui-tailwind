@@ -12,8 +12,14 @@ export {
   CSSObject,
 } from '@janribka/styled-engine';
 
+export { default as GlobalStyles } from './GlobalStyles';
+export * from './GlobalStyles';
+export type { GlobalStylesProps } from './GlobalStyles';
+
 export { default as ThemeProvider } from './ThemeProvider';
 export * from './ThemeProvider';
+
+export { default as useTheme } from './useTheme';
 
 export { default as useThemeWithoutDefault } from './useThemeWithoutDefault';
 export * from './useThemeWithoutDefault';
