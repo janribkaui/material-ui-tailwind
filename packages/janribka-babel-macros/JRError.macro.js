@@ -16,7 +16,7 @@ function invertObject(object) {
  * 2. relative import from `packages/janribka-utils/src` e.g. `'../macros/JRError.macro'`
  * @param {import('babel-plugin-macros').MacroParams} param0
  */
-function jrError({ references, babel, config, source }) {
+function JRError({ references, babel, config, source }) {
   const { errorCodesPath = {}, missingError = 'annotate' } = config;
   const errorCodes = JSON.parse(fs.readFileSync(errorCodesPath, { encoding: 'utf8' }));
   const errorCodesLookup = invertObject(errorCodes);
@@ -136,7 +136,7 @@ function jrError({ references, babel, config, source }) {
         formatJRErrorMessageIdentifier = helperModuleImports.addDefault(
           babelPath,
           '@janribka/utils/formatJRErrorMessage',
-          { nameHint: '_formatJrErrorMessage' },
+          { nameHint: '_formatJRErrorMessage' },
         );
       } else {
         throw new Error('Only package imports from @janribka/internal-babel-macros are supported');
@@ -144,7 +144,7 @@ function jrError({ references, babel, config, source }) {
     }
 
     // Outputs:
-    // formatJrErrorMessage(ERROR_CODE, adj, noun)
+    // formatJRErrorMessage(ERROR_CODE, adj, noun)
     const prodMessage = babel.types.callExpression(
       babel.types.cloneDeep(formatJRErrorMessageIdentifier),
       [babel.types.numericLiteral(errorCode), ...errorMessageExpressions],
@@ -184,6 +184,10 @@ function jrError({ references, babel, config, source }) {
   return { keepImports: false };
 }
 
-module.exports = createMacro(jrError, {
-  configName: 'jrError',
+// module.exports = createMacro(JRError, {
+//   configName: 'JRError',
+// });
+
+export default createMacro(JRError, {
+  configName: 'JRError',
 });

@@ -2,7 +2,7 @@
   "name": "@janribka/internal-babel-macros",
   "version": "0.0.0",
   "author": "Jan Ribka",
-  "description": "KanRibka Babel macros. This is an internal package not meant for general use.",
+  "description": "JanRibka Babel macros. This is an internal package not meant for general use.",
   "license": "MIT",
   "main": "./JRError.macro.js",
   "repository": {
