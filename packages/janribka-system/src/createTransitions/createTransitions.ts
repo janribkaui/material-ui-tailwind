@@ -1,6 +1,6 @@
 // Follow https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves
 
-import { Duration, Easing, TransitionsOptions } from './createTransitionsProps';
+import { Duration, Easing, Transitions, TransitionsOptions } from './createTransitionsProps';
 
 // to learn the context in which each easing should be used.
 export const easing: Easing = {

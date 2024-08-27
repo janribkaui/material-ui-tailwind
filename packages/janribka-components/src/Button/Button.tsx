@@ -12,6 +12,7 @@ import buttonVariants from './buttonVariants';
 import endIconVariants from './endIconVariants copy';
 import startIconVariants from './startIconVariants';
 
+// TODO: Výsledný build je brutálně velký soubor
 const Button = function Button(props: ButtonProps) {
   // Props
   const {

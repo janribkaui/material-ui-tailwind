@@ -5,6 +5,7 @@
   "author": "Jan Ribka",
   "description": "styled() API wrapper package for emotion.",
   "license": "MIT",
+  "type": "module",
   "main": "./src/index.ts",
   "keywords": [
     "react",
@@ -50,6 +51,7 @@
   "peerDependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
+    "@types/react": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "peerDependenciesMeta": {
@@ -57,6 +59,9 @@
       "optional": true
     },
     "@emotion/styled": {
+      "optional": true
+    },
+    "@types/react": {
       "optional": true
     }
   },

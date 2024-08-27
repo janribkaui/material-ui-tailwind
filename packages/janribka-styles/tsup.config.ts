@@ -1,11 +1,8 @@
 import { defineConfig } from 'tsup';
 
+import configBase from '../../tsup.config';
+
 export default defineConfig({
+  ...configBase,
   entryPoints: ['src/index.ts', 'src/**/index.ts'],
-  format: ['cjs', 'esm'],
-  dts: true,
-  minify: false,
-  splitting: false,
-  outDir: 'build',
-  external: ['react'],
 });
