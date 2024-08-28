@@ -4,7 +4,7 @@
   "compilerOptions": {
     "module": "ESNext",
     // aligning with Node18 recommendation: https://www.npmjs.com/package/@tsconfig/node18
-    "target": "ES2022",
+    "target": "ESNext",
     "lib": ["ES2020", "DOM"],
     "jsx": "preserve",
     "moduleResolution": "node",
@@ -16,6 +16,8 @@
     "allowSyntheticDefaultImports": true,
     "noErrorTruncation": false,
     "allowJs": false,
+    "esModuleInterop": true, // Povolení interoperability mezi CommonJS a ES moduly
+    "skipLibCheck": true, // Přeskočení kontroly typů v knihovnách
     "paths": {
       "@janribka/components": ["./packages/janribka-components/src"],
       "@janribka/components/*": ["./packages/janribka-components/src/*"],
@@ -28,8 +30,6 @@
       "@janribka/system/*": ["./packages/janribka-system/src/*"],
       "@janribka/private-theming": ["./packages/janribka-private-theming/src"],
       "@janribka/private-theming/*": ["./packages/janribka-private-theming/src/*"],
-      "@janribka/styles": ["./packages/janribka-styles/src"],
-      "@janribka/styles/*": ["./packages/janribka-styles/src/*"],
       "@janribka/internal-test-utils": ["./packages-internal/test-utils/src"],
       "@janribka/internal-test-utils/*": ["./packages-internal/test-utils/src/*"]
     },

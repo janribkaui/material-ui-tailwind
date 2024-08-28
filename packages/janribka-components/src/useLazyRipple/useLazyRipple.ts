@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import useLazyRef from '@janribka/utils/useLazyRef';
 
-import { TouchRippleActions } from '../ButtonBase/TouchRipple';
+import { TouchRippleActions } from '../ButtonBase/TouchRippleProps';
 
 type ControlledPromise<T = unknown> = Promise<T> & {
   resolve: Function;

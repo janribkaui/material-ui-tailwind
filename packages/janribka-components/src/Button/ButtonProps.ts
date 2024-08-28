@@ -2,12 +2,13 @@ import * as React from 'react';
 
 import { DistributiveOmit, OverridableStringUnion } from '@janribka/types';
 
-import { ExtendButtonBase, ExtendButtonBaseTypeMap } from '../ButtonBase/ButtonBaseProps';
+// import { ExtendButtonBase, ExtendButtonBaseTypeMap } from '../ButtonBase/ButtonBaseProps';
+import { ExtendButtonBaseTypeMap } from '../ButtonBase/ButtonBaseProps';
 import { OverridableComponent, OverridableTypeMap, OverrideProps } from '../OverridableComponent';
 // import { Theme } from '../styles';
 import { ButtonClasses } from './buttonClasses';
 
- export interface ButtonPropsVariantOverrides {}
+export interface ButtonPropsVariantOverrides {}
 
 export interface ButtonPropsColorOverrides {}
 

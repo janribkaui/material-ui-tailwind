@@ -33,6 +33,7 @@ export { default as createStyled } from './createStyled';
 // export * from './createStyled';
 
 export { default as createTheme } from './createTheme';
-// export * from './createTheme';
+export * from './createTheme';
 
 export { default as createTransitions } from './createTransitions';
+export * from './createTransitions';

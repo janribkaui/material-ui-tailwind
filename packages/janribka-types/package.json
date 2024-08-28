@@ -5,6 +5,7 @@
   "author": "Jan Ribka",
   "description": "Utility types for JanRibka",
   "license": "MIT",
+  "type": "module",
   "types": "./index.ts",
   "files": [
     "index.d.ts",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
+    "dev": "tsup --watch --sourcemap",
     "build": "tsup && cpy OverridableComponentAugmentation.ts build/ && pnpm build:copy-files",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
     "prebuild": "rimraf build",

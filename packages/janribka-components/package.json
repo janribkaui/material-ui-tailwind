@@ -5,6 +5,7 @@
   "author": "Jan Ribka",
   "description": "React components library for my projects",
   "license": "MIT",
+  "type": "module",
   "main": "./src/index.ts",
   "keywords": [
     "react",
@@ -25,10 +26,9 @@
   },
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
+    "dev": "tsup --watch --sourcemap",
     "build": "tsup && pnpm build:copy-files",
-    "build:development": "pnpm build:clean-build && tsup --sourcemap && pnpm build:copy-files",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
-    "build:clean-build": "rimraf build tsconfig.build.tsbuildinfo",
     "prebuild": "rimraf build tsconfig.build.tsbuildinfo",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",

@@ -1,9 +1,8 @@
 import { ComponentType } from 'react';
 
 import { DefaultTheme } from '@janribka/private-theming';
-import {
+import styledEngineStyled, {
   internal_processStyles as processStyles,
-  styled as styledEngineStyled,
 } from '@janribka/styled-engine';
 import capitalize from '@janribka/utils/capitalize';
 import { isPlainObject } from '@janribka/utils/deepmerge';
