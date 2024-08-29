@@ -2,7 +2,15 @@ import JRError from '@janribka/internal-babel-macros/JRError.macro';
 /* eslint-disable @typescript-eslint/naming-convention */
 import clamp from '@janribka/utils/clamp';
 
-import { ColorObject } from './colorManipulatorProps';
+// Types
+export type ColorFormat = 'rgb' | 'rgba' | 'hsl' | 'hsla' | 'color';
+export interface ColorObject {
+  type: ColorFormat;
+  values: [number, number, number] | [number, number, number, number | string];
+  colorSpace?: 'srgb' | 'display-p3' | 'a98-rgb' | 'prophoto-rgb' | 'rec-2020';
+}
+
+// Content
 
 /**
  * Returns a number whose value is limited to the given range.

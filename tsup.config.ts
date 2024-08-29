@@ -11,6 +11,7 @@ export default defineConfig({
   skipNodeModulesBundle: true,
   bundle: false,
   clean: true,
+  treeshake: true,
   external: [
     'react', // Označení 'react' jako externí
     'react-dom', // Označení 'react-dom' jako externí

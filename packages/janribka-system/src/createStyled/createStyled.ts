@@ -1,15 +1,39 @@
 import { ComponentType } from 'react';
 
-import { DefaultTheme } from '@janribka/private-theming';
 import styledEngineStyled, {
+  CreateJRStyled as CreateJRStyledStyledEngine,
+  CSSInterpolation,
   internal_processStyles as processStyles,
 } from '@janribka/styled-engine';
 import capitalize from '@janribka/utils/capitalize';
 import { isPlainObject } from '@janribka/utils/deepmerge';
 import getDisplayName from '@janribka/utils/getDisplayName';
 
-import createTheme from '../createTheme';
-import { CreateJRStyled } from './createStyledProps';
+import createTheme, { Theme as DefaultTheme } from '../createTheme';
+
+export interface JRStyledCommonProps<Theme extends object = DefaultTheme> {
+  theme?: Theme;
+  as?: React.ElementType;
+  //   sx?: SxProps<Theme>;
+}
+
+export interface JRStyledOptions {
+  name?: string;
+  slot?: string;
+  // The difference between Interpolation and CSSInterpolation is that the former supports functions based on props
+  // If we want to support props in the overrides, we will need to change the CSSInterpolation to Interpolation<Props>
+  overridesResolver?: (props: any, styles: Record<string, CSSInterpolation>) => CSSInterpolation;
+  skipVariantsResolver?: boolean;
+  //   skipSx?: boolean;
+}
+
+export type CreateJRStyled<Theme extends object = DefaultTheme> = CreateJRStyledStyledEngine<
+  JRStyledCommonProps<Theme>,
+  JRStyledOptions,
+  Theme
+>;
+
+// Content
 
 function isEmpty(obj: object) {
   return Object.keys(obj).length === 0;

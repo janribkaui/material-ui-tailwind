@@ -4,7 +4,14 @@ import { DefaultTheme } from '../defaultTheme';
 import useTheme from '../useTheme';
 import ThemeContext from '../useTheme/ThemeContext';
 import nested from './nested';
-import { ThemeProviderProps } from './ThemeProviderProps';
+
+// Types
+export interface ThemeProviderProps<Theme = DefaultTheme> {
+  children?: React.ReactNode;
+  theme: Partial<Theme> | ((outerTheme: Theme) => Theme);
+}
+
+// Content
 
 // To support composition of theme.
 function mergeOuterLocalTheme(

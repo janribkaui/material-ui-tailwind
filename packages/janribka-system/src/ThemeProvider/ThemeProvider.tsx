@@ -11,7 +11,23 @@ import { ThemeContext as StyledEngineThemeContext } from '@janribka/styled-engin
 import DefaultPropsProvider from '../DefaultPropsProvider';
 import RtlProvider from '../RtlProvider/RtlProvider';
 import useThemeWithoutDefault from '../useThemeWithoutDefault';
-import { ThemeProviderProps } from './ThemeProviderProps';
+
+export interface ThemeProviderProps<Theme = DefaultTheme> {
+  /**
+   * Your component tree.
+   */
+  children?: React.ReactNode;
+  /**
+   * The design system's unique id for getting the corresponded theme when there are multiple design systems.
+   */
+  themeId?: string;
+  /**
+   * A theme object. You can provide a function to extend the outer theme.
+   */
+  theme: Partial<Theme> | ((outerTheme: Theme) => Theme);
+}
+
+// Content
 
 const EMPTY_THEME = {};
 
@@ -45,7 +61,9 @@ function useThemeScoping(
  * <ThemeProvider theme={theme}> // existing use case
  * <ThemeProvider theme={{ id: theme }}> // theme scoping
  */
-function ThemeProvider(props: ThemeProviderProps) {
+function ThemeProvider<T = DefaultTheme>(
+  props: ThemeProviderProps,
+): React.ReactElement<ThemeProviderProps<T>> {
   // Props
   const { children, theme: localTheme, themeId, ...restProps } = props;
 

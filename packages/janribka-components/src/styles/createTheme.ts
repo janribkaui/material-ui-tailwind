@@ -1,15 +1,58 @@
 import JRError from '@janribka/internal-babel-macros/JRError.macro';
-import systemCreateTheme, { Theme } from '@janribka/system/createTheme';
+// Types
+import {
+  Theme as SystemTheme,
+  ThemeOptions as SystemThemeOptions,
+  Transitions,
+  TransitionsOptions,
+} from '@janribka/system';
+import systemCreateTheme from '@janribka/system/createTheme';
 import deepmerge from '@janribka/utils/deepmerge';
 
+import { Components } from './components';
 // import styleFunctionSx, {
 //   unstable_defaultSxConfig as defaultSxConfig,
 // } from '@mui/system/styleFunctionSx';
 // import generateUtilityClass from '@mui/utils/generateUtilityClass';
 // import createMixins from './createMixins';
-import createPalette from './createPalette';
-import { ThemeOptions } from './createThemeProps';
+import createPalette, { Palette, PaletteOptions } from './createPalette';
 import createTransitions from './createTransitions';
+
+export interface ThemeOptions extends Omit<SystemThemeOptions, 'zIndex'> {
+  // mixins?: MixinsOptions;
+  // components?: Components<Omit<Theme, 'components'>>;
+  palette?: PaletteOptions;
+  // shadows?: Shadows;
+  transitions?: TransitionsOptions;
+  // typography?: TypographyOptions | ((palette: Palette) => TypographyOptions);
+  // zIndex?: ZIndexOptions;
+  // unstable_strictMode?: boolean;
+  // unstable_sxConfig?: SxConfig;
+}
+
+interface BaseTheme extends SystemTheme {
+  // mixins: Mixins;
+  palette: Palette;
+  // shadows: Shadows;
+  transitions: Transitions;
+  // typography: Typography;
+  // zIndex: ZIndex;
+  // unstable_strictMode?: boolean;
+}
+
+// shut off automatic exporting for the `BaseTheme` above
+export {};
+
+/**
+ * Our [TypeScript guide on theme customization](https://mui.com/material-ui/guides/typescript/#customization-of-theme) explains in detail how you would add custom properties.
+ */
+export interface Theme extends BaseTheme {
+  components?: Components<BaseTheme>;
+  // unstable_sx: (props: SxProps<Theme>) => CSSObject;
+  // unstable_sxConfig: SxConfig;
+}
+
+// Content
 
 // import createTypography from './createTypography';
 // import shadows from './shadows';

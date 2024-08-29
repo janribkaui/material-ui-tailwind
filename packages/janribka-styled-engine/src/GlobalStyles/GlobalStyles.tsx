@@ -1,20 +1,28 @@
 'use client';
 
-import { Global } from '@emotion/react';
+import { Global, Interpolation } from '@emotion/react';
 
-import { GlobalStylesProps } from './GlobalStylesProps';
+// Types
+export interface GlobalStylesProps<Theme = {}> {
+  defaultTheme?: Theme;
+  styles: Interpolation<Theme>;
+}
 
-function isEmpty(obj: object) {
+// Content
+function isEmpty<Theme = {}>(obj: Theme) {
   return obj === undefined || obj === null || Object.keys(obj).length === 0;
 }
 
-export default function GlobalStyles(props: GlobalStylesProps) {
+export default function GlobalStyles<Theme = {}>(
+  props: GlobalStylesProps<Theme>,
+): React.ReactElement<any> {
   const { styles, defaultTheme = {} } = props;
 
   const globalStyles =
     typeof styles === 'function'
-      ? (themeInput: object) => styles(isEmpty(themeInput) ? defaultTheme : themeInput)
+      ? (themeInput: Theme) =>
+          styles(isEmpty(themeInput as Theme) ? (defaultTheme as Theme) : (themeInput as Theme))
       : styles;
 
-  return <Global styles={globalStyles} />;
+  return <Global styles={globalStyles as Interpolation} />;
 }

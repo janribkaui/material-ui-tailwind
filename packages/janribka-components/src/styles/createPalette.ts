@@ -2,7 +2,7 @@ import JRError from '@janribka/internal-babel-macros/JRError.macro';
 import { darken, getContrastRatio, lighten } from '@janribka/system/colorManipulator';
 import deepmerge from '@janribka/utils/deepmerge';
 
-import { Color } from '../';
+import { Color, PaletteMode } from '../';
 import blue from '../colors/blue';
 import common from '../colors/common';
 import green from '../colors/green';
@@ -11,16 +11,133 @@ import lightBlue from '../colors/lightBlue';
 import orange from '../colors/orange';
 import purple from '../colors/purple';
 import red from '../colors/red';
-import {
-  Palette,
-  PaletteColor,
-  PaletteColorOptions,
-  PaletteOptions,
-  PaletteTonalOffset,
-  SimplePaletteColorOptions,
-  TypeObject,
-} from './createPaletteProps';
 
+// Types
+export {};
+// use standalone interface over typeof colors/commons
+// to enable module augmentation
+export interface CommonColors {
+  black: string;
+  white: string;
+}
+
+export type ColorPartial = Partial<Color>;
+
+export interface TypeText {
+  primary: string;
+  secondary: string;
+  disabled: string;
+  icon?: string;
+}
+
+export interface TypeAction {
+  active: string;
+  hover: string;
+  hoverOpacity: number;
+  selected: string;
+  selectedOpacity: number;
+  disabled: string;
+  disabledOpacity: number;
+  disabledBackground: string;
+  focus: string;
+  focusOpacity: number;
+  activatedOpacity: number;
+}
+
+export interface TypeBackground {
+  default: string;
+  paper: string;
+}
+
+export type TypeDivider = string;
+
+export type PaletteColorOptions = SimplePaletteColorOptions | ColorPartial;
+
+export interface SimplePaletteColorOptions {
+  light?: string;
+  main: string;
+  dark?: string;
+  contrastText?: string;
+}
+
+export interface PaletteColor {
+  light: string;
+  main: string;
+  dark: string;
+  contrastText: string;
+}
+
+export interface TypeObject {
+  text: TypeText;
+  action: TypeAction;
+  divider: TypeDivider;
+  background: TypeBackground;
+}
+
+export type PaletteTonalOffset =
+  | number
+  | {
+      light: number;
+      dark: number;
+    };
+
+export interface PaletteAugmentColorOptions {
+  color: PaletteColorOptions;
+  mainShade?: number | string;
+  lightShade?: number | string;
+  darkShade?: number | string;
+  name?: number | string;
+}
+
+export interface Palette {
+  common: CommonColors;
+  mode: PaletteMode;
+  contrastThreshold: number;
+  tonalOffset: PaletteTonalOffset;
+  primary: PaletteColor;
+  secondary: PaletteColor;
+  error: PaletteColor;
+  warning: PaletteColor;
+  info: PaletteColor;
+  success: PaletteColor;
+  grey: Color;
+  text: TypeText;
+  divider: TypeDivider;
+  action: TypeAction;
+  background: TypeBackground;
+  getContrastText: (background: string) => string;
+  augmentColor: (options: PaletteAugmentColorOptions) => PaletteColor;
+}
+
+export interface Channels {
+  mainChannel: string;
+  lightChannel: string;
+  darkChannel: string;
+  contrastTextChannel: string;
+}
+
+export type PartialTypeObject = { [P in keyof TypeObject]?: Partial<TypeObject[P]> };
+
+export interface PaletteOptions {
+  primary?: PaletteColorOptions;
+  secondary?: PaletteColorOptions;
+  error?: PaletteColorOptions;
+  warning?: PaletteColorOptions;
+  info?: PaletteColorOptions;
+  success?: PaletteColorOptions;
+  mode?: PaletteMode;
+  tonalOffset?: PaletteTonalOffset;
+  contrastThreshold?: number;
+  common?: Partial<CommonColors>;
+  grey?: ColorPartial;
+  text?: Partial<TypeText>;
+  divider?: string;
+  action?: Partial<TypeAction>;
+  background?: Partial<TypeBackground>;
+  getContrastText?: (background: string) => string;
+}
+
+// Content
 export const light: TypeObject = {
   // The colors used to style the text.
   text: {

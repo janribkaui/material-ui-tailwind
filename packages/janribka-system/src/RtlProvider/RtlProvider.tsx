@@ -1,6 +1,12 @@
 import * as React from 'react';
 
-import { RtlProviderProps } from './RtlProviderProps';
+// Types
+export interface RtlProviderProps {
+  children?: React.ReactNode;
+  value?: boolean;
+}
+
+// Content
 
 const RtlContext = React.createContext<boolean | null>(null);
 

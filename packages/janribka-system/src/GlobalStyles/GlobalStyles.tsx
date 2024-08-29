@@ -1,8 +1,15 @@
-import { GlobalStyles as MuiGlobalStyles } from '@janribka/styled-engine';
+import { GlobalStyles as MuiGlobalStyles, Interpolation } from '@janribka/styled-engine';
 
 import { Theme as SystemTheme } from '../createTheme';
 import useTheme from '../useTheme';
-import { GlobalStylesProps } from './GlobalStylesProps';
+
+export interface GlobalStylesProps<Theme = SystemTheme> {
+  styles: Interpolation<Theme>;
+  defaultTheme?: object;
+  themeId?: string;
+}
+
+// Content
 
 function GlobalStyles<Theme = SystemTheme>({
   styles,
