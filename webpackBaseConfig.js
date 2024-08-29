@@ -1,5 +1,5 @@
 const path = require('path');
-
+// TODO: doplnit aliasy
 // WARNING: Use this module only as an inspiration.
 // Cherry-pick the parts you need and inline them in the webpack.config you need.
 // This module isn't used to build the documentation. We use Next.js for that.
