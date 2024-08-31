@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { useTheme as useThemeSystem } from '@janribka/system';
 
-import { Theme } from './createThemeProps';
+import { Theme } from './createTheme';
 import defaultTheme from './defaultTheme';
 import THEME_ID from './identifier';
 

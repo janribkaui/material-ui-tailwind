@@ -9,7 +9,19 @@ export interface StyledComponentProps<ClassKey extends string = string> {
 }
 
 // Content
+export { default as createPalette } from './createPalette';
+export * from './createPalette';
+
+export { default as createTheme, createJrTheme } from './createTheme';
+export * from './createTheme';
+
+export { default as createTransitions, duration, easing } from './createTransitions';
+export * from './createTransitions';
+
 export { default as THEME_ID } from './identifier';
-export * from './createThemeProps';
+
+export { default as styled } from './styled';
+
+export { default as ThemeProvider } from './ThemeProvider';
 
 export { default as useTheme } from './useTheme';

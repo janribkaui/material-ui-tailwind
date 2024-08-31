@@ -4,7 +4,7 @@ import { Interpolation } from '@janribka/system';
 
 // import { extendSxProp } from '@janribka/system/styleFunctionSx';
 import GlobalStyles, { GlobalStylesProps } from '../GlobalStyles';
-import { Theme } from '../styles/createThemeProps';
+import { Theme } from '../styles/createTheme';
 import useTheme from '../styles/useTheme';
 
 export { css, keyframes } from '@janribka/system';

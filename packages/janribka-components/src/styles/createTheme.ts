@@ -1,5 +1,4 @@
 import JRError from '@janribka/internal-babel-macros/JRError.macro';
-// Types
 import {
   Theme as SystemTheme,
   ThemeOptions as SystemThemeOptions,
@@ -18,6 +17,7 @@ import { Components } from './components';
 import createPalette, { Palette, PaletteOptions } from './createPalette';
 import createTransitions from './createTransitions';
 
+// Types
 export interface ThemeOptions extends Omit<SystemThemeOptions, 'zIndex'> {
   // mixins?: MixinsOptions;
   // components?: Components<Omit<Theme, 'components'>>;
@@ -170,7 +170,7 @@ function createTheme(options: ThemeOptions = {}, ...args: Theme[]) {
 
 let warnedOnce = false;
 
-export function createMuiTheme(options?: ThemeOptions, ...args: Theme[]) {
+export function createJrTheme(options?: ThemeOptions, ...args: Theme[]) {
   if (process.env.NODE_ENV !== 'production') {
     if (!warnedOnce) {
       warnedOnce = true;

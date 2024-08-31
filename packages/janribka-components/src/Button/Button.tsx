@@ -1,13 +1,10 @@
-'use client';
 import * as React from 'react';
 
-// Types
 import { DistributiveOmit, OverridableStringUnion } from '@janribka/types';
 import mergeStyles from '@janribka/utils/mergeStyles';
 
-import ButtonBase from '../ButtonBase';
+import ButtonBase, { ExtendButtonBase, ExtendButtonBaseTypeMap } from '../ButtonBase';
 // import { ExtendButtonBase, ExtendButtonBaseTypeMap } from '../ButtonBase/ButtonBaseProps';
-import { ExtendButtonBaseTypeMap } from '../ButtonBase/ButtonBaseProps';
 import ButtonGroupButtonContext from '../ButtonGroup/ButtonGroupButtonContext';
 import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
 import { OverridableComponent, OverridableTypeMap, OverrideProps } from '../OverridableComponent';
@@ -18,6 +15,7 @@ import buttonVariants from './buttonVariants';
 import endIconVariants from './endIconVariants copy';
 import startIconVariants from './startIconVariants';
 
+// Types
 export interface ButtonPropsVariantOverrides {}
 
 export interface ButtonPropsColorOverrides {}

@@ -1,8 +1,8 @@
 import deepmerge from '@janribka/utils/deepmerge';
 
-// Types
 import { Transitions, TransitionsOptions } from '../createTransitions';
 
+// Types
 export type Direction = 'ltr' | 'rtl';
 
 export interface ThemeOptions {

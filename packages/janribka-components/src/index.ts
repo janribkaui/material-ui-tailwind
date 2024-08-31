@@ -1,7 +1,7 @@
 // Types
 import { DistributiveOmit } from '@janribka/types';
 
-import { StyledComponentProps } from './styles/baseProps';
+import { StyledComponentProps } from './styles';
 
 export { StyledComponentProps };
 
@@ -25,17 +25,6 @@ export type InternalStandardProps<
     style?: React.CSSProperties;
   };
 
-export * from './styles';
-
-export { default as ButtonBase } from './ButtonBase';
-export * from './ButtonBase';
-
-export { default as Button } from './Button';
-export * from './Button';
-
-export { default as GlobalStyles } from './GlobalStyles';
-export * from './GlobalStyles';
-
 export type PaletteMode = 'light' | 'dark';
 
 export interface Color {
@@ -54,3 +43,25 @@ export interface Color {
   A400: string;
   A700: string;
 }
+
+// Common
+export * from './styles';
+
+export * from './utils';
+
+export { unstable_composeClasses } from '@janribka/utils';
+
+export { default as generateUtilityClass } from './generateUtilityClass';
+export * from './generateUtilityClass';
+
+export { default as generateUtilityClasses } from './generateUtilityClasses';
+
+// Components
+export { default as ButtonBase } from './ButtonBase';
+export * from './ButtonBase';
+
+export { default as Button } from './Button';
+export * from './Button';
+
+export { default as GlobalStyles } from './GlobalStyles';
+export * from './GlobalStyles';

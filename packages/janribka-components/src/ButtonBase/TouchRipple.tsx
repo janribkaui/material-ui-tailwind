@@ -5,8 +5,37 @@ import { TransitionGroup } from 'react-transition-group';
 import mergeStyles from '@janribka/utils/mergeStyles';
 import useTimeout from '@janribka/utils/useTimeout';
 
+import { InternalStandardProps as StandardProps } from '../index';
 import Ripple from './Ripple';
-import { TouchRippleProps } from './TouchRippleProps';
+import { TouchRippleClasses, TouchRippleClassKey } from './touchRippleClasses';
+
+// Types
+export { TouchRippleClassKey };
+
+export interface StartActionOptions {
+  pulsate?: boolean;
+  center?: boolean;
+}
+
+export interface TouchRippleActions {
+  start: (
+    event?: React.SyntheticEvent,
+    options?: StartActionOptions,
+    callback?: () => void,
+  ) => void;
+  pulsate: (event?: React.SyntheticEvent) => void;
+  stop: (event?: React.SyntheticEvent, callback?: () => void) => void;
+}
+
+export type TouchRippleProps = StandardProps<React.HTMLAttributes<HTMLElement>> & {
+  center?: boolean;
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes?: Partial<TouchRippleClasses>;
+};
+
+// Content
 
 const DURATION = 550;
 export const DELAY_RIPPLE = 80;

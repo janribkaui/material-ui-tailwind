@@ -1,4 +1,4 @@
-import { CommonColors } from '../styles/createPaletteProps';
+import { CommonColors } from '../styles/createPalette';
 
 const common: CommonColors = {
   black: '#000',
