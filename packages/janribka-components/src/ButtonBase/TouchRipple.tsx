@@ -7,10 +7,12 @@ import useTimeout from '@janribka/utils/useTimeout';
 
 import { InternalStandardProps as StandardProps } from '../index';
 import Ripple from './Ripple';
-import { TouchRippleClasses, TouchRippleClassKey } from './touchRippleClasses';
+import { TouchRippleClasses } from './touchRippleClasses';
+
+import type { TouchRippleClassKey } from './touchRippleClasses';
 
 // Types
-export { TouchRippleClassKey };
+export { type TouchRippleClassKey };
 
 export interface StartActionOptions {
   pulsate?: boolean;
