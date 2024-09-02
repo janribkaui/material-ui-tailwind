@@ -21,10 +21,10 @@ export interface TouchRippleClasses {
 export type TouchRippleClassKey = keyof TouchRippleClasses;
 
 export function getTouchRippleUtilityClass(slot: string): string {
-  return generateUtilityClass('MuiTouchRipple', slot);
+  return generateUtilityClass('JrTouchRipple', slot);
 }
 
-const touchRippleClasses: TouchRippleClasses = generateUtilityClasses('MuiTouchRipple', [
+const touchRippleClasses: TouchRippleClasses = generateUtilityClasses('JrTouchRipple', [
   'root',
   'ripple',
   'rippleVisible',

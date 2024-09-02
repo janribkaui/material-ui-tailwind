@@ -170,9 +170,6 @@ importers:
 
   packages/janribka-components:
     dependencies:
-      '@janribka/styles':
-        specifier: workspace:^
-        version: link:../janribka-styles/build
       '@janribka/system':
         specifier: workspace:*
         version: link:../janribka-system/build
@@ -277,13 +274,6 @@ importers:
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
-    publishDirectory: build
-
-  packages/janribka-styles:
-    devDependencies:
-      tailwindcss:
-        specifier: ^3.4.6
-        version: 3.4.6
     publishDirectory: build
 
   packages/janribka-system:

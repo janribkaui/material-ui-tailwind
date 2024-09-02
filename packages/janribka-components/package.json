@@ -36,7 +36,6 @@
     "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@janribka/styles": "workspace:^",
     "@janribka/system": "workspace:*",
     "@janribka/types": "workspace:^",
     "@janribka/utils": "workspace:*",
