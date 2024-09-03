@@ -1,5 +1,3 @@
-'use client';
-
 import { DefaultTheme, ThemeProvider as SystemThemeProvider } from '@janribka/system';
 
 import THEME_ID from './identifier';

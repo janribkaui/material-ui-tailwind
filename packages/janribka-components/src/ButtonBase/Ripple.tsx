@@ -1,5 +1,3 @@
-'use client';
-
 import * as React from 'react';
 // Styles
 import { tv } from 'tailwind-variants';

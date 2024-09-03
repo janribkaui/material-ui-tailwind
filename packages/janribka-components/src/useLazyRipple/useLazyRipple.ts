@@ -1,4 +1,3 @@
-'use client';
 import * as React from 'react';
 
 import useLazyRef from '@janribka/utils/useLazyRef';

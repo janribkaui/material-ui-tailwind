@@ -1,4 +1,3 @@
-'use client';
 import { CreateJRStyled, Theme } from '@janribka/system';
 import createStyled from '@janribka/system/createStyled';
 

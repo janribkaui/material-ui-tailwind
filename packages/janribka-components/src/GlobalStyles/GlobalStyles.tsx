@@ -1,5 +1,3 @@
-'use client';
-
 import {
   GlobalStyles as SystemGlobalStyles,
   GlobalStylesProps as StyledGlobalStylesProps,
