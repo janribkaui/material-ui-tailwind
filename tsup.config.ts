@@ -18,7 +18,6 @@ export default defineConfig({
     'clsx', // Označení 'clsx' jako externí
     /^@janribka\//, // Označení všech balíčků začínajících na '@janribka/' jako externí
     /node_modules/, // Označení všech balíčků z node_modules jako externí
-    /\.d\.ts$/, // Vyloučí všechny .d.ts soubory
   ],
   esbuildOptions(options) {
     options.legalComments = 'inline';
