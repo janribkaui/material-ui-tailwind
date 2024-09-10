@@ -1,6 +1,6 @@
 {
   "name": "@janribka/system",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "author": "Jan Ribka",
   "description": "JanRibka System is a set of CSS utilities to help you build custom designs more efficiently. It makes it possible to rapidly lay out custom designs.",
@@ -23,30 +23,33 @@
   },
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
-    "dev": "tsup --watch --sourcemap",
-    "build": "tsup && pnpm build:copy-files",
+    "build": "pnpm build:modern && pnpm build:node && pnpm build:stable && pnpm build:types && pnpm build:copy-files",
+    "build:modern": "node ../../scripts/build.mjs modern",
+    "build:node": "node ../../scripts/build.mjs node",
+    "build:stable": "node ../../scripts/build.mjs stable",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
-    "prebuild": "rimraf build",
+    "build:types": "node ../../scripts/buildTypes.mjs",
+    "prebuild": "rimraf build tsconfig.build.tsbuildinfo",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
     "release": "pnpm version --no-git && pnpm publish --access public",
     "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@janribka/internal-babel-macros": "workspace:^",
     "@janribka/private-theming": "workspace:^",
     "@janribka/styled-engine": "workspace:*",
     "@janribka/types": "workspace:^",
     "@janribka/utils": "workspace:^"
   },
   "devDependencies": {
+    "@janribka/internal-babel-macros": "workspace:^",
     "@types/react": "^18.3.3",
     "react": "19.0.0-rc-f6cce072-20240723",
     "typescript": "^5.5.3"
   },
   "peerDependencies": {
-    "@types/react": "^19.0.0",
-    "react": "^19.0.0"
+    "@types/react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "peerDependenciesMeta": {
     "@types/react": {
@@ -59,6 +62,6 @@
     "directory": "build"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14.0.0"
   }
 }

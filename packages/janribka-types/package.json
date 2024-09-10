@@ -1,6 +1,6 @@
 {
   "name": "@janribka/types",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "author": "Jan Ribka",
   "description": "Utility types for JanRibka",
@@ -27,8 +27,7 @@
   },
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
-    "dev": "tsup --watch --sourcemap",
-    "build": "tsup && cpy OverridableComponentAugmentation.ts build/ && pnpm build:copy-files",
+    "build": "mkdir build && cpy index.d.ts build/ && cpy OverridableComponentAugmentation.ts build/ && pnpm build:copy-files",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
     "prebuild": "rimraf build",
     "release": "pnpm build && pnpm version --no-git && pnpm publish --access public",
@@ -52,9 +51,5 @@
     "@types/react": {
       "optional": true
     }
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "typescript": "^5.5.3"
   }
 }
