@@ -3,6 +3,5 @@
   "compilerOptions": {
     "types": ["react", "mocha", "node"]
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "build", "dist"]
+  "include": ["src/**/*"]
 }

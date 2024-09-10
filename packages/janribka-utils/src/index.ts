@@ -19,3 +19,5 @@ export { default as unstable_useTimeout, Timeout as unstable_Timeout } from './u
 export { default as unstable_useOnMount } from './useOnMount';
 export { default as clamp } from './clamp';
 export { default as unstable_composeClasses } from './composeClasses';
+
+export * from './types';

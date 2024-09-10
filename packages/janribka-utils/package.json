@@ -1,6 +1,6 @@
 {
   "name": "@janribka/utils",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "author": "Jan Ribka",
   "description": "Utility functions for react components",
@@ -23,17 +23,20 @@
   },
   "homepage": "Private package",
   "scripts": {
-    "dev": "tsup --watch --sourcemap",
-    "build": "tsup && pnpm build:copy-files",
+    "build": "pnpm build:modern && pnpm build:node && pnpm build:stable && pnpm build:types && pnpm build:copy-files",
+    "build:modern": "node ../../scripts/build.mjs modern",
+    "build:node": "node ../../scripts/build.mjs node",
+    "build:stable": "node ../../scripts/build.mjs stable",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
-    "prebuild": "rimraf build",
+    "build:types": "node ../../scripts/buildTypes.mjs",
+    "prebuild": "rimraf build tsconfig.build.tsbuildinfo",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
     "release": "pnpm build && pnpm version --no-git && pnpm publish --access public",
     "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "react": "^18.3.1",
+    "@babel/runtime": "^7.25.6",
     "react-is": "18.3.1"
   },
   "devDependencies": {
@@ -43,6 +46,7 @@
     "@types/react": "^18.3.3",
     "@types/react-is": "^18.3.0",
     "clsx": "^2.1.1",
+    "react": "^18.3.1",
     "tailwind-merge": "^2.4.0",
     "typescript": "^5.5.3"
   },
@@ -61,6 +65,6 @@
     "directory": "build"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14.0.0"
   }
 }

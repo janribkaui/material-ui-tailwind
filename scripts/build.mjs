@@ -1,19 +1,20 @@
-import childProcess from "child_process";
-import { promisify } from "util";
-import yargs from "yargs";
-import glob from "fast-glob";
-import path from "path";
-import { getWorkspaceRoot } from "./utils.mjs";
+import childProcess from 'child_process';
+import glob from 'fast-glob';
+import path from 'path';
+import { promisify } from 'util';
+import yargs from 'yargs';
+import * as fs from 'fs/promises';
+import { getVersionEnvVariables, getWorkspaceRoot } from './utils.mjs';
 
 const exec = promisify(childProcess.exec);
 
 const validBundles = [
   // modern build with a rolling target using ES6 modules
-  "modern",
+  'modern',
   // build for node using commonJS modules
-  "node",
+  'node',
   // build with a hardcoded target using ES6 modules
-  "stable",
+  'stable',
 ];
 
 async function run(argv) {
@@ -21,31 +22,44 @@ async function run(argv) {
 
   if (validBundles.indexOf(bundle) === -1) {
     throw new TypeError(
-      `Unrecognized bundle '${bundle}'. Did you mean one of "${validBundles.join('", "')}"?`
+      `Unrecognized bundle '${bundle}'. Did you mean one of "${validBundles.join('", "')}"?`,
+    );
+  }
+
+  const packageJsonPath = path.resolve('./package.json');
+  const packageJson = JSON.parse(await fs.readFile(packageJsonPath, { encoding: 'utf8' }));
+
+  const babelRuntimeVersion = packageJson.dependencies['@babel/runtime'];
+  if (!babelRuntimeVersion) {
+    throw new Error(
+      'package.json needs to have a dependency on `@babel/runtime` when building with `@babel/plugin-transform-runtime`.',
     );
   }
 
   const env = {
-    NODE_ENV: "production",
+    NODE_ENV: 'production',
     BABEL_ENV: bundle,
     MUI_BUILD_VERBOSE: verbose,
+    MUI_BABEL_RUNTIME_VERSION: babelRuntimeVersion,
+    ...(await getVersionEnvVariables()),
   };
-  const babelConfigPath = path.resolve(getWorkspaceRoot(), "babel.config.js");
-  const srcDir = path.resolve("./src");
-  const extensions = [".js", ".ts", ".tsx"];
+
+  const babelConfigPath = path.resolve(getWorkspaceRoot(), 'babel.config.js');
+  const srcDir = path.resolve('./src');
+  const extensions = ['.js', '.ts', '.tsx'];
   const ignore = [
-    "**/*.test.js",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.spec.ts",
-    "**/*.spec.tsx",
-    "**/*.d.ts",
+    '**/*.test.js',
+    '**/*.test.ts',
+    '**/*.test.tsx',
+    '**/*.spec.ts',
+    '**/*.spec.tsx',
+    '**/*.d.ts',
   ];
 
   const topLevelNonIndexFiles = glob
-    .sync(`*{${extensions.join(",")}}`, { cwd: srcDir, ignore })
+    .sync(`*{${extensions.join(',')}}`, { cwd: srcDir, ignore })
     .filter((file) => {
-      return path.basename(file, path.extname(file)) !== "index";
+      return path.basename(file, path.extname(file)) !== 'index';
     });
   const topLevelPathImportsCanBePackages = topLevelNonIndexFiles.length === 0;
 
@@ -60,38 +74,36 @@ async function run(argv) {
     //
     // TODO v6: Switch to `exports` field.
     {
-      node: topLevelPathImportsCanBePackages ? "./node" : "./",
-      modern: "./modern",
-      stable: topLevelPathImportsCanBePackages ? "./" : "./esm",
-    }[bundle]
+      node: topLevelPathImportsCanBePackages ? './node' : './',
+      modern: './modern',
+      stable: topLevelPathImportsCanBePackages ? './' : './esm',
+    }[bundle],
   );
 
   const babelArgs = [
-    "--config-file",
+    '--config-file',
     babelConfigPath,
-    "--extensions",
-    `"${extensions.join(",")}"`,
+    '--extensions',
+    `"${extensions.join(',')}"`,
     srcDir,
-    "--out-dir",
+    '--out-dir',
     outDir,
-    "--ignore",
+    '--ignore',
     // Need to put these patterns in quotes otherwise they might be evaluated by the used terminal.
     `"${ignore.join('","')}"`,
   ];
   if (largeFiles) {
-    babelArgs.push("--compact false");
+    babelArgs.push('--compact false');
   }
 
-  const command = ["pnpm babel", ...babelArgs].join(" ");
+  const command = ['pnpm babel', ...babelArgs].join(' ');
 
   if (verbose) {
     // eslint-disable-next-line no-console
     console.log(`running '${command}' with ${JSON.stringify(env)}`);
   }
 
-  const { stderr, stdout } = await exec(command, {
-    env: { ...process.env, ...env },
-  });
+  const { stderr, stdout } = await exec(command, { env: { ...process.env, ...env } });
   if (stderr) {
     throw new Error(`'${command}' failed with \n${stderr}`);
   }
@@ -104,22 +116,21 @@ async function run(argv) {
 
 yargs(process.argv.slice(2))
   .command({
-    command: "$0 <bundle>",
-    describe: "Build package",
+    command: '$0 <bundle>',
+    description: 'build package',
     builder: (command) => {
       return command
-        .positional("bundle", {
+        .positional('bundle', {
           description: `Valid bundles: "${validBundles.join('" | "')}"`,
-          type: "string",
+          type: 'string',
         })
-        .option("largeFiles", {
-          type: "boolean",
+        .option('largeFiles', {
+          type: 'boolean',
           default: false,
-          describe:
-            "Set to `true` if you know you are transpiling large files.",
+          describe: 'Set to `true` if you know you are transpiling large files.',
         })
-        .option("out-dir", { default: "./build", type: "string" })
-        .option("verbose", { type: "boolean" });
+        .option('out-dir', { default: './build', type: 'string' })
+        .option('verbose', { type: 'boolean' });
     },
     handler: run,
   })

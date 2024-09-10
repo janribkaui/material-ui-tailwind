@@ -12,7 +12,7 @@ import { OverridableComponent, OverridableTypeMap, OverrideProps } from '../Over
 import { ButtonClasses } from './buttonClasses';
 // import { styled } from '../zero-styled';
 import buttonVariants from './buttonVariants';
-import endIconVariants from './endIconVariants copy';
+import endIconVariants from './endIconVariants';
 import startIconVariants from './startIconVariants';
 
 // Types

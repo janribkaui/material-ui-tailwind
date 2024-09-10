@@ -11,12 +11,11 @@ function invertObject(object) {
 }
 
 /**
- * Supported imports:
- * 1. bare specifier e.g. `'@janribka/internal-babel-macros/JRError.macro'`
- * 2. relative import from `packages/janribka-utils/src` e.g. `'../macros/JRError.macro'`
+ * Supported import:
+ * Bare specifier `'@janribka/internal-babel-macros/JRError.macro'`
  * @param {import('babel-plugin-macros').MacroParams} param0
  */
-function JRError({ references, babel, config, source }) {
+function jrError({ references, babel, config, source }) {
   const { errorCodesPath = {}, missingError = 'annotate' } = config;
   const errorCodes = JSON.parse(fs.readFileSync(errorCodesPath, { encoding: 'utf8' }));
   const errorCodesLookup = invertObject(errorCodes);
@@ -135,7 +134,7 @@ function JRError({ references, babel, config, source }) {
         // import { formatJRErrorMessage } from '@janribka/utils';
         formatJRErrorMessageIdentifier = helperModuleImports.addDefault(
           babelPath,
-          '@janribka/utils/formatJRErrorMessage',
+          '@jr/utils/formatJRErrorMessage',
           { nameHint: '_formatJRErrorMessage' },
         );
       } else {
@@ -184,10 +183,6 @@ function JRError({ references, babel, config, source }) {
   return { keepImports: false };
 }
 
-// module.exports = createMacro(JRError, {
-//   configName: 'JRError',
-// });
-
-export default createMacro(JRError, {
-  configName: 'JRError',
+module.exports = createMacro(jrError, {
+  configName: 'jrError',
 });

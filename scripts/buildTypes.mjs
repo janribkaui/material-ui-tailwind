@@ -109,14 +109,11 @@ async function main() {
         `The package root is '${packageRoot}'`,
     );
   }
-  console.log('tsconfigPath', tsconfigPath);
+
   await $$`pnpm tsc -b ${tsconfigPath}`;
 
   const publishDir = path.join(packageRoot, 'build');
-  const declarationFiles = await glob('**/*.d.ts', {
-    absolute: true,
-    cwd: publishDir,
-  });
+  const declarationFiles = await glob('**/*.d.ts', { absolute: true, cwd: publishDir });
   if (declarationFiles.length === 0) {
     throw new Error(`Unable to find declaration files in '${publishDir}'`);
   }

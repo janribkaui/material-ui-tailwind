@@ -9,6 +9,7 @@ module.exports = {
   resolve: {
     modules: [__dirname, 'node_modules'],
     alias: {
+      '@janribka/utils': path.resolve(__dirname, './packages/janribka-utils/src'),
       // '@mui/internal-markdown': path.resolve(__dirname, './packages/markdown'),
       // '@mui/material': path.resolve(__dirname, './packages/mui-material/src'),
       // '@mui/docs': path.resolve(__dirname, './packages/mui-docs/src'),

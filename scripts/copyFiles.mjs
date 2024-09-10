@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import path from 'path';
 import {
   createModulePackages,
@@ -21,8 +22,7 @@ async function addLicense(packageData) {
  */
 `;
   await Promise.all(
-    // ['./index.js', './modern/index.js', './node/index.js'].map(async (file) => {
-    ['./index.js'].map(async (file) => {
+    ['./index.js', './modern/index.js', './node/index.js'].map(async (file) => {
       try {
         await prepend(path.resolve(buildPath, file), license);
       } catch (err) {
@@ -53,7 +53,7 @@ async function run() {
 
     await addLicense(packageData);
 
-    // await createModulePackages({ from: srcPath, to: buildPath });
+    await createModulePackages({ from: srcPath, to: buildPath });
   } catch (err) {
     console.error(err);
     process.exit(1);

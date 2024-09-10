@@ -27,9 +27,11 @@
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
     "dev": "tsup --watch --sourcemap",
+    "build:test": "node ../../scripts/build.mjs modern",
+    "build:types-test": "node ../../scripts/buildTypes.mjs",
     "build": "tsup && pnpm build:copy-files",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
-    "prebuild": "rimraf build tsconfig.build.tsbuildinfo",
+    "prebuild": "rimraf build",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
     "release": "pnpm version --no-git && pnpm publish --access public",

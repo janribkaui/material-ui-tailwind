@@ -1,4 +1,4 @@
-//! https://github.com/sindresorhus/is-plain-obj/blob/main/index.js
+// https://github.com/sindresorhus/is-plain-obj/blob/main/index.js
 export function isPlainObject(item: unknown): item is Record<keyof any, unknown> {
   if (typeof item !== 'object' || item === null) {
     return false;

@@ -1,8 +1,8 @@
 packages:
   - 'apps/*'
   - 'packages/*'
+  - 'packages-internal/*'
     # - 'benchmark'
   # - 'packages/mui-envinfo/test'
-  # - 'packages-internal/*'
   # - 'docs'
   # - 'test'
