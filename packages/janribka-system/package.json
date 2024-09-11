@@ -5,8 +5,7 @@
   "author": "Jan Ribka",
   "description": "JanRibka System is a set of CSS utilities to help you build custom designs more efficiently. It makes it possible to rapidly lay out custom designs.",
   "license": "MIT",
-  "type": "module",
-  "main": "./src/index.ts",
+  "main": "./src/index.js",
   "keywords": [
     "react",
     "react-components",

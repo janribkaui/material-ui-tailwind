@@ -1,3 +1,4 @@
+// copied from @janribka/system/createStyled
 function slotShouldForwardProp(prop: string) {
   return prop !== 'ownerState' && prop !== 'theme' && prop !== 'sx' && prop !== 'as';
 }
