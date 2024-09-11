@@ -41,6 +41,7 @@
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "lerna": "^8.1.6",
+    "nx": "^19.7.2",
     "postcss-styled-syntax": "^0.6.4",
     "prettier": "^3.3.3",
     "pretty-quick": "^4.0.0",

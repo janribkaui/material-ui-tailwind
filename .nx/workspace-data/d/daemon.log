@@ -1,0 +1,11 @@
+[NX Daemon Server] - 2024-09-11T08:07:38.880Z - Started listening on: \\.\pipe\nx\C:\Users\jribka\AppData\Local\Temp\934b0c4f4bfee05efdb6\d.sock
+[NX Daemon Server] - 2024-09-11T08:07:38.886Z - [WATCHER]: Subscribed to changes within: D:\LocalDev\@jr (native)
+[NX Daemon Server] - 2024-09-11T08:07:38.891Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-11T08:07:38.893Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-11T08:07:38.894Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-11T08:07:38.896Z - [REQUEST]: Responding to the client. Shutdown initiated
+[NX Daemon Server] - 2024-09-11T08:07:38.898Z - Done responding to the client Shutdown initiated
+[NX Daemon Server] - 2024-09-11T08:07:38.898Z - Handled FORCE_SHUTDOWN. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-09-11T08:07:38.898Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-11T08:07:38.898Z - [WATCHER]: Stopping the watcher for D:\LocalDev\@jr (sources)
+[NX Daemon Server] - 2024-09-11T08:07:38.899Z - [WATCHER]: Stopping the watcher for D:\LocalDev\@jr (outputs)
