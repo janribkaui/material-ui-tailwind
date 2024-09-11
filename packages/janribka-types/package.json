@@ -1,11 +1,10 @@
 {
   "name": "@janribka/types",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.0",
   "private": false,
   "author": "Jan Ribka",
   "description": "Utility types for JanRibka",
   "license": "MIT",
-  "type": "module",
   "types": "./index.ts",
   "files": [
     "index.d.ts",

@@ -28,7 +28,7 @@
     "@types/node": "^22.1.0"
   },
   "peerDependencies": {
-    "@janribka/utils": "^1.0.0"
+    "@janribka/utils": "^0.0.0"
   },
   "sideEffects": false,
   "engines": {

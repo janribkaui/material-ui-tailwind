@@ -134,7 +134,7 @@ function jrError({ references, babel, config, source }) {
         // import { formatJRErrorMessage } from '@janribka/utils';
         formatJRErrorMessageIdentifier = helperModuleImports.addDefault(
           babelPath,
-          '@jr/utils/formatJRErrorMessage',
+          '@janribka/utils/formatJRErrorMessage',
           { nameHint: '_formatJRErrorMessage' },
         );
       } else {

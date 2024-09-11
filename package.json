@@ -1,12 +1,11 @@
 {
   "name": "@janribka/monorepo",
-  "version": "0.0.0-alpha.0",
+  "version": "1.0.0-alpha.0",
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "duplicate": "pnpm dedupe",
     "benchmark:browser": "pnpm --filter benchmark browser",
-    "dev": "lerna run dev --parallel",
     "build": "lerna run build --ignore docs",
     "jsonlint": "node ./scripts/jsonlint.mjs",
     "eslint": "eslint . --cache --report-unused-disable-directives --ext .js,.ts,.tsx --max-warnings 0",
