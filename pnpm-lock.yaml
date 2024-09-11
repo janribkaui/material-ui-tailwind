@@ -213,6 +213,9 @@ importers:
       '@janribka/utils':
         specifier: workspace:*
         version: link:../janribka-utils/build
+      csstype:
+        specifier: ^3.1.3
+        version: 3.1.3
       react-transition-group:
         specifier: ^4.4.5
         version: 4.4.5(react-dom@19.0.0-rc-f6cce072-20240723(react@19.0.0-rc-f6cce072-20240723))(react@19.0.0-rc-f6cce072-20240723)

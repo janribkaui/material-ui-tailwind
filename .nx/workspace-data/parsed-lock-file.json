@@ -1737,36 +1737,36 @@
         "hash": "sha512-fTxvnS1sRMu3+JjXwJG0j/i4RT9u4qJ+lqS/yCGap4lH4zZGzQ7tu+xZqQmcMZq5OBZDL4QRxQzRjkWcGt8IVw=="
       }
     },
-    "npm:@eslint/eslintrc@2.1.4": {
+    "npm:@eslint/eslintrc": {
       "type": "npm",
-      "name": "npm:@eslint/eslintrc@2.1.4",
+      "name": "npm:@eslint/eslintrc",
       "data": {
         "version": "2.1.4",
         "packageName": "@eslint/eslintrc",
         "hash": "sha512-269Z39MS6wVJtsoUl10L60WdkhJVdPG24Q4eZTH3nnF6lpvSShEK3wQjDX9JRWAUPvPh7COouPpU9IrqaZFvtQ=="
       }
     },
-    "npm:@eslint/eslintrc": {
+    "npm:@eslint/eslintrc@3.1.0": {
       "type": "npm",
-      "name": "npm:@eslint/eslintrc",
+      "name": "npm:@eslint/eslintrc@3.1.0",
       "data": {
         "version": "3.1.0",
         "packageName": "@eslint/eslintrc",
         "hash": "sha512-4Bfj15dVJdoy3RfZmmo86RK1Fwzn6SstsvK9JS+BaVKqC6QQQQyXekNaC+g+LKNgkQ+2VhGAzm6hO40AhMR3zQ=="
       }
     },
-    "npm:@eslint/js@8.57.0": {
+    "npm:@eslint/js": {
       "type": "npm",
-      "name": "npm:@eslint/js@8.57.0",
+      "name": "npm:@eslint/js",
       "data": {
         "version": "8.57.0",
         "packageName": "@eslint/js",
         "hash": "sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g=="
       }
     },
-    "npm:@eslint/js": {
+    "npm:@eslint/js@9.10.0": {
       "type": "npm",
-      "name": "npm:@eslint/js",
+      "name": "npm:@eslint/js@9.10.0",
       "data": {
         "version": "9.10.0",
         "packageName": "@eslint/js",
@@ -1858,9 +1858,9 @@
       "type": "npm",
       "name": "npm:@janribka/utils",
       "data": {
-        "version": "0.0.0",
+        "version": "1.0.0-alpha.0",
         "packageName": "@janribka/utils",
-        "hash": "sha512-ASyE9PzJ4+/pORg6b98ckUkDVbA7PiPvc6vjom29RnkJHYaqrJM7O1mpcLcfyYRGMC36niBI6uix0Pi6V4AsWw=="
+        "hash": "sha512-AfSu07HgmF1qvnL7+wR2n8zEIO0zsaXL2z3rTPGLAg9qpsOWang78LFavmS96gDlMBsDd8VfpgeX6NG9n/XsyA=="
       }
     },
     "npm:@jest/schemas": {
@@ -4635,36 +4635,36 @@
         "hash": "sha512-Rbj2R9zwP2GYNcIak4xoAMV57hrBh3hTaR0k7hVjwCQgryE/pw5px4b13EYjduOI0hfXyZhwBxaGpOTbWSGzKQ=="
       }
     },
-    "npm:eslint-scope@7.2.2": {
+    "npm:eslint-scope": {
       "type": "npm",
-      "name": "npm:eslint-scope@7.2.2",
+      "name": "npm:eslint-scope",
       "data": {
         "version": "7.2.2",
         "packageName": "eslint-scope",
         "hash": "sha512-dOt21O7lTMhDM+X9mB4GX+DZrZtCUJPL/wlcTqxyrx5IvO0IYtILdtrQGQp+8n5S0gwSVmOf9NQrjMOgfQZlIg=="
       }
     },
-    "npm:eslint-scope": {
+    "npm:eslint-scope@8.0.2": {
       "type": "npm",
-      "name": "npm:eslint-scope",
+      "name": "npm:eslint-scope@8.0.2",
       "data": {
         "version": "8.0.2",
         "packageName": "eslint-scope",
         "hash": "sha512-6E4xmrTw5wtxnLA5wYL3WDfhZ/1bUBGOXV0zQvVRDOtrR8D0p6W7fs3JweNYhwRYeGvd/1CKX2se0/2s7Q/nJA=="
       }
     },
-    "npm:eslint-visitor-keys@3.4.3": {
+    "npm:eslint-visitor-keys": {
       "type": "npm",
-      "name": "npm:eslint-visitor-keys@3.4.3",
+      "name": "npm:eslint-visitor-keys",
       "data": {
         "version": "3.4.3",
         "packageName": "eslint-visitor-keys",
         "hash": "sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag=="
       }
     },
-    "npm:eslint-visitor-keys": {
+    "npm:eslint-visitor-keys@4.0.0": {
       "type": "npm",
-      "name": "npm:eslint-visitor-keys",
+      "name": "npm:eslint-visitor-keys@4.0.0",
       "data": {
         "version": "4.0.0",
         "packageName": "eslint-visitor-keys",
@@ -12747,7 +12747,7 @@
     },
     {
       "source": "npm:@eslint-community/eslint-utils",
-      "target": "npm:eslint-visitor-keys@3.4.3",
+      "target": "npm:eslint-visitor-keys",
       "type": "static"
     },
     {
@@ -12757,7 +12757,7 @@
     },
     {
       "source": "npm:@eslint-community/eslint-utils",
-      "target": "npm:eslint-visitor-keys@3.4.3",
+      "target": "npm:eslint-visitor-keys",
       "type": "static"
     },
     {
@@ -12776,92 +12776,92 @@
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc@2.1.4",
+      "source": "npm:@eslint/eslintrc",
       "target": "npm:ajv@6.12.6",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc@2.1.4",
+      "source": "npm:@eslint/eslintrc",
       "target": "npm:debug",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc@2.1.4",
+      "source": "npm:@eslint/eslintrc",
       "target": "npm:espree@9.6.1",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc@2.1.4",
+      "source": "npm:@eslint/eslintrc",
       "target": "npm:globals@13.24.0",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc@2.1.4",
+      "source": "npm:@eslint/eslintrc",
       "target": "npm:ignore",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc@2.1.4",
+      "source": "npm:@eslint/eslintrc",
       "target": "npm:import-fresh",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc@2.1.4",
+      "source": "npm:@eslint/eslintrc",
       "target": "npm:js-yaml@4.1.0",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc@2.1.4",
+      "source": "npm:@eslint/eslintrc",
       "target": "npm:minimatch@3.1.2",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc@2.1.4",
+      "source": "npm:@eslint/eslintrc",
       "target": "npm:strip-json-comments",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc",
+      "source": "npm:@eslint/eslintrc@3.1.0",
       "target": "npm:ajv@6.12.6",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc",
+      "source": "npm:@eslint/eslintrc@3.1.0",
       "target": "npm:debug",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc",
+      "source": "npm:@eslint/eslintrc@3.1.0",
       "target": "npm:espree@10.1.0",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc",
+      "source": "npm:@eslint/eslintrc@3.1.0",
       "target": "npm:globals@14.0.0",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc",
+      "source": "npm:@eslint/eslintrc@3.1.0",
       "target": "npm:ignore",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc",
+      "source": "npm:@eslint/eslintrc@3.1.0",
       "target": "npm:import-fresh",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc",
+      "source": "npm:@eslint/eslintrc@3.1.0",
       "target": "npm:js-yaml@4.1.0",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc",
+      "source": "npm:@eslint/eslintrc@3.1.0",
       "target": "npm:minimatch@3.1.2",
       "type": "static"
     },
     {
-      "source": "npm:@eslint/eslintrc",
+      "source": "npm:@eslint/eslintrc@3.1.0",
       "target": "npm:strip-json-comments",
       "type": "static"
     },
@@ -12917,7 +12917,17 @@
     },
     {
       "source": "npm:@janribka/utils",
+      "target": "npm:@babel/runtime",
+      "type": "static"
+    },
+    {
+      "source": "npm:@janribka/utils",
       "target": "npm:react@19.0.0-rc-f6cce072-20240723",
+      "type": "static"
+    },
+    {
+      "source": "npm:@janribka/utils",
+      "target": "npm:react-is@18.3.1",
       "type": "static"
     },
     {
@@ -16231,22 +16241,22 @@
       "type": "static"
     },
     {
-      "source": "npm:eslint-scope@7.2.2",
+      "source": "npm:eslint-scope",
       "target": "npm:esrecurse",
       "type": "static"
     },
     {
-      "source": "npm:eslint-scope@7.2.2",
+      "source": "npm:eslint-scope",
       "target": "npm:estraverse",
       "type": "static"
     },
     {
-      "source": "npm:eslint-scope",
+      "source": "npm:eslint-scope@8.0.2",
       "target": "npm:esrecurse",
       "type": "static"
     },
     {
-      "source": "npm:eslint-scope",
+      "source": "npm:eslint-scope@8.0.2",
       "target": "npm:estraverse",
       "type": "static"
     },
@@ -16262,12 +16272,12 @@
     },
     {
       "source": "npm:eslint@8.57.0",
-      "target": "npm:@eslint/eslintrc@2.1.4",
+      "target": "npm:@eslint/eslintrc",
       "type": "static"
     },
     {
       "source": "npm:eslint@8.57.0",
-      "target": "npm:@eslint/js@8.57.0",
+      "target": "npm:@eslint/js",
       "type": "static"
     },
     {
@@ -16322,12 +16332,12 @@
     },
     {
       "source": "npm:eslint@8.57.0",
-      "target": "npm:eslint-scope@7.2.2",
+      "target": "npm:eslint-scope",
       "type": "static"
     },
     {
       "source": "npm:eslint@8.57.0",
-      "target": "npm:eslint-visitor-keys@3.4.3",
+      "target": "npm:eslint-visitor-keys",
       "type": "static"
     },
     {
@@ -16457,12 +16467,12 @@
     },
     {
       "source": "npm:eslint",
-      "target": "npm:@eslint/eslintrc",
+      "target": "npm:@eslint/eslintrc@3.1.0",
       "type": "static"
     },
     {
       "source": "npm:eslint",
-      "target": "npm:@eslint/js",
+      "target": "npm:@eslint/js@9.10.0",
       "type": "static"
     },
     {
@@ -16512,12 +16522,12 @@
     },
     {
       "source": "npm:eslint",
-      "target": "npm:eslint-scope",
+      "target": "npm:eslint-scope@8.0.2",
       "type": "static"
     },
     {
       "source": "npm:eslint",
-      "target": "npm:eslint-visitor-keys",
+      "target": "npm:eslint-visitor-keys@4.0.0",
       "type": "static"
     },
     {
@@ -16627,7 +16637,7 @@
     },
     {
       "source": "npm:espree@10.1.0",
-      "target": "npm:eslint-visitor-keys",
+      "target": "npm:eslint-visitor-keys@4.0.0",
       "type": "static"
     },
     {
@@ -16642,7 +16652,7 @@
     },
     {
       "source": "npm:espree@9.6.1",
-      "target": "npm:eslint-visitor-keys@3.4.3",
+      "target": "npm:eslint-visitor-keys",
       "type": "static"
     },
     {

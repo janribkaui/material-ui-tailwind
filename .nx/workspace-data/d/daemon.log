@@ -9,3 +9,14 @@
 [NX Daemon Server] - 2024-09-11T08:07:38.898Z - Closed a connection. Number of open connections: 0
 [NX Daemon Server] - 2024-09-11T08:07:38.898Z - [WATCHER]: Stopping the watcher for D:\LocalDev\@jr (sources)
 [NX Daemon Server] - 2024-09-11T08:07:38.899Z - [WATCHER]: Stopping the watcher for D:\LocalDev\@jr (outputs)
+[NX Daemon Server] - 2024-09-11T15:22:58.432Z - Started listening on: /tmp/bcaef0cf68d11b82bfa9/d.sock
+[NX Daemon Server] - 2024-09-11T15:22:58.434Z - [WATCHER]: Subscribed to changes within: /home/honza/Projekty/02_Weby/007_Library/03_Realizace/Program/Main/Library (native)
+[NX Daemon Server] - 2024-09-11T15:22:58.438Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-11T15:22:58.438Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-09-11T15:22:58.439Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-11T15:22:58.440Z - [REQUEST]: Responding to the client. Shutdown initiated
+[NX Daemon Server] - 2024-09-11T15:22:58.440Z - Done responding to the client Shutdown initiated
+[NX Daemon Server] - 2024-09-11T15:22:58.441Z - Handled FORCE_SHUTDOWN. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-09-11T15:22:58.442Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-11T15:22:58.442Z - [WATCHER]: Stopping the watcher for /home/honza/Projekty/02_Weby/007_Library/03_Realizace/Program/Main/Library (sources)
+[NX Daemon Server] - 2024-09-11T15:22:58.443Z - [WATCHER]: Stopping the watcher for /home/honza/Projekty/02_Weby/007_Library/03_Realizace/Program/Main/Library (outputs)
