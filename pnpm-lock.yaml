@@ -183,8 +183,8 @@ importers:
         specifier: ^7.25.0
         version: 7.25.6
       '@janribka/utils':
-        specifier: ^0.0.0
-        version: 0.0.0(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)
+        specifier: ^1.0.0-alpha.0
+        version: 1.0.0-alpha.0(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)
       babel-plugin-macros:
         specifier: ^3.1.0
         version: 3.1.0
@@ -1491,9 +1491,9 @@ packages:
   '@isaacs/string-locale-compare@1.1.0':
     resolution: {integrity: sha512-SQ7Kzhh9+D+ZW9MA0zkYv3VXhIDNx+LzM6EJ+/65I3QY+enU6Itte7E5XX7EWrqLW2FN4n06GWzBnPoC3th2aQ==}
 
-  '@janribka/utils@0.0.0':
-    resolution: {integrity: sha512-ASyE9PzJ4+/pORg6b98ckUkDVbA7PiPvc6vjom29RnkJHYaqrJM7O1mpcLcfyYRGMC36niBI6uix0Pi6V4AsWw==}
-    engines: {node: '>=12.0.0'}
+  '@janribka/utils@1.0.0-alpha.0':
+    resolution: {integrity: sha512-AfSu07HgmF1qvnL7+wR2n8zEIO0zsaXL2z3rTPGLAg9qpsOWang78LFavmS96gDlMBsDd8VfpgeX6NG9n/XsyA==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0 || ^19.0.0
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -6431,9 +6431,11 @@ snapshots:
 
   '@isaacs/string-locale-compare@1.1.0': {}
 
-  '@janribka/utils@0.0.0(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)':
+  '@janribka/utils@1.0.0-alpha.0(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)':
     dependencies:
+      '@babel/runtime': 7.25.6
       react: 19.0.0-rc-f6cce072-20240723
+      react-is: 18.3.1
     optionalDependencies:
       '@types/react': 18.3.5
 

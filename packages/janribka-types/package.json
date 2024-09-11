@@ -29,10 +29,10 @@
     "build": "mkdir build && cpy index.d.ts build/ && cpy OverridableComponentAugmentation.ts build/ && pnpm build:copy-files",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
     "prebuild": "rimraf build",
-    "release": "pnpm build && pnpm version --no-git && pnpm publish --access public",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
-    "typescript": "tsc -p tsconfig.json"
+    "typescript": "tsc -p tsconfig.json",
+    "release": "pnpm build && pnpm version --no-git && pnpm publish --access public"
   },
   "sideEffects": false,
   "publishConfig": {
