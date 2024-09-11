@@ -1,9 +1,9 @@
-import generateUtilityClass from "../generateUtilityClass";
+import generateUtilityClass from '../generateUtilityClass';
 
 export default function generateUtilityClasses<T extends string>(
   componentName: string,
   slots: T[],
-  globalStatePrefix = "Jr"
+  globalStatePrefix = 'Jr',
 ): Record<T, string> {
   const result: Record<string, string> = {};
 

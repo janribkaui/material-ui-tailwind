@@ -312,6 +312,9 @@ importers:
 
   packages/janribka-system:
     dependencies:
+      '@babel/runtime':
+        specifier: ^7.25.6
+        version: 7.25.6
       '@janribka/private-theming':
         specifier: workspace:^
         version: link:../janribka-private-theming/build

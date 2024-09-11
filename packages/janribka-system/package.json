@@ -32,10 +32,11 @@
     "prebuild": "rimraf build tsconfig.build.tsbuildinfo",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
-    "release": "pnpm version --no-git && pnpm publish --access public",
-    "typescript": "tsc -p tsconfig.json"
+    "typescript": "tsc -p tsconfig.json",
+    "release": "pnpm build && pnpm version --no-git && pnpm publish --access public"
   },
   "dependencies": {
+    "@babel/runtime": "^7.25.6",
     "@janribka/private-theming": "workspace:^",
     "@janribka/styled-engine": "workspace:*",
     "@janribka/types": "workspace:^",

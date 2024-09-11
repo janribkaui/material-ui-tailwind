@@ -33,7 +33,7 @@ export default function getDisplayName(Component: React.ElementType): string | u
     return getFunctionComponentName(Component, 'Component');
   }
 
-  //! TypeScript can't have components as objects but they exist in the form of `memo` or `Suspense`
+  // TypeScript can't have components as objects but they exist in the form of `memo` or `Suspense`
   if (typeof Component === 'object') {
     switch ((Component as any).$$typeof) {
       case ForwardRef:

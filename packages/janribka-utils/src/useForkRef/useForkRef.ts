@@ -1,5 +1,6 @@
 'use client';
 import * as React from 'react';
+
 import setRef from '../setRef';
 
 export default function useForkRef<Instance>(
@@ -20,6 +21,7 @@ export default function useForkRef<Instance>(
         setRef(ref, instance);
       });
     };
+    // TODO: uncomment once we enable eslint-plugin-react-compiler // eslint-disable-next-line react-compiler/react-compiler -- intentionally ignoring that the dependency array must be an array literal
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, refs);
 }
