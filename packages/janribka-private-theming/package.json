@@ -1,6 +1,6 @@
 {
   "name": "@janribka/private-theming",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0",
   "private": false,
   "author": "Jan Ribka",
   "description": "Private - The React theme context to be shared between `@janribka/styles` and `@janribka/components`.",
