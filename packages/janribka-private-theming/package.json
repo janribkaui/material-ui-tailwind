@@ -23,8 +23,10 @@
   },
   "homepage": "https://github.com/JanRibka/janribka#readme",
   "scripts": {
-    "dev": "tsup --watch --sourcemap",
-    "build": "tsup && pnpm build:copy-files",
+    "build": "pnpm build:modern && pnpm build:node && pnpm build:stable && pnpm build:copy-files",
+    "build:modern": "node ../../scripts/build.mjs modern",
+    "build:node": "node ../../scripts/build.mjs node",
+    "build:stable": "node ../../scripts/build.mjs stable",
     "build:copy-files": "node ../../scripts/copyFiles.mjs",
     "prebuild": "rimraf build",
     "lint": "eslint src/",
@@ -33,6 +35,7 @@
     "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
+    "@babel/runtime": "^7.25.6",
     "@janribka/utils": "workspace:^"
   },
   "devDependencies": {
