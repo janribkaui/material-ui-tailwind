@@ -1,18 +1,16 @@
 import * as React from 'react';
+// import PropTypes from 'prop-types';
 
-// Types
-export interface RtlProviderProps {
-  children?: React.ReactNode;
-  value?: boolean;
-}
+const RtlContext = React.createContext();
 
-// Content
-
-const RtlContext = React.createContext<boolean | null>(null);
-
-function RtlProvider({ value, ...props }: RtlProviderProps) {
+function RtlProvider({ value, ...props }) {
   return <RtlContext.Provider value={value ?? true} {...props} />;
 }
+
+// RtlProvider.propTypes = {
+//   children: PropTypes.node,
+//   value: PropTypes.bool,
+// };
 
 export const useRtl = () => {
   const value = React.useContext(RtlContext);

@@ -1,44 +1,21 @@
 'use client';
 import * as React from 'react';
-
+// import PropTypes from 'prop-types';
 import {
-  DefaultTheme,
-  ThemeProvider as JrThemeProvider,
+  ThemeProvider as JRThemeProvider,
   useTheme as usePrivateTheme,
 } from '@janribka/private-theming';
+// import exactProp from '@janribka/utils/exactProp';
 import { ThemeContext as StyledEngineThemeContext } from '@janribka/styled-engine';
-
-import DefaultPropsProvider from '../DefaultPropsProvider';
-import RtlProvider from '../RtlProvider/RtlProvider';
 import useThemeWithoutDefault from '../useThemeWithoutDefault';
-
-export interface ThemeProviderProps<Theme = DefaultTheme> {
-  /**
-   * Your component tree.
-   */
-  children?: React.ReactNode;
-  /**
-   * The design system's unique id for getting the corresponded theme when there are multiple design systems.
-   */
-  themeId?: string;
-  /**
-   * A theme object. You can provide a function to extend the outer theme.
-   */
-  theme: Partial<Theme> | ((outerTheme: Theme) => Theme);
-}
-
-// Content
+import RtlProvider from '../RtlProvider';
+import DefaultPropsProvider from '../DefaultPropsProvider';
 
 const EMPTY_THEME = {};
 
-function useThemeScoping(
-  themeId?: string,
-  upperTheme?: { [key: string]: any },
-  localTheme?: Partial<DefaultTheme>,
-  isPrivate = false,
-) {
+function useThemeScoping(themeId, upperTheme, localTheme, isPrivate = false) {
   return React.useMemo(() => {
-    const resolvedTheme = themeId ? upperTheme?.[themeId] || upperTheme : upperTheme;
+    const resolvedTheme = themeId ? upperTheme[themeId] || upperTheme : upperTheme;
 
     if (typeof localTheme === 'function') {
       const mergedTheme = localTheme(resolvedTheme);
@@ -61,13 +38,9 @@ function useThemeScoping(
  * <ThemeProvider theme={theme}> // existing use case
  * <ThemeProvider theme={{ id: theme }}> // theme scoping
  */
-function ThemeProvider<T = DefaultTheme>(
-  props: ThemeProviderProps,
-): React.ReactElement<ThemeProviderProps<T>> {
-  // Props
-  const { children, theme: localTheme, themeId, ...restProps } = props;
-
-  const upperTheme = useThemeWithoutDefault<{ [key: string]: any }>(EMPTY_THEME);
+function ThemeProvider(props) {
+  const { children, theme: localTheme, themeId } = props;
+  const upperTheme = useThemeWithoutDefault(EMPTY_THEME);
   const upperPrivateTheme = usePrivateTheme() || EMPTY_THEME;
 
   if (process.env.NODE_ENV !== 'production') {
@@ -93,14 +66,37 @@ function ThemeProvider<T = DefaultTheme>(
   const rtlValue = engineTheme.direction === 'rtl';
 
   return (
-    <JrThemeProvider theme={privateTheme}>
+    <JRThemeProvider theme={privateTheme}>
       <StyledEngineThemeContext.Provider value={engineTheme}>
         <RtlProvider value={rtlValue}>
-          <DefaultPropsProvider value={engineTheme?.components} />
+          <DefaultPropsProvider value={engineTheme?.components}>{children}</DefaultPropsProvider>
         </RtlProvider>
       </StyledEngineThemeContext.Provider>
-    </JrThemeProvider>
+    </JRThemeProvider>
   );
 }
+
+// ThemeProvider.propTypes /* remove-proptypes */ = {
+//   // ┌────────────────────────────── Warning ──────────────────────────────┐
+//   // │ These PropTypes are generated from the TypeScript type definitions. │
+//   // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+//   // └─────────────────────────────────────────────────────────────────────┘
+//   /**
+//    * Your component tree.
+//    */
+//   children: PropTypes.node,
+//   /**
+//    * A theme object. You can provide a function to extend the outer theme.
+//    */
+//   theme: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).isRequired,
+//   /**
+//    * The design system's unique id for getting the corresponded theme when there are multiple design systems.
+//    */
+//   themeId: PropTypes.string,
+// };
+
+// if (process.env.NODE_ENV !== 'production') {
+//   ThemeProvider.propTypes = exactProp(ThemeProvider.propTypes);
+// }
 
 export default ThemeProvider;
