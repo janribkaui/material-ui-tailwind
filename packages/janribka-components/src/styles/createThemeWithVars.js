@@ -1,15 +1,15 @@
-import MuiError from '@mui/internal-babel-macros/MuiError.macro';
-import deepmerge from '@mui/utils/deepmerge';
-import { unstable_createGetCssVar as systemCreateGetCssVar, createSpacing } from '@mui/system';
-import { createUnarySpacing } from '@mui/system/spacing';
+import JRError from '@janribka/internal-babel-macros/JRError.macro';
+import deepmerge from '@janribka/utils/deepmerge';
+import { unstable_createGetCssVar as systemCreateGetCssVar, createSpacing } from '@janribka/system';
+import { createUnarySpacing } from '@janribka/system/spacing';
 import {
   prepareCssVars,
   prepareTypographyVars,
   createGetColorSchemeSelector,
-} from '@mui/system/cssVars';
-import styleFunctionSx, {
-  unstable_defaultSxConfig as defaultSxConfig,
-} from '@mui/system/styleFunctionSx';
+} from '@janribka/system/cssVars';
+// import styleFunctionSx, {
+//   unstable_defaultSxConfig as defaultSxConfig,
+// } from '@janribka/system/styleFunctionSx';
 
 import {
   private_safeColorChannel as safeColorChannel,
@@ -18,7 +18,7 @@ import {
   private_safeLighten as safeLighten,
   private_safeEmphasize as safeEmphasize,
   hslToRgb,
-} from '@mui/system/colorManipulator';
+} from '@janribka/system/colorManipulator';
 
 import createThemeNoVars from './createThemeNoVars';
 import createColorScheme, { getOpacity, getOverlays } from './createColorScheme';
@@ -53,7 +53,7 @@ function setColorChannel(obj, key) {
     // if channel token can't be generated, show a warning.
     obj[`${key}Channel`] = safeColorChannel(
       toRgb(obj[key]),
-      `MUI: Can't create \`palette.${key}Channel\` because \`palette.${key}\` is not one of these formats: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color().` +
+      `JR: Can't create \`palette.${key}Channel\` because \`palette.${key}\` is not one of these formats: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color().` +
         '\n' +
         `To suppress this warning, you need to explicitly provide the \`palette.${key}Channel\` as a string (in rgb format, for example "12 12 12") or undefined if you want to remove the channel token.`,
     );
@@ -83,7 +83,7 @@ const silent = (fn) => {
   return undefined;
 };
 
-export const createGetCssVar = (cssVarPrefix = 'mui') => systemCreateGetCssVar(cssVarPrefix);
+export const createGetCssVar = (cssVarPrefix = 'jr') => systemCreateGetCssVar(cssVarPrefix);
 
 function attachColorScheme(colorSchemes, scheme, restTheme, colorScheme) {
   if (!scheme) {
@@ -98,7 +98,7 @@ function attachColorScheme(colorSchemes, scheme, restTheme, colorScheme) {
     });
     return undefined;
   }
-  const { palette, ...muiTheme } = createThemeNoVars({
+  const { palette, ...jrTheme } = createThemeNoVars({
     ...restTheme,
     palette: { mode, ...scheme?.palette },
   });
@@ -111,7 +111,7 @@ function attachColorScheme(colorSchemes, scheme, restTheme, colorScheme) {
     },
     overlays: scheme?.overlays || getOverlays(mode),
   };
-  return muiTheme;
+  return jrTheme;
 }
 
 /**
@@ -127,7 +127,7 @@ export default function createThemeWithVars(options = {}, ...args) {
     colorSchemes: colorSchemesInput = { light: true },
     defaultColorScheme: defaultColorSchemeInput,
     disableCssColorScheme = false,
-    cssVarPrefix = 'mui',
+    cssVarPrefix = 'jr',
     shouldSkipGeneratingVar = defaultShouldSkipGeneratingVar,
     colorSchemeSelector: selector = colorSchemesInput.light && colorSchemesInput.dark
       ? 'media'
@@ -157,14 +157,14 @@ export default function createThemeWithVars(options = {}, ...args) {
   }
 
   if (!defaultScheme) {
-    throw new MuiError(
-      'MUI: The `colorSchemes.%s` option is either missing or invalid.',
+    throw new JRError(
+      'JR: The `colorSchemes.%s` option is either missing or invalid.',
       defaultColorScheme,
     );
   }
 
   // Create the palette for the default color scheme, either `light`, `dark`, or custom color scheme.
-  const muiTheme = attachColorScheme(colorSchemes, defaultScheme, input, defaultColorScheme);
+  const jrTheme = attachColorScheme(colorSchemes, defaultScheme, input, defaultColorScheme);
 
   if (builtInLight && !colorSchemes.light) {
     attachColorScheme(colorSchemes, builtInLight, undefined, 'light');
@@ -176,12 +176,12 @@ export default function createThemeWithVars(options = {}, ...args) {
 
   let theme = {
     defaultColorScheme,
-    ...muiTheme,
+    ...jrTheme,
     cssVarPrefix,
     colorSchemeSelector: selector,
     getCssVar,
     colorSchemes,
-    font: { ...prepareTypographyVars(muiTheme.typography), ...muiTheme.font },
+    font: { ...prepareTypographyVars(jrTheme.typography), ...jrTheme.font },
     spacing: getSpacingVal(input.spacing),
   };
 
@@ -480,16 +480,16 @@ export default function createThemeWithVars(options = {}, ...args) {
   theme.getColorSchemeSelector = createGetColorSchemeSelector(selector);
   theme.spacing = theme.generateSpacing();
   theme.shouldSkipGeneratingVar = shouldSkipGeneratingVar;
-  theme.unstable_sxConfig = {
-    ...defaultSxConfig,
-    ...input?.unstable_sxConfig,
-  };
-  theme.unstable_sx = function sx(props) {
-    return styleFunctionSx({
-      sx: props,
-      theme: this,
-    });
-  };
+  // theme.unstable_sxConfig = {
+  //   ...defaultSxConfig,
+  //   ...input?.unstable_sxConfig,
+  // };
+  // theme.unstable_sx = function sx(props) {
+  //   return styleFunctionSx({
+  //     sx: props,
+  //     theme: this,
+  //   });
+  // };
   theme.toRuntimeSource = stringifyTheme; // for Pigment CSS integration
 
   return theme;

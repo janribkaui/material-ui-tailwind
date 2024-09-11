@@ -83,7 +83,7 @@ export { default as styled } from './styled';
  */
 export { default as experimentalStyled } from './styled';
 export { default as ThemeProvider } from './ThemeProvider';
-// export { ComponentsProps, ComponentsPropsList } from './props';
+export { ComponentsProps, ComponentsPropsList } from './props';
 // export { ComponentsVariants } from './variants';
 // export { ComponentsOverrides, ComponentNameToClassKey } from './overrides';
 export { Components } from './components';

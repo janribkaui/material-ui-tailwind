@@ -357,7 +357,7 @@ const ButtonBase = function ButtonBase(props: ButtonBaseProps) {
     'cursor-pointer',
     'select-none',
     'align-middle',
-    'appearance-none',
+    // 'appearance-none',
     'no-underline',
     'text-inherit',
     'border-none',

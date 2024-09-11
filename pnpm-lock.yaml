@@ -183,8 +183,8 @@ importers:
         specifier: ^7.25.0
         version: 7.25.6
       '@janribka/utils':
-        specifier: ^1.0.0-alpha.0
-        version: 1.0.0-alpha.0(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)
+        specifier: ^1.0.0
+        version: 1.0.0(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)
       babel-plugin-macros:
         specifier: ^3.1.0
         version: 3.1.0
@@ -204,6 +204,9 @@ importers:
 
   packages/janribka-components:
     dependencies:
+      '@babel/runtime':
+        specifier: ^7.25.6
+        version: 7.25.6
       '@janribka/system':
         specifier: workspace:*
         version: link:../janribka-system/build
@@ -220,9 +223,6 @@ importers:
         specifier: ^4.4.5
         version: 4.4.5(react-dom@19.0.0-rc-f6cce072-20240723(react@19.0.0-rc-f6cce072-20240723))(react@19.0.0-rc-f6cce072-20240723)
     devDependencies:
-      '@babel/runtime':
-        specifier: ^7.24.7
-        version: 7.25.6
       '@janribka/internal-babel-macros':
         specifier: workspace:^
         version: link:../janribka-babel-macros
@@ -336,6 +336,12 @@ importers:
       '@janribka/utils':
         specifier: workspace:^
         version: link:../janribka-utils/build
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      csstype:
+        specifier: ^3.1.3
+        version: 3.1.3
     devDependencies:
       '@janribka/internal-babel-macros':
         specifier: workspace:^
@@ -1503,8 +1509,8 @@ packages:
   '@isaacs/string-locale-compare@1.1.0':
     resolution: {integrity: sha512-SQ7Kzhh9+D+ZW9MA0zkYv3VXhIDNx+LzM6EJ+/65I3QY+enU6Itte7E5XX7EWrqLW2FN4n06GWzBnPoC3th2aQ==}
 
-  '@janribka/utils@1.0.0-alpha.0':
-    resolution: {integrity: sha512-AfSu07HgmF1qvnL7+wR2n8zEIO0zsaXL2z3rTPGLAg9qpsOWang78LFavmS96gDlMBsDd8VfpgeX6NG9n/XsyA==}
+  '@janribka/utils@1.0.0':
+    resolution: {integrity: sha512-gdkL/QPjQq00ud6ti2RZqku69a6GtqUg/KiqX7CcO1vYX3ted52gtUj1fuNaB05W799n+6jhzPapZbAuz61LcA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -6443,7 +6449,7 @@ snapshots:
 
   '@isaacs/string-locale-compare@1.1.0': {}
 
-  '@janribka/utils@1.0.0-alpha.0(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)':
+  '@janribka/utils@1.0.0(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)':
     dependencies:
       '@babel/runtime': 7.25.6
       react: 19.0.0-rc-f6cce072-20240723

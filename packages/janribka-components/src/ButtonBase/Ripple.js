@@ -1,69 +1,9 @@
+'use client';
 import * as React from 'react';
-// Styles
-import { tv } from 'tailwind-variants';
-
 import mergeStyles from '@janribka/utils/mergeStyles';
-
+import { tv } from 'tailwind-variants';
 import { keyframes, styled } from '../zero-styled';
 
-// Types
-export type RippleProps = {
-  /**
-   * Override or extend the styles applied to the component.
-   */
-  className?: string;
-  /**
-   * @ignore - injected from TransitionGroup
-   */
-  in?: boolean;
-  /**
-   * @ignore - injected from TransitionGroup
-   */
-  onExited?: () => void;
-  /**
-   * If `true`, the ripple pulsates, typically indicating the keyboard focus state of an element.
-   */
-  pulsate: boolean;
-  /**
-   * Diameter of the ripple.
-   */
-  rippleSize: number;
-  /**
-   * Horizontal position of the ripple center.
-   */
-  rippleX: number;
-  /**
-   * Vertical position of the ripple center.
-   */
-  rippleY: number;
-  /**
-   * exit delay
-   */
-  timeout: number;
-};
-
-const rippleVariants = tv({
-  base: 'opacity-0 absolute',
-  variants: {
-    rippleVisible: { true: 'opacity-30 scale-100 animation-visible', false: '' },
-    ripplePulsate: { true: 'animation-pulsate', false: '' },
-  },
-  defaultVariants: { rippleVisible: false, ripplePulsate: false },
-});
-
-export const rippleChildVariants = tv({
-  base: 'opacity-1 block w-full h-full rounded-[50%] bg-current',
-  variants: {
-    childLeaving: { true: 'opacity-0 animation-leaving', false: '' },
-    pulsate: {
-      true: 'absolute top-0 left-0 animation-pulsate',
-      false: '',
-    },
-  },
-  defaultVariants: { childLeaving: false, pulsate: false },
-});
-
-// Content
 const DURATION = 550;
 
 const enterKeyframe = keyframes`
@@ -129,12 +69,34 @@ const RippleChildStyled = styled('span', {})`
   }
 `;
 
+const rippleVariants = tv({
+  base: 'opacity-0 absolute',
+  variants: {
+    rippleVisible: { true: 'opacity-30 scale-100 animation-visible', false: '' },
+    ripplePulsate: { true: 'animation-pulsate', false: '' },
+  },
+  defaultVariants: { rippleVisible: false, ripplePulsate: false },
+});
+
+export const rippleChildVariants = tv({
+  base: 'opacity-1 block w-full h-full rounded-[50%] bg-current',
+  variants: {
+    childLeaving: { true: 'opacity-0 animation-leaving', false: '' },
+    pulsate: {
+      true: 'absolute top-0 left-0 animation-pulsate',
+      false: '',
+    },
+  },
+  defaultVariants: { childLeaving: false, pulsate: false },
+});
+
 /**
  * @ignore - internal component.
  */
-function Ripple(props: RippleProps) {
+function Ripple(props) {
   const {
     className,
+    // classes,
     pulsate = false,
     rippleX,
     rippleY,
@@ -162,7 +124,6 @@ function Ripple(props: RippleProps) {
   if (!inProp && !leaving) {
     setLeaving(true);
   }
-
   React.useEffect(() => {
     if (!inProp && onExited != null) {
       // react-transition-group#onExited

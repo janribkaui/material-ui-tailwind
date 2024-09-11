@@ -1,68 +1,27 @@
+'use client';
 import * as React from 'react';
 import { TransitionGroup } from 'react-transition-group';
-
-import mergeStyles from '@janribka/utils/mergeStyles';
 import useTimeout from '@janribka/utils/useTimeout';
-
-import { InternalStandardProps as StandardProps } from '../index';
-import Ripple from './Ripple';
-import { TouchRippleClasses } from './touchRippleClasses';
-
-import type { TouchRippleClassKey } from './touchRippleClasses';
-
-// Types
-export { type TouchRippleClassKey };
-
-export interface StartActionOptions {
-  pulsate?: boolean;
-  center?: boolean;
-}
-
-export interface TouchRippleActions {
-  start: (
-    event?: React.SyntheticEvent,
-    options?: StartActionOptions,
-    callback?: () => void,
-  ) => void;
-  pulsate: (event?: React.SyntheticEvent) => void;
-  stop: (event?: React.SyntheticEvent, callback?: () => void) => void;
-}
-
-export type TouchRippleProps = StandardProps<React.HTMLAttributes<HTMLElement>> & {
-  center?: boolean;
-  /**
-   * Override or extend the styles applied to the component.
-   */
-  classes?: Partial<TouchRippleClasses>;
-};
-
-// Content
+import { useDefaultProps } from '../DefaultPropsProvider';
+import TouchRippleRipple from './Ripple';
+import touchRippleClasses from './touchRippleClasses';
 
 const DURATION = 550;
 export const DELAY_RIPPLE = 80;
 
-const TouchRipple = function TouchRipple(props: TouchRippleProps) {
-  // Props
-  const { center: centerProp = false, classes = {}, className, ref, ...restProps } = props;
+/**
+ * @ignore - internal component.
+ *
+ * TODO v5: Make private
+ */
+const TouchRipple = React.forwardRef(function TouchRipple(inProps, ref) {
+  const props = useDefaultProps({ props: inProps, name: 'JRTouchRipple' });
 
-  // State
-  const [ripples, setRipples] = React.useState<React.ReactNode[]>([]);
-
-  //References
+  const { center: centerProp = false, classes = {}, className, ...other } = props;
+  const [ripples, setRipples] = React.useState([]);
   const nextKey = React.useRef(0);
-  const rippleCallback = React.useRef<Function | null>(null);
-  // Used to filter out mouse emulated events on mobile.
-  const ignoringMouseDown = React.useRef(false);
-  // This is the hook called once the previous timeout is ready.
-  const startTimerCommit = React.useRef<Function | null>(null);
-  const container = React.useRef<HTMLElement>(null);
+  const rippleCallback = React.useRef(null);
 
-  // Constants
-  // We use a timer in order to only show the ripples for touch "click" like events.
-  // We don't want to display the ripple for touch scroll events.
-  const startTimer = useTimeout();
-
-  // Effects
   React.useEffect(() => {
     if (rippleCallback.current) {
       rippleCallback.current();
@@ -70,21 +29,32 @@ const TouchRipple = function TouchRipple(props: TouchRippleProps) {
     }
   }, [ripples]);
 
-  // Handlers
+  // Used to filter out mouse emulated events on mobile.
+  const ignoringMouseDown = React.useRef(false);
+  // We use a timer in order to only show the ripples for touch "click" like events.
+  // We don't want to display the ripple for touch scroll events.
+  const startTimer = useTimeout();
+
+  // This is the hook called once the previous timeout is ready.
+  const startTimerCommit = React.useRef(null);
+  const container = React.useRef(null);
+
   const startCommit = React.useCallback(
-    (params: {
-      pulsate: boolean;
-      rippleX: number;
-      rippleY: number;
-      rippleSize: number;
-      cb: any;
-    }) => {
+    (params) => {
       const { pulsate, rippleX, rippleY, rippleSize, cb } = params;
 
       setRipples((oldRipples) => [
         ...oldRipples,
-        <Ripple
+        <TouchRippleRipple
           key={nextKey.current}
+          // classes={{
+          //   ripple: clsx(classes.ripple, touchRippleClasses.ripple),
+          //   rippleVisible: clsx(classes.rippleVisible, touchRippleClasses.rippleVisible),
+          //   ripplePulsate: clsx(classes.ripplePulsate, touchRippleClasses.ripplePulsate),
+          //   child: clsx(classes.child, touchRippleClasses.child),
+          //   childLeaving: clsx(classes.childLeaving, touchRippleClasses.childLeaving),
+          //   childPulsate: clsx(classes.childPulsate, touchRippleClasses.childPulsate),
+          // }}
           timeout={DURATION}
           pulsate={pulsate}
           rippleX={rippleX}
@@ -99,11 +69,7 @@ const TouchRipple = function TouchRipple(props: TouchRippleProps) {
   );
 
   const start = React.useCallback(
-    (
-      event: { type?: string; clientX?: number; clientY?: number; touches?: Array<any> } = {},
-      options: { pulsate?: boolean; center?: boolean; fakeElement?: boolean } = {},
-      cb = () => {},
-    ) => {
+    (event = {}, options = {}, cb = () => {}) => {
       const {
         pulsate = false,
         center = centerProp || options.pulsate,
@@ -195,7 +161,7 @@ const TouchRipple = function TouchRipple(props: TouchRippleProps) {
   }, [start]);
 
   const stop = React.useCallback(
-    (event: { type: string }, cb: Function | null) => {
+    (event, cb) => {
       startTimer.clear();
 
       // The touch interaction occurs too quickly.
@@ -222,13 +188,11 @@ const TouchRipple = function TouchRipple(props: TouchRippleProps) {
     [startTimer],
   );
 
-  // Styles
   const touchRippleClassName = mergeStyles(
     className,
     'overflow-hidden pointer-events-none absolute z-0 top-0 right-0 bottom-0 left-0 rounded-[inherit]',
   );
 
-  // Render
   React.useImperativeHandle(
     ref,
     () => ({
@@ -240,12 +204,12 @@ const TouchRipple = function TouchRipple(props: TouchRippleProps) {
   );
 
   return (
-    <span className={touchRippleClassName} ref={container} {...restProps}>
+    <span className={touchRippleClassName} ref={container} {...other}>
       <TransitionGroup component={null} exit>
         {ripples}
       </TransitionGroup>
     </span>
   );
-};
+});
 
 export default TouchRipple;

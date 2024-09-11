@@ -7,11 +7,11 @@
 // import { ApplyStyles } from './applyStyles';
 // import { CssContainerQueries } from '../cssContainerQueries';
 
-// export {
-//   Breakpoint,
-//   Breakpoints,
-//   BreakpointOverrides,
-// } from '../createBreakpoints/createBreakpoints';
+export {
+  Breakpoint,
+  Breakpoints,
+  BreakpointOverrides,
+} from '../createBreakpoints/createBreakpoints';
 
 export type Direction = 'ltr' | 'rtl';
 

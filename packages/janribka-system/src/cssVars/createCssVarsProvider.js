@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import { GlobalStyles } from '@janribka/styled-engine';
 import { useTheme as jrUseTheme } from '@janribka/private-theming';
 import ThemeProvider from '../ThemeProvider';
@@ -291,52 +290,6 @@ export default function createCssVarsProvider(options) {
       <ColorSchemeContext.Provider value={contextValue}>{element}</ColorSchemeContext.Provider>
     );
   }
-
-  CssVarsProvider.propTypes = {
-    /**
-     * The component tree.
-     */
-    children: PropTypes.node,
-    /**
-     * The node used to attach the color-scheme attribute
-     */
-    colorSchemeNode: PropTypes.any,
-    /**
-     * localStorage key used to store `colorScheme`
-     */
-    colorSchemeStorageKey: PropTypes.string,
-    /**
-     * If `true`, the provider creates its own context and generate stylesheet as if it is a root `CssVarsProvider`.
-     */
-    disableNestedContext: PropTypes.bool,
-    /**
-     * If `true`, the style sheet won't be generated.
-     *
-     * This is useful for controlling nested CssVarsProvider behavior.
-     */
-    disableStyleSheetGeneration: PropTypes.bool,
-    /**
-     * Disable CSS transitions when switching between modes or color schemes.
-     */
-    disableTransitionOnChange: PropTypes.bool,
-    /**
-     * The document to attach the attribute to.
-     */
-    documentNode: PropTypes.any,
-    /**
-     * The key in the local storage used to store current color scheme.
-     */
-    modeStorageKey: PropTypes.string,
-    /**
-     * The window that attaches the 'storage' event listener.
-     * @default window
-     */
-    storageWindow: PropTypes.any,
-    /**
-     * The calculated theme object that will be passed through context.
-     */
-    theme: PropTypes.object,
-  };
 
   const defaultLightColorScheme =
     typeof defaultColorScheme === 'string' ? defaultColorScheme : defaultColorScheme.light;
