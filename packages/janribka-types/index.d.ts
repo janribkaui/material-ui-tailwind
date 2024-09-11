@@ -84,7 +84,7 @@ export type IfEquals<T, U, Y = unknown, N = never> =
  * This means `typeof value` is not identical to `number | string`
  * @param actual
  */
-// export function expectType<Expected, Actual>(actual: IfEquals<Actual, Expected, Actual>): void;
+export function expectType<Expected, Actual>(actual: IfEquals<Actual, Expected, Actual>): void;
 
 /**
  * A component whose root component can be controlled via a `component` prop.
@@ -93,7 +93,7 @@ export type IfEquals<T, U, Y = unknown, N = never> =
  */
 export interface OverridableComponent<M extends OverridableTypeMap> {
   // If you make any changes to this interface, please make sure to update the
-  // `OverridableComponent` type in `mui-material/src/OverridableComponent.d.ts` as well.
+  // `OverridableComponent` type in `janribka-components/src/OverridableComponent.d.ts` as well.
   // Also, there are types in Base UI that have a similar shape to this interface
   // (for example SelectType, OptionType, etc.).
   <C extends React.ElementType>(
