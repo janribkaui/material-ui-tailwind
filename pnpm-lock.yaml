@@ -280,6 +280,9 @@ importers:
 
   packages/janribka-styled-engine:
     dependencies:
+      '@babel/runtime':
+        specifier: ^7.25.6
+        version: 7.25.6
       '@emotion/cache':
         specifier: 11.13.1
         version: 11.13.1
