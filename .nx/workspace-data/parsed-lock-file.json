@@ -1858,9 +1858,9 @@
       "type": "npm",
       "name": "npm:@janribka/utils",
       "data": {
-        "version": "1.0.0-alpha.0",
+        "version": "1.0.0",
         "packageName": "@janribka/utils",
-        "hash": "sha512-AfSu07HgmF1qvnL7+wR2n8zEIO0zsaXL2z3rTPGLAg9qpsOWang78LFavmS96gDlMBsDd8VfpgeX6NG9n/XsyA=="
+        "hash": "sha512-gdkL/QPjQq00ud6ti2RZqku69a6GtqUg/KiqX7CcO1vYX3ted52gtUj1fuNaB05W799n+6jhzPapZbAuz61LcA=="
       }
     },
     "npm:@jest/schemas": {

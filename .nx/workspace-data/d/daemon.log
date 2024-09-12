@@ -20,3 +20,857 @@
 [NX Daemon Server] - 2024-09-11T15:22:58.442Z - Closed a connection. Number of open connections: 0
 [NX Daemon Server] - 2024-09-11T15:22:58.442Z - [WATCHER]: Stopping the watcher for /home/honza/Projekty/02_Weby/007_Library/03_Realizace/Program/Main/Library (sources)
 [NX Daemon Server] - 2024-09-11T15:22:58.443Z - [WATCHER]: Stopping the watcher for /home/honza/Projekty/02_Weby/007_Library/03_Realizace/Program/Main/Library (outputs)
+[NX Daemon Server] - 2024-09-12T06:55:23.658Z - Started listening on: \\.\pipe\nx\C:\Users\jribka\AppData\Local\Temp\934b0c4f4bfee05efdb6\d.sock
+[NX Daemon Server] - 2024-09-12T06:55:23.664Z - [WATCHER]: Subscribed to changes within: D:\LocalDev\@jr (native)
+[NX Daemon Server] - 2024-09-12T06:55:23.671Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-12T06:55:23.675Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-12T06:55:23.676Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-12T06:55:23.679Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-09-12T06:55:24.095Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T06:55:24.095Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T06:55:24.095Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T06:55:24.108Z - Time taken for 'loadNxPlugins' 412.0368ms
+[NX Daemon Server] - 2024-09-12T06:55:24.951Z - Time taken for 'build-project-configs' 819.9695ms
+[NX Daemon Server] - 2024-09-12T06:55:25.107Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T06:55:25.109Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-09-12T06:55:25.110Z - Time taken for 'total for creating and serializing project graph' 1430.1744ms
+[NX Daemon Server] - 2024-09-12T06:55:25.110Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-09-12T06:55:25.110Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1430. Response time: 1.
+[NX Daemon Server] - 2024-09-12T06:55:25.121Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-09-12T06:55:25.122Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-09-12T06:55:25.122Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 2. Response time: 1.
+[NX Daemon Server] - 2024-09-12T06:55:25.212Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-09-12T06:55:25.214Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-09-12T06:55:25.214Z - Time taken for 'total for creating and serializing project graph' 1.0850000000000364ms
+[NX Daemon Server] - 2024-09-12T06:55:25.215Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-09-12T06:55:25.215Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 2. Response time: 1.
+[NX Daemon Server] - 2024-09-12T06:55:25.289Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX Daemon Server] - 2024-09-12T06:55:25.290Z - Done responding to the client handleHashTasks
+[NX Daemon Server] - 2024-09-12T06:55:25.290Z - Handled HASH_TASKS. Handling time: 23. Response time: 1.
+[NX Daemon Server] - 2024-09-12T06:55:28.021Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 3 file(s) deleted
+[NX Daemon Server] - 2024-09-12T06:55:28.026Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:28.094Z - [WATCHER]: packages/janribka-styled-engine/build was deleted
+[NX Daemon Server] - 2024-09-12T06:55:28.095Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:28.125Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T06:55:28.126Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T06:55:28.126Z - [REQUEST]: packages/janribka-types/build,packages/janribka-utils/build,packages/janribka-utils/tsconfig.build.tsbuildinfo,packages/janribka-styled-engine/build
+[NX Daemon Server] - 2024-09-12T06:55:28.133Z - Time taken for 'hash changed files from watcher' 1.261000000000422ms
+[NX Daemon Server] - 2024-09-12T06:55:28.170Z - Time taken for 'build-project-configs' 29.733500000000276ms
+[NX Daemon Server] - 2024-09-12T06:55:28.228Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T06:55:28.230Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T06:55:28.230Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T06:55:28.230Z - Time taken for 'total execution time for createProjectGraph()' 36.19310000000041ms
+[NX Daemon Server] - 2024-09-12T06:55:28.828Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:29.640Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:31.832Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:31.972Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:55:31.972Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:55:31.972Z - Handled RECORD_OUTPUTS_HASH. Handling time: 26. Response time: 0.
+[NX Daemon Server] - 2024-09-12T06:55:34.917Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:34.971Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:35.036Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:35.121Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:35.191Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:35.251Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:35.305Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:35.359Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:35.412Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:35.472Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:35.526Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:35.584Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:39.196Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:39.337Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:39.750Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:39.812Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:39.875Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:39.935Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:39.986Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:40.053Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:40.110Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:40.186Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:40.242Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:40.294Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:40.374Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:43.209Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:43.272Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:44.120Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:44.191Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:44.243Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:44.295Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:44.348Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:44.399Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:44.451Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:55:44.452Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:55:44.452Z - Handled RECORD_OUTPUTS_HASH. Handling time: 12. Response time: 1.
+[NX Daemon Server] - 2024-09-12T06:55:44.461Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:44.520Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:44.573Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:44.668Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:51.811Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:51.870Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:51.919Z - [WATCHER]: packages/janribka-utils/tsconfig.build.tsbuildinfo was modified
+[NX Daemon Server] - 2024-09-12T06:55:52.127Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T06:55:52.127Z - [REQUEST]: packages/janribka-utils/tsconfig.build.tsbuildinfo
+[NX Daemon Server] - 2024-09-12T06:55:52.127Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T06:55:52.133Z - Time taken for 'hash changed files from watcher' 0.7050000000017462ms
+[NX Daemon Server] - 2024-09-12T06:55:52.158Z - Time taken for 'build-project-configs' 19.963400000000547ms
+[NX Daemon Server] - 2024-09-12T06:55:52.197Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T06:55:52.198Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T06:55:52.198Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T06:55:52.198Z - Time taken for 'total execution time for createProjectGraph()' 31.564299999998184ms
+[NX Daemon Server] - 2024-09-12T06:55:52.936Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:52.988Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:53.055Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:55:53.056Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:55:53.056Z - Handled RECORD_OUTPUTS_HASH. Handling time: 19. Response time: 1.
+[NX Daemon Server] - 2024-09-12T06:55:56.517Z - [WATCHER]: packages/janribka-private-theming/build was deleted
+[NX Daemon Server] - 2024-09-12T06:55:56.517Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:56.922Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T06:55:56.922Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T06:55:56.922Z - [REQUEST]: packages/janribka-private-theming/build
+[NX Daemon Server] - 2024-09-12T06:55:56.927Z - Time taken for 'hash changed files from watcher' 0.6345000000001164ms
+[NX Daemon Server] - 2024-09-12T06:55:56.948Z - Time taken for 'build-project-configs' 17.07850000000326ms
+[NX Daemon Server] - 2024-09-12T06:55:56.982Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T06:55:56.983Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T06:55:56.983Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T06:55:56.983Z - Time taken for 'total execution time for createProjectGraph()' 25.646199999995588ms
+[NX Daemon Server] - 2024-09-12T06:55:59.664Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:55:59.756Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:02.892Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:02.972Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:06.234Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:06.310Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:07.343Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:07.376Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:56:07.376Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:56:07.376Z - Handled RECORD_OUTPUTS_HASH. Handling time: 11. Response time: 0.
+[NX Daemon Server] - 2024-09-12T06:56:09.995Z - [WATCHER]: packages/janribka-system/tsconfig.build.tsbuildinfo was deleted
+[NX Daemon Server] - 2024-09-12T06:56:09.995Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:10.068Z - [WATCHER]: packages/janribka-system/build was deleted
+[NX Daemon Server] - 2024-09-12T06:56:10.070Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:10.799Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T06:56:10.799Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T06:56:10.799Z - [REQUEST]: packages/janribka-system/tsconfig.build.tsbuildinfo,packages/janribka-system/build
+[NX Daemon Server] - 2024-09-12T06:56:10.806Z - Time taken for 'hash changed files from watcher' 0.9442000000053667ms
+[NX Daemon Server] - 2024-09-12T06:56:10.829Z - Time taken for 'build-project-configs' 20.967799999998533ms
+[NX Daemon Server] - 2024-09-12T06:56:10.873Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T06:56:10.874Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T06:56:10.874Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T06:56:10.874Z - Time taken for 'total execution time for createProjectGraph()' 31.1336999999985ms
+[NX Daemon Server] - 2024-09-12T06:56:13.408Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:13.472Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:13.566Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:13.706Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:13.769Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:13.879Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:13.942Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:14.064Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:14.115Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:14.194Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:14.249Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:14.301Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:14.365Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:14.433Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:14.488Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:14.551Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:17.797Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:17.862Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:17.973Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.098Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.154Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.211Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.289Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.342Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.396Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.460Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.537Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.601Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.657Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.711Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.768Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.821Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.885Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:18.959Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:19.018Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:19.071Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:19.135Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:22.347Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:22.405Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:22.500Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:22.624Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:22.691Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:22.786Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:22.878Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:22.942Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:23.003Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:23.055Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:23.116Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:23.179Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:23.233Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:23.288Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:23.352Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:23.416Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:23.478Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:30.623Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:30.674Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:30.740Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:30.742Z - [WATCHER]: packages/janribka-system/tsconfig.build.tsbuildinfo was modified
+[NX Daemon Server] - 2024-09-12T06:56:31.789Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:31.842Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:31.885Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:56:31.885Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:56:31.885Z - Handled RECORD_OUTPUTS_HASH. Handling time: 32. Response time: 0.
+[NX Daemon Server] - 2024-09-12T06:56:32.357Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T06:56:32.357Z - [REQUEST]: packages/janribka-system/tsconfig.build.tsbuildinfo
+[NX Daemon Server] - 2024-09-12T06:56:32.358Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T06:56:32.365Z - Time taken for 'hash changed files from watcher' 1.0072999999974854ms
+[NX Daemon Server] - 2024-09-12T06:56:32.402Z - Time taken for 'build-project-configs' 27.033400000000256ms
+[NX Daemon Server] - 2024-09-12T06:56:32.495Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T06:56:32.498Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T06:56:32.498Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T06:56:32.498Z - Time taken for 'total execution time for createProjectGraph()' 50.20260000000417ms
+[NX Daemon Server] - 2024-09-12T06:56:35.840Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 2 file(s) deleted
+[NX Daemon Server] - 2024-09-12T06:56:35.847Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:39.047Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T06:56:39.047Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T06:56:39.047Z - [REQUEST]: packages/janribka-components/build,packages/janribka-components/tsconfig.build.tsbuildinfo
+[NX Daemon Server] - 2024-09-12T06:56:39.052Z - Time taken for 'hash changed files from watcher' 0.6379000000015367ms
+[NX Daemon Server] - 2024-09-12T06:56:39.080Z - Time taken for 'build-project-configs' 21.710399999996298ms
+[NX Daemon Server] - 2024-09-12T06:56:39.128Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T06:56:39.130Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T06:56:39.130Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T06:56:39.131Z - Time taken for 'total execution time for createProjectGraph()' 31.777000000001863ms
+[NX Daemon Server] - 2024-09-12T06:56:39.653Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:39.721Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:39.780Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:39.892Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:39.985Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.060Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.113Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.172Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.225Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.280Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.334Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.396Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.447Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.540Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.619Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.745Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.803Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.856Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.914Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:40.968Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:41.030Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:41.096Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:44.498Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:44.551Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:44.682Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:44.773Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:44.835Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:44.897Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:44.956Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.008Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.063Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.116Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.172Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.243Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.351Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.429Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.571Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.630Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.693Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.748Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.805Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.863Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:45.916Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:49.377Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:49.437Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:49.549Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:49.627Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:49.683Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:49.733Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:49.799Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:49.850Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:49.907Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:49.969Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:50.034Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:50.148Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:50.206Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:50.404Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:50.456Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:50.516Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:50.582Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:50.657Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:58.068Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:58.137Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:58.191Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:56:58.244Z - [WATCHER]: packages/janribka-components/tsconfig.build.tsbuildinfo was modified
+[NX Daemon Server] - 2024-09-12T06:56:59.120Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:56:59.120Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-12T06:56:59.120Z - Handled RECORD_OUTPUTS_HASH. Handling time: 26. Response time: 0.
+[NX Daemon Server] - 2024-09-12T06:56:59.153Z - [REQUEST]: Responding to the client. handleRecordTaskRuns
+[NX Daemon Server] - 2024-09-12T06:56:59.153Z - Done responding to the client handleRecordTaskRuns
+[NX Daemon Server] - 2024-09-12T06:56:59.153Z - Handled WRITE_TASK_RUNS_TO_HISTORY. Handling time: 3. Response time: 0.
+[NX Daemon Server] - 2024-09-12T06:56:59.155Z - [REQUEST]: Responding to the client. handleGetFlakyTasks
+[NX Daemon Server] - 2024-09-12T06:56:59.155Z - Done responding to the client handleGetFlakyTasks
+[NX Daemon Server] - 2024-09-12T06:56:59.155Z - Handled GET_TASK_HISTORY_FOR_HASHES. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-09-12T06:56:59.162Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-12T06:57:04.649Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T06:57:04.649Z - [REQUEST]: packages/janribka-components/tsconfig.build.tsbuildinfo
+[NX Daemon Server] - 2024-09-12T06:57:04.649Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T06:57:04.653Z - Time taken for 'hash changed files from watcher' 1.172099999996135ms
+[NX Daemon Server] - 2024-09-12T06:57:04.675Z - Time taken for 'build-project-configs' 16.558600000003935ms
+[NX Daemon Server] - 2024-09-12T06:57:04.715Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T06:57:04.716Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T06:57:04.716Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T06:57:04.717Z - Time taken for 'total execution time for createProjectGraph()' 30.335499999986496ms
+[NX Daemon Server] - 2024-09-12T06:57:43.868Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:57:43.869Z - [WATCHER]: packages/janribka-components/src/styles/defaultTheme.js was modified
+[NX Daemon Server] - 2024-09-12T06:57:50.272Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T06:57:50.272Z - [REQUEST]: packages/janribka-components/src/styles/defaultTheme.js
+[NX Daemon Server] - 2024-09-12T06:57:50.272Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T06:57:50.276Z - Time taken for 'hash changed files from watcher' 0.9743000000016764ms
+[NX Daemon Server] - 2024-09-12T06:57:50.299Z - Time taken for 'build-project-configs' 16.749600000010105ms
+[NX Daemon Server] - 2024-09-12T06:57:50.332Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T06:57:50.333Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T06:57:50.333Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T06:57:50.333Z - Time taken for 'total execution time for createProjectGraph()' 23.886499999993248ms
+[NX Daemon Server] - 2024-09-12T06:58:37.152Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T06:58:37.154Z - [WATCHER]: packages/janribka-components/src/styles/createTheme.ts was modified
+[NX Daemon Server] - 2024-09-12T06:58:43.560Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T06:58:43.560Z - [REQUEST]: packages/janribka-components/src/styles/createTheme.ts
+[NX Daemon Server] - 2024-09-12T06:58:43.560Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T06:58:43.566Z - Time taken for 'hash changed files from watcher' 0.6538000000000466ms
+[NX Daemon Server] - 2024-09-12T06:58:43.589Z - Time taken for 'build-project-configs' 17.94419999999809ms
+[NX Daemon Server] - 2024-09-12T06:58:43.622Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T06:58:43.624Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T06:58:43.624Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T06:58:43.624Z - Time taken for 'total execution time for createProjectGraph()' 24.423600000009174ms
+[NX Daemon Server] - 2024-09-12T07:04:50.559Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 2 file(s) deleted
+[NX Daemon Server] - 2024-09-12T07:04:50.565Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:54.846Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:54.909Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.032Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.096Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.160Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.214Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.270Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.327Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.380Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.433Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.490Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.584Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.647Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.766Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.817Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.869Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.921Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:55.986Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:56.976Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T07:04:56.976Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T07:04:56.976Z - [REQUEST]: packages/janribka-components/build,packages/janribka-components/tsconfig.build.tsbuildinfo
+[NX Daemon Server] - 2024-09-12T07:04:56.981Z - Time taken for 'hash changed files from watcher' 0.7072000000625849ms
+[NX Daemon Server] - 2024-09-12T07:04:57.009Z - Time taken for 'build-project-configs' 21.928900000057183ms
+[NX Daemon Server] - 2024-09-12T07:04:57.056Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T07:04:57.058Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T07:04:57.058Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T07:04:57.058Z - Time taken for 'total execution time for createProjectGraph()' 33.32029999990482ms
+[NX Daemon Server] - 2024-09-12T07:04:59.548Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:59.602Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:59.657Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:59.766Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:59.877Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:04:59.969Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.045Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.102Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.156Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.212Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.270Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.325Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.377Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.443Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.505Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.599Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.679Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.851Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.912Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:00.985Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:01.037Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:01.087Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:01.144Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:01.199Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:01.265Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:04.951Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.016Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.125Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.188Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.251Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.313Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.369Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.422Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.476Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.530Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.595Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.687Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.763Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.892Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.944Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:05.999Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:06.051Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:06.103Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:14.636Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:14.746Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:14.803Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:14.869Z - [WATCHER]: packages/janribka-components/tsconfig.build.tsbuildinfo was modified
+[NX Daemon Server] - 2024-09-12T07:05:14.870Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T07:05:21.271Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T07:05:21.271Z - [REQUEST]: packages/janribka-components/tsconfig.build.tsbuildinfo
+[NX Daemon Server] - 2024-09-12T07:05:21.271Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T07:05:21.276Z - Time taken for 'hash changed files from watcher' 0.6598999999696389ms
+[NX Daemon Server] - 2024-09-12T07:05:21.297Z - Time taken for 'build-project-configs' 15.972100000013597ms
+[NX Daemon Server] - 2024-09-12T07:05:21.334Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T07:05:21.335Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T07:05:21.336Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T07:05:21.336Z - Time taken for 'total execution time for createProjectGraph()' 27.5954999999376ms
+[NX Daemon Server] - 2024-09-12T08:11:34.671Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:11:34.690Z - [WATCHER]: packages/janribka-components/src/styles/useTheme.ts was modified
+[NX Daemon Server] - 2024-09-12T08:11:41.110Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:11:41.110Z - [REQUEST]: packages/janribka-components/src/styles/useTheme.ts
+[NX Daemon Server] - 2024-09-12T08:11:41.110Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:11:41.124Z - Time taken for 'hash changed files from watcher' 3.220700000412762ms
+[NX Daemon Server] - 2024-09-12T08:11:41.180Z - Time taken for 'build-project-configs' 46.251899999566376ms
+[NX Daemon Server] - 2024-09-12T08:11:41.226Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:11:41.227Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:11:41.227Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:11:41.227Z - Time taken for 'total execution time for createProjectGraph()' 35.142799999564886ms
+[NX Daemon Server] - 2024-09-12T08:12:25.391Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:12:25.393Z - [WATCHER]: 0 file(s) created or restored, 2 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2024-09-12T08:12:31.387Z - [WATCHER]: packages/janribka-components/src/styles/useTheme.d.ts was modified
+[NX Daemon Server] - 2024-09-12T08:12:31.388Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:12:31.806Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:12:31.806Z - [REQUEST]: packages/janribka-components/src/styles/useTheme.d.ts,packages/janribka-components/src/styles/useTheme.js
+[NX Daemon Server] - 2024-09-12T08:12:31.806Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:12:31.817Z - Time taken for 'hash changed files from watcher' 0.9075999995693564ms
+[NX Daemon Server] - 2024-09-12T08:12:31.870Z - Time taken for 'build-project-configs' 37.23340000025928ms
+[NX Daemon Server] - 2024-09-12T08:12:31.926Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:12:31.927Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:12:31.927Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:12:31.927Z - Time taken for 'total execution time for createProjectGraph()' 50.20250000059605ms
+[NX Daemon Server] - 2024-09-12T08:12:51.406Z - [WATCHER]: packages/janribka-components/src/styles/useTheme.js was modified
+[NX Daemon Server] - 2024-09-12T08:12:51.407Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:12:56.934Z - [WATCHER]: packages/janribka-components/src/styles/useTheme.js was modified
+[NX Daemon Server] - 2024-09-12T08:12:56.935Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:12:57.809Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:12:57.809Z - [REQUEST]: packages/janribka-components/src/styles/useTheme.js
+[NX Daemon Server] - 2024-09-12T08:12:57.809Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:12:57.814Z - Time taken for 'hash changed files from watcher' 0.6311999997124076ms
+[NX Daemon Server] - 2024-09-12T08:12:57.843Z - Time taken for 'build-project-configs' 23.104899999685585ms
+[NX Daemon Server] - 2024-09-12T08:12:57.880Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:12:57.881Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:12:57.881Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:12:57.881Z - Time taken for 'total execution time for createProjectGraph()' 29.501000000163913ms
+[NX Daemon Server] - 2024-09-12T08:13:07.592Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:07.593Z - [WATCHER]: packages/janribka-components/src/styles/useTheme.ts was deleted
+[NX Daemon Server] - 2024-09-12T08:13:10.023Z - [WATCHER]: packages/janribka-components/src/styles/useTheme.js was modified
+[NX Daemon Server] - 2024-09-12T08:13:10.024Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:13.996Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:13:13.997Z - [REQUEST]: packages/janribka-components/src/styles/useTheme.js
+[NX Daemon Server] - 2024-09-12T08:13:13.997Z - [REQUEST]: packages/janribka-components/src/styles/useTheme.ts
+[NX Daemon Server] - 2024-09-12T08:13:14.003Z - Time taken for 'hash changed files from watcher' 0.6542999995872378ms
+[NX Daemon Server] - 2024-09-12T08:13:14.028Z - Time taken for 'build-project-configs' 17.25040000025183ms
+[NX Daemon Server] - 2024-09-12T08:13:14.063Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:13:14.064Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:13:14.064Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:13:14.064Z - Time taken for 'total execution time for createProjectGraph()' 27.052899999544024ms
+[NX Daemon Server] - 2024-09-12T08:13:16.970Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 2 file(s) deleted
+[NX Daemon Server] - 2024-09-12T08:13:16.975Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:20.767Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:20.826Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:20.936Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:20.997Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.054Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.107Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.162Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.213Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.268Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.327Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.394Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.460Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.519Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.639Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.692Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.756Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:21.833Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:23.386Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:13:23.386Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:13:23.386Z - [REQUEST]: packages/janribka-components/tsconfig.build.tsbuildinfo,packages/janribka-components/build
+[NX Daemon Server] - 2024-09-12T08:13:23.391Z - Time taken for 'hash changed files from watcher' 1.0230000000447035ms
+[NX Daemon Server] - 2024-09-12T08:13:23.418Z - Time taken for 'build-project-configs' 18.03910000063479ms
+[NX Daemon Server] - 2024-09-12T08:13:23.457Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:13:23.458Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:13:23.458Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:13:23.458Z - Time taken for 'total execution time for createProjectGraph()' 29.237300000153482ms
+[NX Daemon Server] - 2024-09-12T08:13:25.304Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:25.362Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:25.471Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:25.566Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:25.627Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:25.690Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:25.748Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:25.798Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:25.848Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:25.899Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:25.961Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:26.020Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:26.114Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:26.195Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:26.330Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:26.382Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:26.444Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:26.497Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:26.555Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:26.607Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:26.666Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:29.946Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.010Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.120Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.182Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.237Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.287Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.339Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.402Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.455Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.512Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.576Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.654Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.717Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.847Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.900Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:30.950Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:31.005Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:31.057Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:38.556Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:38.633Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:38.688Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:38.744Z - [WATCHER]: packages/janribka-components/tsconfig.build.tsbuildinfo was modified
+[NX Daemon Server] - 2024-09-12T08:13:39.775Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:13:45.157Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:13:45.157Z - [REQUEST]: packages/janribka-components/tsconfig.build.tsbuildinfo
+[NX Daemon Server] - 2024-09-12T08:13:45.157Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:13:45.163Z - Time taken for 'hash changed files from watcher' 0.7483000000938773ms
+[NX Daemon Server] - 2024-09-12T08:13:45.193Z - Time taken for 'build-project-configs' 21.498500000685453ms
+[NX Daemon Server] - 2024-09-12T08:13:45.238Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:13:45.239Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:13:45.239Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:13:45.240Z - Time taken for 'total execution time for createProjectGraph()' 32.87349999975413ms
+[NX Daemon Server] - 2024-09-12T08:33:35.571Z - [WATCHER]: apps/local-ui-web/vite.config.js.timestamp-1726130015503-9153c441f28fd.mjs was deleted
+[NX Daemon Server] - 2024-09-12T08:33:35.572Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:33:41.974Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:33:41.974Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:33:41.974Z - [REQUEST]: apps/local-ui-web/vite.config.js.timestamp-1726130015503-9153c441f28fd.mjs
+[NX Daemon Server] - 2024-09-12T08:33:41.983Z - Time taken for 'hash changed files from watcher' 0.7467999998480082ms
+[NX Daemon Server] - 2024-09-12T08:33:42.008Z - Time taken for 'build-project-configs' 21.622999999672174ms
+[NX Daemon Server] - 2024-09-12T08:33:42.041Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:33:42.042Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:33:42.042Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:33:42.042Z - Time taken for 'total execution time for createProjectGraph()' 25.13050000090152ms
+[NX Daemon Server] - 2024-09-12T08:41:50.576Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:41:50.577Z - [WATCHER]: packages/janribka-system/src/createTheme/createSpacing.ts was modified
+[NX Daemon Server] - 2024-09-12T08:41:51.384Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:41:51.386Z - [WATCHER]: packages/janribka-system/src/createTheme/createSpacing.ts was modified
+[NX Daemon Server] - 2024-09-12T08:41:56.994Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:41:56.994Z - [REQUEST]: packages/janribka-system/src/createTheme/createSpacing.ts
+[NX Daemon Server] - 2024-09-12T08:41:56.994Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:41:57.006Z - Time taken for 'hash changed files from watcher' 0.9563999995589256ms
+[NX Daemon Server] - 2024-09-12T08:41:57.034Z - Time taken for 'build-project-configs' 25.387099999934435ms
+[NX Daemon Server] - 2024-09-12T08:41:57.076Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:41:57.077Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:41:57.077Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:41:57.077Z - Time taken for 'total execution time for createProjectGraph()' 35.33100000023842ms
+[NX Daemon Server] - 2024-09-12T08:42:12.530Z - [WATCHER]: packages/janribka-system/src/createTheme/index.d.ts was modified
+[NX Daemon Server] - 2024-09-12T08:42:12.530Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:42:18.937Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:42:18.938Z - [REQUEST]: packages/janribka-system/src/createTheme/index.d.ts
+[NX Daemon Server] - 2024-09-12T08:42:18.938Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:42:18.943Z - Time taken for 'hash changed files from watcher' 0.6236000005155802ms
+[NX Daemon Server] - 2024-09-12T08:42:18.964Z - Time taken for 'build-project-configs' 16.865699999965727ms
+[NX Daemon Server] - 2024-09-12T08:42:18.998Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:42:18.999Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:42:18.999Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:42:18.999Z - Time taken for 'total execution time for createProjectGraph()' 23.5246000001207ms
+[NX Daemon Server] - 2024-09-12T08:43:48.085Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:43:48.087Z - [WATCHER]: packages/janribka-components/src/index.js was modified
+[NX Daemon Server] - 2024-09-12T08:43:54.499Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:43:54.499Z - [REQUEST]: packages/janribka-components/src/index.js
+[NX Daemon Server] - 2024-09-12T08:43:54.499Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:43:54.507Z - Time taken for 'hash changed files from watcher' 0.5860000001266599ms
+[NX Daemon Server] - 2024-09-12T08:43:54.536Z - Time taken for 'build-project-configs' 22.51979999989271ms
+[NX Daemon Server] - 2024-09-12T08:43:54.570Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:43:54.571Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:43:54.571Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:43:54.571Z - Time taken for 'total execution time for createProjectGraph()' 25.897499999962747ms
+[NX Daemon Server] - 2024-09-12T08:44:01.984Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:44:01.986Z - [WATCHER]: packages/janribka-components/src/index.d.ts was modified
+[NX Daemon Server] - 2024-09-12T08:44:08.391Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:44:08.391Z - [REQUEST]: packages/janribka-components/src/index.d.ts
+[NX Daemon Server] - 2024-09-12T08:44:08.391Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:44:08.401Z - Time taken for 'hash changed files from watcher' 1.328999999910593ms
+[NX Daemon Server] - 2024-09-12T08:44:08.425Z - Time taken for 'build-project-configs' 20.92869999911636ms
+[NX Daemon Server] - 2024-09-12T08:44:08.458Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:44:08.459Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:44:08.459Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:44:08.459Z - Time taken for 'total execution time for createProjectGraph()' 26.459699999541044ms
+[NX Daemon Server] - 2024-09-12T08:44:25.394Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:44:25.396Z - [WATCHER]: packages/janribka-system/src/index.d.ts was modified
+[NX Daemon Server] - 2024-09-12T08:44:31.799Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:44:31.799Z - [REQUEST]: packages/janribka-system/src/index.d.ts
+[NX Daemon Server] - 2024-09-12T08:44:31.799Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:44:31.802Z - Time taken for 'hash changed files from watcher' 0.6951999999582767ms
+[NX Daemon Server] - 2024-09-12T08:44:31.825Z - Time taken for 'build-project-configs' 17.562800000421703ms
+[NX Daemon Server] - 2024-09-12T08:44:31.856Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:44:31.857Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:44:31.857Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:44:31.857Z - Time taken for 'total execution time for createProjectGraph()' 22.318800000473857ms
+[NX Daemon Server] - 2024-09-12T08:44:35.201Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:44:35.202Z - [WATCHER]: packages/janribka-system/src/index.d.ts was modified
+[NX Daemon Server] - 2024-09-12T08:44:41.614Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:44:41.614Z - [REQUEST]: packages/janribka-system/src/index.d.ts
+[NX Daemon Server] - 2024-09-12T08:44:41.614Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:44:41.619Z - Time taken for 'hash changed files from watcher' 0.7077000001445413ms
+[NX Daemon Server] - 2024-09-12T08:44:41.642Z - Time taken for 'build-project-configs' 17.01989999972284ms
+[NX Daemon Server] - 2024-09-12T08:44:41.644Z - [WATCHER]: packages/janribka-system/src/CSSProperties.d.ts was modified
+[NX Daemon Server] - 2024-09-12T08:44:41.645Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:44:41.691Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:44:41.692Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:44:41.692Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:44:41.692Z - Time taken for 'total execution time for createProjectGraph()' 35.3063999991864ms
+[NX Daemon Server] - 2024-09-12T08:44:48.052Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:44:48.052Z - [REQUEST]: packages/janribka-system/src/CSSProperties.d.ts
+[NX Daemon Server] - 2024-09-12T08:44:48.052Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:44:48.057Z - Time taken for 'hash changed files from watcher' 0.7001000000163913ms
+[NX Daemon Server] - 2024-09-12T08:44:48.079Z - Time taken for 'build-project-configs' 17.33919999934733ms
+[NX Daemon Server] - 2024-09-12T08:44:48.113Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:44:48.114Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:44:48.114Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:44:48.114Z - Time taken for 'total execution time for createProjectGraph()' 24.248599999584258ms
+[NX Daemon Server] - 2024-09-12T08:45:04.751Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:45:04.752Z - [WATCHER]: packages/janribka-system/src/index.js was modified
+[NX Daemon Server] - 2024-09-12T08:45:10.134Z - [WATCHER]: packages/janribka-system/src/index.js was modified
+[NX Daemon Server] - 2024-09-12T08:45:10.134Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:45:11.162Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:45:11.162Z - [REQUEST]: packages/janribka-system/src/index.js
+[NX Daemon Server] - 2024-09-12T08:45:11.162Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:45:11.166Z - Time taken for 'hash changed files from watcher' 0.6361999996006489ms
+[NX Daemon Server] - 2024-09-12T08:45:11.187Z - Time taken for 'build-project-configs' 16.528300000354648ms
+[NX Daemon Server] - 2024-09-12T08:45:11.222Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:45:11.224Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:45:11.224Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:45:11.224Z - Time taken for 'total execution time for createProjectGraph()' 26.509300000034273ms
+[NX Daemon Server] - 2024-09-12T08:45:21.863Z - [WATCHER]: packages/janribka-components/src/styles/createThemeWithVars.js was modified
+[NX Daemon Server] - 2024-09-12T08:45:21.863Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:45:28.265Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:45:28.265Z - [REQUEST]: packages/janribka-components/src/styles/createThemeWithVars.js
+[NX Daemon Server] - 2024-09-12T08:45:28.266Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:45:28.269Z - Time taken for 'hash changed files from watcher' 0.581500000320375ms
+[NX Daemon Server] - 2024-09-12T08:45:28.299Z - Time taken for 'build-project-configs' 20.571999999694526ms
+[NX Daemon Server] - 2024-09-12T08:45:28.332Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:45:28.333Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:45:28.333Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:45:28.333Z - Time taken for 'total execution time for createProjectGraph()' 25.447900000028312ms
+[NX Daemon Server] - 2024-09-12T08:45:56.148Z - [WATCHER]: packages/janribka-components/src/styles/createThemeWithVars.js was modified
+[NX Daemon Server] - 2024-09-12T08:45:56.149Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:46:02.563Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:46:02.563Z - [REQUEST]: packages/janribka-components/src/styles/createThemeWithVars.js
+[NX Daemon Server] - 2024-09-12T08:46:02.563Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:46:02.568Z - Time taken for 'hash changed files from watcher' 0.6340000005438924ms
+[NX Daemon Server] - 2024-09-12T08:46:02.591Z - Time taken for 'build-project-configs' 18.01809999998659ms
+[NX Daemon Server] - 2024-09-12T08:46:02.627Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:46:02.628Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:46:02.628Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:46:02.628Z - Time taken for 'total execution time for createProjectGraph()' 26.518699999898672ms
+[NX Daemon Server] - 2024-09-12T08:46:22.339Z - [WATCHER]: packages/janribka-components/src/styles/createThemeWithVars.d.ts was modified
+[NX Daemon Server] - 2024-09-12T08:46:22.339Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:46:28.742Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:46:28.742Z - [REQUEST]: packages/janribka-components/src/styles/createThemeWithVars.d.ts
+[NX Daemon Server] - 2024-09-12T08:46:28.742Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:46:28.747Z - Time taken for 'hash changed files from watcher' 0.7752999998629093ms
+[NX Daemon Server] - 2024-09-12T08:46:28.772Z - Time taken for 'build-project-configs' 18.261400000192225ms
+[NX Daemon Server] - 2024-09-12T08:46:28.804Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:46:28.805Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:46:28.806Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:46:28.806Z - Time taken for 'total execution time for createProjectGraph()' 23.575699999928474ms
+[NX Daemon Server] - 2024-09-12T08:46:59.756Z - [WATCHER]: packages/janribka-system/src/createTheme/createTheme.d.ts was modified
+[NX Daemon Server] - 2024-09-12T08:46:59.757Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:47:05.794Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:47:05.796Z - [WATCHER]: packages/janribka-system/src/index.js was modified
+[NX Daemon Server] - 2024-09-12T08:47:06.172Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:47:06.173Z - [REQUEST]: packages/janribka-system/src/createTheme/createTheme.d.ts,packages/janribka-system/src/index.js
+[NX Daemon Server] - 2024-09-12T08:47:06.173Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:47:06.177Z - Time taken for 'hash changed files from watcher' 0.8075000001117587ms
+[NX Daemon Server] - 2024-09-12T08:47:06.200Z - Time taken for 'build-project-configs' 17.241699999198318ms
+[NX Daemon Server] - 2024-09-12T08:47:06.234Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:47:06.235Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:47:06.235Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:47:06.235Z - Time taken for 'total execution time for createProjectGraph()' 25.23420000076294ms
+[NX Daemon Server] - 2024-09-12T08:47:28.532Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:47:28.533Z - [WATCHER]: packages/janribka-system/src/index.js was modified
+[NX Daemon Server] - 2024-09-12T08:47:32.125Z - [WATCHER]: packages/janribka-system/src/index.d.ts was modified
+[NX Daemon Server] - 2024-09-12T08:47:32.126Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:47:34.941Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:47:34.941Z - [REQUEST]: packages/janribka-system/src/index.js,packages/janribka-system/src/index.d.ts
+[NX Daemon Server] - 2024-09-12T08:47:34.941Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:47:34.947Z - Time taken for 'hash changed files from watcher' 0.9851999999955297ms
+[NX Daemon Server] - 2024-09-12T08:47:34.971Z - Time taken for 'build-project-configs' 18.676199999637902ms
+[NX Daemon Server] - 2024-09-12T08:47:35.009Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:47:35.010Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:47:35.010Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:47:35.010Z - Time taken for 'total execution time for createProjectGraph()' 28.081499999389052ms
+[NX Daemon Server] - 2024-09-12T08:49:38.106Z - [WATCHER]: packages/janribka-components/package.json was modified
+[NX Daemon Server] - 2024-09-12T08:49:38.107Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:49:44.517Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:49:44.517Z - [REQUEST]: packages/janribka-components/package.json
+[NX Daemon Server] - 2024-09-12T08:49:44.517Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:49:44.523Z - Time taken for 'hash changed files from watcher' 0.8585999999195337ms
+[NX Daemon Server] - 2024-09-12T08:49:44.545Z - Time taken for 'build-project-configs' 17.83049999922514ms
+[NX Daemon Server] - 2024-09-12T08:49:44.585Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:49:44.588Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:49:44.588Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:49:44.588Z - Time taken for 'total execution time for createProjectGraph()' 30.914300000295043ms
+[NX Daemon Server] - 2024-09-12T08:50:26.014Z - [WATCHER]: packages/janribka-components/package.json was modified
+[NX Daemon Server] - 2024-09-12T08:50:26.015Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T08:50:32.418Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T08:50:32.418Z - [REQUEST]: packages/janribka-components/package.json
+[NX Daemon Server] - 2024-09-12T08:50:32.418Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-12T08:50:32.421Z - Time taken for 'hash changed files from watcher' 0.5857999995350838ms
+[NX Daemon Server] - 2024-09-12T08:50:32.449Z - Time taken for 'build-project-configs' 22.43889999948442ms
+[NX Daemon Server] - 2024-09-12T08:50:32.487Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T08:50:32.488Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T08:50:32.488Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T08:50:32.488Z - Time taken for 'total execution time for createProjectGraph()' 29.052899999544024ms
+[NX Daemon Server] - 2024-09-12T09:01:00.090Z - [WATCHER]: packages/janribka-components/package.json was modified
+[NX Daemon Server] - 2024-09-12T09:01:00.090Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T09:01:05.707Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T09:01:05.708Z - [WATCHER]: _tmp_23440_590b7ae5906c8eb8a6fa2b910aa8dff3 was deleted
+[NX Daemon Server] - 2024-09-12T09:01:06.494Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-12T09:01:06.494Z - [REQUEST]: packages/janribka-components/package.json
+[NX Daemon Server] - 2024-09-12T09:01:06.494Z - [REQUEST]: _tmp_23440_590b7ae5906c8eb8a6fa2b910aa8dff3
+[NX Daemon Server] - 2024-09-12T09:01:06.500Z - Time taken for 'hash changed files from watcher' 0.8642999995499849ms
+[NX Daemon Server] - 2024-09-12T09:01:06.535Z - Time taken for 'build-project-configs' 28.675499999895692ms
+[NX Daemon Server] - 2024-09-12T09:01:06.588Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-12T09:01:06.590Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-12T09:01:06.590Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-12T09:01:06.590Z - Time taken for 'total execution time for createProjectGraph()' 39.27960000000894ms
+[NX Daemon Server] - 2024-09-12T09:01:10.157Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-12T09:01:10.162Z - [WATCHER]: Stopping the watcher for D:\LocalDev\@jr (sources)
+[NX Daemon Server] - 2024-09-12T09:01:10.162Z - [WATCHER]: Stopping the watcher for D:\LocalDev\@jr (outputs)
+[NX Daemon Server] - 2024-09-12T09:01:10.168Z - Server stopped because: "LOCK_FILES_CHANGED"
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+
+> NX runtime error err=cannot send event from fs watcher: sending into a closed channel
+
+[NX Daemon Server] - 2024-09-12T09:44:40.479Z - Started listening on: \\.\pipe\nx\C:\Users\jribka\AppData\Local\Temp\934b0c4f4bfee05efdb6\d.sock
+[NX Daemon Server] - 2024-09-12T09:44:40.484Z - [WATCHER]: Subscribed to changes within: D:\LocalDev\@jr (native)
+[NX Daemon Server] - 2024-09-12T09:44:40.488Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-12T09:44:40.491Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-12T09:44:40.491Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-12T09:44:40.493Z - [REQUEST]: Responding to the client. Shutdown initiated
+[NX Daemon Server] - 2024-09-12T09:44:40.495Z - Done responding to the client Shutdown initiated
+[NX Daemon Server] - 2024-09-12T09:44:40.495Z - Handled FORCE_SHUTDOWN. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-09-12T09:44:40.495Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-12T09:44:40.496Z - [WATCHER]: Stopping the watcher for D:\LocalDev\@jr (sources)
+[NX Daemon Server] - 2024-09-12T09:44:40.496Z - [WATCHER]: Stopping the watcher for D:\LocalDev\@jr (outputs)

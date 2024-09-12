@@ -70,12 +70,6 @@
     ],
     "@janribka/private-theming/*": [
       "./packages/janribka-private-theming/src/*"
-    ],
-    "@janribka/internal-test-utils": [
-      "./packages-internal/test-utils/src"
-    ],
-    "@janribka/internal-test-utils/*": [
-      "./packages-internal/test-utils/src/*"
     ]
   },
   "nxJsonPlugins": [],
@@ -86,33 +80,260 @@
   },
   "fileMap": {
     "projectFileMap": {
-      "@janribka/types": [
+      "@janribka/internal-babel-macros": [
         {
-          "file": "packages/janribka-types/OverridableComponentAugmentation.ts",
-          "hash": "8242862530894209977"
+          "file": "packages/janribka-babel-macros/CHANGELOG.md",
+          "hash": "3069411574227895842"
         },
         {
-          "file": "packages/janribka-types/README.md",
-          "hash": "15461195639346576911"
+          "file": "packages/janribka-babel-macros/JRError.macro.d.ts",
+          "hash": "5817704664186776903"
         },
         {
-          "file": "packages/janribka-types/index.d.ts",
-          "hash": "575219287287545096"
+          "file": "packages/janribka-babel-macros/JRError.macro.js",
+          "hash": "16674831134844171923"
         },
         {
-          "file": "packages/janribka-types/package.json",
-          "hash": "9218748636030526199",
+          "file": "packages/janribka-babel-macros/README.md",
+          "hash": "10960064214640031457"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/.eslintrc.js",
+          "hash": "9134147881293566909"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/error-code-extraction/error-codes.after.json",
+          "hash": "4760647077026748772"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/error-code-extraction/error-codes.before.json",
+          "hash": "15539186832960296122"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/error-code-extraction/input.js",
+          "hash": "4203159077633492367"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/error-code-extraction/output.js",
+          "hash": "5410104121303379480"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/factory-call/error-codes.json",
+          "hash": "10863070501363831851"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/factory-call/input.js",
+          "hash": "6081633397055878538"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/literal/error-codes.json",
+          "hash": "5636016987591402708"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/literal/input.js",
+          "hash": "18250622447031538539"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/literal/output.js",
+          "hash": "4668286401578152443"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/no-error-code-annotation/error-codes.json",
+          "hash": "10863070501363831851"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/no-error-code-annotation/input.js",
+          "hash": "5827474410062010700"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/no-error-code-annotation/output.js",
+          "hash": "8200728473474158554"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/no-error-code-throw/error-codes.json",
+          "hash": "10863070501363831851"
+        },
+        {
+          "file": "packages/janribka-babel-macros/__fixtures__/no-error-code-throw/input.js",
+          "hash": "16111606208693730825"
+        },
+        {
+          "file": "packages/janribka-babel-macros/package.json",
+          "hash": "15391009759461277702",
           "deps": [
-            "npm:@types/react"
+            "@janribka/utils",
+            "npm:@types/babel-plugin-macros",
+            "npm:@types/babel__helper-module-imports",
+            "npm:@types/node@22.5.4",
+            "npm:@babel/helper-module-imports",
+            "npm:@babel/runtime",
+            "npm:babel-plugin-macros"
+          ]
+        }
+      ],
+      "@janribka/private-theming": [
+        {
+          "file": "packages/janribka-private-theming/README.md",
+          "hash": "4882966126942661135"
+        },
+        {
+          "file": "packages/janribka-private-theming/package.json",
+          "hash": "4480356226153426565",
+          "deps": [
+            "npm:@types/react",
+            "npm:react@19.0.0-rc-f6cce072-20240723",
+            "@janribka/types",
+            "npm:@types/chai",
+            "npm:chai@4.5.0",
+            "npm:@babel/runtime",
+            "@janribka/utils"
           ]
         },
         {
-          "file": "packages/janribka-types/pnpm-lock.yaml",
-          "hash": "4286748515249750711"
+          "file": "packages/janribka-private-theming/src/ThemeProvider/ThemeProvider.d.ts",
+          "hash": "3319342802747882314"
         },
         {
-          "file": "packages/janribka-types/tsconfig.json",
-          "hash": "14737985571105786120"
+          "file": "packages/janribka-private-theming/src/ThemeProvider/ThemeProvider.js",
+          "hash": "64132278335927485"
+        },
+        {
+          "file": "packages/janribka-private-theming/src/ThemeProvider/index.d.ts",
+          "hash": "6253959035385903075"
+        },
+        {
+          "file": "packages/janribka-private-theming/src/ThemeProvider/index.js",
+          "hash": "15340854162103651739"
+        },
+        {
+          "file": "packages/janribka-private-theming/src/ThemeProvider/nested.js",
+          "hash": "2557002205435814570"
+        },
+        {
+          "file": "packages/janribka-private-theming/src/defaultTheme/index.d.ts",
+          "hash": "12919385010359452775"
+        },
+        {
+          "file": "packages/janribka-private-theming/src/index.d.ts",
+          "hash": "9360627736766894715"
+        },
+        {
+          "file": "packages/janribka-private-theming/src/index.js",
+          "hash": "1099990222338458389"
+        },
+        {
+          "file": "packages/janribka-private-theming/src/useTheme/ThemeContext.js",
+          "hash": "11892585766963259986"
+        },
+        {
+          "file": "packages/janribka-private-theming/src/useTheme/index.d.ts",
+          "hash": "11657541877115400943"
+        },
+        {
+          "file": "packages/janribka-private-theming/src/useTheme/index.js",
+          "hash": "10907459483292397911"
+        },
+        {
+          "file": "packages/janribka-private-theming/src/useTheme/useTheme.d.ts",
+          "hash": "2612109843545989587"
+        },
+        {
+          "file": "packages/janribka-private-theming/src/useTheme/useTheme.js",
+          "hash": "14180638642461863130"
+        },
+        {
+          "file": "packages/janribka-private-theming/tsconfig.json",
+          "hash": "4365189307845323497"
+        }
+      ],
+      "@janribka/internal-babel-plugin-resolve-imports": [
+        {
+          "file": "packages-internal/babel-plugin-resolve-imports/README.md",
+          "hash": "10932937194818925923"
+        },
+        {
+          "file": "packages-internal/babel-plugin-resolve-imports/index.js",
+          "hash": "7874715253753179856"
+        },
+        {
+          "file": "packages-internal/babel-plugin-resolve-imports/package.json",
+          "hash": "535933217571963562",
+          "deps": [
+            "npm:@babel/core",
+            "npm:@types/babel__core",
+            "npm:@types/resolve",
+            "npm:resolve@1.22.8"
+          ]
+        },
+        {
+          "file": "packages-internal/babel-plugin-resolve-imports/resolve.d.ts",
+          "hash": "1085693232351011891"
+        }
+      ],
+      "@janribka/styled-engine": [
+        {
+          "file": "packages/janribka-styled-engine/README.md",
+          "hash": "12179717156385676739"
+        },
+        {
+          "file": "packages/janribka-styled-engine/package.json",
+          "hash": "13335102275149608703",
+          "deps": [
+            "npm:@emotion/react",
+            "npm:@emotion/styled",
+            "npm:@types/react",
+            "npm:react@18.3.1",
+            "npm:@types/chai",
+            "npm:chai@5.1.1",
+            "npm:typescript",
+            "npm:@babel/runtime",
+            "npm:@emotion/cache",
+            "npm:csstype"
+          ]
+        },
+        {
+          "file": "packages/janribka-styled-engine/src/GlobalStyles/GlobalStyles.d.ts",
+          "hash": "4177778362244577768"
+        },
+        {
+          "file": "packages/janribka-styled-engine/src/GlobalStyles/GlobalStyles.js",
+          "hash": "5506036714745993791"
+        },
+        {
+          "file": "packages/janribka-styled-engine/src/GlobalStyles/index.d.ts",
+          "hash": "5260915249905843602"
+        },
+        {
+          "file": "packages/janribka-styled-engine/src/GlobalStyles/index.js",
+          "hash": "3818156507351696924"
+        },
+        {
+          "file": "packages/janribka-styled-engine/src/StyledEngineProvider/StyledEngineProvider.d.ts",
+          "hash": "12469738091250006679"
+        },
+        {
+          "file": "packages/janribka-styled-engine/src/StyledEngineProvider/StyledEngineProvider.js",
+          "hash": "1065099307681492387"
+        },
+        {
+          "file": "packages/janribka-styled-engine/src/StyledEngineProvider/index.d.ts",
+          "hash": "17638841290098157890"
+        },
+        {
+          "file": "packages/janribka-styled-engine/src/StyledEngineProvider/index.js",
+          "hash": "9087224256809351552"
+        },
+        {
+          "file": "packages/janribka-styled-engine/src/index.d.ts",
+          "hash": "14076657413103781188"
+        },
+        {
+          "file": "packages/janribka-styled-engine/src/index.js",
+          "hash": "6397893811366296212"
+        },
+        {
+          "file": "packages/janribka-styled-engine/tsconfig.json",
+          "hash": "11611883688836454067"
         }
       ],
       "@janribka/system": [
@@ -122,7 +343,7 @@
         },
         {
           "file": "packages/janribka-system/package.json",
-          "hash": "2476089541700622841",
+          "hash": "4010798444381657724",
           "deps": [
             "npm:@types/react",
             "npm:react@19.0.0-rc-f6cce072-20240723",
@@ -132,104 +353,410 @@
             "@janribka/private-theming",
             "@janribka/styled-engine",
             "@janribka/types",
-            "@janribka/utils"
+            "@janribka/utils",
+            "npm:clsx",
+            "npm:csstype"
           ]
         },
         {
+          "file": "packages/janribka-system/src/Box/Box.d.ts",
+          "hash": "6244954039309071729"
+        },
+        {
+          "file": "packages/janribka-system/src/Box/Box.js",
+          "hash": "6735639814364496282"
+        },
+        {
+          "file": "packages/janribka-system/src/Box/boxClasses.ts",
+          "hash": "17265953360193736383"
+        },
+        {
+          "file": "packages/janribka-system/src/Box/index.d.ts",
+          "hash": "11673392098328898215"
+        },
+        {
+          "file": "packages/janribka-system/src/Box/index.js",
+          "hash": "10117101573548719457"
+        },
+        {
+          "file": "packages/janribka-system/src/CSSProperties.d.ts",
+          "hash": "10078469209196158756"
+        },
+        {
           "file": "packages/janribka-system/src/DefaultPropsProvider/DefaultPropsProvider.tsx",
-          "hash": "7282799312739456867"
+          "hash": "8030002365338252343"
         },
         {
           "file": "packages/janribka-system/src/DefaultPropsProvider/index.ts",
-          "hash": "3941095566047886893"
+          "hash": "14593141991577135097"
         },
         {
           "file": "packages/janribka-system/src/GlobalStyles/GlobalStyles.tsx",
-          "hash": "6281051335066004"
+          "hash": "15434230993244182627"
         },
         {
           "file": "packages/janribka-system/src/GlobalStyles/index.ts",
-          "hash": "13263998002268384859"
+          "hash": "5260915249905843602"
         },
         {
-          "file": "packages/janribka-system/src/RtlProvider/RtlProvider.tsx",
-          "hash": "2856019859207808821"
+          "file": "packages/janribka-system/src/InitColorSchemeScript/InitColorSchemeScript.tsx",
+          "hash": "13560838410007972267"
         },
         {
-          "file": "packages/janribka-system/src/RtlProvider/index.ts",
-          "hash": "11588315489532299106"
+          "file": "packages/janribka-system/src/InitColorSchemeScript/index.ts",
+          "hash": "6802337657299059718"
         },
         {
-          "file": "packages/janribka-system/src/ThemeProvider/ThemeProvider.tsx",
-          "hash": "13422525693948027715"
+          "file": "packages/janribka-system/src/RtlProvider/index.d.ts",
+          "hash": "2365913186996995800"
         },
         {
-          "file": "packages/janribka-system/src/ThemeProvider/ThemeProviderProps.ts",
-          "hash": "4055606894390288348"
+          "file": "packages/janribka-system/src/RtlProvider/index.js",
+          "hash": "4782310356077051517"
         },
         {
-          "file": "packages/janribka-system/src/ThemeProvider/index.ts",
-          "hash": "57708599858823035"
+          "file": "packages/janribka-system/src/ThemeProvider/ThemeProvider.d.ts",
+          "hash": "16718764331104399217"
         },
         {
-          "file": "packages/janribka-system/src/colorManipulator/ColorManipulator.d.ts",
-          "hash": "15500964748838879355"
+          "file": "packages/janribka-system/src/ThemeProvider/ThemeProvider.js",
+          "hash": "10796677490967660328"
+        },
+        {
+          "file": "packages/janribka-system/src/ThemeProvider/index.d.ts",
+          "hash": "6253959035385903075"
+        },
+        {
+          "file": "packages/janribka-system/src/ThemeProvider/index.js",
+          "hash": "1731779601255535744"
+        },
+        {
+          "file": "packages/janribka-system/src/borders/borders.d.ts",
+          "hash": "2353799118832735160"
+        },
+        {
+          "file": "packages/janribka-system/src/borders/borders.js",
+          "hash": "11166127264014127901"
+        },
+        {
+          "file": "packages/janribka-system/src/borders/index.ts",
+          "hash": "6734125791233235593"
+        },
+        {
+          "file": "packages/janribka-system/src/breakpoints/breakpoints.d.ts",
+          "hash": "6340124033780839084"
+        },
+        {
+          "file": "packages/janribka-system/src/breakpoints/breakpoints.js",
+          "hash": "5966577498755117447"
+        },
+        {
+          "file": "packages/janribka-system/src/breakpoints/index.ts",
+          "hash": "12303453863860521023"
+        },
+        {
+          "file": "packages/janribka-system/src/colorManipulator/colorManipulator.d.ts",
+          "hash": "5378485589936722623"
         },
         {
           "file": "packages/janribka-system/src/colorManipulator/colorManipulator.js",
-          "hash": "17480618380223514116"
+          "hash": "61812468636497709"
         },
         {
           "file": "packages/janribka-system/src/colorManipulator/index.ts",
-          "hash": "11419212105593908571"
+          "hash": "10690898992142944157"
         },
         {
-          "file": "packages/janribka-system/src/createStyled/createStyled.ts",
-          "hash": "16700715973001995867"
+          "file": "packages/janribka-system/src/compose/compose.d.ts",
+          "hash": "3601916551512103024"
+        },
+        {
+          "file": "packages/janribka-system/src/compose/compose.js",
+          "hash": "318903182547654740"
+        },
+        {
+          "file": "packages/janribka-system/src/compose/index.ts",
+          "hash": "6407320807895679036"
+        },
+        {
+          "file": "packages/janribka-system/src/createBox/createBox.d.ts",
+          "hash": "14625341368704809658"
+        },
+        {
+          "file": "packages/janribka-system/src/createBox/createBox.js",
+          "hash": "11585975458130009033"
+        },
+        {
+          "file": "packages/janribka-system/src/createBox/index.ts",
+          "hash": "16794314281290526933"
+        },
+        {
+          "file": "packages/janribka-system/src/createBreakpoints/createBreakpoints.d.ts",
+          "hash": "16149299789475532802"
+        },
+        {
+          "file": "packages/janribka-system/src/createBreakpoints/createBreakpoints.js",
+          "hash": "2074594804392868405"
+        },
+        {
+          "file": "packages/janribka-system/src/createBreakpoints/index.d.ts",
+          "hash": "903891416121259955"
+        },
+        {
+          "file": "packages/janribka-system/src/createBreakpoints/index.js",
+          "hash": "903891416121259955"
+        },
+        {
+          "file": "packages/janribka-system/src/createStyled/createStyled.d.ts",
+          "hash": "8527000394083212862"
+        },
+        {
+          "file": "packages/janribka-system/src/createStyled/createStyled.js",
+          "hash": "11387941515906901971"
         },
         {
           "file": "packages/janribka-system/src/createStyled/index.ts",
-          "hash": "12617905371655489409"
+          "hash": "12555879345680534465"
         },
         {
-          "file": "packages/janribka-system/src/createTheme/createTheme.ts",
-          "hash": "6078576660586411056"
+          "file": "packages/janribka-system/src/createTheme/applyStyles.ts",
+          "hash": "11496601974737137365"
         },
         {
-          "file": "packages/janribka-system/src/createTheme/index.ts",
-          "hash": "17097319996926214940"
+          "file": "packages/janribka-system/src/createTheme/createSpacing.ts",
+          "hash": "6161744419206753453"
         },
         {
-          "file": "packages/janribka-system/src/createTransitions/createTransitions.ts",
-          "hash": "15053695094180591123"
+          "file": "packages/janribka-system/src/createTheme/createTheme.d.ts",
+          "hash": "6194421871577175259"
         },
         {
-          "file": "packages/janribka-system/src/createTransitions/index.ts",
-          "hash": "7013034560114413440"
+          "file": "packages/janribka-system/src/createTheme/createTheme.js",
+          "hash": "7197376261089487214"
         },
         {
-          "file": "packages/janribka-system/src/index.ts",
-          "hash": "228974137821926127"
+          "file": "packages/janribka-system/src/createTheme/index.d.ts",
+          "hash": "2678377305363239283"
+        },
+        {
+          "file": "packages/janribka-system/src/createTheme/index.js",
+          "hash": "17397351774923591767"
+        },
+        {
+          "file": "packages/janribka-system/src/cssContainerQueries/cssContainerQueries.ts",
+          "hash": "16365419049903078489"
+        },
+        {
+          "file": "packages/janribka-system/src/cssContainerQueries/index.ts",
+          "hash": "10375759165447286656"
+        },
+        {
+          "file": "packages/janribka-system/src/cssGrid/cssGrid.d.ts",
+          "hash": "4354882014175005794"
+        },
+        {
+          "file": "packages/janribka-system/src/cssGrid/cssGrid.js",
+          "hash": "22507867640408671"
+        },
+        {
+          "file": "packages/janribka-system/src/cssGrid/index.ts",
+          "hash": "3121950336030703042"
+        },
+        {
+          "file": "packages/janribka-system/src/cssVars/createCssVarsProvider.d.ts",
+          "hash": "3335214120954599262"
+        },
+        {
+          "file": "packages/janribka-system/src/cssVars/createCssVarsProvider.js",
+          "hash": "18131825800698198076"
+        },
+        {
+          "file": "packages/janribka-system/src/cssVars/createGetCssVar.ts",
+          "hash": "16019271417308461978"
+        },
+        {
+          "file": "packages/janribka-system/src/cssVars/createSpacing.ts",
+          "hash": "18210494709586258094"
+        },
+        {
+          "file": "packages/janribka-system/src/cssVars/index.ts",
+          "hash": "11080665915774163172"
+        },
+        {
+          "file": "packages/janribka-system/src/cssVars/prepareTypographyVars.ts",
+          "hash": "8315085017620291208"
+        },
+        {
+          "file": "packages/janribka-system/src/cssVars/useCurrentColorScheme.ts",
+          "hash": "3225560322244215790"
+        },
+        {
+          "file": "packages/janribka-system/src/index.d.ts",
+          "hash": "16125606673448537130"
+        },
+        {
+          "file": "packages/janribka-system/src/index.js",
+          "hash": "15840660968223040993"
+        },
+        {
+          "file": "packages/janribka-system/src/memoize/index.ts",
+          "hash": "2334972742427018858"
+        },
+        {
+          "file": "packages/janribka-system/src/memoize/memoize.d.ts",
+          "hash": "17793401460089615765"
+        },
+        {
+          "file": "packages/janribka-system/src/memoize/memoize.js",
+          "hash": "1443577804312259879"
+        },
+        {
+          "file": "packages/janribka-system/src/merge/index.ts",
+          "hash": "14390774297374560250"
+        },
+        {
+          "file": "packages/janribka-system/src/merge/merge.d.ts",
+          "hash": "7786970344226069841"
+        },
+        {
+          "file": "packages/janribka-system/src/merge/merge.js",
+          "hash": "13638530546796205418"
+        },
+        {
+          "file": "packages/janribka-system/src/palette/index.ts",
+          "hash": "12558012827555662758"
+        },
+        {
+          "file": "packages/janribka-system/src/palette/palette.d.ts",
+          "hash": "13788183619246470904"
+        },
+        {
+          "file": "packages/janribka-system/src/palette/palette.js",
+          "hash": "3187071239409427758"
+        },
+        {
+          "file": "packages/janribka-system/src/responsivePropType/index.ts",
+          "hash": "2009347658695348735"
+        },
+        {
+          "file": "packages/janribka-system/src/responsivePropType/responsivePropType.d.ts",
+          "hash": "3933859468697354478"
+        },
+        {
+          "file": "packages/janribka-system/src/responsivePropType/responsivePropType.js",
+          "hash": "6001108054574100849"
+        },
+        {
+          "file": "packages/janribka-system/src/sizing/index.ts",
+          "hash": "6842297570618474055"
+        },
+        {
+          "file": "packages/janribka-system/src/sizing/sizing.d.ts",
+          "hash": "13468653943341031328"
+        },
+        {
+          "file": "packages/janribka-system/src/sizing/sizing.js",
+          "hash": "17293654417346590746"
+        },
+        {
+          "file": "packages/janribka-system/src/spacing/index.ts",
+          "hash": "6937368719141632444"
+        },
+        {
+          "file": "packages/janribka-system/src/spacing/spacing.d.ts",
+          "hash": "13648676560303703882"
+        },
+        {
+          "file": "packages/janribka-system/src/spacing/spacing.js",
+          "hash": "14975544742720457971"
+        },
+        {
+          "file": "packages/janribka-system/src/style/index.ts",
+          "hash": "5354909021184693968"
+        },
+        {
+          "file": "packages/janribka-system/src/style/style.d.ts",
+          "hash": "6545342877796647439"
+        },
+        {
+          "file": "packages/janribka-system/src/style/style.js",
+          "hash": "12201930990844534374"
+        },
+        {
+          "file": "packages/janribka-system/src/styleFunctionSx/AliasesCSSProperties.d.ts",
+          "hash": "6701140283162603678"
+        },
+        {
+          "file": "packages/janribka-system/src/styleFunctionSx/OverwriteCSSProperties.d.ts",
+          "hash": "4926159891006016942"
+        },
+        {
+          "file": "packages/janribka-system/src/styleFunctionSx/StandardCssProperties.d.ts",
+          "hash": "10332371661501681140"
+        },
+        {
+          "file": "packages/janribka-system/src/styleFunctionSx/defaultSxConfig.d.ts",
+          "hash": "8993790285315016024"
+        },
+        {
+          "file": "packages/janribka-system/src/styleFunctionSx/defaultSxConfig.js",
+          "hash": "10070929007302292196"
+        },
+        {
+          "file": "packages/janribka-system/src/styleFunctionSx/extendSxProp.d.ts",
+          "hash": "1207024414277574440"
+        },
+        {
+          "file": "packages/janribka-system/src/styleFunctionSx/extendSxProp.js",
+          "hash": "8468952819050805406"
+        },
+        {
+          "file": "packages/janribka-system/src/styleFunctionSx/index.d.ts",
+          "hash": "2955549048454597500"
+        },
+        {
+          "file": "packages/janribka-system/src/styleFunctionSx/index.js",
+          "hash": "3164137961968919332"
+        },
+        {
+          "file": "packages/janribka-system/src/styleFunctionSx/styleFunctionSx.d.ts",
+          "hash": "719237941353996214"
+        },
+        {
+          "file": "packages/janribka-system/src/styleFunctionSx/styleFunctionSx.js",
+          "hash": "15921340730045899918"
         },
         {
           "file": "packages/janribka-system/src/useTheme/index.ts",
-          "hash": "1285841190478918955"
+          "hash": "11657541877115400943"
         },
         {
-          "file": "packages/janribka-system/src/useTheme/useTheme.ts",
-          "hash": "9031376160438884189"
+          "file": "packages/janribka-system/src/useTheme/useTheme.d.ts",
+          "hash": "6564793701474446220"
+        },
+        {
+          "file": "packages/janribka-system/src/useTheme/useTheme.js",
+          "hash": "1460905455600150109"
         },
         {
           "file": "packages/janribka-system/src/useThemeWithoutDefault/index.ts",
-          "hash": "8911643648224982452"
+          "hash": "17810728695296150414"
         },
         {
-          "file": "packages/janribka-system/src/useThemeWithoutDefault/useThemeWithoutDefault.ts",
-          "hash": "7160329675342638395"
+          "file": "packages/janribka-system/src/useThemeWithoutDefault/useThemeWithoutDefault.d.ts",
+          "hash": "10773880139840621725"
+        },
+        {
+          "file": "packages/janribka-system/src/useThemeWithoutDefault/useThemeWithoutDefault.js",
+          "hash": "6926876805549050061"
         },
         {
           "file": "packages/janribka-system/tsconfig.build.json",
           "hash": "12265043947154755385"
+        },
+        {
+          "file": "packages/janribka-system/tsconfig.build.tsbuildinfo",
+          "hash": "11958757838562443064"
         },
         {
           "file": "packages/janribka-system/tsconfig.json",
@@ -239,11 +766,11 @@
       "@janribka/utils": [
         {
           "file": "packages/janribka-utils/README.md",
-          "hash": "9415493541843149530"
+          "hash": "14692416220966701245"
         },
         {
           "file": "packages/janribka-utils/package.json",
-          "hash": "18290484791400989344",
+          "hash": "4438770586850000280",
           "deps": [
             "npm:@types/react",
             "npm:react@18.3.1",
@@ -260,43 +787,43 @@
         },
         {
           "file": "packages/janribka-utils/src/ClassNameGenerator/ClassNameGenerator.ts",
-          "hash": "5740768424794174860"
+          "hash": "15228227598248835595"
         },
         {
           "file": "packages/janribka-utils/src/ClassNameGenerator/index.ts",
-          "hash": "11571794088679567251"
+          "hash": "14533170612013651488"
         },
         {
           "file": "packages/janribka-utils/src/capitalize/capitalize.ts",
-          "hash": "12591262820119880164"
+          "hash": "45199425505885781"
         },
         {
           "file": "packages/janribka-utils/src/capitalize/index.ts",
-          "hash": "7015597352402646563"
+          "hash": "17252578917823826459"
         },
         {
           "file": "packages/janribka-utils/src/clamp/clamp.ts",
-          "hash": "6053569589143512357"
+          "hash": "5127127060719771264"
         },
         {
           "file": "packages/janribka-utils/src/clamp/index.ts",
-          "hash": "1689450984330216427"
+          "hash": "736719956696944796"
         },
         {
           "file": "packages/janribka-utils/src/composeClasses/composeClasses.ts",
-          "hash": "12014273987536491593"
+          "hash": "1544102702239988367"
         },
         {
           "file": "packages/janribka-utils/src/composeClasses/index.ts",
-          "hash": "5918356164901206308"
+          "hash": "3118299635888903127"
         },
         {
           "file": "packages/janribka-utils/src/deepmerge/deepmerge.ts",
-          "hash": "9148411305403702470"
+          "hash": "13108760498745177129"
         },
         {
           "file": "packages/janribka-utils/src/deepmerge/index.ts",
-          "hash": "12672163982430353804"
+          "hash": "13526335927677654714"
         },
         {
           "file": "packages/janribka-utils/src/formatJRErrorMessage/formatJRErrorMessage.ts",
@@ -308,119 +835,119 @@
         },
         {
           "file": "packages/janribka-utils/src/generateUtilityClass/generateUtilityClass.ts",
-          "hash": "12661816217212595803"
+          "hash": "5667971660669386763"
         },
         {
           "file": "packages/janribka-utils/src/generateUtilityClass/index.ts",
-          "hash": "15090485889546824035"
+          "hash": "10145183482421024766"
         },
         {
           "file": "packages/janribka-utils/src/generateUtilityClasses/generateUtilityClasses.ts",
-          "hash": "8251095594738162888"
+          "hash": "16858138932398266006"
         },
         {
           "file": "packages/janribka-utils/src/generateUtilityClasses/index.ts",
-          "hash": "11769371498969268963"
+          "hash": "7948454020003578370"
         },
         {
           "file": "packages/janribka-utils/src/getDisplayName/getDisplayName.ts",
-          "hash": "14899026266546378325"
+          "hash": "14974958952650432632"
         },
         {
           "file": "packages/janribka-utils/src/getDisplayName/index.ts",
-          "hash": "12682162252203537086"
+          "hash": "2094296722768701085"
         },
         {
           "file": "packages/janribka-utils/src/index.ts",
-          "hash": "8333621906516142770"
+          "hash": "8678834484157123923"
         },
         {
           "file": "packages/janribka-utils/src/isFocusVisible/index.ts",
-          "hash": "18348631785531488239"
+          "hash": "6926412800643620985"
         },
         {
           "file": "packages/janribka-utils/src/isFocusVisible/isFocusVisible.ts",
-          "hash": "2880981091106446220"
+          "hash": "7410703783712649242"
         },
         {
           "file": "packages/janribka-utils/src/mergeStyles/index.ts",
-          "hash": "14682282445255856832"
+          "hash": "2320653477567206269"
         },
         {
           "file": "packages/janribka-utils/src/mergeStyles/mergeStyles.ts",
-          "hash": "16253189441157282252"
+          "hash": "18018125296302020385"
         },
         {
           "file": "packages/janribka-utils/src/resolveProps/index.ts",
-          "hash": "799899356939663401"
+          "hash": "18052685441215458884"
         },
         {
           "file": "packages/janribka-utils/src/resolveProps/resolveProps.ts",
-          "hash": "5066470472247258618"
+          "hash": "14556877801980788390"
         },
         {
           "file": "packages/janribka-utils/src/setRef/index.ts",
-          "hash": "9858709233508292592"
+          "hash": "2170478039182571038"
         },
         {
           "file": "packages/janribka-utils/src/setRef/setRef.ts",
-          "hash": "13257822790867135534"
+          "hash": "6819067964005024447"
         },
         {
           "file": "packages/janribka-utils/src/types.ts",
-          "hash": "15454509027401936373"
+          "hash": "1754679202915031205"
         },
         {
           "file": "packages/janribka-utils/src/useEnhancedEffect/index.ts",
-          "hash": "9504848705294849484"
+          "hash": "441632010942614256"
         },
         {
           "file": "packages/janribka-utils/src/useEnhancedEffect/useEnhancedEffect.ts",
-          "hash": "1803220555799588329"
+          "hash": "17134326136250867993"
         },
         {
           "file": "packages/janribka-utils/src/useEventCallback/index.ts",
-          "hash": "12693790525610319834"
+          "hash": "13939764136679930976"
         },
         {
           "file": "packages/janribka-utils/src/useEventCallback/useEventCallback.ts",
-          "hash": "16146742572458075847"
+          "hash": "1366813017254871851"
         },
         {
           "file": "packages/janribka-utils/src/useForkRef/index.ts",
-          "hash": "617649552758227243"
+          "hash": "6522076260463438840"
         },
         {
           "file": "packages/janribka-utils/src/useForkRef/useForkRef.ts",
-          "hash": "633883027389383407"
+          "hash": "14973805018129014028"
         },
         {
           "file": "packages/janribka-utils/src/useLazyRef/index.ts",
-          "hash": "3618388295301722299"
+          "hash": "4286652088390023076"
         },
         {
           "file": "packages/janribka-utils/src/useLazyRef/useLazyRef.ts",
-          "hash": "14246695811071493670"
+          "hash": "6452754460484702078"
         },
         {
           "file": "packages/janribka-utils/src/useOnMount/index.ts",
-          "hash": "7445061829986556327"
+          "hash": "1668051759772908529"
         },
         {
           "file": "packages/janribka-utils/src/useOnMount/useOnMount.ts",
-          "hash": "11013018235827319986"
+          "hash": "5901302102963806001"
         },
         {
           "file": "packages/janribka-utils/src/useTimeout/index.ts",
-          "hash": "13644784619868635368"
+          "hash": "17235303793185117232"
         },
         {
           "file": "packages/janribka-utils/src/useTimeout/useTimeout.ts",
-          "hash": "7647449387661445671"
+          "hash": "16070915361706768597"
         },
         {
           "file": "packages/janribka-utils/tsconfig.build.json",
-          "hash": "16549154616394477650"
+          "hash": "10022656588695908214"
         },
         {
           "file": "packages/janribka-utils/tsconfig.build.tsbuildinfo",
@@ -428,205 +955,7 @@
         },
         {
           "file": "packages/janribka-utils/tsconfig.json",
-          "hash": "348795125108343565"
-        }
-      ],
-      "@janribka/private-theming": [
-        {
-          "file": "packages/janribka-private-theming/README.md",
-          "hash": "4882966126942661135"
-        },
-        {
-          "file": "packages/janribka-private-theming/package.json",
-          "hash": "3231794890600789375",
-          "deps": [
-            "npm:@types/react",
-            "npm:react@19.0.0-rc-f6cce072-20240723",
-            "@janribka/types",
-            "npm:@types/chai",
-            "npm:chai@4.5.0",
-            "@janribka/utils"
-          ]
-        },
-        {
-          "file": "packages/janribka-private-theming/src/ThemeProvider/ThemeProvider.tsx",
-          "hash": "12642068638921729253"
-        },
-        {
-          "file": "packages/janribka-private-theming/src/ThemeProvider/index.ts",
-          "hash": "2504142783950993820"
-        },
-        {
-          "file": "packages/janribka-private-theming/src/ThemeProvider/nested.ts",
-          "hash": "2057335178185528246"
-        },
-        {
-          "file": "packages/janribka-private-theming/src/defaultTheme/index.ts",
-          "hash": "11432110194678623526"
-        },
-        {
-          "file": "packages/janribka-private-theming/src/index.ts",
-          "hash": "3621200615864397766"
-        },
-        {
-          "file": "packages/janribka-private-theming/src/useTheme/ThemeContext.ts",
-          "hash": "14377671946462929838"
-        },
-        {
-          "file": "packages/janribka-private-theming/src/useTheme/index.ts",
-          "hash": "3513221241226925001"
-        },
-        {
-          "file": "packages/janribka-private-theming/src/useTheme/useTheme.ts",
-          "hash": "6518074973220126731"
-        },
-        {
-          "file": "packages/janribka-private-theming/tsconfig.json",
-          "hash": "4365189307845323497"
-        },
-        {
-          "file": "packages/janribka-private-theming/tsup.config.ts",
-          "hash": "13008509152672338904"
-        }
-      ],
-      "@janribka/styled-engine": [
-        {
-          "file": "packages/janribka-styled-engine/README.md",
-          "hash": "1556652664448468395"
-        },
-        {
-          "file": "packages/janribka-styled-engine/package.json",
-          "hash": "13908374577230828635",
-          "deps": [
-            "npm:@emotion/react",
-            "npm:@emotion/styled",
-            "npm:@types/react",
-            "npm:react@18.3.1",
-            "npm:@types/chai",
-            "npm:chai@5.1.1",
-            "npm:typescript",
-            "npm:@emotion/cache",
-            "npm:csstype"
-          ]
-        },
-        {
-          "file": "packages/janribka-styled-engine/src/GlobalStyles/GlobalStyles.tsx",
-          "hash": "16861238815675870428"
-        },
-        {
-          "file": "packages/janribka-styled-engine/src/GlobalStyles/index.ts",
-          "hash": "18359747782456836219"
-        },
-        {
-          "file": "packages/janribka-styled-engine/src/StyledEngineProvider/StyledEngineProvider.tsx",
-          "hash": "4926443477764749562"
-        },
-        {
-          "file": "packages/janribka-styled-engine/src/StyledEngineProvider/index.ts",
-          "hash": "12641204199653358885"
-        },
-        {
-          "file": "packages/janribka-styled-engine/src/index.ts",
-          "hash": "3008084882732618598"
-        },
-        {
-          "file": "packages/janribka-styled-engine/tsconfig.json",
-          "hash": "4365189307845323497"
-        },
-        {
-          "file": "packages/janribka-styled-engine/tsup.config.ts",
-          "hash": "13008509152672338904"
-        }
-      ],
-      "@janribka/internal-babel-macros": [
-        {
-          "file": "packages/janribka-babel-macros/CHANGELOG.md",
-          "hash": "6996614185070113211"
-        },
-        {
-          "file": "packages/janribka-babel-macros/JRError.macro.d.ts",
-          "hash": "12359625462915084286"
-        },
-        {
-          "file": "packages/janribka-babel-macros/JRError.macro.js",
-          "hash": "4198765987644763969"
-        },
-        {
-          "file": "packages/janribka-babel-macros/README.md",
-          "hash": "7042763388838508705"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/.eslintrc.js",
-          "hash": "4719011336742512951"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/error-code-extraction/error-codes.after.json",
-          "hash": "9111354571001983287"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/error-code-extraction/error-codes.before.json",
-          "hash": "801943570300416534"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/error-code-extraction/input.js",
-          "hash": "12292526889892113690"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/error-code-extraction/output.js",
-          "hash": "13102381673645333538"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/factory-call/error-codes.json",
-          "hash": "15753941481085060538"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/factory-call/input.js",
-          "hash": "17094126334961965627"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/literal/error-codes.json",
-          "hash": "8625201886992710240"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/literal/input.js",
-          "hash": "6459651586314150508"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/literal/output.js",
-          "hash": "15738821446529600707"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/no-error-code-annotation/error-codes.json",
-          "hash": "15753941481085060538"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/no-error-code-annotation/input.js",
-          "hash": "12851524055865181288"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/no-error-code-annotation/output.js",
-          "hash": "12189307425484058711"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/no-error-code-throw/error-codes.json",
-          "hash": "15753941481085060538"
-        },
-        {
-          "file": "packages/janribka-babel-macros/__fixtures__/no-error-code-throw/input.js",
-          "hash": "4026105088338687485"
-        },
-        {
-          "file": "packages/janribka-babel-macros/package.json",
-          "hash": "2022311932297665121",
-          "deps": [
-            "@janribka/utils",
-            "npm:@types/babel-plugin-macros",
-            "npm:@types/babel__helper-module-imports",
-            "npm:@types/node@22.5.4",
-            "npm:@babel/helper-module-imports",
-            "npm:@babel/runtime",
-            "npm:babel-plugin-macros"
-          ]
+          "hash": "6719702565111584862"
         }
       ],
       "local-ui-web": [
@@ -644,11 +973,11 @@
         },
         {
           "file": "apps/local-ui-web/devcert.crt",
-          "hash": "6867576307664514854"
+          "hash": "15594209510017671356"
         },
         {
           "file": "apps/local-ui-web/devcert.key",
-          "hash": "17787558451408478178"
+          "hash": "16191689796296193639"
         },
         {
           "file": "apps/local-ui-web/index.html",
@@ -656,7 +985,7 @@
         },
         {
           "file": "apps/local-ui-web/package.json",
-          "hash": "10078133317125476244",
+          "hash": "15041271604580568426",
           "deps": [
             "@janribka/components",
             "npm:@types/react",
@@ -676,7 +1005,7 @@
         },
         {
           "file": "apps/local-ui-web/postcss.config.js",
-          "hash": "1121830044826443979"
+          "hash": "15693758819557691193"
         },
         {
           "file": "apps/local-ui-web/public/vite.svg",
@@ -684,7 +1013,7 @@
         },
         {
           "file": "apps/local-ui-web/src/App.jsx",
-          "hash": "5759440463881135939"
+          "hash": "142178956898325745"
         },
         {
           "file": "apps/local-ui-web/src/assets/react.svg",
@@ -692,19 +1021,48 @@
         },
         {
           "file": "apps/local-ui-web/src/main.jsx",
-          "hash": "16573260632239492088"
+          "hash": "15424209450287180310"
         },
         {
           "file": "apps/local-ui-web/tailwind.config.ts",
-          "hash": "7624714844048861573"
+          "hash": "5498445154135455300"
         },
         {
           "file": "apps/local-ui-web/tsconfig.json",
-          "hash": "7809185326443917086"
+          "hash": "15834000644742989499"
         },
         {
           "file": "apps/local-ui-web/vite.config.js",
           "hash": "16677056438756365849"
+        }
+      ],
+      "@janribka/types": [
+        {
+          "file": "packages/janribka-types/OverridableComponentAugmentation.ts",
+          "hash": "10390983915099289109"
+        },
+        {
+          "file": "packages/janribka-types/README.md",
+          "hash": "747087008443332279"
+        },
+        {
+          "file": "packages/janribka-types/index.d.ts",
+          "hash": "12599066056282019864"
+        },
+        {
+          "file": "packages/janribka-types/package.json",
+          "hash": "16331914471106358950",
+          "deps": [
+            "npm:@types/react"
+          ]
+        },
+        {
+          "file": "packages/janribka-types/pnpm-lock.yaml",
+          "hash": "11553584045567875612"
+        },
+        {
+          "file": "packages/janribka-types/tsconfig.json",
+          "hash": "14906122470306795712"
         }
       ],
       "@janribka/components": [
@@ -714,339 +1072,568 @@
         },
         {
           "file": "packages/janribka-components/package.json",
-          "hash": "14597989208110162823",
+          "hash": "6592466238179227028",
           "deps": [
             "npm:@types/react",
             "npm:react@19.0.0-rc-f6cce072-20240723",
             "npm:react-dom",
             "@janribka/internal-babel-macros",
-            "npm:@babel/runtime",
             "npm:@types/node",
             "npm:@types/react-transition-group",
             "npm:rimraf",
             "npm:tailwind-variants",
             "npm:tailwindcss",
             "npm:typescript",
+            "npm:@babel/runtime",
             "@janribka/system",
             "@janribka/types",
             "@janribka/utils",
+            "npm:csstype",
             "npm:react-transition-group"
           ]
         },
         {
           "file": "packages/janribka-components/src/Button/Button.d.ts",
-          "hash": "3244421341483603138"
+          "hash": "6737212490717506495"
         },
         {
-          "file": "packages/janribka-components/src/Button/Button.tsx",
-          "hash": "3415064852359498380"
+          "file": "packages/janribka-components/src/Button/Button.js",
+          "hash": "12404513152316661719"
         },
         {
           "file": "packages/janribka-components/src/Button/buttonClasses.ts",
-          "hash": "10526855355622534592"
+          "hash": "11336813791649294657"
         },
         {
           "file": "packages/janribka-components/src/Button/buttonVariants.ts",
-          "hash": "12512465831896674330"
+          "hash": "15482565134549688429"
         },
         {
           "file": "packages/janribka-components/src/Button/commIconStyleVariants.ts",
-          "hash": "8477929248353383718"
+          "hash": "3958282976617630775"
         },
         {
           "file": "packages/janribka-components/src/Button/endIconVariants.ts",
-          "hash": "14335367734240656657"
+          "hash": "13954279920440683368"
         },
         {
-          "file": "packages/janribka-components/src/Button/index.ts",
-          "hash": "11434022469216331353"
+          "file": "packages/janribka-components/src/Button/index.d.ts",
+          "hash": "7173522639970273986"
+        },
+        {
+          "file": "packages/janribka-components/src/Button/index.js",
+          "hash": "4662399435485863130"
         },
         {
           "file": "packages/janribka-components/src/Button/startIconVariants.ts",
-          "hash": "581279063118382392"
+          "hash": "16928705093313655826"
+        },
+        {
+          "file": "packages/janribka-components/src/ButtonBase/ButtonBase.d.ts",
+          "hash": "5599190582572838398"
+        },
+        {
+          "file": "packages/janribka-components/src/ButtonBase/ButtonBase.js",
+          "hash": "13488904845145514036"
         },
         {
           "file": "packages/janribka-components/src/ButtonBase/ButtonBase.tsx",
-          "hash": "18436857977900358120"
+          "hash": "12993457284517463887"
         },
         {
-          "file": "packages/janribka-components/src/ButtonBase/Ripple.tsx",
-          "hash": "7962265556150789345"
+          "file": "packages/janribka-components/src/ButtonBase/Ripple.d.ts",
+          "hash": "9096335431817858318"
         },
         {
-          "file": "packages/janribka-components/src/ButtonBase/TouchRipple.tsx",
-          "hash": "13439470608196696141"
+          "file": "packages/janribka-components/src/ButtonBase/Ripple.js",
+          "hash": "11423908646632857292"
+        },
+        {
+          "file": "packages/janribka-components/src/ButtonBase/TouchRipple.d.ts",
+          "hash": "15394673793104315298"
+        },
+        {
+          "file": "packages/janribka-components/src/ButtonBase/TouchRipple.js",
+          "hash": "13130768071257639630"
         },
         {
           "file": "packages/janribka-components/src/ButtonBase/buttonBaseClasses.ts",
-          "hash": "1945936845782184545"
+          "hash": "5914906691632933355"
         },
         {
           "file": "packages/janribka-components/src/ButtonBase/index.ts",
-          "hash": "16243178080557423300"
+          "hash": "9855514844820733177"
         },
         {
           "file": "packages/janribka-components/src/ButtonBase/touchRippleClasses.ts",
-          "hash": "17827769126409537281"
+          "hash": "8523978462597883975"
         },
         {
           "file": "packages/janribka-components/src/ButtonGroup/ButtonGroupButtonContext.ts",
-          "hash": "9124335023238673951"
+          "hash": "10706437492765674010"
         },
         {
           "file": "packages/janribka-components/src/ButtonGroup/ButtonGroupContext.ts",
-          "hash": "10206673779230414712"
+          "hash": "694835906095453678"
         },
         {
           "file": "packages/janribka-components/src/ButtonGroup/ButtonGroupProps.ts",
-          "hash": "9251307518676813327"
+          "hash": "8475771355603220789"
         },
         {
           "file": "packages/janribka-components/src/ButtonGroup/index.ts",
-          "hash": "18358714756313223111"
+          "hash": "13902201715532533596"
         },
         {
-          "file": "packages/janribka-components/src/GlobalStyles/GlobalStyles.tsx",
-          "hash": "4853202477032418694"
+          "file": "packages/janribka-components/src/DefaultPropsProvider/DefaultPropsProvider.tsx",
+          "hash": "9278300729862335983"
         },
         {
-          "file": "packages/janribka-components/src/GlobalStyles/index.ts",
-          "hash": "16727256046419223079"
+          "file": "packages/janribka-components/src/DefaultPropsProvider/index.ts",
+          "hash": "14593141991577135097"
+        },
+        {
+          "file": "packages/janribka-components/src/GlobalStyles/GlobalStyles.d.ts",
+          "hash": "12022440308570882447"
+        },
+        {
+          "file": "packages/janribka-components/src/GlobalStyles/GlobalStyles.js",
+          "hash": "13788177064017432430"
+        },
+        {
+          "file": "packages/janribka-components/src/GlobalStyles/index.d.ts",
+          "hash": "5260915249905843602"
+        },
+        {
+          "file": "packages/janribka-components/src/GlobalStyles/index.js",
+          "hash": "3818156507351696924"
+        },
+        {
+          "file": "packages/janribka-components/src/InitColorSchemeScript/InitColorSchemeScript.tsx",
+          "hash": "8507479890368952650"
+        },
+        {
+          "file": "packages/janribka-components/src/InitColorSchemeScript/index.ts",
+          "hash": "8231946273148668718"
         },
         {
           "file": "packages/janribka-components/src/OverridableComponent.d.ts",
-          "hash": "4319331569878621556"
+          "hash": "4852994333356317490"
         },
         {
-          "file": "packages/janribka-components/src/colors/amber.ts",
-          "hash": "5098413778168965436"
+          "file": "packages/janribka-components/src/colors/amber.d.ts",
+          "hash": "7714475461060014634"
         },
         {
-          "file": "packages/janribka-components/src/colors/blue.ts",
-          "hash": "15324112969994652426"
+          "file": "packages/janribka-components/src/colors/amber.js",
+          "hash": "4645322527962479824"
         },
         {
-          "file": "packages/janribka-components/src/colors/blueGrey.ts",
-          "hash": "6217645269232347164"
+          "file": "packages/janribka-components/src/colors/blue.d.ts",
+          "hash": "7663219145071801120"
         },
         {
-          "file": "packages/janribka-components/src/colors/brown.ts",
-          "hash": "17180996486205231352"
+          "file": "packages/janribka-components/src/colors/blue.js",
+          "hash": "12592986732965830330"
         },
         {
-          "file": "packages/janribka-components/src/colors/common.ts",
-          "hash": "3971682182847926875"
+          "file": "packages/janribka-components/src/colors/blueGrey.d.ts",
+          "hash": "5209511003973502393"
         },
         {
-          "file": "packages/janribka-components/src/colors/cyan.ts",
-          "hash": "9562426670144097735"
+          "file": "packages/janribka-components/src/colors/blueGrey.js",
+          "hash": "5693407087563728637"
         },
         {
-          "file": "packages/janribka-components/src/colors/deepOrange.ts",
-          "hash": "3180163209951346700"
+          "file": "packages/janribka-components/src/colors/brown.d.ts",
+          "hash": "15331745033159809470"
         },
         {
-          "file": "packages/janribka-components/src/colors/deepPurple.ts",
-          "hash": "16924632731400438870"
+          "file": "packages/janribka-components/src/colors/brown.js",
+          "hash": "5524834513476203440"
         },
         {
-          "file": "packages/janribka-components/src/colors/green.ts",
-          "hash": "97316447113317233"
+          "file": "packages/janribka-components/src/colors/colors.spec.tsx",
+          "hash": "9057252739362084686"
         },
         {
-          "file": "packages/janribka-components/src/colors/grey.ts",
-          "hash": "7703532285738716109"
+          "file": "packages/janribka-components/src/colors/common.d.ts",
+          "hash": "7792523923981557713"
         },
         {
-          "file": "packages/janribka-components/src/colors/index.ts",
-          "hash": "17758966021869163111"
+          "file": "packages/janribka-components/src/colors/common.js",
+          "hash": "10247695162267107149"
         },
         {
-          "file": "packages/janribka-components/src/colors/indigo.ts",
-          "hash": "13032327878492191905"
+          "file": "packages/janribka-components/src/colors/cyan.d.ts",
+          "hash": "17685214814654195843"
         },
         {
-          "file": "packages/janribka-components/src/colors/lightBlue.ts",
-          "hash": "6117227384814961617"
+          "file": "packages/janribka-components/src/colors/cyan.js",
+          "hash": "12166090243531919662"
         },
         {
-          "file": "packages/janribka-components/src/colors/lightGreen.ts",
-          "hash": "1628276931073517603"
+          "file": "packages/janribka-components/src/colors/deepOrange.d.ts",
+          "hash": "3790405428561501112"
         },
         {
-          "file": "packages/janribka-components/src/colors/lime.ts",
-          "hash": "10020487321724588615"
+          "file": "packages/janribka-components/src/colors/deepOrange.js",
+          "hash": "12830098078475169224"
         },
         {
-          "file": "packages/janribka-components/src/colors/orange.ts",
-          "hash": "4842262586103944610"
+          "file": "packages/janribka-components/src/colors/deepPurple.d.ts",
+          "hash": "13316329226207607846"
         },
         {
-          "file": "packages/janribka-components/src/colors/pink.ts",
-          "hash": "12964747313628033336"
+          "file": "packages/janribka-components/src/colors/deepPurple.js",
+          "hash": "3873991321867142597"
         },
         {
-          "file": "packages/janribka-components/src/colors/purple.ts",
-          "hash": "11755594783968662043"
+          "file": "packages/janribka-components/src/colors/green.d.ts",
+          "hash": "17549853486128374304"
         },
         {
-          "file": "packages/janribka-components/src/colors/red.ts",
-          "hash": "15457253696736103981"
+          "file": "packages/janribka-components/src/colors/green.js",
+          "hash": "11981188522218575393"
         },
         {
-          "file": "packages/janribka-components/src/colors/teal.ts",
-          "hash": "6114398532366551069"
+          "file": "packages/janribka-components/src/colors/grey.d.ts",
+          "hash": "12821750091709673714"
         },
         {
-          "file": "packages/janribka-components/src/colors/yellow.ts",
-          "hash": "12053501029154137853"
+          "file": "packages/janribka-components/src/colors/grey.js",
+          "hash": "9463985451649917171"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/index.d.ts",
+          "hash": "8213866141142295839"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/index.js",
+          "hash": "11003745305779717579"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/indigo.d.ts",
+          "hash": "10950437191481885797"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/indigo.js",
+          "hash": "6847057644487047575"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/lightBlue.d.ts",
+          "hash": "9075176185730258438"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/lightBlue.js",
+          "hash": "5947546750926050381"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/lightGreen.d.ts",
+          "hash": "1790215055497133279"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/lightGreen.js",
+          "hash": "8857928544038004285"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/lime.d.ts",
+          "hash": "17321510231001091793"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/lime.js",
+          "hash": "2661805435626163014"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/orange.d.ts",
+          "hash": "2807398750051029786"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/orange.js",
+          "hash": "17964649365332099683"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/pink.d.ts",
+          "hash": "16111148731718098801"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/pink.js",
+          "hash": "4252660601051937521"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/purple.d.ts",
+          "hash": "7463746965927379970"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/purple.js",
+          "hash": "11873454302320962861"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/red.d.ts",
+          "hash": "17152851349818493248"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/red.js",
+          "hash": "7885628349197895540"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/teal.d.ts",
+          "hash": "16889380960347192870"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/teal.js",
+          "hash": "1284876027775397196"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/yellow.d.ts",
+          "hash": "2852803785105194163"
+        },
+        {
+          "file": "packages/janribka-components/src/colors/yellow.js",
+          "hash": "13021365032365601082"
         },
         {
           "file": "packages/janribka-components/src/generateUtilityClass/index.ts",
-          "hash": "1228384109766550452"
+          "hash": "17462147768716419927"
         },
         {
           "file": "packages/janribka-components/src/generateUtilityClasses/index.ts",
-          "hash": "18164303747659200450"
+          "hash": "18354512984037039323"
         },
         {
-          "file": "packages/janribka-components/src/index.ts",
-          "hash": "14987164469738781301"
+          "file": "packages/janribka-components/src/index.d.ts",
+          "hash": "15695164046914120447"
+        },
+        {
+          "file": "packages/janribka-components/src/index.js",
+          "hash": "10872963436944262674"
         },
         {
           "file": "packages/janribka-components/src/styles/ThemeProvider.tsx",
-          "hash": "3144589551915092347"
+          "hash": "12539080957620025587"
         },
         {
-          "file": "packages/janribka-components/src/styles/components.ts",
-          "hash": "17834724410277470115"
+          "file": "packages/janribka-components/src/styles/ThemeProviderNoVars.tsx",
+          "hash": "13271868373796533422"
         },
         {
-          "file": "packages/janribka-components/src/styles/createPalette.ts",
-          "hash": "4146938601830081463"
+          "file": "packages/janribka-components/src/styles/ThemeProviderWithVars.tsx",
+          "hash": "4963170051270825249"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/components.d.ts",
+          "hash": "13298167784384315632"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/createColorScheme.ts",
+          "hash": "12928045730673149333"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/createGetSelector.ts",
+          "hash": "2722679677144954299"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/createPalette.d.ts",
+          "hash": "7603376871406207143"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/createPalette.js",
+          "hash": "5479204505670818688"
         },
         {
           "file": "packages/janribka-components/src/styles/createTheme.ts",
-          "hash": "1399710583236194360"
+          "hash": "11916444706174813693"
         },
         {
-          "file": "packages/janribka-components/src/styles/createTransitions.ts",
-          "hash": "7850396894293591964"
+          "file": "packages/janribka-components/src/styles/createThemeNoVars.d.ts",
+          "hash": "7159076086240251839"
         },
         {
-          "file": "packages/janribka-components/src/styles/defaultTheme.ts",
-          "hash": "8817559487598853052"
+          "file": "packages/janribka-components/src/styles/createThemeNoVars.js",
+          "hash": "1999387013801227879"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/createThemeWithVars.d.ts",
+          "hash": "10873006219383849014"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/createThemeWithVars.js",
+          "hash": "2095836254759221702"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/createTransitions.d.ts",
+          "hash": "3051829538595520340"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/createTransitions.js",
+          "hash": "13082692264658384437"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/createTypography.d.ts",
+          "hash": "9323548555666255634"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/createTypography.js",
+          "hash": "7390891465324242579"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/defaultTheme.js",
+          "hash": "1540635924590983330"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/excludeVariablesFromRoot.ts",
+          "hash": "16181242889311960458"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/getOverlayAlpha.ts",
+          "hash": "16579699696207042239"
         },
         {
           "file": "packages/janribka-components/src/styles/identifier.ts",
-          "hash": "17487515283869097002"
+          "hash": "10634319875651889754"
         },
         {
-          "file": "packages/janribka-components/src/styles/index.ts",
-          "hash": "4793702487306804842"
+          "file": "packages/janribka-components/src/styles/index.d.ts",
+          "hash": "12784369489740104452"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/index.js",
+          "hash": "18225690800417382183"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/props.d.ts",
+          "hash": "16859668934697981408"
         },
         {
           "file": "packages/janribka-components/src/styles/rootShouldForwardProp.ts",
-          "hash": "16582888890594122513"
+          "hash": "8223067186501829187"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/shouldSkipGeneratingVar.ts",
+          "hash": "4544514377970427981"
         },
         {
           "file": "packages/janribka-components/src/styles/slotShouldForwardProp.ts",
-          "hash": "2437839125861486713"
+          "hash": "13012287712342814031"
         },
         {
-          "file": "packages/janribka-components/src/styles/styled.ts",
-          "hash": "10846285176260937923"
+          "file": "packages/janribka-components/src/styles/stringifyTheme.ts",
+          "hash": "15808844121608109845"
         },
         {
-          "file": "packages/janribka-components/src/styles/useTheme.ts",
-          "hash": "10604650824900773475"
+          "file": "packages/janribka-components/src/styles/styled.d.ts",
+          "hash": "15036932508306076434"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/styled.js",
+          "hash": "4169258039545213913"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/useTheme.d.ts",
+          "hash": "7809080240555302270"
+        },
+        {
+          "file": "packages/janribka-components/src/styles/useTheme.js",
+          "hash": "9316861433901956886"
         },
         {
           "file": "packages/janribka-components/src/types/OverridableComponentAugmentation.ts",
-          "hash": "16423862027808080272"
+          "hash": "3782214205439717185"
         },
         {
           "file": "packages/janribka-components/src/useLazyRipple/index.ts",
-          "hash": "11774594791707391580"
+          "hash": "9018393540258927969"
         },
         {
           "file": "packages/janribka-components/src/useLazyRipple/useLazyRipple.ts",
-          "hash": "11700624022716081189"
+          "hash": "2527770230117477349"
         },
         {
-          "file": "packages/janribka-components/src/utils/capitalize.ts",
-          "hash": "2538540561541999051"
+          "file": "packages/janribka-components/src/utils/capitalize.d.ts",
+          "hash": "4275761396417155388"
         },
         {
-          "file": "packages/janribka-components/src/utils/index.ts",
-          "hash": "17219654355148152044"
+          "file": "packages/janribka-components/src/utils/capitalize.js",
+          "hash": "4275761396417155388"
+        },
+        {
+          "file": "packages/janribka-components/src/utils/index.d.ts",
+          "hash": "13257649171560661014"
+        },
+        {
+          "file": "packages/janribka-components/src/utils/index.js",
+          "hash": "13752240514670733253"
+        },
+        {
+          "file": "packages/janribka-components/src/utils/memoTheme.ts",
+          "hash": "15344015017677977122"
+        },
+        {
+          "file": "packages/janribka-components/src/utils/mergeStyles.d.ts",
+          "hash": "16537216971322259299"
+        },
+        {
+          "file": "packages/janribka-components/src/utils/mergeStyles.js",
+          "hash": "16537216971322259299"
+        },
+        {
+          "file": "packages/janribka-components/src/utils/useEventCallback.d.ts",
+          "hash": "16565486544574932579"
+        },
+        {
+          "file": "packages/janribka-components/src/utils/useEventCallback.js",
+          "hash": "5550204508371220932"
+        },
+        {
+          "file": "packages/janribka-components/src/utils/useForkRef.d.ts",
+          "hash": "16742248571177440618"
+        },
+        {
+          "file": "packages/janribka-components/src/utils/useForkRef.js",
+          "hash": "13778562965290559789"
         },
         {
           "file": "packages/janribka-components/src/zero-styled/index.tsx",
-          "hash": "6469216575454255804"
+          "hash": "5877671237287140297"
         },
         {
           "file": "packages/janribka-components/tailwind.config.ts",
-          "hash": "15241180491290663771"
+          "hash": "377669646107913828"
         },
         {
           "file": "packages/janribka-components/tsconfig.build.json",
-          "hash": "15870307040935160689"
+          "hash": "8540235912757331135"
+        },
+        {
+          "file": "packages/janribka-components/tsconfig.build.tsbuildinfo",
+          "hash": "16889312391639129259"
         },
         {
           "file": "packages/janribka-components/tsconfig.json",
-          "hash": "14261247095755961873"
-        },
-        {
-          "file": "packages/janribka-components/tsup.config.ts",
-          "hash": "13008509152672338904"
-        }
-      ],
-      "@janribka/internal-babel-plugin-resolve-imports": [
-        {
-          "file": "packages-internal/babel-plugin-resolve-imports/README.md",
-          "hash": "6338477348934056439"
-        },
-        {
-          "file": "packages-internal/babel-plugin-resolve-imports/index.js",
-          "hash": "11133814755094047733"
-        },
-        {
-          "file": "packages-internal/babel-plugin-resolve-imports/package.json",
-          "hash": "14393355149564103549",
-          "deps": [
-            "npm:@babel/core",
-            "npm:@types/babel__core",
-            "npm:@types/resolve",
-            "npm:resolve@1.22.8"
-          ]
-        },
-        {
-          "file": "packages-internal/babel-plugin-resolve-imports/resolve.d.ts",
-          "hash": "6128459459730477659"
+          "hash": "7767074480859769171"
         }
       ]
     },
     "nonProjectFiles": [
       {
         "file": ".editorconfig",
-        "hash": "9281331455268854640"
+        "hash": "5063035560588681748"
       },
       {
         "file": ".eslintignore",
-        "hash": "10979731571483532028"
+        "hash": "3665915721786616397"
       },
       {
         "file": ".eslintrc.js",
-        "hash": "106370463091890194"
+        "hash": "2314411251966134387"
       },
       {
         "file": ".gitignore",
-        "hash": "7534321514738666122"
+        "hash": "12346042841173563827"
       },
       {
         "file": ".vscode/settings.json",
-        "hash": "1003338634976584576"
+        "hash": "1877806803782469727"
       },
       {
         "file": "CHANGELOG.md",
@@ -1058,23 +1645,23 @@
       },
       {
         "file": "LICENSE",
-        "hash": "3753532348701299847"
+        "hash": "255118483994411640"
       },
       {
         "file": "babel.config.js",
-        "hash": "4392264304994760730"
+        "hash": "15719819265916845257"
       },
       {
         "file": "docs/public/static/error-codes.json",
-        "hash": "1698105608920927931"
+        "hash": "113322422435525069"
       },
       {
         "file": "lerna-debug.log",
-        "hash": "14332812546565919998"
+        "hash": "15284174316605250537"
       },
       {
         "file": "lerna.json",
-        "hash": "1522295035357258616"
+        "hash": "17877193987634187160"
       },
       {
         "file": "nx.json",
@@ -1085,48 +1672,44 @@
         "hash": "16507634236024125308"
       },
       {
-        "file": "pnpm-lock.yaml",
-        "hash": "3618914044933206662"
-      },
-      {
         "file": "pnpm-workspace.yaml",
-        "hash": "6213478378650949254"
+        "hash": "14573961618666917548"
       },
       {
         "file": "prettier.config.js",
-        "hash": "1108957405561116925"
+        "hash": "17751617049352459274"
       },
       {
         "file": "scripts/build.mjs",
-        "hash": "4019822997770440007"
+        "hash": "959317039726705953"
       },
       {
         "file": "scripts/buildTypes.mjs",
-        "hash": "15584128629763367957"
+        "hash": "1446658562960235479"
       },
       {
         "file": "scripts/copyFiles.mjs",
-        "hash": "15896188984757895327"
+        "hash": "7160543770884509199"
       },
       {
         "file": "scripts/copyFilesUtils.mjs",
-        "hash": "17899656344644214651"
+        "hash": "9807225757893865117"
       },
       {
         "file": "scripts/utils.mjs",
-        "hash": "8372811269676785723"
+        "hash": "15249270251229279132"
       },
       {
         "file": "stylelint.config.mjs",
-        "hash": "3975326994493894252"
+        "hash": "5495617608849296193"
       },
       {
         "file": "tsconfig.json",
-        "hash": "15490231559656056722"
+        "hash": "15889392113775693049"
       },
       {
         "file": "webpackBaseConfig.js",
-        "hash": "14259520190016341121"
+        "hash": "12844759903114052232"
       }
     ]
   }

@@ -80,8 +80,8 @@ export * from './createTheme';
 export { default as createBreakpoints } from './createBreakpoints/createBreakpoints';
 export * from './createBreakpoints/createBreakpoints';
 
-// export { default as createSpacing } from './createTheme/createSpacing';
-// export { SpacingOptions, Spacing } from './createTheme/createSpacing';
+export { default as createSpacing } from './createTheme/createSpacing';
+export { SpacingOptions, Spacing } from './createTheme/createSpacing';
 
 // export { default as shape } from './createTheme/shape';
 // export * from './createTheme/shape';

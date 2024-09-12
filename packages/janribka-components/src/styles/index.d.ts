@@ -23,7 +23,7 @@ export {
   PaletteMode,
   Color,
 } from './createPalette';
-// export { default as createColorScheme } from './createColorScheme';
+export { default as createColorScheme } from './createColorScheme';
 // export { default as createStyles } from './createStyles';
 export {
   Typography as TypographyVariants,
@@ -139,8 +139,8 @@ export type {
   ThemeCssVarOverrides,
   ColorSystemOptions,
 } from './createThemeWithVars';
-// export { default as getOverlayAlpha } from './getOverlayAlpha';
-// export { default as shouldSkipGeneratingVar } from './shouldSkipGeneratingVar';
+export { default as getOverlayAlpha } from './getOverlayAlpha';
+export { default as shouldSkipGeneratingVar } from './shouldSkipGeneratingVar';
 
 // Private methods for creating parts of the theme
 export { default as private_createTypography } from './createTypography';
