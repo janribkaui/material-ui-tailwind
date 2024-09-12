@@ -35,7 +35,7 @@ export default function createSpacing(
   }),
 ): Spacing {
   // Already transformed.
-  if ((spacingInput as any).mui) {
+  if ((spacingInput as any).jr) {
     return spacingInput as Spacing;
   }
 
@@ -43,7 +43,7 @@ export default function createSpacing(
     if (process.env.NODE_ENV !== 'production') {
       if (!(argsInput.length <= 4)) {
         console.error(
-          `MUI: Too many arguments provided, expected between 0 and 4, got ${argsInput.length}`,
+          `JR: Too many arguments provided, expected between 0 and 4, got ${argsInput.length}`,
         );
       }
     }

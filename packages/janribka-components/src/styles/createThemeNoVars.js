@@ -119,7 +119,7 @@ function createThemeNoVars(options = {}, ...args) {
   //   });
   // };
 
-  return muiTheme;
+  return jrTheme;
 }
 
 let warnedOnce = false;

@@ -17,8 +17,6 @@ module.exports = {
       '@janribka/styled-engine': path.resolve(__dirname, './packages/janribka-styled-engine/src'),
       '@janribka/system': path.resolve(__dirname, './packages/janribka-system/src'),
       '@janribka/utils': path.resolve(__dirname, './packages/janribka-utils/src'),
-
-      '@janribka/utils': path.resolve(__dirname, './packages/janribka-utils/src'),
       docs: path.resolve(__dirname, './docs'),
     },
     extensions: ['.js', '.ts', '.tsx', '.d.ts'],

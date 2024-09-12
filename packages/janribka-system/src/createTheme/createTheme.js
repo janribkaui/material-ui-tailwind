@@ -23,7 +23,7 @@ function createTheme(options = {}, ...args) {
     {
       // breakpoints,
       direction: 'ltr',
-      // components: {}, // Inject component definitions.
+      components: {}, // Inject component definitions.
       palette: { mode: 'light', ...paletteInput },
       // spacing,
       // shape: { ...shape, ...shapeInput },
@@ -47,7 +47,7 @@ function createTheme(options = {}, ...args) {
   //   });
   // };
 
-  return muiTheme;
+  return jrTheme;
 }
 
 export default createTheme;
