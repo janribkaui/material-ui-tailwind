@@ -36,10 +36,12 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.25.6",
+    "@janribka/types": "workspace:^",
     "react-is": "18.3.1"
   },
   "devDependencies": {
     "@janribka/internal-babel-macros": "workspace:^",
+    "@janribka/types": "workspace:^",
     "@types/mocha": "^10.0.7",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
