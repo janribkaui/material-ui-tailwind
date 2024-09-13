@@ -87,44 +87,20 @@
         "hash": "5063035560588681748"
       },
       {
-        "file": ".eslintignore",
-        "hash": "3665915721786616397"
-      },
-      {
-        "file": ".eslintrc.js",
-        "hash": "15611684777920972284"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "12346042841173563827"
-      },
-      {
-        "file": ".vscode/settings.json",
-        "hash": "1877806803782469727"
-      },
-      {
-        "file": "CHANGELOG.md",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "CHANGELOG.old.md",
-        "hash": "3244421341483603138"
-      },
-      {
         "file": "LICENSE",
         "hash": "255118483994411640"
       },
       {
-        "file": "babel.config.js",
-        "hash": "2801042515281254455"
+        "file": "scripts/build.mjs",
+        "hash": "959317039726705953"
       },
       {
-        "file": "docs/public/static/error-codes.json",
-        "hash": "113322422435525069"
+        "file": ".eslintignore",
+        "hash": "3665915721786616397"
       },
       {
-        "file": "jest.config.js",
-        "hash": "18164486227812464591"
+        "file": "package.json",
+        "hash": "8222282098744186735"
       },
       {
         "file": "lerna-debug.log",
@@ -135,48 +111,60 @@
         "hash": "17877193987634187160"
       },
       {
-        "file": "nx.json",
-        "hash": "3059716512433403805"
+        "file": "scripts/buildTypes.mjs",
+        "hash": "1446658562960235479"
       },
       {
-        "file": "package.json",
-        "hash": "8222282098744186735"
-      },
-      {
-        "file": "pnpm-lock.yaml",
-        "hash": "15115074366230961053"
-      },
-      {
-        "file": "pnpm-workspace.yaml",
-        "hash": "14573961618666917548"
+        "file": ".vscode/settings.json",
+        "hash": "1877806803782469727"
       },
       {
         "file": "prettier.config.js",
         "hash": "17751617049352459274"
       },
       {
-        "file": "scripts/build.mjs",
-        "hash": "959317039726705953"
+        "file": "pnpm-lock.yaml",
+        "hash": "15115074366230961053"
       },
       {
-        "file": "scripts/buildTypes.mjs",
-        "hash": "1446658562960235479"
+        "file": ".gitignore",
+        "hash": "12346042841173563827"
       },
       {
-        "file": "scripts/copyFiles.mjs",
-        "hash": "7160543770884509199"
+        "file": "pnpm-workspace.yaml",
+        "hash": "14573961618666917548"
+      },
+      {
+        "file": ".eslintrc.js",
+        "hash": "15611684777920972284"
+      },
+      {
+        "file": "nx.json",
+        "hash": "3059716512433403805"
       },
       {
         "file": "scripts/copyFilesUtils.mjs",
         "hash": "9807225757893865117"
       },
       {
-        "file": "scripts/utils.mjs",
-        "hash": "15249270251229279132"
+        "file": "docs/public/static/error-codes.json",
+        "hash": "113322422435525069"
       },
       {
-        "file": "stylelint.config.mjs",
-        "hash": "5495617608849296193"
+        "file": "CHANGELOG.old.md",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "webpackBaseConfig.js",
+        "hash": "10035265460226515341"
+      },
+      {
+        "file": "CHANGELOG.md",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "scripts/utils.mjs",
+        "hash": "15249270251229279132"
       },
       {
         "file": "tsconfig.json",
@@ -187,8 +175,20 @@
         "hash": "18164486227812464591"
       },
       {
-        "file": "webpackBaseConfig.js",
-        "hash": "10035265460226515341"
+        "file": "jest.config.js",
+        "hash": "18164486227812464591"
+      },
+      {
+        "file": "babel.config.js",
+        "hash": "2801042515281254455"
+      },
+      {
+        "file": "scripts/copyFiles.mjs",
+        "hash": "7160543770884509199"
+      },
+      {
+        "file": "stylelint.config.mjs",
+        "hash": "5495617608849296193"
       }
     ],
     "projectFileMap": {
@@ -199,6 +199,78 @@
           "deps": [
             "npm:eslint@8.57.0"
           ]
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/no-hardcoded-labels.js",
+          "hash": "4279412745026998408"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/no-empty-box.js",
+          "hash": "12062241169539256553"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/straight-quotes.js",
+          "hash": "12945689167045213308"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/straight-quotes.test.js",
+          "hash": "12604058180063048453"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/README.md",
+          "hash": "8769149299190308735"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/no-styled-box.js",
+          "hash": "9460751359753727150"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/docgen-ignore-before-comment.js",
+          "hash": "15212331368912651097"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/no-empty-box.test.js",
+          "hash": "14000319658467453680"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/mui-name-matches-component-name.test.js",
+          "hash": "7548920168245498064"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/disallow-active-elements-as-key-event-target.test.js",
+          "hash": "3078017628906238621"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/rules-of-use-theme-variants.test.js",
+          "hash": "7009120708964214733"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/rules-of-use-theme-variants.js",
+          "hash": "12838366204758326521"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/disallow-active-element-as-key-event-target.js",
+          "hash": "4135217160076696080"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/mui-name-matches-component-name.js",
+          "hash": "257240864879296552"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/index.js",
+          "hash": "6983065326239852113"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/docgen-ignore-before-comment.test.js",
+          "hash": "1831426782703559860"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/no-hardcoded-labels.test.js",
+          "hash": "4724811398700938364"
+        },
+        {
+          "file": "packages/eslint-plugin-material-ui/src/rules/no-styled-box.test.js",
+          "hash": "6821319264940818015"
         }
       ],
       "local-ui-web": [
