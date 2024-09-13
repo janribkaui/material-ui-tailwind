@@ -3074,3 +3074,35 @@
 [NX Daemon Server] - 2024-09-13T13:42:34.007Z - Done responding to the client handleGetFlakyTasks
 [NX Daemon Server] - 2024-09-13T13:42:34.007Z - Handled GET_TASK_HISTORY_FOR_HASHES. Handling time: 0. Response time: 0.
 [NX Daemon Server] - 2024-09-13T13:42:34.024Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-13T13:43:31.421Z - [WATCHER]: 25 file(s) created or restored, 0 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2024-09-13T13:43:31.421Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-13T13:43:31.523Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-13T13:43:31.523Z - [REQUEST]: packages/eslint-plugin-material-ui/src/rules/no-hardcoded-labels.test.js,packages/janribka-utils/tsconfig.build.tsbuildinfo,packages/eslint-plugin-material-ui/src/rules/no-styled-box.test.js,webpack.config.js,packages/eslint-plugin-material-ui/README.md,packages/janribka-components/tsconfig.build.tsbuildinfo,packages/eslint-plugin-material-ui/src/index.js,packages/eslint-plugin-material-ui/package.json,packages/eslint-plugin-material-ui/src/rules/docgen-ignore-before-comment.test.js,jest.config.js,packages/eslint-plugin-material-ui/src/rules/mui-name-matches-component-name.test.js,packages/eslint-plugin-material-ui/src/rules/no-styled-box.js,packages/eslint-plugin-material-ui/src/rules/docgen-ignore-before-comment.js,packages/eslint-plugin-material-ui/src/rules/straight-quotes.test.js,packages/eslint-plugin-material-ui/src/rules/no-empty-box.js,packages/eslint-plugin-material-ui/src/rules/straight-quotes.js,packages/eslint-plugin-material-ui/src/rules/mui-name-matches-component-name.js,packages/janribka-system/tsconfig.build.tsbuildinfo,.eslintrc.js,packages/eslint-plugin-material-ui/src/rules/no-empty-box.test.js,packages/eslint-plugin-material-ui/src/rules/disallow-active-elements-as-key-event-target.test.js,packages/eslint-plugin-material-ui/src/rules/rules-of-use-theme-variants.test.js,packages/eslint-plugin-material-ui/src/rules/no-hardcoded-labels.js,packages/eslint-plugin-material-ui/src/rules/rules-of-use-theme-variants.js,packages/eslint-plugin-material-ui/src/rules/disallow-active-element-as-key-event-target.js
+[NX Daemon Server] - 2024-09-13T13:43:31.523Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-13T13:43:31.527Z - Time taken for 'hash changed files from watcher' 1.0348769999982323ms
+[NX Daemon Server] - 2024-09-13T13:43:31.658Z - Time taken for 'build-project-configs' 126.2167899999913ms
+[NX Daemon Server] - 2024-09-13T13:43:31.694Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-13T13:43:31.694Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-13T13:43:31.695Z - Time taken for 'total execution time for createProjectGraph()' 30.08224400000472ms
+[NX Daemon Server] - 2024-09-13T13:44:20.073Z - [WATCHER]: 2 file(s) created or restored, 0 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2024-09-13T13:44:20.074Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-13T13:44:20.175Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-13T13:44:20.175Z - [REQUEST]: packages/janribka-components/tsconfig.build.tsbuildinfo,packages/janribka-system/tsconfig.build.tsbuildinfo
+[NX Daemon Server] - 2024-09-13T13:44:20.175Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-13T13:44:20.179Z - Time taken for 'hash changed files from watcher' 0.7928830000164453ms
+[NX Daemon Server] - 2024-09-13T13:44:20.194Z - Time taken for 'build-project-configs' 11.60418700001901ms
+[NX Daemon Server] - 2024-09-13T13:44:20.227Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-13T13:44:20.228Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-13T13:44:20.228Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-13T13:44:20.228Z - Time taken for 'total execution time for createProjectGraph()' 24.873881000006804ms
+[NX Daemon Server] - 2024-09-13T13:44:59.063Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-13T13:44:59.063Z - [WATCHER]: packages/janribka-utils/tsconfig.build.tsbuildinfo was created or restored
+[NX Daemon Server] - 2024-09-13T13:44:59.165Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-13T13:44:59.165Z - [REQUEST]: packages/janribka-utils/tsconfig.build.tsbuildinfo
+[NX Daemon Server] - 2024-09-13T13:44:59.165Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-13T13:44:59.168Z - Time taken for 'hash changed files from watcher' 0.679615000000922ms
+[NX Daemon Server] - 2024-09-13T13:44:59.183Z - Time taken for 'build-project-configs' 10.72829999998794ms
+[NX Daemon Server] - 2024-09-13T13:44:59.217Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-13T13:44:59.218Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-13T13:44:59.218Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-13T13:44:59.218Z - Time taken for 'total execution time for createProjectGraph()' 26.515056000003824ms
