@@ -83,112 +83,112 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "docs/public/static/error-codes.json",
-        "hash": "1698105608920927931"
-      },
-      {
-        "file": "scripts/copyFilesUtils.mjs",
-        "hash": "17899656344644214651"
+        "file": "pnpm-workspace.yaml",
+        "hash": "6213478378650949254"
       },
       {
         "file": "package.json",
         "hash": "4286751188105859944"
       },
       {
-        "file": "lerna-debug.log",
-        "hash": "14332812546565919998"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "12415953482800131216"
-      },
-      {
-        "file": "lerna.json",
-        "hash": "1522295035357258616"
-      },
-      {
-        "file": "scripts/buildTypes.mjs",
-        "hash": "15584128629763367957"
-      },
-      {
-        "file": "CHANGELOG.old.md",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".eslintignore",
-        "hash": "10979731571483532028"
-      },
-      {
         "file": ".eslintrc.js",
         "hash": "7431401595857844727"
-      },
-      {
-        "file": "scripts/utils.mjs",
-        "hash": "8372811269676785723"
-      },
-      {
-        "file": ".vscode/settings.json",
-        "hash": "1003338634976584576"
-      },
-      {
-        "file": "nx.json",
-        "hash": "3059716512433403805"
-      },
-      {
-        "file": "stylelint.config.mjs",
-        "hash": "3975326994493894252"
-      },
-      {
-        "file": ".editorconfig",
-        "hash": "9281331455268854640"
-      },
-      {
-        "file": "babel.config.js",
-        "hash": "18086427779928880307"
       },
       {
         "file": "tsconfig.json",
         "hash": "7498907791930816366"
       },
       {
-        "file": "webpackBaseConfig.js",
-        "hash": "18046901940209968023"
-      },
-      {
-        "file": "prettier.config.js",
-        "hash": "1108957405561116925"
-      },
-      {
         "file": "pnpm-lock.yaml",
         "hash": "8849094924629208627"
-      },
-      {
-        "file": "LICENSE",
-        "hash": "3753532348701299847"
-      },
-      {
-        "file": "pnpm-workspace.yaml",
-        "hash": "6213478378650949254"
-      },
-      {
-        "file": "scripts/build.mjs",
-        "hash": "4019822997770440007"
       },
       {
         "file": "jest.config.js",
         "hash": "18164486227812464591"
       },
       {
+        "file": ".eslintignore",
+        "hash": "10979731571483532028"
+      },
+      {
+        "file": "stylelint.config.mjs",
+        "hash": "3975326994493894252"
+      },
+      {
         "file": "scripts/copyFiles.mjs",
         "hash": "15896188984757895327"
+      },
+      {
+        "file": "scripts/buildTypes.mjs",
+        "hash": "15584128629763367957"
+      },
+      {
+        "file": "scripts/utils.mjs",
+        "hash": "8372811269676785723"
       },
       {
         "file": "webpack.config.js",
         "hash": "18164486227812464591"
       },
       {
+        "file": ".editorconfig",
+        "hash": "9281331455268854640"
+      },
+      {
+        "file": "lerna-debug.log",
+        "hash": "14332812546565919998"
+      },
+      {
+        "file": "CHANGELOG.old.md",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "scripts/build.mjs",
+        "hash": "4019822997770440007"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "1003338634976584576"
+      },
+      {
+        "file": "prettier.config.js",
+        "hash": "1108957405561116925"
+      },
+      {
+        "file": "lerna.json",
+        "hash": "1522295035357258616"
+      },
+      {
+        "file": "scripts/copyFilesUtils.mjs",
+        "hash": "17899656344644214651"
+      },
+      {
+        "file": "nx.json",
+        "hash": "3059716512433403805"
+      },
+      {
+        "file": "babel.config.js",
+        "hash": "18086427779928880307"
+      },
+      {
         "file": "CHANGELOG.md",
         "hash": "3244421341483603138"
+      },
+      {
+        "file": "LICENSE",
+        "hash": "3753532348701299847"
+      },
+      {
+        "file": "docs/public/static/error-codes.json",
+        "hash": "1698105608920927931"
+      },
+      {
+        "file": "webpackBaseConfig.js",
+        "hash": "18046901940209968023"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "12415953482800131216"
       }
     ],
     "projectFileMap": {
@@ -1761,7 +1761,7 @@
         },
         {
           "file": "packages/janribka-utils/tsconfig.build.tsbuildinfo",
-          "hash": "7614198916155259126"
+          "hash": "15460595210261011255"
         },
         {
           "file": "packages/janribka-utils/tsconfig.json",
