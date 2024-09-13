@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-
+import clsx from 'clsx';
 import resolveProps from '@janribka/utils/resolveProps';
 import composeClasses from '@janribka/utils/composeClasses';
 import { alpha } from '@janribka/system/colorManipulator';
@@ -14,32 +14,32 @@ import buttonClasses, { getButtonUtilityClass } from './buttonClasses';
 import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
 import ButtonGroupButtonContext from '../ButtonGroup/ButtonGroupButtonContext';
 
-// const useUtilityClasses = (ownerState) => {
-//   const { color, disableElevation, fullWidth, size, variant, classes } = ownerState;
+const useUtilityClasses = (ownerState) => {
+  const { color, disableElevation, fullWidth, size, variant, classes } = ownerState;
 
-//   const slots = {
-//     root: [
-//       'root',
-//       variant,
-//       `${variant}${capitalize(color)}`,
-//       `size${capitalize(size)}`,
-//       `${variant}Size${capitalize(size)}`,
-//       `color${capitalize(color)}`,
-//       disableElevation && 'disableElevation',
-//       fullWidth && 'fullWidth',
-//     ],
-//     label: ['label'],
-//     startIcon: ['icon', 'startIcon', `iconSize${capitalize(size)}`],
-//     endIcon: ['icon', 'endIcon', `iconSize${capitalize(size)}`],
-//   };
+  const slots = {
+    root: [
+      'root',
+      variant,
+      `${variant}${capitalize(color)}`,
+      `size${capitalize(size)}`,
+      `${variant}Size${capitalize(size)}`,
+      `color${capitalize(color)}`,
+      disableElevation && 'disableElevation',
+      fullWidth && 'fullWidth',
+    ],
+    label: ['label'],
+    startIcon: ['icon', 'startIcon', `iconSize${capitalize(size)}`],
+    endIcon: ['icon', 'endIcon', `iconSize${capitalize(size)}`],
+  };
 
-//   const composedClasses = composeClasses(slots, getButtonUtilityClass, classes);
+  const composedClasses = composeClasses(slots, getButtonUtilityClass, classes);
 
-//   return {
-//     ...classes, // forward the focused, disabled, etc. classes to the ButtonBase
-//     ...composedClasses,
-//   };
-// };
+  return {
+    ...classes, // forward the focused, disabled, etc. classes to the ButtonBase
+    ...composedClasses,
+  };
+};
 
 const commonIconStyles = [
   {
