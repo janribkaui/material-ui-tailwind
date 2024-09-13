@@ -5,7 +5,7 @@ const OneLevelImportMessage = [
   'See https://github.com/mui/material-ui/pull/24147 for the kind of win it can unlock.',
 ].join('\n');
 // This only applies to packages published from this monorepo.
-// If you build a library around `@mui/material` you can safely use `createStyles` without running into the same issue as we are.
+// If you build a library around `@janribka/components` you can safely use `createStyles` without running into the same issue as we are.
 const forbidCreateStylesMessage =
   'Use `MuiStyles<ClassKey, Props>` instead if the styles are exported. Otherwise use `as const` assertions. ' +
   '`createStyles` will lead to inlined, at-compile-time-resolved type-imports. ' +
@@ -74,9 +74,9 @@ module.exports = {
               '@pigment-css/*/*/*',
               '@base_ui/*/*/*',
               // Allow any import depth with any internal packages
-              '!@mui/internal-*/**',
+              '!@janribka/internal-*/**',
               // TODO delete, @mui/docs should be @mui/internal-docs
-              '!@mui/docs/**',
+              '!@janribka/docs/**',
             ],
             message: OneLevelImportMessage,
           },
@@ -355,23 +355,23 @@ module.exports = {
           {
             paths: [
               {
-                name: '@mui/material/styles',
+                name: '@janribka/components/styles',
                 importNames: ['createStyles'],
                 message: forbidCreateStylesMessage,
               },
               {
-                name: '@mui/styles',
+                name: '@janribka/styles',
                 importNames: ['createStyles'],
                 message: forbidCreateStylesMessage,
               },
               {
-                name: '@mui/styles/createStyles',
+                name: '@janribka/styles/createStyles',
                 message: forbidCreateStylesMessage,
               },
             ],
             patterns: [
               // Allow deeper imports for TypeScript types. TODO?
-              '@mui/*/*/*/*',
+              '@janribka/*/*/*/*',
             ],
           },
         ],
@@ -426,11 +426,11 @@ module.exports = {
           {
             paths: [
               {
-                name: '@mui/material',
+                name: '@janribka/components',
                 message: OneLevelImportMessage,
               },
               {
-                name: '@mui/lab',
+                name: '@janribka/lab',
                 message: OneLevelImportMessage,
               },
             ],
@@ -444,7 +444,12 @@ module.exports = {
     },
     {
       files: ['packages/*/src/**/*{.ts,.tsx,.js}'],
-      excludedFiles: ['*.d.ts', '*.spec.ts', '*.spec.tsx', 'packages/mui-joy/**/*{.ts,.tsx,.js}'],
+      excludedFiles: [
+        '*.d.ts',
+        '*.spec.ts',
+        '*.spec.tsx',
+        'packages/janribka-joy/**/*{.ts,.tsx,.js}',
+      ],
       rules: {
         'material-ui/mui-name-matches-component-name': 'error',
       },
@@ -463,7 +468,7 @@ module.exports = {
       },
     },
     {
-      files: ['packages/mui-base/src/**/**{.ts,.tsx}'],
+      files: ['packages/janribka-base/src/**/**{.ts,.tsx}'],
       rules: {
         'import/no-default-export': 'error',
         'import/prefer-default-export': 'off',

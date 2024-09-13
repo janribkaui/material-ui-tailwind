@@ -28,6 +28,41 @@
         "implicitDependencies": []
       }
     },
+    "eslint-plugin-material-ui": {
+      "name": "eslint-plugin-material-ui",
+      "type": "lib",
+      "data": {
+        "root": "packages/eslint-plugin-material-ui",
+        "sourceRoot": "packages/eslint-plugin-material-ui",
+        "name": "eslint-plugin-material-ui",
+        "tags": [
+          "npm:private"
+        ],
+        "metadata": {
+          "targetGroups": {
+            "NPM Scripts": [
+              "test"
+            ]
+          },
+          "description": "Custom eslint rules for Material UI."
+        },
+        "targets": {
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "metadata": {
+              "scriptContent": "cd ../../ && cross-env NODE_ENV=test mocha 'packages/eslint-plugin-material-ui/**/*.test.js'",
+              "runCommand": "pnpm run test"
+            },
+            "configurations": {},
+            "parallelism": true
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
     "@janribka/private-theming": {
       "name": "@janribka/private-theming",
       "type": "lib",
@@ -2950,36 +2985,36 @@
         "hash": "sha512-fTxvnS1sRMu3+JjXwJG0j/i4RT9u4qJ+lqS/yCGap4lH4zZGzQ7tu+xZqQmcMZq5OBZDL4QRxQzRjkWcGt8IVw=="
       }
     },
-    "npm:@eslint/eslintrc@2.1.4": {
+    "npm:@eslint/eslintrc": {
       "type": "npm",
-      "name": "npm:@eslint/eslintrc@2.1.4",
+      "name": "npm:@eslint/eslintrc",
       "data": {
         "version": "2.1.4",
         "packageName": "@eslint/eslintrc",
         "hash": "sha512-269Z39MS6wVJtsoUl10L60WdkhJVdPG24Q4eZTH3nnF6lpvSShEK3wQjDX9JRWAUPvPh7COouPpU9IrqaZFvtQ=="
       }
     },
-    "npm:@eslint/eslintrc": {
+    "npm:@eslint/eslintrc@3.1.0": {
       "type": "npm",
-      "name": "npm:@eslint/eslintrc",
+      "name": "npm:@eslint/eslintrc@3.1.0",
       "data": {
         "version": "3.1.0",
         "packageName": "@eslint/eslintrc",
         "hash": "sha512-4Bfj15dVJdoy3RfZmmo86RK1Fwzn6SstsvK9JS+BaVKqC6QQQQyXekNaC+g+LKNgkQ+2VhGAzm6hO40AhMR3zQ=="
       }
     },
-    "npm:@eslint/js@8.57.0": {
+    "npm:@eslint/js": {
       "type": "npm",
-      "name": "npm:@eslint/js@8.57.0",
+      "name": "npm:@eslint/js",
       "data": {
         "version": "8.57.0",
         "packageName": "@eslint/js",
         "hash": "sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g=="
       }
     },
-    "npm:@eslint/js": {
+    "npm:@eslint/js@9.10.0": {
       "type": "npm",
-      "name": "npm:@eslint/js",
+      "name": "npm:@eslint/js@9.10.0",
       "data": {
         "version": "9.10.0",
         "packageName": "@eslint/js",
@@ -5866,36 +5901,36 @@
         "hash": "sha512-c+RvVxBH0JE2kHt/8p043nPPhIohSnyQOZApIzGJqM2tXnjEzcZzyKIAg72gymLtuwuKfgGxW2H2aqTJqRgTfQ=="
       }
     },
-    "npm:eslint-scope@7.2.2": {
+    "npm:eslint-scope": {
       "type": "npm",
-      "name": "npm:eslint-scope@7.2.2",
+      "name": "npm:eslint-scope",
       "data": {
         "version": "7.2.2",
         "packageName": "eslint-scope",
         "hash": "sha512-dOt21O7lTMhDM+X9mB4GX+DZrZtCUJPL/wlcTqxyrx5IvO0IYtILdtrQGQp+8n5S0gwSVmOf9NQrjMOgfQZlIg=="
       }
     },
-    "npm:eslint-scope": {
+    "npm:eslint-scope@8.0.2": {
       "type": "npm",
-      "name": "npm:eslint-scope",
+      "name": "npm:eslint-scope@8.0.2",
       "data": {
         "version": "8.0.2",
         "packageName": "eslint-scope",
         "hash": "sha512-6E4xmrTw5wtxnLA5wYL3WDfhZ/1bUBGOXV0zQvVRDOtrR8D0p6W7fs3JweNYhwRYeGvd/1CKX2se0/2s7Q/nJA=="
       }
     },
-    "npm:eslint-visitor-keys@3.4.3": {
+    "npm:eslint-visitor-keys": {
       "type": "npm",
-      "name": "npm:eslint-visitor-keys@3.4.3",
+      "name": "npm:eslint-visitor-keys",
       "data": {
         "version": "3.4.3",
         "packageName": "eslint-visitor-keys",
         "hash": "sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag=="
       }
     },
-    "npm:eslint-visitor-keys": {
+    "npm:eslint-visitor-keys@4.0.0": {
       "type": "npm",
-      "name": "npm:eslint-visitor-keys",
+      "name": "npm:eslint-visitor-keys@4.0.0",
       "data": {
         "version": "4.0.0",
         "packageName": "eslint-visitor-keys",
@@ -11511,7 +11546,35 @@
     }
   },
   "dependencies": {
-    "@janribka/internal-babel-plugin-resolve-imports": [],
+    "@janribka/internal-babel-plugin-resolve-imports": [
+      {
+        "source": "@janribka/internal-babel-plugin-resolve-imports",
+        "target": "npm:@babel/core",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-plugin-resolve-imports",
+        "target": "npm:@types/babel__core",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-plugin-resolve-imports",
+        "target": "npm:@types/resolve",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-plugin-resolve-imports",
+        "target": "npm:resolve@1.22.8",
+        "type": "static"
+      }
+    ],
+    "eslint-plugin-material-ui": [
+      {
+        "source": "eslint-plugin-material-ui",
+        "target": "npm:eslint@8.57.0",
+        "type": "static"
+      }
+    ],
     "@janribka/private-theming": [
       {
         "source": "@janribka/private-theming",
@@ -11606,12 +11669,102 @@
         "source": "@janribka/internal-babel-macros",
         "target": "@janribka/utils",
         "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:@types/babel-plugin-macros",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:@types/babel__helper-module-imports",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:@types/node@22.5.4",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:@babel/helper-module-imports",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:@babel/runtime",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:babel-plugin-macros",
+        "type": "static"
       }
     ],
     "@janribka/components": [
       {
         "source": "@janribka/components",
+        "target": "npm:@emotion/react",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:@emotion/styled",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:@types/react",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:react@19.0.0-rc-f6cce072-20240723",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:react-dom",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
         "target": "@janribka/internal-babel-macros",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:@types/node",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:@types/react-transition-group",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:rimraf",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:tailwind-variants",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:tailwindcss",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:@babel/runtime",
         "type": "static"
       },
       {
@@ -11628,12 +11781,42 @@
         "source": "@janribka/components",
         "target": "@janribka/utils",
         "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:csstype",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:react-transition-group",
+        "type": "static"
       }
     ],
     "@janribka/system": [
       {
         "source": "@janribka/system",
+        "target": "npm:@types/react",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/system",
+        "target": "npm:react@19.0.0-rc-f6cce072-20240723",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/system",
         "target": "@janribka/internal-babel-macros",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/system",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/system",
+        "target": "npm:@babel/runtime",
         "type": "static"
       },
       {
@@ -11655,10 +11838,36 @@
         "source": "@janribka/system",
         "target": "@janribka/utils",
         "type": "static"
+      },
+      {
+        "source": "@janribka/system",
+        "target": "npm:clsx",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/system",
+        "target": "npm:csstype",
+        "type": "static"
       }
     ],
-    "@janribka/types": [],
+    "@janribka/types": [
+      {
+        "source": "@janribka/types",
+        "target": "npm:@types/react",
+        "type": "static"
+      }
+    ],
     "@janribka/utils": [
+      {
+        "source": "@janribka/utils",
+        "target": "npm:@types/react",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:react@18.3.1",
+        "type": "static"
+      },
       {
         "source": "@janribka/utils",
         "target": "@janribka/internal-babel-macros",
@@ -11668,12 +11877,117 @@
         "source": "@janribka/utils",
         "target": "@janribka/types",
         "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:@types/mocha",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:@types/node",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:@types/react-is",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:clsx",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:tailwind-merge",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:@babel/runtime",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:react-is@18.3.1",
+        "type": "static"
       }
     ],
     "local-ui-web": [
       {
         "source": "local-ui-web",
         "target": "@janribka/components",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:@types/react",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:@types/react-dom",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:@vitejs/plugin-react",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:autoprefixer",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:eslint@8.57.0",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:eslint-plugin-react",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:eslint-plugin-react-hooks",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:eslint-plugin-react-refresh",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:postcss@8.4.45",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:tailwindcss",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:vite",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:react@19.0.0-rc-f6cce072-20240723",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:react-dom",
         "type": "static"
       }
     ],
@@ -14416,7 +14730,7 @@
       },
       {
         "source": "npm:@eslint-community/eslint-utils",
-        "target": "npm:eslint-visitor-keys@3.4.3",
+        "target": "npm:eslint-visitor-keys",
         "type": "static"
       },
       {
@@ -14442,53 +14756,6 @@
         "type": "static"
       }
     ],
-    "npm:@eslint/eslintrc@2.1.4": [
-      {
-        "source": "npm:@eslint/eslintrc@2.1.4",
-        "target": "npm:ajv@6.12.6",
-        "type": "static"
-      },
-      {
-        "source": "npm:@eslint/eslintrc@2.1.4",
-        "target": "npm:debug",
-        "type": "static"
-      },
-      {
-        "source": "npm:@eslint/eslintrc@2.1.4",
-        "target": "npm:espree@9.6.1",
-        "type": "static"
-      },
-      {
-        "source": "npm:@eslint/eslintrc@2.1.4",
-        "target": "npm:globals@13.24.0",
-        "type": "static"
-      },
-      {
-        "source": "npm:@eslint/eslintrc@2.1.4",
-        "target": "npm:ignore",
-        "type": "static"
-      },
-      {
-        "source": "npm:@eslint/eslintrc@2.1.4",
-        "target": "npm:import-fresh",
-        "type": "static"
-      },
-      {
-        "source": "npm:@eslint/eslintrc@2.1.4",
-        "target": "npm:js-yaml@4.1.0",
-        "type": "static"
-      },
-      {
-        "source": "npm:@eslint/eslintrc@2.1.4",
-        "target": "npm:minimatch@3.1.2",
-        "type": "static"
-      },
-      {
-        "source": "npm:@eslint/eslintrc@2.1.4",
-        "target": "npm:strip-json-comments",
-        "type": "static"
-      }
-    ],
     "npm:@eslint/eslintrc": [
       {
         "source": "npm:@eslint/eslintrc",
@@ -14502,12 +14769,12 @@
       },
       {
         "source": "npm:@eslint/eslintrc",
-        "target": "npm:espree@10.1.0",
+        "target": "npm:espree@9.6.1",
         "type": "static"
       },
       {
         "source": "npm:@eslint/eslintrc",
-        "target": "npm:globals@14.0.0",
+        "target": "npm:globals@13.24.0",
         "type": "static"
       },
       {
@@ -14532,6 +14799,53 @@
       },
       {
         "source": "npm:@eslint/eslintrc",
+        "target": "npm:strip-json-comments",
+        "type": "static"
+      }
+    ],
+    "npm:@eslint/eslintrc@3.1.0": [
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:ajv@6.12.6",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:debug",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:espree@10.1.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:globals@14.0.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:ignore",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:import-fresh",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:js-yaml@4.1.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:minimatch@3.1.2",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
         "target": "npm:strip-json-comments",
         "type": "static"
       }
@@ -18240,18 +18554,6 @@
         "type": "static"
       }
     ],
-    "npm:eslint-scope@7.2.2": [
-      {
-        "source": "npm:eslint-scope@7.2.2",
-        "target": "npm:esrecurse",
-        "type": "static"
-      },
-      {
-        "source": "npm:eslint-scope@7.2.2",
-        "target": "npm:estraverse",
-        "type": "static"
-      }
-    ],
     "npm:eslint-scope": [
       {
         "source": "npm:eslint-scope",
@@ -18260,6 +18562,18 @@
       },
       {
         "source": "npm:eslint-scope",
+        "target": "npm:estraverse",
+        "type": "static"
+      }
+    ],
+    "npm:eslint-scope@8.0.2": [
+      {
+        "source": "npm:eslint-scope@8.0.2",
+        "target": "npm:esrecurse",
+        "type": "static"
+      },
+      {
+        "source": "npm:eslint-scope@8.0.2",
         "target": "npm:estraverse",
         "type": "static"
       }
@@ -18277,12 +18591,12 @@
       },
       {
         "source": "npm:eslint@8.57.0",
-        "target": "npm:@eslint/eslintrc@2.1.4",
+        "target": "npm:@eslint/eslintrc",
         "type": "static"
       },
       {
         "source": "npm:eslint@8.57.0",
-        "target": "npm:@eslint/js@8.57.0",
+        "target": "npm:@eslint/js",
         "type": "static"
       },
       {
@@ -18337,12 +18651,12 @@
       },
       {
         "source": "npm:eslint@8.57.0",
-        "target": "npm:eslint-scope@7.2.2",
+        "target": "npm:eslint-scope",
         "type": "static"
       },
       {
         "source": "npm:eslint@8.57.0",
-        "target": "npm:eslint-visitor-keys@3.4.3",
+        "target": "npm:eslint-visitor-keys",
         "type": "static"
       },
       {
@@ -18474,12 +18788,12 @@
       },
       {
         "source": "npm:eslint",
-        "target": "npm:@eslint/eslintrc",
+        "target": "npm:@eslint/eslintrc@3.1.0",
         "type": "static"
       },
       {
         "source": "npm:eslint",
-        "target": "npm:@eslint/js",
+        "target": "npm:@eslint/js@9.10.0",
         "type": "static"
       },
       {
@@ -18529,12 +18843,12 @@
       },
       {
         "source": "npm:eslint",
-        "target": "npm:eslint-scope",
+        "target": "npm:eslint-scope@8.0.2",
         "type": "static"
       },
       {
         "source": "npm:eslint",
-        "target": "npm:eslint-visitor-keys",
+        "target": "npm:eslint-visitor-keys@4.0.0",
         "type": "static"
       },
       {
@@ -18646,7 +18960,7 @@
       },
       {
         "source": "npm:espree@10.1.0",
-        "target": "npm:eslint-visitor-keys",
+        "target": "npm:eslint-visitor-keys@4.0.0",
         "type": "static"
       }
     ],
@@ -18663,7 +18977,7 @@
       },
       {
         "source": "npm:espree@9.6.1",
-        "target": "npm:eslint-visitor-keys@3.4.3",
+        "target": "npm:eslint-visitor-keys",
         "type": "static"
       }
     ],
