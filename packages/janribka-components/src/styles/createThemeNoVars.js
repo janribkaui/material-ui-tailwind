@@ -9,7 +9,7 @@ import generateUtilityClass from '@janribka/utils/generateUtilityClass';
 import createPalette from './createPalette';
 // import createTypography from './createTypography';
 // import shadows from './shadows';
-import createTransitions from './createTransitions';
+// import createTransitions from './createTransitions';
 // import zIndex from './zIndex';
 
 function createThemeNoVars(options = {}, ...args) {
