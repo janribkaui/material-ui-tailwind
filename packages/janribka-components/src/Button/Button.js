@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import clsx from 'clsx';
+import { tv } from 'tailwind-variants';
 import resolveProps from '@janribka/utils/resolveProps';
 import composeClasses from '@janribka/utils/composeClasses';
 import { alpha } from '@janribka/system/colorManipulator';
@@ -13,33 +13,39 @@ import capitalize from '../utils/capitalize';
 import buttonClasses, { getButtonUtilityClass } from './buttonClasses';
 import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
 import ButtonGroupButtonContext from '../ButtonGroup/ButtonGroupButtonContext';
+import { mergeStyles } from '../utils';
 
-const useUtilityClasses = (ownerState) => {
-  const { color, disableElevation, fullWidth, size, variant, classes } = ownerState;
+// Styles
+const commonIconStyleVariants = tv({
+  base: 'display-inherit',
+  variants: {
+    size: {
+      small: 'text-lg',
+      medium: 'text-xl',
+      large: 'text-[22px]',
+    },
+  },
+});
 
-  const slots = {
-    root: [
-      'root',
-      variant,
-      `${variant}${capitalize(color)}`,
-      `size${capitalize(size)}`,
-      `${variant}Size${capitalize(size)}`,
-      `color${capitalize(color)}`,
-      disableElevation && 'disableElevation',
-      fullWidth && 'fullWidth',
-    ],
-    label: ['label'],
-    startIcon: ['icon', 'startIcon', `iconSize${capitalize(size)}`],
-    endIcon: ['icon', 'endIcon', `iconSize${capitalize(size)}`],
-  };
+const startIconVariants = tv({
+  extend: commonIconStyleVariants,
+  base: 'mr-2 -ml-1',
+  variants: {
+    size: {
+      small: '-ml-0.5',
+    },
+  },
+});
 
-  const composedClasses = composeClasses(slots, getButtonUtilityClass, classes);
-
-  return {
-    ...classes, // forward the focused, disabled, etc. classes to the ButtonBase
-    ...composedClasses,
-  };
-};
+const endIconVariants = tv({
+  extend: commonIconStyleVariants,
+  base: '-mr-1 ml-2',
+  variants: {
+    size: {
+      small: '-mr-0.5',
+    },
+  },
+});
 
 const commonIconStyles = [
   {
@@ -67,6 +73,10 @@ const commonIconStyles = [
     },
   },
 ];
+
+const buttonVariants = tv({
+  base: ['min-w-16', 'py-1.5', 'px-4', 'border-0', 'rounded-sm'],
+});
 
 const ButtonRoot = styled(ButtonBase, {
   shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === 'classes',
@@ -347,16 +357,14 @@ const ButtonEndIcon = styled('span', {
   ],
 });
 
-const Button = React.forwardRef(function Button(inProps, ref) {
+const Button = React.forwardRef(function Button(props, ref) {
   // props priority: `inProps` > `contextProps` > `themeDefaultProps`
-  const contextProps = React.useContext(ButtonGroupContext);
-  const buttonGroupButtonContextPositionClassName = React.useContext(ButtonGroupButtonContext);
-  const resolvedProps = resolveProps(contextProps, inProps);
-  const props = useDefaultProps({ props: resolvedProps, name: 'JRButton' });
+  // const resolvedProps = resolveProps(contextProps, inProps);
+  // const props = useDefaultProps({ props: resolvedProps, name: 'JRButton' });
   const {
     children,
     color = 'primary',
-    component = 'button',
+    // component = 'button',
     className,
     disabled = false,
     disableElevation = false,
@@ -364,59 +372,53 @@ const Button = React.forwardRef(function Button(inProps, ref) {
     endIcon: endIconProp,
     focusVisibleClassName,
     fullWidth = false,
-    size = 'medium',
+    size = 'medium', // TODO: default bude ve variants
     startIcon: startIconProp,
     type,
-    variant = 'text',
+    variant = 'text', // TODO: default bude ve variants
     ...other
   } = props;
+  const contextProps = React.useContext(ButtonGroupContext);
 
-  const ownerState = {
-    ...props,
-    color,
-    component,
-    disabled,
-    disableElevation,
-    disableFocusRipple,
-    fullWidth,
-    size,
-    type,
-    variant,
-  };
+  // Class names
+  const buttonGroupButtonContextPositionClassName = React.useContext(ButtonGroupButtonContext);
+  const positionClassName = buttonGroupButtonContextPositionClassName || '';
 
-  const classes = useUtilityClasses(ownerState);
-
+  // Icons
   const startIcon = startIconProp && (
-    <ButtonStartIcon className={classes.startIcon} ownerState={ownerState}>
+    <span className={mergeStyles('JrButton-startIcon', startIconVariants({ size: size }))}>
       {startIconProp}
-    </ButtonStartIcon>
+    </span>
   );
 
   const endIcon = endIconProp && (
-    <ButtonEndIcon className={classes.endIcon} ownerState={ownerState}>
+    <span className={mergeStyles('JrButton-endIcon', endIconVariants({ size: size }))}>
       {endIconProp}
-    </ButtonEndIcon>
+    </span>
   );
 
-  const positionClassName = buttonGroupButtonContextPositionClassName || '';
-
   return (
-    <ButtonRoot
-      ownerState={ownerState}
-      className={clsx(contextProps.className, classes.root, className, positionClassName)}
-      component={component}
+    <ButtonBase
+      // ownerState={ownerState}
+      className={mergeStyles(
+        'JrButton-root transition-background-color duration-short ease-in-out',
+        buttonVariants({}),
+        contextProps.className,
+        className,
+        positionClassName,
+      )}
       disabled={disabled}
       focusRipple={!disableFocusRipple}
-      focusVisibleClassName={clsx(classes.focusVisible, focusVisibleClassName)}
+      focusVisibleClassName={mergeStyles(focusVisibleClassName)}
       ref={ref}
       type={type}
       {...other}
-      classes={classes}
+      // classes={classes}
     >
       {startIcon}
       {children}
       {endIcon}
-    </ButtonRoot>
+    </ButtonBase>
   );
 });
 

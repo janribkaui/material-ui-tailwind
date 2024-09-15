@@ -5,6 +5,7 @@ import useTimeout from '@janribka/utils/useTimeout';
 import { useDefaultProps } from '../DefaultPropsProvider';
 import TouchRippleRipple from './Ripple';
 import touchRippleClasses from './touchRippleClasses';
+import mergeStyles from '../utils/mergeStyles';
 
 const DURATION = 550;
 export const DELAY_RIPPLE = 80;
