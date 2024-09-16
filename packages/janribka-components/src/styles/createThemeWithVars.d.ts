@@ -3,7 +3,7 @@ import { ExtractTypographyTokens } from '@janribka/system/cssVars';
 import { OverridableStringUnion } from '@janribka/types';
 
 import { Components } from './components';
-import { Palette, PaletteOptions } from './createPalette';
+import { Palette, PaletteOptions } from './createPaletteOld';
 import { Theme, ThemeOptions } from './createThemeNoVars';
 
 // import { Shadows } from './shadows';

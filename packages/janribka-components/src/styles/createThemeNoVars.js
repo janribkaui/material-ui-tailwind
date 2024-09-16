@@ -6,7 +6,7 @@ import systemCreateTheme from '@janribka/system/createTheme';
 import JRError from '@janribka/internal-babel-macros/JRError.macro';
 import generateUtilityClass from '@janribka/utils/generateUtilityClass';
 // import createMixins from './createMixins';
-import createPalette from './createPalette';
+import createPalette from './createColors';
 // import createTypography from './createTypography';
 // import shadows from './shadows';
 // import createTransitions from './createTransitions';

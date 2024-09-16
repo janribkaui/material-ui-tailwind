@@ -75,7 +75,17 @@ const commonIconStyles = [
 ];
 
 const buttonVariants = tv({
-  base: ['min-w-16', 'py-1.5', 'px-4', 'border-0', 'rounded-sm'],
+  base: [
+    'min-w-16',
+    'py-1.5',
+    'px-4',
+    'border-0',
+    'rounded-sm',
+    'transition-background-color transition-box-shadow transition-border-color transition-color',
+    'duration-short ease-in-out',
+    'hover:no-underline decoration-transparent',
+    '',
+  ],
 });
 
 const ButtonRoot = styled(ButtonBase, {
@@ -401,7 +411,7 @@ const Button = React.forwardRef(function Button(props, ref) {
     <ButtonBase
       // ownerState={ownerState}
       className={mergeStyles(
-        'JrButton-root transition-background-color duration-short ease-in-out',
+        'JrButton-root',
         buttonVariants({}),
         contextProps.className,
         className,

@@ -1,54 +1,20 @@
-import type { Config } from 'tailwindcss';
-import { RecursiveKeyValuePair } from 'tailwindcss/types/config';
+import common from '../colors/common';
+import grey from '../colors/grey';
+import purple from '../colors/purple';
+import red from '../colors/red';
+import orange from '../colors/orange';
+import blue from '../colors/blue';
+import lightBlue from '../colors/lightBlue';
+import green from '../colors/green';
 
-import blue from '@janribka/components/colors/blue';
-import common from '@janribka/components/colors/common';
-import green from '@janribka/components/colors/green';
-import lightBlue from '@janribka/components/colors/lightBlue';
-import orange from '@janribka/components/colors/orange';
-import purple from '@janribka/components/colors/purple';
-import red from '@janribka/components/colors/red';
-
-import themePlugin from './src/styles/themePlugin';
-
-// Follow https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves
-// to learn the context in which each easing should be used.
-const easing = {
-  // This is the most common easing curve.
-  'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
-  // Objects enter the screen at full velocity from off-screen and
-  // slowly decelerate to a resting point.
-  out: 'cubic-bezier(0.0, 0, 0.2, 1)',
-  // Objects leave the screen at full velocity. They do not decelerate when off-screen.
-  in: 'cubic-bezier(0.4, 0, 1, 1)',
-  // The sharp curve is used by objects that may return to the screen at any time.
-  sharp: 'cubic-bezier(0.4, 0, 0.6, 1)',
-};
-
-// Follow https://m2.material.io/guidelines/motion/duration-easing.html#duration-easing-common-durations
-// to learn when use what timing
-const duration = {
-  shortest: '150',
-  shorter: '200',
-  short: '250',
-  // most basic recommended timing
-  standard: '300',
-  // this is to be used in complex animations
-  complex: '375',
-  // recommended when something is entering screen
-  enteringScreen: '225',
-  // recommended when something is leaving screen
-  leavingScreen: '195',
-};
-
-const light: RecursiveKeyValuePair<string, string> = {
-  // The primary color of the app.
+const light = {
+  // The colors used to represent primary interface elements for a user.
   primary: {
     light: blue[400],
     DEFAULT: blue[700],
     dark: blue[800],
   },
-  // The secondary color of the app.
+  // The colors used to represent secondary interface elements for a user.
   secondary: {
     light: purple[300],
     DEFAULT: purple[500],
@@ -90,21 +56,25 @@ const light: RecursiveKeyValuePair<string, string> = {
     focusOpacity: '0.12',
     activatedOpacity: '0.12',
   },
+  // The colors used to represent interface elements that the user should be made aware of.
   error: {
     light: red[400],
     DEFAULT: red[700],
     dark: red[800],
   },
+  // The colors used to present information to the user that is neutral and not necessarily important.
   info: {
     light: lightBlue[500],
     DEFAULT: lightBlue[900],
     dark: lightBlue[900],
   },
+  // The colors used to indicate the successful completion of an action that user triggered.
   success: {
     light: green[500],
     DEFAULT: green[800],
     dark: green[900],
   },
+  // The colors used to represent potentially dangerous actions or important messages.
   warning: {
     light: orange[500],
     DEFAULT: '#ed6c02', // closest to orange[800] that pass 3:1.
@@ -112,7 +82,7 @@ const light: RecursiveKeyValuePair<string, string> = {
   },
 };
 
-const dark: RecursiveKeyValuePair<string, string> = {
+const dark = {
   // The primary color of the app.
   primary: {
     light: blue[50],
@@ -171,25 +141,15 @@ const dark: RecursiveKeyValuePair<string, string> = {
   },
 };
 
-const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {
-      transitionProperty: {
-        'background-color': 'background-color',
-        'box-shadow': 'box-shadow',
-        'border-color': 'border-color',
-        color: 'color',
-      },
-      transitionDuration: {
-        ...duration,
-      },
-      transitionTimingFunction: {
-        ...easing,
-      },
+export default function createColors() {
+  return {
+    // A collection of common colors.
+    common: { ...common }, // prevent mutable object.
+    // The grey colors.
+    grey,
+    ...light,
+    dark: {
+      ...dark,
     },
-  },
-  plugins: [themePlugin({})],
-};
-
-export default config;
+  };
+}

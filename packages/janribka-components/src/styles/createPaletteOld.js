@@ -1,5 +1,5 @@
 import deepmerge from '@janribka/utils/deepmerge';
-import JRError from '@janribka/internal-babel-macros/JRError.macro';
+import MuiError from '@janribka/internal-babel-macros/JRError.macro';
 import { darken, getContrastRatio, lighten } from '@janribka/system/colorManipulator';
 import common from '../colors/common';
 import grey from '../colors/grey';
@@ -205,7 +205,7 @@ export default function createPalette(palette) {
       if (contrast < 3) {
         console.error(
           [
-            `JR: The contrast ratio of ${contrast}:1 for ${contrastText} on ${background}`,
+            `MUI: The contrast ratio of ${contrast}:1 for ${contrastText} on ${background}`,
             'falls below the WCAG recommended absolute minimum contrast ratio of 3:1.',
             'https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast',
           ].join('\n'),
@@ -223,8 +223,8 @@ export default function createPalette(palette) {
     }
 
     if (!color.hasOwnProperty('main')) {
-      throw new JRError(
-        'JR: The color%s provided to augmentColor(color) is invalid.\n' +
+      throw new MuiError(
+        'MUI: The color%s provided to augmentColor(color) is invalid.\n' +
           'The color object needs to have a `main` property or a `%s` property.',
         name ? ` (${name})` : '',
         mainShade,
@@ -232,13 +232,13 @@ export default function createPalette(palette) {
     }
 
     if (typeof color.main !== 'string') {
-      throw new JRError(
-        'JR: The color%s provided to augmentColor(color) is invalid.\n' +
+      throw new MuiError(
+        'MUI: The color%s provided to augmentColor(color) is invalid.\n' +
           '`color.main` should be a string, but `%s` was provided instead.\n' +
           '\n' +
           'Did you intend to use one of the following approaches?\n' +
           '\n' +
-          'import { green } from "@janribka/components/colors";\n' +
+          'import { green } from "@mui/material/colors";\n' +
           '\n' +
           'const theme1 = createTheme({ palette: {\n' +
           '  primary: green,\n' +
@@ -265,7 +265,7 @@ export default function createPalette(palette) {
 
   if (process.env.NODE_ENV !== 'production') {
     if (!modes[mode]) {
-      console.error(`JR: The palette mode \`${mode}\` is not supported.`);
+      console.error(`MUI: The palette mode \`${mode}\` is not supported.`);
     }
   }
 

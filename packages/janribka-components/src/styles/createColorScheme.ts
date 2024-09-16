@@ -1,5 +1,5 @@
 import type { ColorSystemOptions } from './createThemeWithVars';
-import createPalette, { PaletteOptions } from './createPalette';
+import createPalette, { PaletteOptions } from './createPaletteOld';
 import getOverlayAlpha from './getOverlayAlpha';
 
 const defaultDarkOverlays = [...Array(25)].map((_, index) => {

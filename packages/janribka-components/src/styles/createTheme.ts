@@ -1,4 +1,4 @@
-import createPalette from './createPalette';
+import createPalette from './createPaletteOld';
 import createThemeNoVars, { Theme, ThemeOptions } from './createThemeNoVars';
 import createThemeWithVars, {
   ColorSystem,

@@ -11,6 +11,19 @@ export {
 // export { Shadows } from './shadows';
 // export { ZIndex } from './zIndex';
 export {
+  CommonColors as CommonColorsOld,
+  Palette as PaletteOld,
+  PaletteColor as PaletteColorOld,
+  PaletteColorOptions as PaletteColorOptionsOld,
+  PaletteOptions as PaletteOptionsOld,
+  SimplePaletteColorOptions as SimplePaletteColorOptionsOld,
+  TypeText as TypeTextOld,
+  TypeAction as TypeActionOld,
+  TypeBackground as TypeBackgroundOld,
+  PaletteMode as PaletteModeOld,
+  Color as ColorOld,
+} from './createPaletteOld';
+export {
   CommonColors,
   Palette,
   PaletteColor,
@@ -20,9 +33,8 @@ export {
   TypeText,
   TypeAction,
   TypeBackground,
-  PaletteMode,
   Color,
-} from './createPalette';
+} from './createColors';
 export { default as createColorScheme } from './createColorScheme';
 // export { default as createStyles } from './createStyles';
 export {

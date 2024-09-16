@@ -2,7 +2,7 @@ import { Theme as SystemTheme, ThemeOptions as SystemThemeOptions } from '@janri
 
 import { Components } from './components';
 // import { Mixins, MixinsOptions } from './createMixins';
-import { Palette, PaletteOptions } from './createPalette';
+import { Palette, PaletteOptions } from './createPaletteOld';
 import { ColorSystemOptions, CssVarsPalette, CssVarsTheme } from './createThemeWithVars';
 import { Transitions, TransitionsOptions } from './createTransitions';
 import { Typography, TypographyOptions } from './createTypography';
