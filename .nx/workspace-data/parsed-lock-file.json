@@ -2817,6 +2817,15 @@
         "hash": "sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ=="
       }
     },
+    "npm:@types/tailwindcss": {
+      "type": "npm",
+      "name": "npm:@types/tailwindcss",
+      "data": {
+        "version": "3.1.0",
+        "packageName": "@types/tailwindcss",
+        "hash": "sha512-JxPzrm609hzvF4nmOI3StLjbBEP3WWQxDDJESqR1nh94h7gyyy3XSl0hn5RBMJ9mPudlLjtaXs5YEBtLw7CnPA=="
+      }
+    },
     "npm:@types/yargs-parser": {
       "type": "npm",
       "name": "npm:@types/yargs-parser",
@@ -14230,6 +14239,11 @@
     {
       "source": "npm:@types/react",
       "target": "npm:csstype",
+      "type": "static"
+    },
+    {
+      "source": "npm:@types/tailwindcss",
+      "target": "npm:tailwindcss",
       "type": "static"
     },
     {
