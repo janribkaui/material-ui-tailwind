@@ -6083,3 +6083,146 @@
 [NX Daemon Server] - 2024-09-16T21:49:01.112Z - [SYNC]: project graph hash is the same, not collecting task sync generators
 [NX Daemon Server] - 2024-09-16T21:49:01.112Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
 [NX Daemon Server] - 2024-09-16T21:49:01.112Z - Time taken for 'total execution time for createProjectGraph()' 23.8657030002214ms
+[NX Daemon Server] - 2024-09-17T16:55:38.311Z - Started listening on: /tmp/bcaef0cf68d11b82bfa9/d.sock
+[NX Daemon Server] - 2024-09-17T16:55:38.313Z - [WATCHER]: Subscribed to changes within: /home/honza/Projekty/02_Weby/007_Library/03_Realizace/Program/Main/Library (native)
+[NX Daemon Server] - 2024-09-17T16:55:38.316Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-17T16:55:38.317Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-09-17T16:55:38.318Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-17T16:55:38.319Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-09-17T16:55:38.470Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-17T16:55:38.470Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-17T16:55:38.470Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-17T16:55:38.477Z - Time taken for 'loadNxPlugins' 149.56871800000002ms
+[NX Daemon Server] - 2024-09-17T16:55:38.895Z - Time taken for 'build-project-configs' 405.65029ms
+[NX Daemon Server] - 2024-09-17T16:55:38.920Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-17T16:55:38.921Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-09-17T16:55:38.921Z - Time taken for 'total for creating and serializing project graph' 601.6793829999999ms
+[NX Daemon Server] - 2024-09-17T16:55:38.922Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-09-17T16:55:38.922Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 602. Response time: 1.
+[NX Daemon Server] - 2024-09-17T16:55:38.928Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-09-17T16:55:38.928Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-09-17T16:55:38.928Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:38.978Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-09-17T16:55:38.979Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-09-17T16:55:38.980Z - Time taken for 'total for creating and serializing project graph' 0.3759619999999586ms
+[NX Daemon Server] - 2024-09-17T16:55:38.980Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-09-17T16:55:38.980Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2024-09-17T16:55:39.013Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX Daemon Server] - 2024-09-17T16:55:39.013Z - Done responding to the client handleHashTasks
+[NX Daemon Server] - 2024-09-17T16:55:39.013Z - Handled HASH_TASKS. Handling time: 15. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:39.036Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX Daemon Server] - 2024-09-17T16:55:39.036Z - Done responding to the client outputsHashesMatch
+[NX Daemon Server] - 2024-09-17T16:55:39.036Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 2. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:39.039Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX Daemon Server] - 2024-09-17T16:55:39.039Z - Done responding to the client outputsHashesMatch
+[NX Daemon Server] - 2024-09-17T16:55:39.039Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 2. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:39.045Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:39.045Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:39.045Z - Handled RECORD_OUTPUTS_HASH. Handling time: 3. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:39.047Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:39.047Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:39.047Z - Handled RECORD_OUTPUTS_HASH. Handling time: 2. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:39.053Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX Daemon Server] - 2024-09-17T16:55:39.053Z - Done responding to the client outputsHashesMatch
+[NX Daemon Server] - 2024-09-17T16:55:39.053Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 4. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:39.086Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:39.086Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:39.086Z - Handled RECORD_OUTPUTS_HASH. Handling time: 5. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:39.091Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX Daemon Server] - 2024-09-17T16:55:39.091Z - Done responding to the client outputsHashesMatch
+[NX Daemon Server] - 2024-09-17T16:55:39.091Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 2. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:39.100Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:39.100Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:39.100Z - Handled RECORD_OUTPUTS_HASH. Handling time: 3. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:39.109Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX Daemon Server] - 2024-09-17T16:55:39.109Z - Done responding to the client outputsHashesMatch
+[NX Daemon Server] - 2024-09-17T16:55:39.110Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 7. Response time: 1.
+[NX Daemon Server] - 2024-09-17T16:55:39.158Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:39.158Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:39.158Z - Handled RECORD_OUTPUTS_HASH. Handling time: 7. Response time: 0.
+
+> NX notify watch() error err=Error { kind: MaxFilesWatch, paths: ["/home/honza/Projekty/02_Weby/007_Library/03_Realizace/Program/Main/Library/node_modules/.pnpm/@nodelib+fs.stat@2.0.5/node_modules"] }
+
+
+> NX runtime error err=Native fs watcher error
+
+
+> NX notify watch() error err=Error { kind: MaxFilesWatch, paths: ["/home/honza/Projekty/02_Weby/007_Library/03_Realizace/Program/Main/Library/node_modules/.pnpm/@isaacs+string-locale-compare@1.1.0"] }
+
+
+> NX runtime error err=Native fs watcher error
+
+[NX Daemon Server] - 2024-09-17T16:55:39.644Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:42.024Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:42.098Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:42.161Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:42.213Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:42.265Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:42.322Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:42.400Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:42.527Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:42.584Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:42.636Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.227Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.309Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.368Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.424Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.478Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.531Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.585Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.637Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.715Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.843Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.905Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:44.958Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:45.010Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:46.607Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:46.677Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:46.744Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:46.796Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:46.849Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:46.902Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:46.957Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:47.021Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:47.119Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:47.176Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:47.226Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:51.423Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:51.475Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:51.492Z - [WATCHER]: packages/janribka-components/tsconfig.build.tsbuildinfo was created or restored
+[NX Daemon Server] - 2024-09-17T16:55:51.593Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-17T16:55:51.593Z - [REQUEST]: packages/janribka-components/tsconfig.build.tsbuildinfo
+[NX Daemon Server] - 2024-09-17T16:55:51.594Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-17T16:55:51.598Z - Time taken for 'hash changed files from watcher' 0.5608019999999669ms
+[NX Daemon Server] - 2024-09-17T16:55:51.619Z - Time taken for 'build-project-configs' 17.36242400000083ms
+[NX Daemon Server] - 2024-09-17T16:55:51.652Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-17T16:55:51.653Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-17T16:55:51.653Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-17T16:55:51.653Z - Time taken for 'total execution time for createProjectGraph()' 29.56653400000141ms
+[NX Daemon Server] - 2024-09-17T16:55:52.073Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:52.073Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:52.073Z - Handled RECORD_OUTPUTS_HASH. Handling time: 7. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:52.073Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:53.320Z - [WATCHER]: node_modules/.pnpm/node_modules/local-ui-web/vite.config.js.timestamp-1726592153268-870f636d1a528.mjs was created or restored
+[NX Daemon Server] - 2024-09-17T16:55:53.320Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:53.521Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-09-17T16:55:53.521Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-17T16:55:53.521Z - [REQUEST]: 
+[NX Daemon Server] - 2024-09-17T16:55:53.525Z - Time taken for 'hash changed files from watcher' 0.35659599999962666ms
+[NX Daemon Server] - 2024-09-17T16:55:53.540Z - Time taken for 'build-project-configs' 12.6319110000004ms
+[NX Daemon Server] - 2024-09-17T16:55:53.561Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-09-17T16:55:53.562Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-09-17T16:55:53.562Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-09-17T16:55:53.562Z - Time taken for 'total execution time for createProjectGraph()' 16.66547299999911ms
+[NX Daemon Server] - 2024-09-17T16:55:54.739Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:54.927Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-17T16:55:54.935Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:54.936Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2024-09-17T16:55:54.936Z - Handled RECORD_OUTPUTS_HASH. Handling time: 2. Response time: 1.
+[NX Daemon Server] - 2024-09-17T16:55:54.942Z - [REQUEST]: Responding to the client. handleRecordTaskRuns
+[NX Daemon Server] - 2024-09-17T16:55:54.943Z - Done responding to the client handleRecordTaskRuns
+[NX Daemon Server] - 2024-09-17T16:55:54.943Z - Handled WRITE_TASK_RUNS_TO_HISTORY. Handling time: 2. Response time: 1.
+[NX Daemon Server] - 2024-09-17T16:55:54.943Z - [REQUEST]: Responding to the client. handleGetFlakyTasks
+[NX Daemon Server] - 2024-09-17T16:55:54.943Z - Done responding to the client handleGetFlakyTasks
+[NX Daemon Server] - 2024-09-17T16:55:54.943Z - Handled GET_TASK_HISTORY_FOR_HASHES. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-09-17T16:55:54.953Z - Closed a connection. Number of open connections: 0

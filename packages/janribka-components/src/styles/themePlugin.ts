@@ -20,7 +20,7 @@ const themePlugin = plugin.withOptions(
     };
   },
   () => {
-    return { darkMode: 'class', theme: { colors: colors } };
+    return { darkMode: 'class', theme: { colors: createColors() } };
   },
 );
 

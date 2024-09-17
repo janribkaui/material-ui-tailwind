@@ -1,7 +1,6 @@
 'use client';
 import * as React from 'react';
 
-// import composeClasses from '@janribka/utils/composeClasses';
 import isFocusVisible from '@janribka/utils/isFocusVisible';
 import { styled } from '../zero-styled';
 import { useDefaultProps } from '../DefaultPropsProvider';
