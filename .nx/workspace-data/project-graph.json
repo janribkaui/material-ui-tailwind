@@ -4065,6 +4065,15 @@
         "hash": "sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ=="
       }
     },
+    "npm:@types/tailwindcss": {
+      "type": "npm",
+      "name": "npm:@types/tailwindcss",
+      "data": {
+        "version": "3.1.0",
+        "packageName": "@types/tailwindcss",
+        "hash": "sha512-JxPzrm609hzvF4nmOI3StLjbBEP3WWQxDDJESqR1nh94h7gyyy3XSl0hn5RBMJ9mPudlLjtaXs5YEBtLw7CnPA=="
+      }
+    },
     "npm:@types/yargs-parser": {
       "type": "npm",
       "name": "npm:@types/yargs-parser",
@@ -11510,16 +11519,47 @@
     }
   },
   "dependencies": {
-    "@janribka/internal-babel-plugin-resolve-imports": [],
+    "@janribka/internal-babel-plugin-resolve-imports": [
+      {
+        "source": "@janribka/internal-babel-plugin-resolve-imports",
+        "target": "npm:@babel/core",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-plugin-resolve-imports",
+        "target": "npm:@types/babel__core",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-plugin-resolve-imports",
+        "target": "npm:@types/resolve",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-plugin-resolve-imports",
+        "target": "npm:resolve@1.22.8",
+        "type": "static"
+      }
+    ],
     "eslint-plugin-material-ui": [
       {
         "source": "eslint-plugin-material-ui",
-        "target": "npm:eslint",
+        "target": "npm:eslint@8.57.0",
         "type": "static"
       },
       {
         "source": "eslint-plugin-material-ui",
-        "target": "npm:emoji-regex@8.0.0",
+        "target": "npm:@types/eslint",
+        "type": "static"
+      },
+      {
+        "source": "eslint-plugin-material-ui",
+        "target": "npm:@typescript-eslint/parser",
+        "type": "static"
+      },
+      {
+        "source": "eslint-plugin-material-ui",
+        "target": "npm:emoji-regex@10.4.0",
         "type": "static"
       }
     ],
@@ -11617,12 +11657,107 @@
         "source": "@janribka/internal-babel-macros",
         "target": "@janribka/utils",
         "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:@types/babel-plugin-macros",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:@types/babel__helper-module-imports",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:@types/node@22.5.4",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:@babel/helper-module-imports",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:@babel/runtime",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/internal-babel-macros",
+        "target": "npm:babel-plugin-macros",
+        "type": "static"
       }
     ],
     "@janribka/components": [
       {
         "source": "@janribka/components",
+        "target": "npm:@emotion/react",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:@emotion/styled",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:@types/react",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:react@19.0.0-rc-f6cce072-20240723",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:react-dom",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
         "target": "@janribka/internal-babel-macros",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:@types/node",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:@types/react-transition-group",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:@types/tailwindcss",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:rimraf",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:tailwind-variants",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:tailwindcss",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:@babel/runtime",
         "type": "static"
       },
       {
@@ -11639,12 +11774,42 @@
         "source": "@janribka/components",
         "target": "@janribka/utils",
         "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:csstype",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/components",
+        "target": "npm:react-transition-group",
+        "type": "static"
       }
     ],
     "@janribka/system": [
       {
         "source": "@janribka/system",
+        "target": "npm:@types/react",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/system",
+        "target": "npm:react@19.0.0-rc-f6cce072-20240723",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/system",
         "target": "@janribka/internal-babel-macros",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/system",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/system",
+        "target": "npm:@babel/runtime",
         "type": "static"
       },
       {
@@ -11666,10 +11831,36 @@
         "source": "@janribka/system",
         "target": "@janribka/utils",
         "type": "static"
+      },
+      {
+        "source": "@janribka/system",
+        "target": "npm:clsx",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/system",
+        "target": "npm:csstype",
+        "type": "static"
       }
     ],
-    "@janribka/types": [],
+    "@janribka/types": [
+      {
+        "source": "@janribka/types",
+        "target": "npm:@types/react",
+        "type": "static"
+      }
+    ],
     "@janribka/utils": [
+      {
+        "source": "@janribka/utils",
+        "target": "npm:@types/react",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:react@18.3.1",
+        "type": "static"
+      },
       {
         "source": "@janribka/utils",
         "target": "@janribka/internal-babel-macros",
@@ -11679,12 +11870,117 @@
         "source": "@janribka/utils",
         "target": "@janribka/types",
         "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:@types/mocha",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:@types/node",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:@types/react-is",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:clsx",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:tailwind-merge",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:@babel/runtime",
+        "type": "static"
+      },
+      {
+        "source": "@janribka/utils",
+        "target": "npm:react-is@18.3.1",
+        "type": "static"
       }
     ],
     "local-ui-web": [
       {
         "source": "local-ui-web",
         "target": "@janribka/components",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:@types/react",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:@types/react-dom",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:@vitejs/plugin-react",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:autoprefixer",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:eslint@8.57.0",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:eslint-plugin-react",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:eslint-plugin-react-hooks",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:eslint-plugin-react-refresh",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:postcss@8.4.45",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:tailwindcss",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:vite",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:react@19.0.0-rc-f6cce072-20240723",
+        "type": "static"
+      },
+      {
+        "source": "local-ui-web",
+        "target": "npm:react-dom",
         "type": "static"
       }
     ],
@@ -15939,6 +16235,13 @@
       {
         "source": "npm:@types/react",
         "target": "npm:csstype",
+        "type": "static"
+      }
+    ],
+    "npm:@types/tailwindcss": [
+      {
+        "source": "npm:@types/tailwindcss",
+        "target": "npm:tailwindcss",
         "type": "static"
       }
     ],

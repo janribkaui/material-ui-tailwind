@@ -235,6 +235,9 @@ importers:
       '@emotion/styled':
         specifier: ^11.3.0
         version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723))(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)
+      '@janribka/components':
+        specifier: workspace:^
+        version: link:build
       '@janribka/system':
         specifier: workspace:^
         version: link:../janribka-system/build
@@ -244,9 +247,6 @@ importers:
       '@janribka/utils':
         specifier: workspace:^
         version: link:../janribka-utils/build
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       csstype:
         specifier: ^3.1.3
         version: 3.1.3
@@ -266,6 +266,9 @@ importers:
       '@types/react-transition-group':
         specifier: ^4.4.10
         version: 4.4.11
+      '@types/tailwindcss':
+        specifier: ^3.1.0
+        version: 3.1.0
       react:
         specifier: 19.0.0-rc-f6cce072-20240723
         version: 19.0.0-rc-f6cce072-20240723
@@ -1984,6 +1987,10 @@ packages:
 
   '@types/resolve@1.20.6':
     resolution: {integrity: sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ==}
+
+  '@types/tailwindcss@3.1.0':
+    resolution: {integrity: sha512-JxPzrm609hzvF4nmOI3StLjbBEP3WWQxDDJESqR1nh94h7gyyy3XSl0hn5RBMJ9mPudlLjtaXs5YEBtLw7CnPA==}
+    deprecated: This is a stub types definition. tailwindcss provides its own type definitions, so you do not need this installed.
 
   '@types/yargs-parser@21.0.3':
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
@@ -7074,6 +7081,12 @@ snapshots:
       csstype: 3.1.3
 
   '@types/resolve@1.20.6': {}
+
+  '@types/tailwindcss@3.1.0':
+    dependencies:
+      tailwindcss: 3.4.11
+    transitivePeerDependencies:
+      - ts-node
 
   '@types/yargs-parser@21.0.3': {}
 
