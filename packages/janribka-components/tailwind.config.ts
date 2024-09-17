@@ -1,14 +1,13 @@
 import type { Config } from 'tailwindcss';
 import { RecursiveKeyValuePair } from 'tailwindcss/types/config';
 
-import blue from '@janribka/components/colors/blue';
-import common from '@janribka/components/colors/common';
-import green from '@janribka/components/colors/green';
-import lightBlue from '@janribka/components/colors/lightBlue';
-import orange from '@janribka/components/colors/orange';
-import purple from '@janribka/components/colors/purple';
-import red from '@janribka/components/colors/red';
-
+import blue from './src/colors/blue';
+import common from './src/colors/common';
+import green from './src/colors/green';
+import lightBlue from './src/colors/lightBlue';
+import orange from './src/colors/orange';
+import purple from './src/colors/purple';
+import red from './src/colors/red';
 import themePlugin from './src/styles/themePlugin';
 
 // Follow https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves

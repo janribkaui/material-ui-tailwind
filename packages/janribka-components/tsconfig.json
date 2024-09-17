@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["tailwind.config.ts", "src/**/*"],
+  "include": ["src/**/*"],
   "compilerOptions": {
     "moduleResolution": "Bundler"
   },

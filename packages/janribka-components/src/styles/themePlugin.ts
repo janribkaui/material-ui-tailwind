@@ -1,6 +1,6 @@
 import plugin from 'tailwindcss/plugin';
 
-import createColors from '@janribka/components/styles/createColors';
+import createColors from './createColors';
 
 const colors = { ...createColors() };
 
