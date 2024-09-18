@@ -2,6 +2,8 @@ import type { Config } from 'tailwindcss';
 import basePlugin from '@janribka/components/styles/basePlugin';
 import colorsPlugin from '@janribka/components/styles/colorsPlugin';
 
+import { colors } from './src';
+
 // Follow https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves
 // to learn the context in which each easing should be used.
 const easing = {
@@ -41,12 +43,20 @@ const config: Config = {
         'box-shadow': 'box-shadow',
         'border-color': 'border-color',
         color: 'color',
+        button: 'background-color, color, box-shadow, border-color',
       },
       transitionDuration: {
         ...duration,
       },
       transitionTimingFunction: {
         ...easing,
+      },
+      lineHeight: {
+        '4_67': '1.167',
+        '4_8': '1.2',
+        '4_94': '1.235',
+        '5_34': '1.334',
+        '6_4': '1.6',
       },
     },
   },
