@@ -482,6 +482,7 @@
               "build:node",
               "build:stable",
               "build:copy-files",
+              "build:copy-tailwind-config",
               "build:types",
               "prebuild",
               "lint",
@@ -499,7 +500,7 @@
               "script": "build"
             },
             "metadata": {
-              "scriptContent": "pnpm build:modern && pnpm build:node && pnpm build:stable && pnpm build:types && pnpm build:copy-files",
+              "scriptContent": "pnpm build:modern && pnpm build:node && pnpm build:stable && pnpm build:types && pnpm build:copy-files && pnpm build:copy-tailwind-config",
               "runCommand": "pnpm run build"
             },
             "configurations": {},
@@ -559,6 +560,18 @@
             "metadata": {
               "scriptContent": "node ../../scripts/copyFiles.mjs",
               "runCommand": "pnpm run build:copy-files"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "build:copy-tailwind-config": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build:copy-tailwind-config"
+            },
+            "metadata": {
+              "scriptContent": "node ../../scripts/copyTailwindConfig.mjs",
+              "runCommand": "pnpm run build:copy-tailwind-config"
             },
             "configurations": {},
             "parallelism": true
@@ -11728,11 +11741,6 @@
       {
         "source": "@janribka/components",
         "target": "npm:@types/react-transition-group",
-        "type": "static"
-      },
-      {
-        "source": "@janribka/components",
-        "target": "npm:@types/tailwindcss",
         "type": "static"
       },
       {

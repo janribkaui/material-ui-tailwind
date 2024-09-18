@@ -1,14 +1,14 @@
 import type { Config } from 'tailwindcss';
 import { RecursiveKeyValuePair } from 'tailwindcss/types/config';
 
-import blue from './src/colors/blue';
-import common from './src/colors/common';
-import green from './src/colors/green';
-import lightBlue from './src/colors/lightBlue';
-import orange from './src/colors/orange';
-import purple from './src/colors/purple';
-import red from './src/colors/red';
-import themePlugin from './src/styles/themePlugin';
+import blue from '@janribka/components/colors/blue';
+import common from '@janribka/components/colors/common';
+import green from '@janribka/components/colors/green';
+import lightBlue from '@janribka/components/colors/lightBlue';
+import orange from '@janribka/components/colors/orange';
+import purple from '@janribka/components/colors/purple';
+import red from '@janribka/components/colors/red';
+import themePlugin from '@janribka/components/styles/themePlugin';
 
 // Follow https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves
 // to learn the context in which each easing should be used.
@@ -27,17 +27,17 @@ const easing = {
 // Follow https://m2.material.io/guidelines/motion/duration-easing.html#duration-easing-common-durations
 // to learn when use what timing
 const duration = {
-  shortest: '150',
-  shorter: '200',
-  short: '250',
+  shortest: '150ms',
+  shorter: '200ms',
+  short: '250ms',
   // most basic recommended timing
-  standard: '300',
+  standard: '300ms',
   // this is to be used in complex animations
-  complex: '375',
+  complex: '375ms',
   // recommended when something is entering screen
-  enteringScreen: '225',
+  enteringScreen: '225ms',
   // recommended when something is leaving screen
-  leavingScreen: '195',
+  leavingScreen: '195ms',
 };
 
 const light: RecursiveKeyValuePair<string, string> = {

@@ -2,8 +2,6 @@ import plugin from 'tailwindcss/plugin';
 
 import createColors from './createColors';
 
-const colors = { ...createColors() };
-
 const themePlugin = plugin.withOptions(
   () => {
     return ({ addBase }) => {
