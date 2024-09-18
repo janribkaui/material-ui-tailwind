@@ -408,29 +408,27 @@ const Button = React.forwardRef(function Button(props, ref) {
   );
 
   return (
-    <>
-      <ButtonBase
-        // ownerState={ownerState}
-        className={mergeStyles(
-          'JrButton-root',
-          buttonVariants({}),
-          contextProps.className,
-          className,
-          positionClassName,
-        )}
-        disabled={disabled}
-        focusRipple={!disableFocusRipple}
-        focusVisibleClassName={mergeStyles(focusVisibleClassName)}
-        ref={ref}
-        type={type}
-        {...other}
-        // classes={classes}
-      >
-        {startIcon}
-        {children}
-        {endIcon}
-      </ButtonBase>
-    </>
+    <ButtonBase
+      // ownerState={ownerState}
+      className={mergeStyles(
+        'JrButton-root',
+        buttonVariants({}),
+        contextProps.className,
+        className,
+        positionClassName,
+      )}
+      disabled={disabled}
+      focusRipple={!disableFocusRipple}
+      focusVisibleClassName={mergeStyles(focusVisibleClassName)}
+      ref={ref}
+      type={type}
+      {...other}
+      // classes={classes}
+    >
+      {startIcon}
+      {children}
+      {endIcon}
+    </ButtonBase>
   );
 });
 

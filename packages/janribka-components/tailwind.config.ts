@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-
+import basePlugin from '@janribka/components/styles/basePlugin';
 import colorsPlugin from '@janribka/components/styles/colorsPlugin';
 
 // Follow https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves
@@ -34,17 +34,7 @@ const duration = {
 
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
   theme: {
-    '*': {
-      outlineColor: 'currentColor',
-    },
-    'html, body': {
-      height: '100%',
-      '-webkit-font-smoothing': 'antialiased',
-      '-moz-osx-font-smoothing': 'grayscale',
-      '-webkit-tap-highlight-color': 'transparent',
-    },
     extend: {
       transitionProperty: {
         'background-color': 'background-color',
@@ -60,7 +50,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [colorsPlugin({})],
+  plugins: [basePlugin({}), colorsPlugin({})],
 };
 
 export default config;
