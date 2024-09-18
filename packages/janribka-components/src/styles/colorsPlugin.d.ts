@@ -1,6 +1,6 @@
 import { Config, PluginCreator } from 'tailwindcss/types/config';
 
-declare const themePlugin: {
+declare const colorsPlugin: {
   (options: any): {
     handler: PluginCreator;
     config?: Partial<Config>;
@@ -8,4 +8,4 @@ declare const themePlugin: {
   __isOptionsFunction: true;
 };
 
-export default themePlugin;
+export default colorsPlugin;
