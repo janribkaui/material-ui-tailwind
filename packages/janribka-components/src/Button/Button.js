@@ -22,7 +22,7 @@ const commonIconStyleVariants = tv({
     size: {
       small: 'text-lg',
       medium: 'text-xl',
-      large: 'text-[22px]',
+      large: 'text-[1.375rem]',
     },
   },
 });
@@ -111,6 +111,66 @@ const buttonVariants = tv({
         // 'py-1.5', 'px-2', 'bg-transparent', 'text-current'
       ],
     },
+    color: ({ colors }) => {
+      debugger;
+      console.log('colors', colors);
+      Object.entries(colors).filter((acc, color) => {
+        acc[color] = {
+          contained: [
+            `text-${color}-contrastText`,
+            `bg-${color}-main`,
+            `hover:bg-${color}-dark`,
+            `active:bg-${color}-darker`,
+            `focus-visible:bg-${color}-dark`,
+            `disabled:bg-${color}-disabled`,
+          ],
+          outlined: [
+            `text-${color}-main`,
+            `border-${color}-main`,
+            `hover:bg-${color}-light`,
+            `active:bg-${color}-lighter`,
+            `focus-visible:bg-${color}-light`,
+            `disabled:border-${color}-disabled`,
+          ],
+          text: [
+            `text-${color}-main`,
+            `hover:bg-${color}-light`,
+            `active:bg-${color}-lighter`,
+            `focus-visible:bg-${color}-light`,
+            `disabled:text-${color}-disabled`,
+          ],
+        };
+        return acc;
+      }, {});
+    },
+    // colors: Object.entries(props.colors).filter((acc, color) => {
+    //   acc[color] = {
+    //     contained: [
+    //       `text-${color}-contrastText`,
+    //       `bg-${color}-main`,
+    //       `hover:bg-${color}-dark`,
+    //       `active:bg-${color}-darker`,
+    //       `focus-visible:bg-${color}-dark`,
+    //       `disabled:bg-${color}-disabled`,
+    //     ],
+    //     outlined: [
+    //       `text-${color}-main`,
+    //       `border-${color}-main`,
+    //       `hover:bg-${color}-light`,
+    //       `active:bg-${color}-lighter`,
+    //       `focus-visible:bg-${color}-light`,
+    //       `disabled:border-${color}-disabled`,
+    //     ],
+    //     text: [
+    //       `text-${color}-main`,
+    //       `hover:bg-${color}-light`,
+    //       `active:bg-${color}-lighter`,
+    //       `focus-visible:bg-${color}-light`,
+    //       `disabled:text-${color}-disabled`,
+    //     ],
+    //   };
+    //   return acc;
+    // }, {}),
   },
   defaultVariants: { variant: 'text', size: 'medium' },
 });
@@ -154,13 +214,13 @@ const Button = React.forwardRef(function Button(props, ref) {
       {endIconProp}
     </span>
   );
-
+  console.log(props);
   return (
     <ButtonBase
       // ownerState={ownerState}
       className={mergeStyles(
-        'JrButton-root text',
-        buttonVariants({}),
+        'JrButton-root',
+        buttonVariants({ color: props.color, variant: props.variant }),
         contextProps.className,
         className,
         positionClassName,
