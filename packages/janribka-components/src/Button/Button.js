@@ -215,6 +215,9 @@ const Button = React.forwardRef(function Button(props, ref) {
     </span>
   );
   console.log(props);
+
+  // TODO: Tady bude memo funkce, kter8 bude na48tat colors a bude nastavovat css prom2nn0 pro variants
+
   return (
     <ButtonBase
       // ownerState={ownerState}
