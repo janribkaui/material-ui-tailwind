@@ -13,8 +13,8 @@ const buildVariant = (theme, fontWeight, size, lineHeight, letterSpacing, casing
 
 const basePlugin = plugin.withOptions(
   () => {
-    return ({ addBase, theme }) => {
-      return addBase({
+    return ({ addBase, addVariant, theme }) => {
+      addBase({
         '*': {
           outlineColor: 'currentColor',
         },
@@ -75,6 +75,8 @@ const basePlugin = plugin.withOptions(
           'uppercase',
         ),
       });
+
+      addVariant('hover-none', '@media (hover: none)');
     };
   },
   () => {

@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/material": "^6.1.1",
     "react": "19.0.0-rc-f6cce072-20240723",
     "react-dom": "19.0.0-rc-f6cce072-20240723"
   },

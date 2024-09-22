@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 import resolveConfig from 'tailwindcss/resolveConfig';
-
+// import Test from './components/Test';
 import Button from '@janribka/components/Button';
 
 import tailwindConfig from '../tailwind.config';
@@ -43,8 +43,8 @@ const commonIconStyleVariants = tv({
   },
 });
 
-const colorVariants = commonIconStyleVariants.variants.color('secondary');
-console.log('Color Variants:', colorVariants);
+// const colorVariants = commonIconStyleVariants.variants.color('secondary');
+// console.log('Color Variants:', colorVariants);
 
 function App() {
   return (

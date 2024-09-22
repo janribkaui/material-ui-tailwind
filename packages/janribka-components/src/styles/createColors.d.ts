@@ -148,4 +148,6 @@ export interface PaletteOptions {
   // getContrastText?: (background: string) => string;
 }
 
+export function getContrastText(background: string, contrastThreshold: number): string;
+
 export default function createColors(): ResolvableTo<RecursiveKeyValuePair<keyof Palette, string>>;

@@ -6,6 +6,7 @@ import orange from '../colors/orange';
 import blue from '../colors/blue';
 import lightBlue from '../colors/lightBlue';
 import green from '../colors/green';
+import { getContrastRatio } from '@janribka/system/colorManipulator';
 
 const light = {
   // The colors used to represent primary interface elements for a user.
@@ -13,12 +14,14 @@ const light = {
     light: blue[400],
     DEFAULT: blue[700],
     dark: blue[800],
+    contrastText: getContrastText(blue[700]),
   },
   // The colors used to represent secondary interface elements for a user.
   secondary: {
     light: purple[300],
     DEFAULT: purple[500],
     dark: purple[700],
+    contrastText: getContrastText(purple[500]),
   },
   // The colors used to style the text.
   text: {
@@ -61,24 +64,28 @@ const light = {
     light: red[400],
     DEFAULT: red[700],
     dark: red[800],
+    contrastText: getContrastText(red[700]),
   },
   // The colors used to present information to the user that is neutral and not necessarily important.
   info: {
     light: lightBlue[500],
     DEFAULT: lightBlue[900],
     dark: lightBlue[900],
+    contrastText: getContrastText(lightBlue[900]),
   },
   // The colors used to indicate the successful completion of an action that user triggered.
   success: {
     light: green[500],
     DEFAULT: green[800],
     dark: green[900],
+    contrastText: getContrastText(green[800]),
   },
   // The colors used to represent potentially dangerous actions or important messages.
   warning: {
     light: orange[500],
     DEFAULT: '#ed6c02', // closest to orange[800] that pass 3:1.
     dark: orange[900],
+    contrastText: getContrastText('#ed6c02'),
   },
 };
 
@@ -140,6 +147,28 @@ const dark = {
     dark: orange[700],
   },
 };
+
+export function getContrastText(background, contrastThreshold = 3) {
+  const contrastText =
+    getContrastRatio(background, dark.text.primary) >= contrastThreshold
+      ? dark.text.primary
+      : light.text.primary;
+
+  if (process.env.NODE_ENV !== 'production') {
+    const contrast = getContrastRatio(background, contrastText);
+    if (contrast < 3) {
+      console.error(
+        [
+          `JR: The contrast ratio of ${contrast}:1 for ${contrastText} on ${background}`,
+          'falls below the WCAG recommended absolute minimum contrast ratio of 3:1.',
+          'https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast',
+        ].join('\n'),
+      );
+    }
+  }
+
+  return contrastText;
+}
 
 export default function createColors() {
   return {

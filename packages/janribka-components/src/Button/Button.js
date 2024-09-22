@@ -14,6 +14,13 @@ import buttonClasses, { getButtonUtilityClass } from './buttonClasses';
 import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
 import ButtonGroupButtonContext from '../ButtonGroup/ButtonGroupButtonContext';
 import { mergeStyles } from '../utils';
+import plugin from 'tailwindcss/plugin';
+import { inherits } from 'util';
+import { color } from '@janribka/system';
+// import tailwindConfig from '../tailwind.config';
+// import resolveConfig from 'tailwindcss/resolveConfig';
+
+// const fullConfig = React.useMemo(resolveConfig(tailwindConfig), []);
 
 // Styles
 const commonIconStyleVariants = tv({
@@ -90,6 +97,7 @@ const buttonVariants = tv({
   variants: {
     variant: {
       contained: [
+        'shadow-sm hover:shadow-md active:shadow-lg focus-visible:shadow-md',
         // 'text-white',
         // 'bg-primary-main',
         // 'shadow-md',
@@ -111,37 +119,56 @@ const buttonVariants = tv({
         // 'py-1.5', 'px-2', 'bg-transparent', 'text-current'
       ],
     },
-    color: ({ colors }) => {
-      debugger;
-      console.log('colors', colors);
-      Object.entries(colors).filter((acc, color) => {
-        acc[color] = {
-          contained: [
-            `text-${color}-contrastText`,
-            `bg-${color}-main`,
-            `hover:bg-${color}-dark`,
-            `active:bg-${color}-darker`,
-            `focus-visible:bg-${color}-dark`,
-            `disabled:bg-${color}-disabled`,
-          ],
-          outlined: [
-            `text-${color}-main`,
-            `border-${color}-main`,
-            `hover:bg-${color}-light`,
-            `active:bg-${color}-lighter`,
-            `focus-visible:bg-${color}-light`,
-            `disabled:border-${color}-disabled`,
-          ],
-          text: [
-            `text-${color}-main`,
-            `hover:bg-${color}-light`,
-            `active:bg-${color}-lighter`,
-            `focus-visible:bg-${color}-light`,
-            `disabled:text-${color}-disabled`,
-          ],
-        };
-        return acc;
-      }, {});
+    color: {
+      primary: [
+        // 'text-primary-contrastText',
+        // 'bg-primary-main',
+        // 'hover:bg-primary-dark',
+        // 'active:bg-primary-darker',
+        // 'focus-visible:bg-primary-dark',
+        // 'disabled:bg-primary-disabled',
+      ],
+      secondary: [
+        // 'text-secondary-contrastText',
+        // 'bg-secondary-main',
+        // 'hover:bg-secondary-dark',
+        // 'active:bg-secondary-darker',
+        // 'focus-visible:bg-secondary-dark',
+        // 'disabled:bg-secondary-disabled',
+      ],
+      info: [
+        // 'text-info-contrastText',
+        // 'bg-info-main',
+        // 'hover:bg-info-dark',
+        // 'active:bg-info-darker',
+        // 'focus-visible:bg-info-dark',
+        // 'disabled:bg-info-disabled',
+      ],
+      success: [
+        // 'text-success-contrastText',
+        // 'bg-success-main',
+        // 'hover:bg-success-dark',
+        // 'active:bg-success-darker',
+        // 'focus-visible:bg-success-dark',
+        // 'disabled:bg-success-disabled',
+      ],
+      warning: [
+        // 'text-warning-contrastText',
+        // 'bg-warning-main',
+        // 'hover:bg-warning-dark',
+        // 'active:bg-warning-darker',
+        // 'focus-visible:bg-warning-dark',
+        // 'disabled:bg-warning-disabled',
+      ],
+      error: [
+        // 'text-error-contrastText',
+        // 'bg-error-main',
+        // 'hover:bg-error-dark',
+        // 'active:bg-error-darker',
+        // 'focus-visible:bg-error-dark',
+        // 'disabled:bg-error-disabled',
+      ],
+      inherit: [],
     },
     // colors: Object.entries(props.colors).filter((acc, color) => {
     //   acc[color] = {
@@ -171,6 +198,11 @@ const buttonVariants = tv({
     //   };
     //   return acc;
     // }, {}),
+  },
+  compoundVariants: {
+    variant: 'contained',
+    color: 'primary',
+    className: 'text-primary-contrastText',
   },
   defaultVariants: { variant: 'text', size: 'medium' },
 });
