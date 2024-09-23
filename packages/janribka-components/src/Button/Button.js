@@ -97,14 +97,9 @@ const buttonVariants = tv({
   variants: {
     variant: {
       contained: [
-        'shadow-sm hover:shadow-md active:shadow-lg focus-visible:shadow-md',
-        // 'text-white',
-        // 'bg-primary-main',
-        // 'shadow-md',
-        // 'hover:shadow-lg',
-        // 'active:shadow-xl',
-        // 'focus-visible:shadow-lg',
-        // 'disabled:bg-action-disabled',
+        'shadow-sm hover:shadow hover-none:shadow-sm',
+        'active:shadow-lg focus-visible:shadow-md',
+        'disabled:text-action-disabled disabled:shadow-none disabled:text-action-disabledBackground',
       ],
       outlined: [
         // 'py-1',
@@ -170,40 +165,51 @@ const buttonVariants = tv({
       ],
       inherit: [],
     },
-    // colors: Object.entries(props.colors).filter((acc, color) => {
-    //   acc[color] = {
-    //     contained: [
-    //       `text-${color}-contrastText`,
-    //       `bg-${color}-main`,
-    //       `hover:bg-${color}-dark`,
-    //       `active:bg-${color}-darker`,
-    //       `focus-visible:bg-${color}-dark`,
-    //       `disabled:bg-${color}-disabled`,
-    //     ],
-    //     outlined: [
-    //       `text-${color}-main`,
-    //       `border-${color}-main`,
-    //       `hover:bg-${color}-light`,
-    //       `active:bg-${color}-lighter`,
-    //       `focus-visible:bg-${color}-light`,
-    //       `disabled:border-${color}-disabled`,
-    //     ],
-    //     text: [
-    //       `text-${color}-main`,
-    //       `hover:bg-${color}-light`,
-    //       `active:bg-${color}-lighter`,
-    //       `focus-visible:bg-${color}-light`,
-    //       `disabled:text-${color}-disabled`,
-    //     ],
-    //   };
-    //   return acc;
-    // }, {}),
   },
-  compoundVariants: {
-    variant: 'contained',
-    color: 'primary',
-    className: 'text-primary-contrastText',
-  },
+  compoundVariants: [
+    {
+      variant: 'contained',
+      color: 'primary',
+      className: 'text-primary-contrastText bg-primary hover:bg-primary-dark',
+    },
+    {
+      variant: 'contained',
+      color: 'secondary',
+      className: 'text-secondary-contrastText bg-secondary hover:bg-secondary-dark',
+    },
+    {
+      variant: 'contained',
+      color: 'success',
+      className: 'text-success-contrastText bg-success hover:bg-success-dark',
+    },
+    {
+      variant: 'contained',
+      color: 'error',
+      className: 'text-error-contrastText bg-error hover:bg-error-dark',
+    },
+    {
+      variant: 'contained',
+      color: 'info',
+      className: 'text-info-contrastText bg-info hover:bg-info-dark',
+    },
+    {
+      variant: 'contained',
+      color: 'warning',
+      className: 'text-warning-contrastText bg-warning hover:bg-warning-dark',
+    },
+    {
+      // TODO: Doplnit do tailwind a nastavit dole
+      // text-inherit	color: inherit;
+      // Aa
+      // text-current	color: currentColor;
+      // Aa
+      // text-transparent
+
+      variant: 'contained',
+      color: 'inherit',
+      className: 'text-primary-contrastText bg-primary hover:bg-primary-dark',
+    },
+  ],
   defaultVariants: { variant: 'text', size: 'medium' },
 });
 
@@ -254,7 +260,7 @@ const Button = React.forwardRef(function Button(props, ref) {
     <ButtonBase
       // ownerState={ownerState}
       className={mergeStyles(
-        'JrButton-root',
+        'JrButton-root text-inherit',
         buttonVariants({ color: props.color, variant: props.variant }),
         contextProps.className,
         className,
