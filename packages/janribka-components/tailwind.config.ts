@@ -59,6 +59,13 @@ const config: Config = {
         '5_34': '1.334',
         '6_4': '1.6',
       },
+      opacity: {
+        hover: '0.04',
+        selected: '0.08',
+        disabled: '0.38',
+        focus: '0.12',
+        activated: '0.12',
+      },
     },
   },
   plugins: [basePlugin({}), colorsPlugin({})],

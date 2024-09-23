@@ -102,71 +102,35 @@ const buttonVariants = tv({
         'disabled:text-action-disabled disabled:shadow-none disabled:text-action-disabledBackground',
       ],
       outlined: [
-        // 'py-1',
-        // 'px-3',
-        // 'border',
-        // 'border-current',
-        // 'bg-transparent',
-        // 'text-current',
-        // 'disabled:border-action-disabled',
+        'py-[0.313rem]',
+        'px-[0.938rem]',
+        'border',
+        'border-current',
+        'border-solid',
+        'disabled:border-action-action-disabled',
       ],
-      text: [
-        // 'py-1.5', 'px-2', 'bg-transparent', 'text-current'
-      ],
+      text: ['py-1.5', 'px-2'],
     },
     color: {
-      primary: [
-        // 'text-primary-contrastText',
-        // 'bg-primary-main',
-        // 'hover:bg-primary-dark',
-        // 'active:bg-primary-darker',
-        // 'focus-visible:bg-primary-dark',
-        // 'disabled:bg-primary-disabled',
-      ],
-      secondary: [
-        // 'text-secondary-contrastText',
-        // 'bg-secondary-main',
-        // 'hover:bg-secondary-dark',
-        // 'active:bg-secondary-darker',
-        // 'focus-visible:bg-secondary-dark',
-        // 'disabled:bg-secondary-disabled',
-      ],
-      info: [
-        // 'text-info-contrastText',
-        // 'bg-info-main',
-        // 'hover:bg-info-dark',
-        // 'active:bg-info-darker',
-        // 'focus-visible:bg-info-dark',
-        // 'disabled:bg-info-disabled',
-      ],
-      success: [
-        // 'text-success-contrastText',
-        // 'bg-success-main',
-        // 'hover:bg-success-dark',
-        // 'active:bg-success-darker',
-        // 'focus-visible:bg-success-dark',
-        // 'disabled:bg-success-disabled',
-      ],
-      warning: [
-        // 'text-warning-contrastText',
-        // 'bg-warning-main',
-        // 'hover:bg-warning-dark',
-        // 'active:bg-warning-darker',
-        // 'focus-visible:bg-warning-dark',
-        // 'disabled:bg-warning-disabled',
-      ],
-      error: [
-        // 'text-error-contrastText',
-        // 'bg-error-main',
-        // 'hover:bg-error-dark',
-        // 'active:bg-error-darker',
-        // 'focus-visible:bg-error-dark',
-        // 'disabled:bg-error-disabled',
-      ],
+      primary: [],
+      secondary: [],
+      info: [],
+      success: [],
+      warning: [],
+      error: [],
       inherit: [],
+    },
+    size: {
+      small: [],
+      large: [],
+    },
+    disableElevation: {
+      true: [],
+      false: [],
     },
   },
   compoundVariants: [
+    // Contained
     {
       variant: 'contained',
       color: 'primary',
@@ -198,19 +162,90 @@ const buttonVariants = tv({
       className: 'text-warning-contrastText bg-warning hover:bg-warning-dark',
     },
     {
-      // TODO: Doplnit do tailwind a nastavit dole
-      // text-inherit	color: inherit;
-      // Aa
-      // text-current	color: currentColor;
-      // Aa
-      // text-transparent
-
       variant: 'contained',
       color: 'inherit',
-      className: 'text-primary-contrastText bg-primary hover:bg-primary-dark',
+      className: 'text-inherit bg-inherit hover:bg-inherit',
+    },
+    // Outlined
+    {
+      variant: 'outlined',
+      color: 'primary',
+      className:
+        'border-primary/50 hover:border-primary hover:bg-primary hover:bg-opacity-hover text-primary',
+    },
+    {
+      variant: 'outlined',
+      color: 'secondary',
+      className:
+        'border-secondary/50 hover:border-secondary hover:bg-secondary hover:bg-opacity-hover text-secondary',
+    },
+    {
+      variant: 'outlined',
+      color: 'success',
+      className:
+        'border-success/50 hover:border-success hover:bg-success hover:bg-opacity-hover text-success',
+    },
+    {
+      variant: 'outlined',
+      color: 'error',
+      className:
+        'border-error/50 hover:border-error hover:bg-error hover:bg-opacity-hover text-error',
+    },
+    {
+      variant: 'outlined',
+      color: 'info',
+      className: 'border-info/50 hover:border-info hover:bg-info hover:bg-opacity-hover text-info',
+    },
+    {
+      variant: 'outlined',
+      color: 'warning',
+      className:
+        'border-warning/50 hover:border-warning hover:bg-warning hover:bg-opacity-hover text-warning',
+    },
+    {
+      variant: 'outlined',
+      color: 'inherit',
+      className:
+        'border-inherit hover:border-inherit hover:bg-inherit hover:bg-opacity-hover text-inherit',
+    },
+    // Text
+    {
+      variant: 'text',
+      color: 'primary',
+      className: 'text-primary hover:bg-primary hover:bg-opacity-hover',
+    },
+    {
+      variant: 'text',
+      color: 'secondary',
+      className: 'text-secondary hover:bg-secondary hover:bg-opacity-hover',
+    },
+    {
+      variant: 'text',
+      color: 'success',
+      className: 'text-success hover:bg-success hover:bg-opacity-hover',
+    },
+    {
+      variant: 'text',
+      color: 'error',
+      className: 'text-error hover:bg-error hover:bg-opacity-hover',
+    },
+    {
+      variant: 'text',
+      color: 'info',
+      className: 'text-info hover:bg-info hover:bg-opacity-hover',
+    },
+    {
+      variant: 'text',
+      color: 'warning',
+      className: 'text-warning hover:bg-warning hover:bg-opacity-hover',
+    },
+    {
+      variant: 'text',
+      color: 'inherit',
+      className: 'text-inherit hover:bg-inherit hover:bg-opacity-hover',
     },
   ],
-  defaultVariants: { variant: 'text', size: 'medium' },
+  defaultVariants: { variant: 'text', color: 'primary', size: 'medium', disableElevation: false },
 });
 
 const Button = React.forwardRef(function Button(props, ref) {
@@ -260,7 +295,7 @@ const Button = React.forwardRef(function Button(props, ref) {
     <ButtonBase
       // ownerState={ownerState}
       className={mergeStyles(
-        'JrButton-root text-inherit',
+        'JrButton-root',
         buttonVariants({ color: props.color, variant: props.variant }),
         contextProps.className,
         className,

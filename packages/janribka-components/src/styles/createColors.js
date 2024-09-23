@@ -44,18 +44,13 @@ const light = {
     active: 'rgba(0, 0, 0, 0.54)',
     // The color of an hovered action.
     hover: 'rgba(0, 0, 0, 0.04)',
-    hoverOpacity: '0.04',
     // The color of a selected action.
     selected: 'rgba(0, 0, 0, 0.08)',
-    selectedOpacity: '0.08',
     // The color of a disabled action.
     disabled: 'rgba(0, 0, 0, 0.26)',
     // The background color of a disabled action.
     disabledBackground: 'rgba(0, 0, 0, 0.12)',
-    disabledOpacity: '0.38',
     focus: 'rgba(0, 0, 0, 0.12)',
-    focusOpacity: '0.12',
-    activatedOpacity: '0.12',
   },
   // The colors used to represent interface elements that the user should be made aware of.
   error: {
@@ -189,5 +184,8 @@ export default function createColors() {
     dark: {
       ...dark,
     },
+    inherit: 'inherit',
+    current: 'currentColor',
+    transparent: 'transparent',
   };
 }
