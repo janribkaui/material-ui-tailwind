@@ -14,14 +14,12 @@ const light = {
     light: blue[400],
     DEFAULT: blue[700],
     dark: blue[800],
-    contrastText: getContrastText(blue[700]),
   },
   // The colors used to represent secondary interface elements for a user.
   secondary: {
     light: purple[300],
     DEFAULT: purple[500],
     dark: purple[700],
-    contrastText: getContrastText(purple[500]),
   },
   // The colors used to style the text.
   text: {
@@ -64,28 +62,24 @@ const light = {
     light: red[400],
     DEFAULT: red[700],
     dark: red[800],
-    contrastText: getContrastText(red[700]),
   },
   // The colors used to present information to the user that is neutral and not necessarily important.
   info: {
     light: lightBlue[500],
     DEFAULT: lightBlue[900],
     dark: lightBlue[900],
-    contrastText: getContrastText(lightBlue[900]),
   },
   // The colors used to indicate the successful completion of an action that user triggered.
   success: {
     light: green[500],
     DEFAULT: green[800],
     dark: green[900],
-    contrastText: getContrastText(green[800]),
   },
   // The colors used to represent potentially dangerous actions or important messages.
   warning: {
     light: orange[500],
     DEFAULT: '#ed6c02', // closest to orange[800] that pass 3:1.
     dark: orange[900],
-    contrastText: getContrastText('#ed6c02'),
   },
 };
 
@@ -147,6 +141,21 @@ const dark = {
     dark: orange[700],
   },
 };
+
+// Get contrastText from background color.
+light.primary.contrastText = getContrastText(blue[700]);
+light.secondary.contrastText = getContrastText(purple[700]);
+light.error.contrastText = getContrastText(red[700]);
+light.info.contrastText = getContrastText(lightBlue[700]);
+light.success.contrastText = getContrastText(green[700]);
+light.warning.contrastText = getContrastText('#ed6c02');
+
+dark.primary.contrastText = getContrastText(blue[200]);
+dark.secondary.contrastText = getContrastText(purple[200]);
+dark.error.contrastText = getContrastText(red[500]);
+dark.info.contrastText = getContrastText(lightBlue[400]);
+dark.success.contrastText = getContrastText(green[400]);
+dark.warning.contrastText = getContrastText(orange[400]);
 
 export function getContrastText(background, contrastThreshold = 3) {
   const contrastText =
