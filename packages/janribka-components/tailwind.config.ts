@@ -4,6 +4,7 @@ import colorsPlugin from '@janribka/components/styles/colorsPlugin';
 
 import { colors } from './src';
 
+//TODO: Predělat do pluginu
 // Follow https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves
 // to learn the context in which each easing should be used.
 const easing = {
