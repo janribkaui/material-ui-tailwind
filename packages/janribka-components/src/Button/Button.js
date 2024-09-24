@@ -71,19 +71,20 @@ const buttonVariants = tv({
     'py-1.5',
     'px-4',
     'border-0',
-    'rounded-sm',
+    'rounded',
     'transition-button',
     'duration-short ease-in-out',
-    // 'hover:no-underline decoration-transparent',
+    'hover:no-underline decoration-transparent',
     'disabled:text-action-disabled',
   ],
 
   variants: {
     variant: {
       contained: [
-        // 'shadow-sm hover:shadow hover-none:shadow-sm',
-        'active:shadow-lg focus-visible:shadow-md',
-        'disabled:text-action-disabled disabled:shadow-none disabled:text-action-disabledBackground',
+        'shadow-2xl',
+        // 'shadow-sm hover:shadow-lg hover-none:shadow-sm',
+        // 'active:shadow-lg focus-visible:shadow-md',
+        // 'disabled:text-action-disabled disabled:shadow-none disabled:text-action-disabledBackground',
       ],
       outlined: [
         'py-[0.313rem]',
@@ -111,7 +112,7 @@ const buttonVariants = tv({
     disableElevation: {
       true: [
         'shadow-none',
-        // 'hover:shadow-none',
+        'hover:shadow-none',
         'active:shadow-none',
         'focus-visible:shadow-none',
         'disabled:shadow-none',
@@ -207,42 +208,37 @@ const buttonVariants = tv({
     {
       variant: 'text',
       color: 'primary',
-      className: 'text-primary hover:bg-primary dark:hover:bg-opacity-hoverDark',
-      // 'text-primary hover:bg-primary hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
+      className: 'text-primary hover:bg-primary/hover dark:hover:bg-primary/hoverDark',
     },
     {
       variant: 'text',
       color: 'secondary',
-      className:
-        'text-secondary hover:bg-secondary hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
+      className: 'text-secondary hover:bg-secondary/hover dark:hover:bg-secondary/hoverDark',
     },
     {
       variant: 'text',
       color: 'success',
-      className:
-        'text-success hover:bg-success hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
+      className: 'text-success hover:bg-success/hover dark:hover:bg-success/hoverDark',
     },
     {
       variant: 'text',
       color: 'error',
-      className: 'text-error hover:bg-error hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
+      className: 'text-error hover:bg-error/hover dark:hover:bg-error/hoverDark',
     },
     {
       variant: 'text',
       color: 'info',
-      className: 'text-info hover:bg-info hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
+      className: 'text-info hover:bg-info/hover dark:hover:bg-info/hoverDark',
     },
     {
       variant: 'text',
       color: 'warning',
-      className:
-        'text-warning hover:bg-warning hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
+      className: 'text-warning hover:bg-warning/hover dark:hover:bg-warning/hoverDark',
     },
     {
       variant: 'text',
       color: 'inherit',
-      className:
-        'text-inherit hover:bg-inherit hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
+      className: 'text-inherit hover:bg-inherit/hover dark:hover:bg-inherit/hoverDark',
     },
     // Small
     {
@@ -325,9 +321,16 @@ const Button = React.forwardRef(function Button(props, ref) {
 
   return (
     <ButtonBase
+      // className="hover:bg-primary/hover"
       className={mergeStyles(
         'JrButton-root',
-        buttonVariants({ color: props.color, variant: props.variant }),
+        buttonVariants({
+          variant: props.variant,
+          color: props.color,
+          size: props.size,
+          disableElevation: props.disableElevation,
+          fullWidth: props.fullWidth,
+        }),
         // contextProps.className,
         // className,
         // positionClassName,

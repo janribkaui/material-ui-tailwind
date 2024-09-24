@@ -1,8 +1,7 @@
 import type { Config } from 'tailwindcss';
+
 import basePlugin from '@janribka/components/styles/basePlugin';
 import colorsPlugin from '@janribka/components/styles/colorsPlugin';
-
-import { colors } from './src';
 
 //TODO: Predělat do pluginu
 // Follow https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves
@@ -37,6 +36,7 @@ const duration = {
 
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  // mode: 'jit',
   theme: {
     extend: {
       transitionProperty: {
@@ -74,6 +74,7 @@ const config: Config = {
     },
   },
   plugins: [basePlugin({}), colorsPlugin({})],
+  // plugins: [basePlugin({}), colorsPlugin({}), alphaPlugin],
 };
 
 export default config;

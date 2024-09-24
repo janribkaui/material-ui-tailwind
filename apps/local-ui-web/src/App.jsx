@@ -1,4 +1,10 @@
 import Button from '@janribka/components/Button';
+import tailwindConfig from '../tailwind.config';
+import resolveConfig from 'tailwindcss/resolveConfig';
+
+const fullConfig = resolveConfig(tailwindConfig);
+
+console.log('fullConfig:', fullConfig);
 
 function App() {
   return (
@@ -13,6 +19,13 @@ function App() {
         <Button>Button</Button>
         <Button variant="contained">Button</Button>
         <Button variant="outlined">Button</Button>
+        <Button disabled>Button</Button>
+        <Button disabled variant="contained">
+          Button
+        </Button>
+        <Button disabled variant="outlined">
+          Button
+        </Button>
       </div>
     </>
   );
