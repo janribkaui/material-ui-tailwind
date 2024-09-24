@@ -1,26 +1,10 @@
 'use client';
 import * as React from 'react';
 import { tv } from 'tailwind-variants';
-import resolveProps from '@janribka/utils/resolveProps';
-import composeClasses from '@janribka/utils/composeClasses';
-import { alpha } from '@janribka/system/colorManipulator';
-import rootShouldForwardProp from '../styles/rootShouldForwardProp';
-import { styled } from '../zero-styled';
-import memoTheme from '../utils/memoTheme';
-import { useDefaultProps } from '../DefaultPropsProvider';
 import ButtonBase from '../ButtonBase';
-import capitalize from '../utils/capitalize';
-import buttonClasses, { getButtonUtilityClass } from './buttonClasses';
 import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
 import ButtonGroupButtonContext from '../ButtonGroup/ButtonGroupButtonContext';
 import { mergeStyles } from '../utils';
-import plugin from 'tailwindcss/plugin';
-import { inherits } from 'util';
-import { color } from '@janribka/system';
-// import tailwindConfig from '../tailwind.config';
-// import resolveConfig from 'tailwindcss/resolveConfig';
-
-// const fullConfig = React.useMemo(resolveConfig(tailwindConfig), []);
 
 // Styles
 const commonIconStyleVariants = tv({
@@ -90,14 +74,14 @@ const buttonVariants = tv({
     'rounded-sm',
     'transition-button',
     'duration-short ease-in-out',
-    'hover:no-underline decoration-transparent',
+    // 'hover:no-underline decoration-transparent',
     'disabled:text-action-disabled',
   ],
 
   variants: {
     variant: {
       contained: [
-        'shadow-sm hover:shadow hover-none:shadow-sm',
+        // 'shadow-sm hover:shadow hover-none:shadow-sm',
         'active:shadow-lg focus-visible:shadow-md',
         'disabled:text-action-disabled disabled:shadow-none disabled:text-action-disabledBackground',
       ],
@@ -125,7 +109,17 @@ const buttonVariants = tv({
       large: [],
     },
     disableElevation: {
-      true: [],
+      true: [
+        'shadow-none',
+        // 'hover:shadow-none',
+        'active:shadow-none',
+        'focus-visible:shadow-none',
+        'disabled:shadow-none',
+      ],
+      false: [],
+    },
+    fullWidth: {
+      true: ['w-full'],
       false: [],
     },
   },
@@ -171,90 +165,131 @@ const buttonVariants = tv({
       variant: 'outlined',
       color: 'primary',
       className:
-        'border-primary/50 hover:border-primary hover:bg-primary hover:bg-opacity-hover text-primary',
+        'border-primary/50 hover:border-primary hover:bg-primary hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-primary',
     },
     {
       variant: 'outlined',
       color: 'secondary',
       className:
-        'border-secondary/50 hover:border-secondary hover:bg-secondary hover:bg-opacity-hover text-secondary',
+        'border-secondary/50 hover:border-secondary hover:bg-secondary hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-secondary',
     },
     {
       variant: 'outlined',
       color: 'success',
       className:
-        'border-success/50 hover:border-success hover:bg-success hover:bg-opacity-hover text-success',
+        'border-success/50 hover:border-success hover:bg-success hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-success',
     },
     {
       variant: 'outlined',
       color: 'error',
       className:
-        'border-error/50 hover:border-error hover:bg-error hover:bg-opacity-hover text-error',
+        'border-error/50 hover:border-error hover:bg-error hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-error',
     },
     {
       variant: 'outlined',
       color: 'info',
-      className: 'border-info/50 hover:border-info hover:bg-info hover:bg-opacity-hover text-info',
+      className:
+        'border-info/50 hover:border-info hover:bg-info hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-info',
     },
     {
       variant: 'outlined',
       color: 'warning',
       className:
-        'border-warning/50 hover:border-warning hover:bg-warning hover:bg-opacity-hover text-warning',
+        'border-warning/50 hover:border-warning hover:bg-warning hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-warning',
     },
     {
       variant: 'outlined',
       color: 'inherit',
       className:
-        'border-inherit hover:border-inherit hover:bg-inherit hover:bg-opacity-hover text-inherit',
+        'border-inherit hover:border-inherit hover:bg-inherit hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-inherit',
     },
     // Text
     {
       variant: 'text',
       color: 'primary',
-      className: 'text-primary hover:bg-primary hover:bg-opacity-hover',
+      className: 'text-primary hover:bg-primary dark:hover:bg-opacity-hoverDark',
+      // 'text-primary hover:bg-primary hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
     },
     {
       variant: 'text',
       color: 'secondary',
-      className: 'text-secondary hover:bg-secondary hover:bg-opacity-hover',
+      className:
+        'text-secondary hover:bg-secondary hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
     },
     {
       variant: 'text',
       color: 'success',
-      className: 'text-success hover:bg-success hover:bg-opacity-hover',
+      className:
+        'text-success hover:bg-success hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
     },
     {
       variant: 'text',
       color: 'error',
-      className: 'text-error hover:bg-error hover:bg-opacity-hover',
+      className: 'text-error hover:bg-error hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
     },
     {
       variant: 'text',
       color: 'info',
-      className: 'text-info hover:bg-info hover:bg-opacity-hover',
+      className: 'text-info hover:bg-info hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
     },
     {
       variant: 'text',
       color: 'warning',
-      className: 'text-warning hover:bg-warning hover:bg-opacity-hover',
+      className:
+        'text-warning hover:bg-warning hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
     },
     {
       variant: 'text',
       color: 'inherit',
-      className: 'text-inherit hover:bg-inherit hover:bg-opacity-hover',
+      className:
+        'text-inherit hover:bg-inherit hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark',
+    },
+    // Small
+    {
+      size: 'small',
+      variant: 'text',
+      className: 'py-1 px-[0.313rem] text-[0.813rem]',
+    },
+    {
+      size: 'small',
+      variant: 'outlined',
+      className: 'py-[0.188rem] px-[0.563rem] text-[0.813rem]',
+    },
+    {
+      size: 'small',
+      variant: 'contained',
+      className: 'py-1 px-2.5 text-[0.813rem]',
+    },
+    // Large
+    {
+      size: 'large',
+      variant: 'text',
+      className: 'py-2 px-[0.688rem] text-[0.938rem]',
+    },
+    {
+      size: 'large',
+      variant: 'outlined',
+      className: 'py-[0.438rem] px-[1.313rem] text-[0.938rem]',
+    },
+    {
+      size: 'large',
+      variant: 'contained',
+      className: 'py-2 px-[1.375rem] text-[0.938rem]',
     },
   ],
-  defaultVariants: { variant: 'text', color: 'primary', size: 'medium', disableElevation: false },
+  defaultVariants: {
+    variant: 'text',
+    color: 'primary',
+    size: 'medium',
+    disableElevation: false,
+    fullWidth: false,
+  },
 });
 
 const Button = React.forwardRef(function Button(props, ref) {
-  // props priority: `inProps` > `contextProps` > `themeDefaultProps`
-  // const resolvedProps = resolveProps(contextProps, inProps);
-  // const props = useDefaultProps({ props: resolvedProps, name: 'JRButton' });
   const {
     children,
-    color = 'primary',
+    color,
     // component = 'button',
     className,
     disabled = false,
@@ -287,19 +322,15 @@ const Button = React.forwardRef(function Button(props, ref) {
       {endIconProp}
     </span>
   );
-  console.log(props);
-
-  // TODO: Tady bude memo funkce, kter8 bude na48tat colors a bude nastavovat css prom2nn0 pro variants
 
   return (
     <ButtonBase
-      // ownerState={ownerState}
       className={mergeStyles(
         'JrButton-root',
         buttonVariants({ color: props.color, variant: props.variant }),
-        contextProps.className,
-        className,
-        positionClassName,
+        // contextProps.className,
+        // className,
+        // positionClassName,
       )}
       disabled={disabled}
       focusRipple={!disableFocusRipple}
