@@ -2,3 +2,4 @@ node_modules/
 build/
 .nx/cache
 .nx/workspace-data
+*.tsbuildinfo

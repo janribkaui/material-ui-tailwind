@@ -2,8 +2,8 @@
 import * as React from 'react';
 import { tv } from 'tailwind-variants';
 import ButtonBase from '../ButtonBase';
-import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
-import ButtonGroupButtonContext from '../ButtonGroup/ButtonGroupButtonContext';
+// import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
+// import ButtonGroupButtonContext from '../ButtonGroup/ButtonGroupButtonContext';
 import { mergeStyles } from '../utils';
 
 // Styles
@@ -16,6 +16,7 @@ const commonIconStyleVariants = tv({
       large: 'text-[1.375rem]',
     },
   },
+  defaultVariants: { size: 'medium' },
 });
 
 const startIconVariants = tv({
@@ -38,33 +39,6 @@ const endIconVariants = tv({
   },
 });
 
-const commonIconStyles = [
-  {
-    props: { size: 'small' },
-    style: {
-      '& > *:nth-of-type(1)': {
-        fontSize: 18,
-      },
-    },
-  },
-  {
-    props: { size: 'medium' },
-    style: {
-      '& > *:nth-of-type(1)': {
-        fontSize: 20,
-      },
-    },
-  },
-  {
-    props: { size: 'large' },
-    style: {
-      '& > *:nth-of-type(1)': {
-        fontSize: 22,
-      },
-    },
-  },
-];
-
 const buttonVariants = tv({
   base: [
     'min-w-16',
@@ -81,10 +55,9 @@ const buttonVariants = tv({
   variants: {
     variant: {
       contained: [
-        'shadow-2xl',
-        // 'shadow-sm hover:shadow-lg hover-none:shadow-sm',
-        // 'active:shadow-lg focus-visible:shadow-md',
-        // 'disabled:text-action-disabled disabled:shadow-none disabled:text-action-disabledBackground',
+        'shadow-2 hover:shadow-4 hover-none:shadow-2',
+        'active:shadow-8 focus-visible:shadow-6',
+        'disabled:text-action-disabled disabled:shadow-none disabled:bg-action-disabledBackground',
       ],
       outlined: [
         'py-[0.313rem]',
@@ -92,7 +65,7 @@ const buttonVariants = tv({
         'border',
         'border-current',
         'border-solid',
-        'disabled:border-action-action-disabled',
+        'disabled:border-action-disabledBackground',
       ],
       text: ['py-1.5', 'px-2'],
     },
@@ -166,43 +139,43 @@ const buttonVariants = tv({
       variant: 'outlined',
       color: 'primary',
       className:
-        'border-primary/50 hover:border-primary hover:bg-primary hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-primary',
+        'border-primary/50 hover:border-primary hover:bg-primary/hover dark:hover:bg-primary/hoverDark text-primary',
     },
     {
       variant: 'outlined',
       color: 'secondary',
       className:
-        'border-secondary/50 hover:border-secondary hover:bg-secondary hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-secondary',
+        'border-secondary/50 hover:border-secondary hover:bg-secondary/hover dark:hover:bg-secondary/hoverDark text-secondary',
     },
     {
       variant: 'outlined',
       color: 'success',
       className:
-        'border-success/50 hover:border-success hover:bg-success hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-success',
+        'border-success/50 hover:border-success hover:bg-success/hover dark:hover:bg-success/hoverDark text-success',
     },
     {
       variant: 'outlined',
       color: 'error',
       className:
-        'border-error/50 hover:border-error hover:bg-error hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-error',
+        'border-error/50 hover:border-error hover:bg-error/hover dark:hover:bg-error/hoverDark text-error',
     },
     {
       variant: 'outlined',
       color: 'info',
       className:
-        'border-info/50 hover:border-info hover:bg-info hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-info',
+        'border-info/50 hover:border-info hover:bg-info/hover dark:hover:bg-info/hoverDark text-info',
     },
     {
       variant: 'outlined',
       color: 'warning',
       className:
-        'border-warning/50 hover:border-warning hover:bg-warning hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-warning',
+        'border-warning/50 hover:border-warning hover:bg-warning/hover dark:hover:bg-warning/hoverDark text-warning',
     },
     {
       variant: 'outlined',
       color: 'inherit',
       className:
-        'border-inherit hover:border-inherit hover:bg-inherit hover:bg-opacity-hover dark:hover:bg-opacity-hoverDark text-inherit',
+        'border-inherit hover:border-inherit hover:bg-inherit dark:hover:bg-inherit text-inherit',
     },
     // Text
     {
@@ -286,25 +259,24 @@ const Button = React.forwardRef(function Button(props, ref) {
   const {
     children,
     color,
-    // component = 'button',
     className,
     disabled = false,
-    disableElevation = false,
+    disableElevation,
     disableFocusRipple = false,
     endIcon: endIconProp,
     focusVisibleClassName,
-    fullWidth = false,
+    fullWidth,
     size,
     startIcon: startIconProp,
     type,
     variant,
     ...other
   } = props;
-  const contextProps = React.useContext(ButtonGroupContext);
+  // const contextProps = React.useContext(ButtonGroupContext);
 
   // Class names
-  const buttonGroupButtonContextPositionClassName = React.useContext(ButtonGroupButtonContext);
-  const positionClassName = buttonGroupButtonContextPositionClassName || '';
+  // const buttonGroupButtonContextPositionClassName = React.useContext(ButtonGroupButtonContext);
+  // const positionClassName = buttonGroupButtonContextPositionClassName || '';
 
   // Icons
   const startIcon = startIconProp && (
@@ -325,11 +297,11 @@ const Button = React.forwardRef(function Button(props, ref) {
       className={mergeStyles(
         'JrButton-root',
         buttonVariants({
-          variant: props.variant,
-          color: props.color,
-          size: props.size,
-          disableElevation: props.disableElevation,
-          fullWidth: props.fullWidth,
+          variant: variant,
+          color: color,
+          size: size,
+          disableElevation: disableElevation,
+          fullWidth: fullWidth,
         }),
         // contextProps.className,
         // className,

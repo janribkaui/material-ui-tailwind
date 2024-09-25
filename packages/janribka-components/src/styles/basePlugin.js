@@ -1,4 +1,5 @@
 import plugin from 'tailwindcss/plugin';
+import shadows from './shadows';
 
 const buildVariant = (theme, fontWeight, size, lineHeight, letterSpacing, casing) => {
   return {
@@ -81,6 +82,11 @@ const basePlugin = plugin.withOptions(
   },
   () => {
     return {
+      theme: {
+        boxShadow: {
+          ...shadows,
+        },
+      },
       // darkMode: 'class',
     };
   },

@@ -2,9 +2,7 @@
 import * as React from 'react';
 import { TransitionGroup } from 'react-transition-group';
 import useTimeout from '@janribka/utils/useTimeout';
-import { useDefaultProps } from '../DefaultPropsProvider';
 import TouchRippleRipple from './Ripple';
-import touchRippleClasses from './touchRippleClasses';
 import mergeStyles from '../utils/mergeStyles';
 
 const DURATION = 550;
@@ -15,9 +13,7 @@ export const DELAY_RIPPLE = 80;
  *
  * TODO v5: Make private
  */
-const TouchRipple = React.forwardRef(function TouchRipple(inProps, ref) {
-  const props = useDefaultProps({ props: inProps, name: 'JRTouchRipple' });
-
+const TouchRipple = React.forwardRef(function TouchRipple(props, ref) {
   const { center: centerProp = false, classes = {}, className, ...other } = props;
   const [ripples, setRipples] = React.useState([]);
   const nextKey = React.useRef(0);
@@ -43,7 +39,7 @@ const TouchRipple = React.forwardRef(function TouchRipple(inProps, ref) {
   const startCommit = React.useCallback(
     (params) => {
       const { pulsate, rippleX, rippleY, rippleSize, cb } = params;
-
+      debugger;
       setRipples((oldRipples) => [
         ...oldRipples,
         <TouchRippleRipple
@@ -71,6 +67,7 @@ const TouchRipple = React.forwardRef(function TouchRipple(inProps, ref) {
 
   const start = React.useCallback(
     (event = {}, options = {}, cb = () => {}) => {
+      debugger;
       const {
         pulsate = false,
         center = centerProp || options.pulsate,
@@ -190,8 +187,9 @@ const TouchRipple = React.forwardRef(function TouchRipple(inProps, ref) {
   );
 
   const touchRippleClassName = mergeStyles(
-    className,
+    'JRTouchRipple-root',
     'overflow-hidden pointer-events-none absolute z-0 top-0 right-0 bottom-0 left-0 rounded-[inherit]',
+    className,
   );
 
   React.useImperativeHandle(
