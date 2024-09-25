@@ -39,7 +39,7 @@ const TouchRipple = React.forwardRef(function TouchRipple(props, ref) {
   const startCommit = React.useCallback(
     (params) => {
       const { pulsate, rippleX, rippleY, rippleSize, cb } = params;
-      debugger;
+
       setRipples((oldRipples) => [
         ...oldRipples,
         <TouchRippleRipple
@@ -67,7 +67,6 @@ const TouchRipple = React.forwardRef(function TouchRipple(props, ref) {
 
   const start = React.useCallback(
     (event = {}, options = {}, cb = () => {}) => {
-      debugger;
       const {
         pulsate = false,
         center = centerProp || options.pulsate,

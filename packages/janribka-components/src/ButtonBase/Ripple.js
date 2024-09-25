@@ -120,13 +120,11 @@ function Ripple(props) {
   };
 
   const childClassName = rippleChildVariants({ childLeaving: leaving, pulsate: pulsate });
-  debugger;
+
   if (!inProp && !leaving) {
-    debugger;
     setLeaving(true);
   }
   React.useEffect(() => {
-    debugger;
     if (!inProp && onExited != null) {
       // react-transition-group#onExited
       const timeoutId = setTimeout(onExited, timeout);
