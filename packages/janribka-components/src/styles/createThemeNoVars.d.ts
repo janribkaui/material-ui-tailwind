@@ -4,7 +4,7 @@ import { Components } from './components';
 // import { Mixins, MixinsOptions } from './createMixins';
 import { Palette, PaletteOptions } from './createPaletteOld';
 import { ColorSystemOptions, CssVarsPalette, CssVarsTheme } from './createThemeWithVars';
-import { Transitions, TransitionsOptions } from './createTransitions';
+import { Transitions, TransitionsOptions } from './createTransitionsOld';
 import { Typography, TypographyOptions } from './createTypography';
 
 // import { Shadows } from './shadows';

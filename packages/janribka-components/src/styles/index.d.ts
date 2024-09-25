@@ -48,9 +48,9 @@ export {
   Duration,
   Easing,
   Transitions,
-  TransitionsOptions,
-  duration,
-  easing,
+  // TransitionsOptions,
+  // duration,
+  // easing,
 } from './createTransitions';
 // export { Mixins } from './createMixins';
 export {

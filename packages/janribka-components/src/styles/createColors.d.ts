@@ -150,4 +150,5 @@ export interface PaletteOptions {
 
 export function getContrastText(background: string, contrastThreshold: number): string;
 
+// TODO: V modelu palette chybí dark
 export default function createColors(): ResolvableTo<RecursiveKeyValuePair<keyof Palette, string>>;

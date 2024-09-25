@@ -321,7 +321,6 @@ const Button = React.forwardRef(function Button(props, ref) {
 
   return (
     <ButtonBase
-      // className="hover:bg-primary/hover"
       className={mergeStyles(
         'JrButton-root',
         buttonVariants({
@@ -331,8 +330,8 @@ const Button = React.forwardRef(function Button(props, ref) {
           disableElevation: props.disableElevation,
           fullWidth: props.fullWidth,
         }),
+        className,
         // contextProps.className,
-        // className,
         // positionClassName,
       )}
       disabled={disabled}
