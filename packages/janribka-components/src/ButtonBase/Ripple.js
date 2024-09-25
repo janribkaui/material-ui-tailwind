@@ -2,7 +2,7 @@
 import * as React from 'react';
 import mergeStyles from '@janribka/utils/mergeStyles';
 import { tv } from 'tailwind-variants';
-import { keyframes, styled } from '../zero-styled';
+import styled, { keyframes } from 'styled-components';
 
 const DURATION = 550;
 
@@ -42,28 +42,28 @@ const pulsateKeyframe = keyframes`
   }
 `;
 
-const RippleStyled = styled('span', {})`
-  $.animation-visible {
+const RippleStyled = styled.span`
+  &.animation-visible {
     animation-name: ${enterKeyframe};
     animation-duration: ${DURATION}ms;
-    animation-timing-function: ${({ theme }) => theme.transitions?.easing.easeInOut};
+    animation-timing-function: ease-in-out;
   }
-  $.animation-pulsate {
-    animation-duration: ${({ theme }) => theme.transitions?.duration.shorter}ms;
+  &.animation-pulsate {
+    animation-duration: duration-shorter;
   }
 `;
 
-const RippleChildStyled = styled('span', {})`
+const RippleChildStyled = styled.span`
   &.animation-leaving {
     animation-name: ${exitKeyframe};
     animation-duration: ${DURATION}ms;
-    animation-timing-function: ${({ theme }) => theme.transitions?.easing.easeInOut};
+    animation-timing-function: ease-in-out;
   }
 
   &.animation-pulsate {
     animation-name: ${pulsateKeyframe};
     animation-duration: 2500ms;
-    animation-timing-function: ${({ theme }) => theme.transitions?.easing.easeInOut};
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-delay: 200ms;
   }
@@ -108,8 +108,8 @@ function Ripple(props) {
   const [leaving, setLeaving] = React.useState(false);
 
   const rippleClassName = mergeStyles(
-    className,
     rippleVariants({ rippleVisible: true, ripplePulsate: pulsate }),
+    className,
   );
 
   const rippleStyles = {
