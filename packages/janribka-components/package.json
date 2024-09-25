@@ -35,7 +35,7 @@
     "prebuild": "rimraf build tsconfig.build.tsbuildinfo",
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
-    "release": "pnpm version --no-git && pnpm publish --access public",
+    "release": "pnpm build && pnpm version --no-git && pnpm publish --access public",
     "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
