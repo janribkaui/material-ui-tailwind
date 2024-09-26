@@ -14,7 +14,7 @@ import { Typography, TypographyOptions } from './createTypography';
  * To disable custom properties, use module augmentation
  *
  * @example
- * declare module '@janribka/components/styles' {
+ * declare module '@janribka/ui/styles' {
  *   interface CssThemeVariables {
  *     enabled: true;
  *   }
@@ -83,7 +83,7 @@ export interface Theme extends BaseTheme, CssVarsProperties {
 
 /**
  * @deprecated
- * Use `import { createTheme } from '@janribka/components/styles'` instead.
+ * Use `import { createTheme } from '@janribka/ui/styles'` instead.
  */
 export function createJRTheme(options?: ThemeOptions, ...args: object[]): Theme;
 

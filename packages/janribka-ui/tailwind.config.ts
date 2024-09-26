@@ -1,8 +1,8 @@
 import type { Config } from 'tailwindcss';
 
-import basePlugin from '@janribka/components/styles/basePlugin';
-import colorsPlugin from '@janribka/components/styles/colorsPlugin';
-import transitionsPlugin from '@janribka/components/styles/transitionsPlugin';
+import basePlugin from '@janribka/ui/styles/basePlugin';
+import colorsPlugin from '@janribka/ui/styles/colorsPlugin';
+import transitionsPlugin from '@janribka/ui/styles/transitionsPlugin';
 
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],

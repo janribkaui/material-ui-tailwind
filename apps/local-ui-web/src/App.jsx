@@ -1,4 +1,4 @@
-import Button from '@janribka/components/Button';
+import Button from '@janribka/ui/Button';
 import tailwindConfig from '../tailwind.config';
 import resolveConfig from 'tailwindcss/resolveConfig';
 import { AiFillAndroid } from 'react-icons/ai';

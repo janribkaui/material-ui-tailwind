@@ -132,7 +132,7 @@ export function createJRTheme(...args) {
         [
           'JR: the createJRTheme function was renamed to createTheme.',
           '',
-          "You should use `import { createTheme } from '@janribka/components/styles'`",
+          "You should use `import { createTheme } from '@janribka/ui/styles'`",
         ].join('\n'),
       );
     }

@@ -93,7 +93,7 @@ export function expectType<Expected, Actual>(actual: IfEquals<Actual, Expected, 
  */
 export interface OverridableComponent<M extends OverridableTypeMap> {
   // If you make any changes to this interface, please make sure to update the
-  // `OverridableComponent` type in `janribka-components/src/OverridableComponent.d.ts` as well.
+  // `OverridableComponent` type in `janribka-ui/src/OverridableComponent.d.ts` as well.
   // Also, there are types in Base UI that have a similar shape to this interface
   // (for example SelectType, OptionType, etc.).
   <C extends React.ElementType>(

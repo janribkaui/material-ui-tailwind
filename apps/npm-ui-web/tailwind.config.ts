@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-import twConfigBase from '@janribka/components/tailwind.config';
+import twConfigBase from '@janribka/ui/tailwind.config';
 
 const config: Pick<Config, 'content' | 'presets' | 'theme'> = {
   content: [
@@ -8,7 +8,7 @@ const config: Pick<Config, 'content' | 'presets' | 'theme'> = {
     './src/shared/**/*.{js,ts,jsx,tsx}',
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@janribka/components/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@janribka/ui/**/*.{js,ts,jsx,tsx}',
   ],
   presets: [twConfigBase],
   theme: {

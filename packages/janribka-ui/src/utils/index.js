@@ -14,9 +14,9 @@ export const unstable_ClassNameGenerator = {
     if (process.env.NODE_ENV !== 'production') {
       console.warn(
         [
-          'JR: `ClassNameGenerator` import from `@janribka/components/utils` is outdated and might cause unexpected issues.',
+          'JR: `ClassNameGenerator` import from `@janribka/ui/utils` is outdated and might cause unexpected issues.',
           '',
-          "You should use `import { unstable_ClassNameGenerator } from '@janribka/components/className'` instead",
+          "You should use `import { unstable_ClassNameGenerator } from '@janribka/className'` instead",
           '',
           'The detail of the issue: https://github.com/mui/material-ui/issues/30011#issuecomment-1024993401',
           '',

@@ -5,7 +5,7 @@ const OneLevelImportMessage = [
   'See https://github.com/mui/material-ui/pull/24147 for the kind of win it can unlock.',
 ].join('\n');
 // This only applies to packages published from this monorepo.
-// If you build a library around `@janribka/components` you can safely use `createStyles` without running into the same issue as we are.
+// If you build a library around `@janribka/ui` you can safely use `createStyles` without running into the same issue as we are.
 const forbidCreateStylesMessage =
   'Use `MuiStyles<ClassKey, Props>` instead if the styles are exported. Otherwise use `as const` assertions. ' +
   '`createStyles` will lead to inlined, at-compile-time-resolved type-imports. ' +
@@ -355,7 +355,7 @@ module.exports = {
           {
             paths: [
               {
-                name: '@janribka/components/styles',
+                name: '@janribka/ui/styles',
                 importNames: ['createStyles'],
                 message: forbidCreateStylesMessage,
               },
@@ -426,7 +426,7 @@ module.exports = {
           {
             paths: [
               {
-                name: '@janribka/components',
+                name: '@janribka/ui',
                 message: OneLevelImportMessage,
               },
               {

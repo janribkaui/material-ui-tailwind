@@ -9,7 +9,7 @@ module.exports = {
   resolve: {
     modules: [__dirname, 'node_modules'],
     alias: {
-      '@janribka/components': path.resolve(__dirname, './packages/janribka-components/src'),
+      '@janribka/ui': path.resolve(__dirname, './packages/janribka-ui/src'),
       '@janribka/private-theming': path.resolve(
         __dirname,
         './packages/janribka-private-theming/src',
