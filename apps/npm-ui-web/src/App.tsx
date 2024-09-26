@@ -3,9 +3,9 @@ import Button from '@janribka/components/Button';
 function App() {
   return (
     <>
-      <Button>Test</Button>
-      <Button variant="contained">Test</Button>
-      <Button variant="outlined">Test</Button>
+      <Button>Text</Button>
+      <Button variant="contained">Contained</Button>
+      <Button variant="outlined">Outlined</Button>
     </>
   );
 }
