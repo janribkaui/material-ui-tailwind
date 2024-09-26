@@ -148,7 +148,7 @@ function jrError({ references, babel, config, source }) {
       babel.types.cloneDeep(formatJRErrorMessageIdentifier),
       [babel.types.numericLiteral(errorCode), ...errorMessageExpressions],
     );
-
+    // TODO: Porovnat ty zakomnetovane veci s origin8lem
     // Outputs:
     // new Error(
     //   process.env.NODE_ENV !== "production"
