@@ -66,6 +66,9 @@ export * from './ButtonBase';
 // export { default as ButtonGroup } from './ButtonGroup';
 // export * from './ButtonGroup';
 
+export { default as IconButton } from './IconButton';
+export * from './IconButton';
+
 /**
  * @deprecated will be removed in v5.beta, please use StyledEngineProvider from @mui/material/styles instead
  */

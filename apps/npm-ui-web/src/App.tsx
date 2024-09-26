@@ -1,4 +1,4 @@
-import Button from '@janribka/components/Button';
+import Button from '@janribka/ui/Button';
 
 function App() {
   return (

@@ -16,6 +16,9 @@ export * from './ButtonBase';
 // export { default as ButtonGroup } from './ButtonGroup';
 // export * from './ButtonGroup';
 
+export { default as IconButton } from './IconButton';
+export * from './IconButton';
+
 // createFilterOptions is exported from Autocomplete
 
 export { default as GlobalStyles } from './GlobalStyles';

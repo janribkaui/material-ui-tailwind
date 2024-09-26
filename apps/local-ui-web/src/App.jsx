@@ -1,12 +1,8 @@
 import Button from '@janribka/ui/Button';
-import tailwindConfig from '../tailwind.config';
-import resolveConfig from 'tailwindcss/resolveConfig';
+
 import { AiFillAndroid } from 'react-icons/ai';
 import { TbArrowBigRightLinesFilled } from 'react-icons/tb';
-
-const fullConfig = resolveConfig(tailwindConfig);
-
-console.log('fullConfig:', fullConfig);
+import IconButton from '@janribka/ui/IconButton';
 
 function App() {
   return (
@@ -17,6 +13,9 @@ function App() {
       <h4>H4</h4>
       <h5>H5</h5>
       <h6>H6</h6>
+      <IconButton>
+        <TbArrowBigRightLinesFilled fontSize="inherit" />
+      </IconButton>
       <div className="ml-3 mt-3 flex gap-3">
         <div>
           <Button size="small">Small</Button>

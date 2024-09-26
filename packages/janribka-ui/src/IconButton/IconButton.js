@@ -1,17 +1,18 @@
 'use client';
 import * as React from 'react';
 // import PropTypes from 'prop-types';
-import clsx from 'clsx';
+
 // import chainPropTypes from '@mui/utils/chainPropTypes';
 // import composeClasses from '@mui/utils/composeClasses';
 import { alpha } from '@janribka/system/colorManipulator';
 import { styled } from '../zero-styled';
 import memoTheme from '../utils/memoTheme';
-import { useDefaultProps } from '../DefaultPropsProvider';
+
 import ButtonBase from '../ButtonBase';
 import capitalize from '../utils/capitalize';
 // import iconButtonClasses, { getIconButtonUtilityClass } from './iconButtonClasses';
 import { tv } from 'tailwind-variants';
+import { mergeStyles } from '../utils';
 
 // const useUtilityClasses = (ownerState) => {
 //   const { classes, disabled, color, edge, size } = ownerState;
@@ -30,7 +31,15 @@ import { tv } from 'tailwind-variants';
 // };
 
 const iconButtonVariants = tv({
-  base: 'text-center',
+  base: [
+    'text-center',
+    'flex-noneAuto',
+    'text-2xl',
+    'p-2',
+    'rounded-[50%]',
+    'transition-background-color',
+    'duration-shortest',
+  ],
   variants: {},
 });
 
@@ -160,8 +169,7 @@ const IconButtonRoot = styled(ButtonBase, {
  * Refer to the [Icons](/material-ui/icons/) section of the documentation
  * regarding the available icon options.
  */
-const IconButton = React.forwardRef(function IconButton(inProps, ref) {
-  const props = useDefaultProps({ props: inProps, name: 'MuiIconButton' });
+const IconButton = React.forwardRef(function IconButton(props, ref) {
   const {
     edge = false,
     children,
@@ -174,31 +182,23 @@ const IconButton = React.forwardRef(function IconButton(inProps, ref) {
     ...other
   } = props;
 
-  const ownerState = {
-    ...props,
-    edge,
-    color,
-    disabled,
-    disableFocusRipple,
-    disableRipple,
-    size,
-  };
-
-  const classes = useUtilityClasses(ownerState);
-
   return (
-    <IconButtonRoot
-      className={clsx(classes.root, className, 'flex')}
+    <ButtonBase
+      className={mergeStyles(
+        'JrIconButton-root',
+        iconButtonVariants({}),
+        className,
+        'duration-shortest bg-grey-50',
+      )}
       centerRipple
       focusRipple={!disableFocusRipple}
       disabled={disabled}
       disableRipple={disableRipple}
       ref={ref}
       {...other}
-      ownerState={ownerState}
     >
       {children}
-    </IconButtonRoot>
+    </ButtonBase>
   );
 });
 

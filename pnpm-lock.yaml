@@ -175,9 +175,9 @@ importers:
 
   apps/npm-ui-web:
     dependencies:
-      '@janribka/components':
-        specifier: 1.1.1
-        version: 1.1.1(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@janribka/ui':
+        specifier: 1.1.2
+        version: 1.1.2(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1616,23 +1616,6 @@ packages:
   '@isaacs/string-locale-compare@1.1.0':
     resolution: {integrity: sha512-SQ7Kzhh9+D+ZW9MA0zkYv3VXhIDNx+LzM6EJ+/65I3QY+enU6Itte7E5XX7EWrqLW2FN4n06GWzBnPoC3th2aQ==}
 
-  '@janribka/components@1.1.1':
-    resolution: {integrity: sha512-3WQ7uTJAn/CNcn3BkybxqF+BNyEVGs8/u9bGL31+9B2/okSsfPvKtSVSmm/xBoObxHLbFyjy05JX8zxSSgJb7g==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      '@emotion/react': ^11.5.0
-      '@emotion/styled': ^11.3.0
-      '@types/react': ^17.0.0 || ^18.0.0 || ^19.0.0
-      react: ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      '@emotion/react':
-        optional: true
-      '@emotion/styled':
-        optional: true
-      '@types/react':
-        optional: true
-
   '@janribka/private-theming@1.0.0':
     resolution: {integrity: sha512-FaSObqOhWBnmdb0vG0D40/+YJAYfZ9Av2VnPaqMyaIEh3IOSpcLxSChuAzyogrsSvebRk3nOsLO7jG71yUrM0w==}
     engines: {node: '>=12.0.0'}
@@ -1677,8 +1660,35 @@ packages:
       '@types/react':
         optional: true
 
+  '@janribka/ui@1.1.2':
+    resolution: {integrity: sha512-UkXX9rUn1f7jOygEOE/gMyV64Tyj6Nz6ViKBYrs1xtPqXeVyDDZ/mURtTc3Bt1hZEAUvPFdVB9vbhX+ujevF7A==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      '@emotion/react': ^11.5.0
+      '@emotion/styled': ^11.3.0
+      '@types/react': ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/react':
+        optional: true
+      '@emotion/styled':
+        optional: true
+      '@types/react':
+        optional: true
+
   '@janribka/utils@1.0.0':
     resolution: {integrity: sha512-gdkL/QPjQq00ud6ti2RZqku69a6GtqUg/KiqX7CcO1vYX3ted52gtUj1fuNaB05W799n+6jhzPapZbAuz61LcA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      '@types/react': ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@janribka/utils@1.0.1':
+    resolution: {integrity: sha512-ClMALeKq2oYWcaRhQLMG8IfccDz/HIJ0tKf/pKV4gg/y2q9A1MFthZMw3AnPz5jKeynKZtr/djztKvis7V+8ig==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -6838,25 +6848,10 @@ snapshots:
 
   '@isaacs/string-locale-compare@1.1.0': {}
 
-  '@janribka/components@1.1.1(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@babel/runtime': 7.25.6
-      '@janribka/system': 1.1.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
-      '@janribka/types': 1.0.0(@types/react@18.3.5)
-      '@janribka/utils': 1.0.0(@types/react@18.3.5)(react@18.3.1)
-      csstype: 3.1.3
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-transition-group: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-    optionalDependencies:
-      '@emotion/react': 11.13.3(@types/react@18.3.5)(react@18.3.1)
-      '@emotion/styled': 11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
-      '@types/react': 18.3.5
-
   '@janribka/private-theming@1.0.0(@types/react@18.3.5)(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.6
-      '@janribka/utils': 1.0.0(@types/react@18.3.5)(react@18.3.1)
+      '@janribka/utils': 1.0.1(@types/react@18.3.5)(react@18.3.1)
       react: 18.3.1
     optionalDependencies:
       '@types/react': 18.3.5
@@ -6878,7 +6873,7 @@ snapshots:
       '@janribka/private-theming': 1.0.0(@types/react@18.3.5)(react@18.3.1)
       '@janribka/styled-engine': 1.0.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
       '@janribka/types': 1.0.0(@types/react@18.3.5)
-      '@janribka/utils': 1.0.0(@types/react@18.3.5)(react@18.3.1)
+      '@janribka/utils': 1.0.1(@types/react@18.3.5)(react@18.3.1)
       clsx: 2.1.1
       csstype: 3.1.3
       react: 18.3.1
@@ -6892,18 +6887,34 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.5
 
-  '@janribka/utils@1.0.0(@types/react@18.3.5)(react@18.3.1)':
+  '@janribka/ui@1.1.2(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.6
+      '@janribka/system': 1.1.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
+      '@janribka/types': 1.0.0(@types/react@18.3.5)
+      '@janribka/utils': 1.0.1(@types/react@18.3.5)(react@18.3.1)
+      csstype: 3.1.3
       react: 18.3.1
-      react-is: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-transition-group: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     optionalDependencies:
+      '@emotion/react': 11.13.3(@types/react@18.3.5)(react@18.3.1)
+      '@emotion/styled': 11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
       '@types/react': 18.3.5
 
   '@janribka/utils@1.0.0(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)':
     dependencies:
       '@babel/runtime': 7.25.6
       react: 19.0.0-rc-f6cce072-20240723
+      react-is: 18.3.1
+    optionalDependencies:
+      '@types/react': 18.3.5
+
+  '@janribka/utils@1.0.1(@types/react@18.3.5)(react@18.3.1)':
+    dependencies:
+      '@babel/runtime': 7.25.6
+      '@janribka/types': 1.0.0(@types/react@18.3.5)
+      react: 18.3.1
       react-is: 18.3.1
     optionalDependencies:
       '@types/react': 18.3.5

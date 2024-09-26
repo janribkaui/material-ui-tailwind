@@ -35,6 +35,10 @@ const config: Config = {
         focusDark: '0.12',
         activatedDark: '0.24',
       },
+      flex: {
+        noneAuto: '0 0 auto',
+      },
+      transitionDuration: {},
     },
   },
   plugins: [basePlugin({}), colorsPlugin({}), transitionsPlugin({})],
