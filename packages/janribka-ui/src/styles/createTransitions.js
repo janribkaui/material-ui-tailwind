@@ -16,17 +16,17 @@ const easing = {
 // Follow https://m2.material.io/guidelines/motion/duration-easing.html#duration-easing-common-durations
 // to learn when use what timing
 const duration = {
-  shortest: 150,
-  shorter: 200,
-  short: 250,
+  shortest: '150ms',
+  shorter: '200ms',
+  short: '250ms',
   // most basic recommended timing
-  standard: 300,
+  standard: '300ms',
   // this is to be used in complex animations
-  complex: 375,
+  complex: '375ms',
   // recommended when something is entering screen
-  'entering-screen': 225,
+  'entering-screen': '225ms',
   // recommended when something is leaving screen
-  'leaving-screen': 195,
+  'leaving-screen': '195ms',
 };
 
 export default function createTransitions() {

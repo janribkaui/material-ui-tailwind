@@ -21,7 +21,7 @@ export interface IconButtonOwnProps {
    * @default 'default'
    */
   color?: OverridableStringUnion<
-    'inherit' | 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning',
+    'inherit' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning',
     IconButtonPropsColorOverrides
   >;
   /**
