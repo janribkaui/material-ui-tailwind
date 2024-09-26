@@ -1,9 +1,6 @@
 import * as React from 'react';
 
 import { OverridableComponent, OverridableTypeMap, OverrideProps } from '../OverridableComponent';
-// import { SxProps } from '@janribka/system';
-import { Theme } from '../styles';
-import { ButtonBaseClasses } from './buttonBaseClasses';
 import { TouchRippleActions, TouchRippleProps } from './TouchRipple';
 
 export interface ButtonBaseOwnProps {
@@ -58,11 +55,6 @@ export interface ButtonBaseOwnProps {
    * if needed.
    */
   focusVisibleClassName?: string;
-  /**
-   * The component used to render a link when the `href` prop is provided.
-   * @default 'a'
-   */
-  LinkComponent?: React.ElementType;
   /**
    * Callback fired when the component is focused with a keyboard.
    * We trigger a `onFocus` callback too.

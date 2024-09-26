@@ -28,7 +28,6 @@ export const ButtonBaseRoot = styled.button({
  * It contains a load of style reset and some focus/ripple logic.
  */
 const ButtonBase = React.forwardRef(function ButtonBase(props, ref) {
-  // const props = useDefaultProps({ props: inProps, name: 'JrButtonBase' });
   const {
     action,
     centerRipple = false,
@@ -39,7 +38,6 @@ const ButtonBase = React.forwardRef(function ButtonBase(props, ref) {
     disableTouchRipple = false,
     focusRipple = false,
     focusVisibleClassName,
-    // LinkComponent = 'a',
     onBlur,
     onClick,
     onContextMenu,
@@ -153,11 +151,6 @@ const ButtonBase = React.forwardRef(function ButtonBase(props, ref) {
     }
   });
 
-  // const isNonNativeButton = () => {
-  //   const button = buttonRef.current;
-  //   return component && component !== 'button' && !(button.tagName === 'A' && button.href);
-  // };
-
   const handleKeyDown = useEventCallback((event) => {
     // Check if key is already down to avoid repeats being counted as multiple activations
     if (focusRipple && !event.repeat && focusVisible && event.key === ' ') {
@@ -166,7 +159,6 @@ const ButtonBase = React.forwardRef(function ButtonBase(props, ref) {
       });
     }
 
-    // if (event.target === event.currentTarget && isNonNativeButton() && event.key === ' ') {
     if (event.target === event.currentTarget && event.key === ' ') {
       event.preventDefault();
     }
@@ -176,12 +168,7 @@ const ButtonBase = React.forwardRef(function ButtonBase(props, ref) {
     }
 
     // Keyboard accessibility for non interactive elements
-    if (
-      event.target === event.currentTarget &&
-      // isNonNativeButton() &&
-      event.key === 'Enter' &&
-      !disabled
-    ) {
+    if (event.target === event.currentTarget && event.key === 'Enter' && !disabled) {
       event.preventDefault();
       if (onClick) {
         onClick(event);
@@ -205,7 +192,6 @@ const ButtonBase = React.forwardRef(function ButtonBase(props, ref) {
     if (
       onClick &&
       event.target === event.currentTarget &&
-      // isNonNativeButton() &&
       event.key === ' ' &&
       !event.defaultPrevented
     ) {
@@ -213,24 +199,10 @@ const ButtonBase = React.forwardRef(function ButtonBase(props, ref) {
     }
   });
 
-  // let ComponentProp = component;
-
-  // if (ComponentProp === 'button' && (other.href || other.to)) {
-  //   ComponentProp = LinkComponent;
-  // }
-
   const buttonProps = {};
-  // if (ComponentProp === 'button') {
+
   buttonProps.type = type === undefined ? 'button' : type;
   buttonProps.disabled = disabled;
-  // } else {
-  //   if (!other.href && !other.to) {
-  //     buttonProps.role = 'button';
-  //   }
-  //   if (disabled) {
-  //     buttonProps['aria-disabled'] = disabled;
-  //   }
-  // }
 
   const handleRef = useForkRef(ref, buttonRef);
 

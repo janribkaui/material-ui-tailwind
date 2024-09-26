@@ -2,8 +2,6 @@
 import * as React from 'react';
 import { tv } from 'tailwind-variants';
 import ButtonBase from '../ButtonBase';
-// import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
-// import ButtonGroupButtonContext from '../ButtonGroup/ButtonGroupButtonContext';
 import { mergeStyles } from '../utils';
 
 // Styles
@@ -272,11 +270,6 @@ const Button = React.forwardRef(function Button(props, ref) {
     variant,
     ...other
   } = props;
-  // const contextProps = React.useContext(ButtonGroupContext);
-
-  // Class names
-  // const buttonGroupButtonContextPositionClassName = React.useContext(ButtonGroupButtonContext);
-  // const positionClassName = buttonGroupButtonContextPositionClassName || '';
 
   // Icons
   const startIcon = startIconProp && (
@@ -303,8 +296,6 @@ const Button = React.forwardRef(function Button(props, ref) {
           fullWidth: fullWidth,
         }),
         className,
-        // contextProps.className,
-        // positionClassName,
       )}
       disabled={disabled}
       focusRipple={!disableFocusRipple}
@@ -312,7 +303,6 @@ const Button = React.forwardRef(function Button(props, ref) {
       ref={ref}
       type={type}
       {...other}
-      // classes={classes}
     >
       {startIcon}
       {children}
