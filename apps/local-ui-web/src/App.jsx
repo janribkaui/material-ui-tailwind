@@ -3,6 +3,7 @@ import Button from '@janribka/ui/Button';
 import { AiFillAndroid } from 'react-icons/ai';
 import { TbArrowBigRightLinesFilled } from 'react-icons/tb';
 import IconButton from '@janribka/ui/IconButton';
+import CircularProgress from '@janribka/ui/CircularProgress';
 
 function App() {
   return (
@@ -13,6 +14,13 @@ function App() {
       <h4>H4</h4>
       <h5>H5</h5>
       <h6>H6</h6>
+
+      <div className="ml-3 mt-3 flex gap-3">
+        <div>
+          <CircularProgress />
+        </div>
+      </div>
+
       <div className="ml-3 mt-3 flex gap-3">
         <div>
           <IconButton>

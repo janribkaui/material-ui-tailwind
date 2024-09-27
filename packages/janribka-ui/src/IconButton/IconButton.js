@@ -83,6 +83,7 @@ const iconButtonVariants = tv({
  * regarding the available icon options.
  */
 const IconButton = React.forwardRef(function IconButton(props, ref) {
+  // TODO: Předělat props podle mui
   const {
     edge = false,
     children,

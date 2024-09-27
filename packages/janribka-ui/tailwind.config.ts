@@ -16,6 +16,7 @@ const config: Config = {
         'border-color': 'border-color',
         color: 'color',
         button: 'background-color, color, box-shadow, border-color',
+        'stroke-dashoffset': 'stroke-dashoffset',
       },
       lineHeight: {
         '4_67': '1.167',
@@ -39,7 +40,6 @@ const config: Config = {
       flex: {
         noneAuto: '0 0 auto',
       },
-      transitionDuration: {},
     },
   },
   plugins: [basePlugin({}), colorsPlugin({}), transitionsPlugin({})],

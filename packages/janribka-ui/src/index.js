@@ -16,6 +16,9 @@ export * from './ButtonBase';
 // export { default as ButtonGroup } from './ButtonGroup';
 // export * from './ButtonGroup';
 
+export { default as CircularProgress } from './CircularProgress';
+export * from './CircularProgress';
+
 export { default as IconButton } from './IconButton';
 export * from './IconButton';
 
