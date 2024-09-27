@@ -4,3 +4,4 @@ build/
 .nx/workspace-data
 *.tsbuildinfo
 .env
+.bashrc

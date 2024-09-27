@@ -82,7 +82,7 @@ async function main(argv) {
    */
   const timeline = octokit.paginate.iterator(
     octokit.repos.compareCommits.endpoint.merge({
-      owner: 'mui',
+      owner: 'jr',
       repo,
       base: lastRelease,
       head: release,
