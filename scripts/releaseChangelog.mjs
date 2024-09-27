@@ -56,7 +56,7 @@ async function findLatestTaggedVersion() {
 
 async function main(argv) {
   const { githubToken, lastRelease: lastReleaseInput, release, repo } = argv;
-  console.log('githubToken', githubToken);
+
   if (!githubToken) {
     throw new TypeError(
       'Unable to authenticate. Make sure you either call the script with `--githubToken $token` or set `process.env.GITHUB_TOKEN`. The token needs `public_repo` permissions.',
