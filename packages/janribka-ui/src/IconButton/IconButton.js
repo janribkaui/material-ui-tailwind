@@ -11,6 +11,7 @@ const iconButtonVariants = tv({
     'text-2xl',
     'p-2',
     'rounded-[50%]',
+    'text-action-active',
     'transition-background-color',
     'duration-shortest',
     'disabled:bg-transparent',
@@ -42,37 +43,37 @@ const iconButtonVariants = tv({
     {
       disableRipple: false,
       color: 'primary',
-      className: ['hover:bg-primary-main/hover', 'hover:hover-none:bg-transparent'],
-    },
-    {
-      disableRipple: false,
-      color: 'primary',
-      className: ['hover:bg-primary-main/hover', 'hover:hover-none:bg-transparent'],
+      className: ['hover:bg-primary/hover', 'hover:hover-none:bg-transparent'],
     },
     {
       disableRipple: false,
       color: 'secondary',
-      className: ['hover:bg-secondary-main/hover', 'hover:hover-none:bg-transparent'],
-    },
-    {
-      disableRipple: false,
-      color: 'info',
-      className: ['hover:bg-info-main/hover', 'hover:hover-none:bg-transparent'],
+      className: ['hover:bg-secondary/hover', 'hover:hover-none:bg-transparent'],
     },
     {
       disableRipple: false,
       color: 'success',
-      className: ['hover:bg-success-main/hover', 'hover:hover-none:bg-transparent'],
+      className: ['hover:bg-success/hover', 'hover:hover-none:bg-transparent'],
     },
     {
       disableRipple: false,
       color: 'error',
-      className: ['hover:bg-error-main/hover', 'hover:hover-none:bg-transparent'],
+      className: ['hover:bg-error/hover', 'hover:hover-none:bg-transparent'],
+    },
+    {
+      disableRipple: false,
+      color: 'info',
+      className: ['hover:bg-info/hover', 'hover:hover-none:bg-transparent'],
+    },
+    {
+      disableRipple: false,
+      color: 'warning',
+      className: ['hover:bg-warning/hover', 'hover:hover-none:bg-transparent'],
     },
     {
       disableRipple: false,
       color: 'inherit',
-      className: ['hover:bg-inherit-main/hover', 'hover:hover-none:bg-transparent'],
+      className: ['hover:bg-inherit/hover', 'hover:hover-none:bg-transparent'],
     },
   ],
 });
@@ -86,7 +87,7 @@ const IconButton = React.forwardRef(function IconButton(props, ref) {
     edge = false,
     children,
     className,
-    color = 'primary',
+    color = 'default',
     disabled = false,
     disableFocusRipple = false,
     disableRipple = false,
@@ -100,7 +101,7 @@ const IconButton = React.forwardRef(function IconButton(props, ref) {
         'JrIconButton-root',
         iconButtonVariants({ disableRipple: disableRipple, edge: edge, size: size, color: color }),
         className,
-        'm-',
+        '',
       )}
       centerRipple
       focusRipple={!disableFocusRipple}

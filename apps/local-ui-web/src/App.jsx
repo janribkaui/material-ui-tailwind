@@ -13,9 +13,34 @@ function App() {
       <h4>H4</h4>
       <h5>H5</h5>
       <h6>H6</h6>
-      <IconButton>
-        <TbArrowBigRightLinesFilled fontSize="inherit" />
-      </IconButton>
+      <div className="ml-3 mt-3 flex gap-3">
+        <div>
+          <IconButton>
+            <TbArrowBigRightLinesFilled />
+          </IconButton>
+          <IconButton disabled>
+            <TbArrowBigRightLinesFilled />
+          </IconButton>
+          <IconButton color="secondary">
+            <TbArrowBigRightLinesFilled />
+          </IconButton>
+          <IconButton color="primary">
+            <TbArrowBigRightLinesFilled />
+          </IconButton>
+        </div>
+        <div>
+          <IconButton size="small">
+            <TbArrowBigRightLinesFilled />
+          </IconButton>
+          <IconButton>
+            <TbArrowBigRightLinesFilled />
+          </IconButton>
+          <IconButton size="large">
+            <TbArrowBigRightLinesFilled />
+          </IconButton>
+        </div>
+      </div>
+
       <div className="ml-3 mt-3 flex gap-3">
         <div>
           <Button size="small">Small</Button>
