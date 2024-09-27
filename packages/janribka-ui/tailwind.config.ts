@@ -4,6 +4,7 @@ import basePlugin from '@janribka/ui/styles/basePlugin';
 import colorsPlugin from '@janribka/ui/styles/colorsPlugin';
 import transitionsPlugin from '@janribka/ui/styles/transitionsPlugin';
 
+// TODO: Dát zde výchozí font roboto podle mui
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   // mode: 'jit',
