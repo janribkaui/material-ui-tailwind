@@ -5,6 +5,7 @@ import ButtonBase from '../ButtonBase';
 import { mergeStyles } from '../utils';
 import resolveProps from '@janribka/utils/resolveProps';
 import { useDefaultProps } from '../DefaultPropsProvider';
+import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
 
 // Styles
 const commonIconStyleVariants = tv({
@@ -269,7 +270,7 @@ const Button = React.forwardRef(function Button(inProps, ref) {
     variant = 'text',
     ...other
   } = props;
-
+  debugger;
   // Icons
   const startIcon = startIconProp && (
     <span className={mergeStyles('JrButton-startIcon', startIconVariants({ size: size }))}>
