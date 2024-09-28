@@ -3,6 +3,7 @@ import * as React from 'react';
 import ButtonBase from '../ButtonBase';
 import { tv } from 'tailwind-variants';
 import { mergeStyles } from '../utils';
+import { useDefaultProps } from '../DefaultPropsProvider';
 
 const iconButtonVariants = tv({
   base: [
@@ -78,12 +79,8 @@ const iconButtonVariants = tv({
   ],
 });
 
-/**
- * Refer to the [Icons](/material-ui/icons/) section of the documentation
- * regarding the available icon options.
- */
-const IconButton = React.forwardRef(function IconButton(props, ref) {
-  // TODO: Předělat props podle mui
+const IconButton = React.forwardRef(function IconButton(inProps, ref) {
+  const props = useDefaultProps({ props: inProps, name: 'JrIconButton' });
   const {
     edge = false,
     children,
