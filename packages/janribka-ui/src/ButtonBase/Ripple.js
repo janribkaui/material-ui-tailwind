@@ -87,7 +87,7 @@ export const rippleChildVariants = tv({
       false: '',
     },
   },
-  defaultVariants: { childLeaving: false, pulsate: false },
+  defaultVariants: { childLeaving: false },
 });
 
 /**
