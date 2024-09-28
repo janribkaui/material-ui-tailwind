@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useDefaultProps } from '../DefaultPropsProvider';
 import { mergeStyles } from '../utils';
 import { tv } from 'tailwind-variants';
-import { keyframes, css } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const SIZE = 44;
 
@@ -39,23 +39,47 @@ const circularDashKeyframe = keyframes`
 // which can be done by checking typeof indeterminate1Keyframe !== 'string' (at runtime, Pigment CSS transform keyframes`` to a string).
 const rotateAnimation =
   typeof circularRotateKeyframe !== 'string'
-    ? css`animate-[${circularRotateKeyframe} 1.4s linear infinite]`
+    ? css`
+        animation: ${circularRotateKeyframe} 1.4s linear infinite;
+      `
     : null;
 
 const dashAnimation =
   typeof circularDashKeyframe !== 'string'
-    ? css`animate-[${circularDashKeyframe} 1.4s ease-in-out infinite]`
+    ? css`
+        animation: ${circularDashKeyframe} 1.4s ease-in-out infinite;
+      `
     : null;
+
+const CircularProgressRoot =
+  styled.span`
+  &.variant-indeterminate {
+    ${rotateAnimation}` ||
+  `animation: ${circularRotateKeyframe} 1.4s linear infinite
+  }
+`;
+
+const CircularProgressCircle =
+  styled.circle`
+    &.variant-indeterminate {
+      stroke-dasharray: 80px, 200px;
+      stroke-dashoffset: 0;
+      &.disable-shrink {
+        ${dashAnimation}` ||
+  `animation: ${circularDashKeyframe} 1.4s linear infinite
+      }   
+    }
+`;
 
 const circularProgressRootVariants = tv({
   base: 'inline-block',
   variants: {
     variant: {
       determinate: ['transition-transform'],
-      indeterminate:
-        rotateAnimation || css`animate-[${circularRotateKeyframe} 1.4s linear infinite]`,
+      indeterminate: 'variant-indeterminate',
     },
     color: {
+      // TODO: Přidat custom color a tam si každý může nadefinovat svou. Nebo do color přidat properu string. To samé pro ostatní varianty
       primary: 'text-primary',
       secondary: 'text-secondary',
       info: 'text-info',
@@ -72,9 +96,16 @@ const circularProgressCircleVariants = tv({
   variants: {
     variant: {
       determinate: ['transition-transform'],
-      indeterminate: dashAnimation || css`animate-[${circularRotateKeyframe} 1.4s linear infinite]`,
+      indeterminate: 'variant-indeterminate',
+    },
+    disableShrink: {
+      true: '',
+      false: '',
     },
   },
+  compoundVariants: [
+    { variant: 'indeterminate', disableShrink: false, className: 'disable-shrink' },
+  ],
 });
 
 /**
@@ -111,7 +142,7 @@ const CircularProgress = React.forwardRef(function CircularProgress(inProps, ref
   }
 
   return (
-    <span
+    <CircularProgressRoot
       className={circularProgressRootVariants({ variant: variant, color: color })}
       style={{ width: size, height: size, ...rootStyle, ...style }}
       ref={ref}
@@ -123,10 +154,14 @@ const CircularProgress = React.forwardRef(function CircularProgress(inProps, ref
         className="JrCircularProgress-svg block"
         viewBox={`${SIZE / 2} ${SIZE / 2} ${SIZE} ${SIZE}`}
       >
-        <circle
+        <CircularProgressCircle
           className={mergeStyles(
             'JrCircularProgress-circle',
-            circularProgressCircleVariants({ variant: variant, color: color }),
+            circularProgressCircleVariants({
+              variant: variant,
+              color: color,
+              disableShrink: disableShrink,
+            }),
           )}
           style={circleStyle}
           cx={SIZE}
@@ -136,7 +171,7 @@ const CircularProgress = React.forwardRef(function CircularProgress(inProps, ref
           strokeWidth={thickness}
         />
       </svg>
-    </span>
+    </CircularProgressRoot>
   );
 });
 

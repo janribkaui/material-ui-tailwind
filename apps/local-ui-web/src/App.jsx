@@ -1,11 +1,24 @@
-import Button from '@janribka/ui/Button';
+import * as React from 'react';
 
+import Button from '@janribka/ui/Button';
 import { AiFillAndroid } from 'react-icons/ai';
 import { TbArrowBigRightLinesFilled } from 'react-icons/tb';
 import IconButton from '@janribka/ui/IconButton';
 import CircularProgress from '@janribka/ui/CircularProgress';
 
 function App() {
+  const [progress, setProgress] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
+    }, 800);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   return (
     <>
       <h1>H1</h1>
@@ -16,8 +29,22 @@ function App() {
       <h6>H6</h6>
 
       <div className="ml-3 mt-3 flex gap-3">
+        <div className="text-grey-500">
+          <CircularProgress color="secondary" />
+          <CircularProgress color="success" />
+          <CircularProgress color="inherit" />
+        </div>
+        <div className>
+          <CircularProgress size="30px" />
+          <CircularProgress size={40} />
+          <CircularProgress size="3rem" />
+        </div>
         <div>
-          <CircularProgress />
+          <CircularProgress variant="determinate" value={25} />
+          <CircularProgress variant="determinate" value={50} />
+          <CircularProgress variant="determinate" value={75} />
+          <CircularProgress variant="determinate" value={100} />
+          <CircularProgress variant="determinate" value={progress} />
         </div>
       </div>
 
