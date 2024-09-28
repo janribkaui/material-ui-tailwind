@@ -3,6 +3,8 @@ import * as React from 'react';
 import { tv } from 'tailwind-variants';
 import ButtonBase from '../ButtonBase';
 import { mergeStyles } from '../utils';
+import resolveProps from '@janribka/utils/resolveProps';
+import { useDefaultProps } from '../DefaultPropsProvider';
 
 // Styles
 const commonIconStyleVariants = tv({
@@ -253,8 +255,11 @@ const buttonVariants = tv({
   },
 });
 
-const Button = React.forwardRef(function Button(props, ref) {
-  // TODO: Předělat props podle mui
+const Button = React.forwardRef(function Button(inProps, ref) {
+  // props priority: `inProps` > `contextProps` > `themeDefaultProps`
+  const contextProps = React.useContext(ButtonGroupContext);
+  const resolvedProps = resolveProps(contextProps, inProps);
+  const props = useDefaultProps({ props: resolvedProps, name: 'JrButton' });
   const {
     children,
     color,
