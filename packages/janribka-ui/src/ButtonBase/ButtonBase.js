@@ -27,7 +27,8 @@ export const ButtonBaseRoot = styled.button({
  * It aims to be a simple building block for creating a button.
  * It contains a load of style reset and some focus/ripple logic.
  */
-const ButtonBase = React.forwardRef(function ButtonBase(props, ref) {
+const ButtonBase = React.forwardRef(function ButtonBase(inProps, ref) {
+  const props = useDefaultProps({ props: inProps, name: 'JrButtonBase' });
   const {
     action,
     centerRipple = false,
