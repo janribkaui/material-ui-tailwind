@@ -246,13 +246,6 @@ const buttonVariants = tv({
       className: 'py-2 px-[1.375rem] text-[0.938rem]',
     },
   ],
-  defaultVariants: {
-    variant: 'text',
-    color: 'primary',
-    size: 'medium',
-    disableElevation: false,
-    fullWidth: false,
-  },
 });
 
 const Button = React.forwardRef(function Button(inProps, ref) {
@@ -262,18 +255,18 @@ const Button = React.forwardRef(function Button(inProps, ref) {
   const props = useDefaultProps({ props: resolvedProps, name: 'JrButton' });
   const {
     children,
-    color,
+    color = 'primary',
     className,
     disabled = false,
-    disableElevation,
+    disableElevation = false,
     disableFocusRipple = false,
     endIcon: endIconProp,
     focusVisibleClassName,
-    fullWidth,
-    size,
+    fullWidth = false,
+    size = 'medium',
     startIcon: startIconProp,
     type,
-    variant,
+    variant = 'text',
     ...other
   } = props;
 
