@@ -270,7 +270,7 @@ const Button = React.forwardRef(function Button(inProps, ref) {
     variant = 'text',
     ...other
   } = props;
-  debugger;
+
   // Icons
   const startIcon = startIconProp && (
     <span className={mergeStyles('JrButton-startIcon', startIconVariants({ size: size }))}>
