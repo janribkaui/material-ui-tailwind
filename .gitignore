@@ -1,5 +1,7 @@
 node_modules/
 build/
+# vale downloaded config
+.github/styles/
 .nx/cache
 .nx/workspace-data
 *.tsbuildinfo
