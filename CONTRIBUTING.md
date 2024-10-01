@@ -1,4 +1,4 @@
-# Contributing to JanRIbka UI React
+# Contributing to JanRibka UI React
 
 If you're reading this, you're awesome!
 Thank you for being a part of the community and helping us make these projects great.
