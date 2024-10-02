@@ -5,6 +5,8 @@ import { AiFillAndroid } from 'react-icons/ai';
 import { TbArrowBigRightLinesFilled } from 'react-icons/tb';
 import IconButton from '@janribka/ui/IconButton';
 import CircularProgress from '@janribka/ui/CircularProgress';
+import LinearProgress from '@janribka/ui/LinearProgress';
+import { darken } from '@janribka/system/colorManipulator';
 
 function App() {
   const [progress, setProgress] = React.useState(0);
@@ -19,6 +21,9 @@ function App() {
     };
   }, []);
 
+  debugger;
+  const x = darken('bg-blue-500', 0.5);
+
   return (
     <>
       <h1>H1</h1>
@@ -29,12 +34,18 @@ function App() {
       <h6>H6</h6>
 
       <div className="ml-3 mt-3 flex gap-3">
+        <div className="w-full">
+          <LinearProgress />
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3">
         <div className="text-grey-500">
           <CircularProgress color="secondary" />
           <CircularProgress color="success" />
           <CircularProgress color="inherit" />
         </div>
-        <div className>
+        <div>
           <CircularProgress size="30px" />
           <CircularProgress size={40} />
           <CircularProgress size="3rem" />

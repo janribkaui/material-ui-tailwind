@@ -46,4 +46,5 @@ export { default as clamp } from './clamp';
 // export { default as unstable_resolveComponentProps } from './resolveComponentProps';
 // export { default as unstable_extractEventHandlers } from './extractEventHandlers';
 // export { default as unstable_getReactNodeRef } from './getReactNodeRef';
+export { default as splitTailwindClassByFirstDash } from './splitTailwindClassByFirstDash';
 export * from './types';

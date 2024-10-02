@@ -133,6 +133,9 @@ importers:
         specifier: 19.0.0-rc-f6cce072-20240723
         version: 19.0.0-rc-f6cce072-20240723(react@19.0.0-rc-f6cce072-20240723)
     devDependencies:
+      '@janribka/system':
+        specifier: workspace:^
+        version: link:../../packages/janribka-system/build
       '@janribka/ui':
         specifier: workspace:^
         version: link:../../packages/janribka-ui/build

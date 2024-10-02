@@ -40,6 +40,9 @@ const config: Config = {
       flex: {
         noneAuto: '0 0 auto',
       },
+      backgroundImage: {
+        'radial-gradient': 'radial-gradient',
+      },
     },
   },
   plugins: [basePlugin({}), colorsPlugin({}), transitionsPlugin({})],
