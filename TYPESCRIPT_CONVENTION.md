@@ -45,21 +45,6 @@ export interface BarProps {
 
 </details>
 
-### `ClassKey`
-
-- naming as `{ComponentName}ClassKey`
-- export if `classes` exists in props interface using `keyof` from `{component}Classes.ts`
-
-```ts
-// fooClasses.ts
-export interface FooClasses {
-  ...
-}
-
-export type FooClassKey = keyof FooClasses;
-// verify that FooClassKey is union of string literal
-```
-
 ### `StyledComponent`
 
 - naming using slot `{ComponentName}{Slot}`
@@ -153,8 +138,6 @@ const Foo = React.forwardRef<HTMLSpanElement, FooProps>(function Foo(inProps, re
   <summary>internal component</summary>
 
 ```ts
-const classes = generateUtilityClasses('PrivateBar', ['selected']);
-
 const BarRoot = styled.div({
   // Styles
 }));
