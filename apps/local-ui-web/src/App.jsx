@@ -6,7 +6,6 @@ import { TbArrowBigRightLinesFilled } from 'react-icons/tb';
 import IconButton from '@janribka/ui/IconButton';
 import CircularProgress from '@janribka/ui/CircularProgress';
 import LinearProgress from '@janribka/ui/LinearProgress';
-import { darken } from '@janribka/system/colorManipulator';
 
 function App() {
   const [progress, setProgress] = React.useState(0);
@@ -21,9 +20,6 @@ function App() {
     };
   }, []);
 
-  debugger;
-  const x = darken('bg-blue-500', 0.5);
-
   return (
     <>
       <h1>H1</h1>
@@ -35,7 +31,7 @@ function App() {
 
       <div className="ml-3 mt-3 flex gap-3">
         <div className="w-full">
-          <LinearProgress />
+          <LinearProgress variant="buffer" valueBuffer={50} value={25} />
         </div>
       </div>
 

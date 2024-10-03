@@ -154,10 +154,11 @@ export function hslToRgb(color) {
  */
 export function darken(tailwindClass, coefficient) {
   let color = getTailwindColorFromTailwindClass(tailwindClass);
-
+  // TODO: remove console.log
+  console.log('darken-color', color);
   color = decomposeColor(color);
   coefficient = clampWrapper(coefficient);
-
+  // TODO: If tailwind class doesn't exist, return the current color
   if (color.type.includes('hsl')) {
     color.values[2] *= 1 - coefficient;
   } else if (color.type.includes('rgb') || color.type.includes('color')) {
@@ -166,9 +167,9 @@ export function darken(tailwindClass, coefficient) {
     }
   }
 
-  // const classPrefix = getTailwindClassPrefix(tailwindClass);
+  const [className] = splitTailwindClassByFirstDash(tailwindClass);
 
-  return recomposeColor(color);
+  return `${className}-[${recomposeColor(color)}]`;
 }
 
 /**
@@ -178,9 +179,12 @@ export function darken(tailwindClass, coefficient) {
  * @returns {string} A CSS color string. Hex input values are returned as rgb
  */
 export function lighten(tailwindClass, coefficient) {
+  let color = getTailwindColorFromTailwindClass(tailwindClass);
+  // TODO: remove console.log
+  console.log('lighten-color', color);
   color = decomposeColor(color);
   coefficient = clampWrapper(coefficient);
-
+  // TODO: If tailwind class doesn't exist, return the current color
   if (color.type.includes('hsl')) {
     color.values[2] += (100 - color.values[2]) * coefficient;
   } else if (color.type.includes('rgb')) {
@@ -193,7 +197,9 @@ export function lighten(tailwindClass, coefficient) {
     }
   }
 
-  return recomposeColor(color);
+  const [className] = splitTailwindClassByFirstDash(tailwindClass);
+
+  return `${className}-[${recomposeColor(color)}]`;
 }
 
 /**

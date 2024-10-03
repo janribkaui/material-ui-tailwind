@@ -5,7 +5,7 @@ import { useDefaultProps } from '../DefaultPropsProvider';
 import capitalize from '../utils/capitalize';
 import { tv } from 'tailwind-variants';
 import styled, { keyframes, css } from 'styled-components';
-import { color, style } from '@janribka/system';
+import { color, darken, lighten, style } from '@janribka/system';
 import { mergeStyles } from '../utils';
 
 const TRANSITION_DURATION = 4; // seconds
@@ -168,7 +168,7 @@ const linearProgressRootVariants = tv({
     },
   ],
 });
-
+// TODO: Udelat funkci pro prevedeni tw barvy na rgb bez predpony
 const LinearProgressDashed = styled.span({
   position: 'absolute',
   marginTop: 0,
@@ -229,19 +229,6 @@ const LinearProgressDashed = styled.span({
   ],
 });
 
-// const LinearProgressDashedOld =
-//   styled.span`
-//     background-size: '10px 10px',
-//     background-position: '0 -23px',
-//     ${bufferAnimation}
-//   ` ||
-//   `animation: ${bufferKeyframe} 3s linear infinite
-// `;
-
-// const linearProgressDashedVariants = tv({
-//   base: ['absolute', 'mt-0', 'h-full', 'w-full', 'bg-current'],
-// });
-
 const LinearProgressBar1 =
   styled.span`
   &.variant-indeterminate, &.variant-query {
@@ -260,6 +247,7 @@ const linearProgressBar1Variants = tv({
     'transition-transform',
     'duration-[0.2s]',
     'linear',
+    'origin-left',
   ],
   variants: {
     color: {
@@ -269,12 +257,12 @@ const linearProgressBar1Variants = tv({
       success: 'bg-success',
       warning: 'bg-warning',
       error: 'bg-error',
-      inherit: 'bg-inherit',
+      inherit: 'bg-current',
     },
     variant: {
-      determinate: ['transition-transform', `duration-[${TRANSITION_DURATION}s]`, 'linear'],
+      determinate: ['transition-transform', `duration-[0.${TRANSITION_DURATION}s]`, 'linear'],
       indeterminate: ['w-auto', 'variant-indeterminate'],
-      buffer: ['z-[1px]', 'transition-transform', `duration-[${TRANSITION_DURATION}s]`, 'linear'],
+      buffer: ['z-[1px]', 'transition-transform', `duration-[0.${TRANSITION_DURATION}s]`, 'linear'],
       query: ['w-auto', 'variant-query'],
     },
   },
@@ -311,13 +299,14 @@ const linearProgressBar2Variants = tv({
       inherit: 'opacity-30',
     },
     variant: {
-      determinate: ['w-auto', 'variant-indeterminate'],
-      indeterminate: [],
-      buffer: ['transition-transform', `duration-[${TRANSITION_DURATION}]`],
+      determinate: ['variant-indeterminate'],
+      indeterminate: ['w-auto'],
+      buffer: [`duration-[0.${TRANSITION_DURATION}]`],
       query: ['w-auto', 'variant-query'],
     },
   },
   compoundVariants: [
+    // Determinate
     {
       variant: 'determinate',
       color: 'primary',
@@ -348,11 +337,7 @@ const linearProgressBar2Variants = tv({
       color: 'error',
       className: 'bg-error',
     },
-    // {
-    //   variant: 'determinate',
-    //   color: 'inherit',
-    //   className: 'bg-inherit',
-    // },
+    // Indeterminate
     {
       variant: 'indeterminate',
       color: 'primary',
@@ -383,41 +368,38 @@ const linearProgressBar2Variants = tv({
       color: 'error',
       className: 'bg-error',
     },
-    // {
-    //   variant: 'indeterminate',
-    //   color: 'inherit',
-    //   className: 'bg-inherit',
-    // },
+    // Buffer
     {
       variant: 'buffer',
       color: 'primary',
-      className: 'bg-primary/50',
+      className: [lighten('bg-primary', 0.62), `dark:${darken('bg-primary', 0.5)}`],
     },
     {
       variant: 'buffer',
       color: 'secondary',
-      className: 'bg-secondary/50',
+      className: [lighten('bg-secondary', 0.62), `dark:${darken('bg-secondary', 0.5)}`],
     },
     {
       variant: 'buffer',
       color: 'info',
-      className: 'bg-info/50',
+      className: [lighten('bg-info', 0.62), `dark:${darken('bg-info', 0.5)}`],
     },
     {
       variant: 'buffer',
       color: 'success',
-      className: 'bg-success/50',
+      className: [lighten('bg-success', 0.62), `dark:${darken('bg-success', 0.5)}`],
     },
     {
       variant: 'buffer',
       color: 'warning',
-      className: 'bg-warning/50',
+      className: [lighten('bg-warning', 0.62), `dark:${darken('bg-warning', 0.5)}`],
     },
     {
       variant: 'buffer',
       color: 'error',
-      className: 'bg-error/50',
+      className: [lighten('bg-error', 0.62), `dark:${darken('bg-error', 0.5)}`],
     },
+    // Query
     {
       variant: 'query',
       color: 'primary',
@@ -448,11 +430,6 @@ const linearProgressBar2Variants = tv({
       color: 'error',
       className: 'bg-error',
     },
-    // {
-    //   variant: 'query',
-    //   color: 'inherit',
-    //   className: 'bg-inherit',
-    // },
   ],
 });
 
