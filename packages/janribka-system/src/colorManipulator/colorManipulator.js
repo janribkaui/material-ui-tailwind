@@ -76,7 +76,7 @@ export function recomposeColor(color) {
   if (type.includes('color')) {
     values = `${colorSpace} ${values.join(' ')}`;
   } else {
-    values = `${values.join(', ')}`;
+    values = `${values.join(',')}`;
   }
 
   return `${type}(${values})`;
@@ -153,7 +153,7 @@ export function hslToRgb(color) {
  * @returns {string} A CSS color string. Hex input values are returned as rgb
  */
 export function darken(tailwindClass, coefficient) {
-  let color = getTailwindColorFromTailwindClass(tailwindClass);
+  let color = getColorByTailWIndName(tailwindClass);
   // TODO: remove console.log
   console.log('darken-color', color);
   color = decomposeColor(color);
@@ -178,28 +178,28 @@ export function darken(tailwindClass, coefficient) {
  * @param {number} coefficient - multiplier in the range 0 - 1
  * @returns {string} A CSS color string. Hex input values are returned as rgb
  */
-export function lighten(tailwindClass, coefficient) {
-  let color = getTailwindColorFromTailwindClass(tailwindClass);
+export function lighten(color, coefficient) {
+  console.log('color', color);
+  let convertedColor = getColorByTailWIndName(color);
   // TODO: remove console.log
-  console.log('lighten-color', color);
-  color = decomposeColor(color);
+  debugger;
+  console.log('lighten-color', convertedColor);
+  convertedColor = decomposeColor(convertedColor);
   coefficient = clampWrapper(coefficient);
   // TODO: If tailwind class doesn't exist, return the current color
-  if (color.type.includes('hsl')) {
-    color.values[2] += (100 - color.values[2]) * coefficient;
-  } else if (color.type.includes('rgb')) {
+  if (convertedColor.type.includes('hsl')) {
+    convertedColor.values[2] += (100 - color.values[2]) * coefficient;
+  } else if (convertedColor.type.includes('rgb')) {
     for (let i = 0; i < 3; i += 1) {
-      color.values[i] += (255 - color.values[i]) * coefficient;
+      convertedColor.values[i] += (255 - convertedColor.values[i]) * coefficient;
     }
-  } else if (color.type.includes('color')) {
+  } else if (convertedColor.type.includes('color')) {
     for (let i = 0; i < 3; i += 1) {
-      color.values[i] += (1 - color.values[i]) * coefficient;
+      convertedColor.values[i] += (1 - convertedColor.values[i]) * coefficient;
     }
   }
 
-  const [className] = splitTailwindClassByFirstDash(tailwindClass);
-
-  return `${className}-[${recomposeColor(color)}]`;
+  return recomposeColor(convertedColor);
 }
 
 /**
@@ -393,17 +393,16 @@ function intToHex(int) {
   return hex.length === 1 ? `0${hex}` : hex;
 }
 
-function getTailwindColorFromTailwindClass(tailwindClass) {
+function getColorByTailWIndName(color) {
   const element = document.createElement('div');
-  const [, classColor] = splitTailwindClassByFirstDash(tailwindClass);
 
-  element.className = `bg-${classColor}`;
+  element.className = `bg-${color}`;
   document.body.appendChild(element);
 
   const computedStyle = getComputedStyle(element);
-  const color = computedStyle.backgroundColor;
+  const newColor = computedStyle.backgroundColor;
 
   document.body.removeChild(element);
 
-  return color;
+  return newColor;
 }

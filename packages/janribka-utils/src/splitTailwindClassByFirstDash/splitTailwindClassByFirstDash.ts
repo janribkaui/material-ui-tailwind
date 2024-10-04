@@ -1,3 +1,5 @@
+// TODO: Remove this function
+
 import JRError from '@janribka/internal-babel-macros/JRError.macro';
 
 function splitTailwindClassByFirstDash(tailwindClass: string): [string, string] {

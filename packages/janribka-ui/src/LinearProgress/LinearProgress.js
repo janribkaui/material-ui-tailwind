@@ -2,10 +2,8 @@
 import * as React from 'react';
 import { useRtl } from '@janribka/system/RtlProvider';
 import { useDefaultProps } from '../DefaultPropsProvider';
-import capitalize from '../utils/capitalize';
 import { tv } from 'tailwind-variants';
 import styled, { keyframes, css } from 'styled-components';
-import { color, darken, lighten, style } from '@janribka/system';
 import { mergeStyles } from '../utils';
 
 const TRANSITION_DURATION = 4; // seconds
@@ -83,15 +81,6 @@ const bufferAnimation =
       `
     : null;
 
-const getColorShade = (theme, color) => {
-  if (theme.vars) {
-    return theme.vars.palette.LinearProgress[`${color}Bg`];
-  }
-  return theme.palette.mode === 'light'
-    ? lighten(theme.palette[color].main, 0.62)
-    : darken(theme.palette[color].main, 0.5);
-};
-
 const LinearProgressRoot = styled.span({
   '@media: print': {
     colorAdjust: 'exact',
@@ -108,13 +97,13 @@ const linearProgressRootVariants = tv({
   ],
   variants: {
     color: {
-      primary: ['bg-text-primary/[0.62]', 'dark:bg-text-primary/[1.5]'],
-      secondary: ['bg-text-secondary/[0.62]', 'bg-text-secondary/[1.5]'],
-      info: ['bg-text-info/[0.62]', 'bg-text-info/[1.5]'],
-      success: ['bg-text-success/[0.62]', 'bg-text-success/[1.5]'],
-      warning: ['bg-text-warning/[0.62]', 'bg-text-warning/[1.5]'],
-      error: ['bg-text-error/[0.62]', 'bg-text-error/[1.5]'],
-      inherit: ['bg-text-inherit/[0.62]', 'bg-text-inherit/[1.5]'],
+      primary: ['bg-primary/[0.38]', 'dark:bg-primary/[0.5]'],
+      secondary: ['bg-secondary/[0.38]', 'dark:bg-secondary/[0.5]'],
+      info: ['bg-info/[0.38]', 'dark:bg-info/[0.5]'],
+      success: ['bg-success/[0.38]', 'dark:bg-success/[0.5]'],
+      warning: ['bg-warning/[0.38]', 'dark:bg-warning/[0.5]'],
+      error: ['bg-error/[0.38]', 'dark:bg-error/[0.5]'],
+      inherit: ['bg-inherit/[0.38]', 'dark:bg-inherit/[0.5]'],
     },
     variant: {
       determinate: '',
@@ -168,65 +157,30 @@ const linearProgressRootVariants = tv({
     },
   ],
 });
-// TODO: Udelat funkci pro prevedeni tw barvy na rgb bez predpony
-const LinearProgressDashed = styled.span({
-  position: 'absolute',
-  marginTop: 0,
-  height: '100%',
-  width: '100%',
-  backgroundSize: '10px 10px',
-  backgroundPosition: '0 -23px',
-  variants: [
-    {
-      props: { color: 'inherit' },
-      style: {
-        opacity: 0.3,
-        backgroundImage: `radial-gradient(currentColor 0%, currentColor 16%, transparent 42%)`,
-      },
+
+const LinearProgressDashed =
+  styled.span`
+  position: 'absolute';
+  margin-top: 0,
+  height: '100%';
+  width: '100%';
+  background-size: '10px 10px';
+  background-position: '0 -23px';
+        ${bufferAnimation}` ||
+  `animation: ${bufferKeyframe} 3s infinite linear;
+`;
+
+const linearProgressDashedVariants = tv({
+  variants: {
+    color: {
+      primary: 'text-primary',
+      secondary: 'text-secondary',
+      info: 'text-info',
+      success: 'text-success',
+      warning: 'text-warning',
+      error: 'text-error',
     },
-    {
-      props: { color: 'primary' },
-      style: {
-        opacity: 0.3,
-        backgroundImage: `radial-gradient(currentColor 0%, currentColor 16%, transparent 42%)`,
-      },
-    },
-    {
-      props: { color: 'secondary' },
-      style: {
-        opacity: 0.3,
-        backgroundImage: `radial-gradient(currentColor 0%, currentColor 16%, transparent 42%)`,
-      },
-    },
-    {
-      props: { color: 'info' },
-      style: {
-        opacity: 0.3,
-        backgroundImage: `radial-gradient(currentColor 0%, currentColor 16%, transparent 42%)`,
-      },
-    },
-    {
-      props: { color: 'success' },
-      style: {
-        opacity: 0.3,
-        backgroundImage: `radial-gradient(currentColor 0%, currentColor 16%, transparent 42%)`,
-      },
-    },
-    {
-      props: { color: 'warning' },
-      style: {
-        opacity: 0.3,
-        backgroundImage: `radial-gradient(currentColor 0%, currentColor 16%, transparent 42%)`,
-      },
-    },
-    {
-      props: { color: 'error' },
-      style: {
-        opacity: 0.3,
-        backgroundImage: `radial-gradient(currentColor 0%, currentColor 16%, transparent 42%)`,
-      },
-    },
-  ],
+  },
 });
 
 const LinearProgressBar1 =
@@ -246,7 +200,7 @@ const linearProgressBar1Variants = tv({
     'top-0',
     'transition-transform',
     'duration-[0.2s]',
-    'linear',
+    'ease-linear',
     'origin-left',
   ],
   variants: {
@@ -259,10 +213,11 @@ const linearProgressBar1Variants = tv({
       error: 'bg-error',
       inherit: 'bg-current',
     },
+    // TODO: Nefunguje transition duration
     variant: {
-      determinate: ['transition-transform', `duration-[0.${TRANSITION_DURATION}s]`, 'linear'],
+      determinate: [`duration-[0.${TRANSITION_DURATION}s]`],
       indeterminate: ['w-auto', 'variant-indeterminate'],
-      buffer: ['z-[1px]', 'transition-transform', `duration-[0.${TRANSITION_DURATION}s]`, 'linear'],
+      buffer: ['z-[1px]', `duration-[0.${TRANSITION_DURATION}s]`],
       query: ['w-auto', 'variant-query'],
     },
   },
@@ -285,7 +240,7 @@ const linearProgressBar2Variants = tv({
     'top-0',
     'transition-transform',
     'duration-[0.2s]',
-    'linear',
+    'ease-linear',
     'origin-left',
   ],
   variants: {
@@ -299,8 +254,8 @@ const linearProgressBar2Variants = tv({
       inherit: 'opacity-30',
     },
     variant: {
-      determinate: ['variant-indeterminate'],
-      indeterminate: ['w-auto'],
+      determinate: [],
+      indeterminate: ['w-auto', 'variant-indeterminate'],
       buffer: [`duration-[0.${TRANSITION_DURATION}]`],
       query: ['w-auto', 'variant-query'],
     },
@@ -372,32 +327,32 @@ const linearProgressBar2Variants = tv({
     {
       variant: 'buffer',
       color: 'primary',
-      className: [lighten('bg-primary', 0.62), `dark:${darken('bg-primary', 0.5)}`],
-    },
-    {
-      variant: 'buffer',
-      color: 'secondary',
-      className: [lighten('bg-secondary', 0.62), `dark:${darken('bg-secondary', 0.5)}`],
-    },
-    {
-      variant: 'buffer',
-      color: 'info',
-      className: [lighten('bg-info', 0.62), `dark:${darken('bg-info', 0.5)}`],
-    },
-    {
-      variant: 'buffer',
-      color: 'success',
-      className: [lighten('bg-success', 0.62), `dark:${darken('bg-success', 0.5)}`],
-    },
-    {
-      variant: 'buffer',
-      color: 'warning',
-      className: [lighten('bg-warning', 0.62), `dark:${darken('bg-warning', 0.5)}`],
+      className: ['bg-primary/[0.38]', 'dark:bg-primary/[0.5]'],
     },
     {
       variant: 'buffer',
       color: 'error',
-      className: [lighten('bg-error', 0.62), `dark:${darken('bg-error', 0.5)}`],
+      className: ['bg-error/[0.38]', 'dark:bg-error/[0.5]'],
+    },
+    {
+      variant: 'buffer',
+      color: 'error',
+      className: ['bg-error/[0.38]', 'dark:bg-error/[0.5]'],
+    },
+    {
+      variant: 'buffer',
+      color: 'error',
+      className: ['bg-error/[0.38]', 'dark:bg-error/[0.5]'],
+    },
+    {
+      variant: 'buffer',
+      color: 'error',
+      className: ['bg-error/[0.38]', 'dark:bg-error/[0.5]'],
+    },
+    {
+      variant: 'buffer',
+      color: 'error',
+      className: ['bg-error/[0.38]', 'dark:bg-error/[0.5]'],
     },
     // Query
     {
@@ -486,7 +441,9 @@ const LinearProgress = React.forwardRef(function LinearProgress(inProps, ref) {
       );
     }
   }
-
+  // TODO: U barvy inherit mi to nefunguje barva
+  // TODO: Pokud je determine, tam na mui je styl plynulej39. U me tak skáče
+  // TODO: Pokud je buffer, tam na mui je styl plynulej39. U me tak skáče. A na mui se zobrazují tečky
   return (
     <LinearProgressRoot
       className={mergeStyles(
@@ -497,8 +454,16 @@ const LinearProgress = React.forwardRef(function LinearProgress(inProps, ref) {
       {...rootProps}
       ref={ref}
       {...other}
+      color={color}
     >
-      {variant === 'buffer' ? <LinearProgressDashed /> : null}
+      {variant === 'buffer' ? (
+        <LinearProgressDashed
+          className={mergeStyles(
+            'JrLinearProgress-dashed',
+            linearProgressDashedVariants({ color: color }),
+          )}
+        />
+      ) : null}
       <LinearProgressBar1
         className={mergeStyles(
           'JrLinearProgress-bar1',

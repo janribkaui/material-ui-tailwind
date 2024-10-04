@@ -12,7 +12,7 @@ export function hexToRgb(hex: string): string;
 export function rgbToHex(color: string): string;
 export function hslToRgb(color: string): string;
 export function darken(tailwindClass: string, coefficient: number): string;
-export function lighten(tailwindClass: string, coefficient: number): string;
+export function lighten(color: string, coefficient: number): string;
 export function colorChannel(color: string): string;
 export function private_safeColorChannel(color: string, warning?: string): string;
 export function getContrastRatio(foreground: string, background: string): number;
