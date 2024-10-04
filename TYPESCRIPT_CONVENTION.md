@@ -100,6 +100,7 @@ const barRootVariants = tv({
   // styling
 });
 ```
+</details>
 
 ### `Component declaration`
 
