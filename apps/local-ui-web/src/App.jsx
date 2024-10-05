@@ -7,6 +7,19 @@ import IconButton from '@janribka/ui/IconButton';
 import CircularProgress from '@janribka/ui/CircularProgress';
 import LinearProgress from '@janribka/ui/LinearProgress';
 
+function LinearProgressWithLabel(props) {
+  return (
+    <div className="flex items-center">
+      <div className="w-full mr-0.5">
+        <LinearProgress variant="determinate" {...props} />
+      </div>
+      <div className="min-w-9">
+        <span className="text-secondary">{`${Math.round(props.value)}%`}</span>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [progress, setProgress] = React.useState(0);
   const [progressNumber, setProgressNumber] = React.useState(0);
@@ -47,8 +60,8 @@ function App() {
         setProgressBuffer(0);
         setBuffer(10);
       } else {
-        setProgressBuffer(progress + 1);
-        if (buffer < 100 && progress % 5 === 0) {
+        setProgressBuffer(progressBuffer + 1);
+        if (buffer < 100 && progressBuffer % 5 === 0) {
           const newBuffer = buffer + 1 + Math.random() * 10;
           setBuffer(newBuffer > 100 ? 100 : newBuffer);
         }
@@ -74,19 +87,6 @@ function App() {
       clearInterval(timer);
     };
   }, []);
-
-  function LinearProgressWithLabel(props) {
-    return (
-      <div className="flex items-center">
-        <div className="w-full mr-0.5">
-          <LinearProgress variant="determinate" {...props} />
-        </div>
-        <div className="min-w-9">
-          <span className="text-secondary">{`${Math.round(props.value)}%`}</span>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <>

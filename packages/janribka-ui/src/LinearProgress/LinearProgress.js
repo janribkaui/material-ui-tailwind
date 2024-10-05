@@ -121,10 +121,10 @@ const linearProgressRootVariants = tv({
         'before:absolute',
         'before:left-0',
         'before:top-0',
-        'before:ring-0',
+        'before:right-0',
         'before:bottom-0',
         'before:bg-current',
-        'before:opacity-[0.3]',
+        'before:opacity-30',
       ],
     },
     {
@@ -135,10 +135,10 @@ const linearProgressRootVariants = tv({
         'before:absolute',
         'before:left-0',
         'before:top-0',
-        'before:ring-0',
+        'before:right-0',
         'before:bottom-0',
         'before:bg-current',
-        'before:opacity-[0.3]',
+        'before:opacity-30',
       ],
     },
     {
@@ -149,10 +149,10 @@ const linearProgressRootVariants = tv({
         'before:absolute',
         'before:left-0',
         'before:top-0',
-        'before:ring-0',
+        'before:right-0',
         'before:bottom-0',
         'before:bg-current',
-        'before:opacity-[0.3]',
+        'before:opacity-30',
       ],
     },
   ],
@@ -160,32 +160,36 @@ const linearProgressRootVariants = tv({
 
 const LinearProgressDashed =
   styled.span`
-  position: 'absolute';
-  margin-top: 0,
-  height: '100%';
-  width: '100%';
-  background-size: '10px 10px';
-  background-position: '0 -23px';
-        ${bufferAnimation}` ||
+    background-size: 10px 10px;
+    background-position: 0 -23px;
+    background-image: radial-gradient(currentColor 0%, currentColor 16%, transparent 42%);
+    ${bufferAnimation}
+  ` ||
   `animation: ${bufferKeyframe} 3s infinite linear;
 `;
 
 const linearProgressDashedVariants = tv({
+  base: ['absolute', 'mt-0', 'h-full', 'w-full'],
   variants: {
     color: {
-      primary: 'text-primary',
-      secondary: 'text-secondary',
-      info: 'text-info',
-      success: 'text-success',
-      warning: 'text-warning',
-      error: 'text-error',
+      primary: ['text-primary/[0.38]', 'dark:text-primary/[0.5]'],
+      secondary: ['text-secondary/[0.38]', 'dark:text-secondary/[0.5]'],
+      info: ['text-info/[0.38]', 'dark:text-info/[0.5]'],
+      success: ['text-success/[0.38]', 'dark:text-success/[0.5]'],
+      warning: ['text-warning/[0.38]', 'dark:text-warning/[0.5]'],
+      error: ['text-error/[0.38]', 'dark:text-error/[0.5]'],
+      inherit: ['opacity-30'],
     },
   },
 });
 
 const LinearProgressBar1 =
   styled.span`
-  &.variant-indeterminate, &.variant-query {
+  transition-duration: 0.2s;
+    &.variant-determinate, &.variant-buffer {
+      transition-duration: 0.${TRANSITION_DURATION}s;
+    }
+    &.variant-indeterminate, &.variant-query {    
         ${indeterminate1Animation}` ||
   `animation: ${indeterminate1Keyframe} 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite
   }
@@ -199,7 +203,6 @@ const linearProgressBar1Variants = tv({
     'bottom-0',
     'top-0',
     'transition-transform',
-    'duration-[0.2s]',
     'ease-linear',
     'origin-left',
   ],
@@ -213,11 +216,10 @@ const linearProgressBar1Variants = tv({
       error: 'bg-error',
       inherit: 'bg-current',
     },
-    // TODO: Nefunguje transition duration
     variant: {
-      determinate: [`duration-[0.${TRANSITION_DURATION}s]`],
+      determinate: ['variant-determinate'],
       indeterminate: ['w-auto', 'variant-indeterminate'],
-      buffer: ['z-[1px]', `duration-[0.${TRANSITION_DURATION}s]`],
+      buffer: ['z-[1]', 'variant-buffer'],
       query: ['w-auto', 'variant-query'],
     },
   },
@@ -225,7 +227,11 @@ const linearProgressBar1Variants = tv({
 
 const LinearProgressBar2 =
   styled.span`
-&.variant-indeterminate, &.variant-query {
+  transition-duration: 0.2s;
+  &.variant-buffer {  
+    transition-duration: 0.${TRANSITION_DURATION}s;      
+  }
+  &.variant-indeterminate, &.variant-query {
         ${indeterminate2Animation}` ||
   `animation: ${indeterminate2Keyframe} 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) 1.15s infinite
   }
@@ -239,7 +245,6 @@ const linearProgressBar2Variants = tv({
     'bottom-0',
     'top-0',
     'transition-transform',
-    'duration-[0.2s]',
     'ease-linear',
     'origin-left',
   ],
@@ -251,12 +256,12 @@ const linearProgressBar2Variants = tv({
       success: '',
       warning: '',
       error: '',
-      inherit: 'opacity-30',
+      inherit: ['opacity-30', 'bg-current'],
     },
     variant: {
       determinate: [],
       indeterminate: ['w-auto', 'variant-indeterminate'],
-      buffer: [`duration-[0.${TRANSITION_DURATION}]`],
+      buffer: ['variant-buffer', 'overflow-hidden'],
       query: ['w-auto', 'variant-query'],
     },
   },
@@ -441,9 +446,7 @@ const LinearProgress = React.forwardRef(function LinearProgress(inProps, ref) {
       );
     }
   }
-  // TODO: U barvy inherit mi to nefunguje barva
-  // TODO: Pokud je determine, tam na mui je styl plynulej39. U me tak skáče
-  // TODO: Pokud je buffer, tam na mui je styl plynulej39. U me tak skáče. A na mui se zobrazují tečky
+
   return (
     <LinearProgressRoot
       className={mergeStyles(
