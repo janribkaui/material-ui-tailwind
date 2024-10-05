@@ -11,6 +11,8 @@ const easing = {
   in: 'cubic-bezier(0.4, 0, 1, 1)',
   // The sharp curve is used by objects that may return to the screen at any time.
   sharp: 'cubic-bezier(0.4, 0, 0.6, 1)',
+  // The linear curve is used for constant speed transitions.
+  linear: 'linear',
 };
 
 // Follow https://m2.material.io/guidelines/motion/duration-easing.html#duration-easing-common-durations

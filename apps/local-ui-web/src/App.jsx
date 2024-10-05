@@ -5,15 +5,84 @@ import { AiFillAndroid } from 'react-icons/ai';
 import { TbArrowBigRightLinesFilled } from 'react-icons/tb';
 import IconButton from '@janribka/ui/IconButton';
 import CircularProgress from '@janribka/ui/CircularProgress';
+import LinearProgress from '@janribka/ui/LinearProgress';
+
+function LinearProgressWithLabel(props) {
+  return (
+    <div className="flex items-center">
+      <div className="w-full mr-0.5">
+        <LinearProgress variant="determinate" {...props} />
+      </div>
+      <div className="min-w-9">
+        <span className="text-secondary">{`${Math.round(props.value)}%`}</span>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   const [progress, setProgress] = React.useState(0);
+  const [progressNumber, setProgressNumber] = React.useState(0);
+  const [progressLinear, setProgressLinear] = React.useState(0);
+  const [progressBuffer, setProgressBuffer] = React.useState(0);
+  const [buffer, setBuffer] = React.useState(10);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
     }, 800);
 
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgressLinear((oldProgress) => {
+        if (oldProgress === 100) {
+          return 0;
+        }
+        const diff = Math.random() * 10;
+        return Math.min(oldProgress + diff, 100);
+      });
+    }, 500);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  const progressBufferRef = React.useRef(() => {});
+  React.useEffect(() => {
+    progressBufferRef.current = () => {
+      if (progress === 100) {
+        setProgressBuffer(0);
+        setBuffer(10);
+      } else {
+        setProgressBuffer(progressBuffer + 1);
+        if (buffer < 100 && progressBuffer % 5 === 0) {
+          const newBuffer = buffer + 1 + Math.random() * 10;
+          setBuffer(newBuffer > 100 ? 100 : newBuffer);
+        }
+      }
+    };
+  });
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      progressBufferRef.current();
+    }, 100);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgressNumber((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
+    }, 800);
     return () => {
       clearInterval(timer);
     };
@@ -29,12 +98,42 @@ function App() {
       <h6>H6</h6>
 
       <div className="ml-3 mt-3 flex gap-3">
+        <div className="w-full">
+          <LinearProgress />
+        </div>
+        <div className="w-full">
+          <LinearProgress color="secondary" />
+        </div>
+        <div className="w-full">
+          <LinearProgress color="success" />
+        </div>
+        <div className="w-full text-grey-500">
+          <LinearProgress color="inherit" />
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3">
+        <div className="w-full">
+          <LinearProgress variant="determinate" value={progressLinear} />
+        </div>
+        <div className="w-full">
+          <LinearProgress variant="buffer" value={progressBuffer} valueBuffer={buffer} />
+        </div>
+        <div className="w-full">
+          <LinearProgressWithLabel value={progressNumber} />
+        </div>
+        <div className="w-full text-error">
+          <LinearProgress color="inherit" />
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3">
         <div className="text-grey-500">
           <CircularProgress color="secondary" />
           <CircularProgress color="success" />
           <CircularProgress color="inherit" />
         </div>
-        <div className>
+        <div>
           <CircularProgress size="30px" />
           <CircularProgress size={40} />
           <CircularProgress size="3rem" />

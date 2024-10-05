@@ -22,6 +22,9 @@ export * from './CircularProgress';
 export { default as IconButton } from './IconButton';
 export * from './IconButton';
 
+export { default as LinearProgress } from './LinearProgress';
+export * from './LinearProgress';
+
 // createFilterOptions is exported from Autocomplete
 
 export { default as GlobalStyles } from './GlobalStyles';

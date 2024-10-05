@@ -72,6 +72,9 @@ export * from './CircularProgress';
 export { default as IconButton } from './IconButton';
 export * from './IconButton';
 
+export { default as LinearProgress } from './LinearProgress';
+export * from './LinearProgress';
+
 /**
  * @deprecated will be removed in v5.beta, please use StyledEngineProvider from @mui/material/styles instead
  */
