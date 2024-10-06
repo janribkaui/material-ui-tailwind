@@ -54,9 +54,9 @@ export interface BarProps {
   <summary>public component</summary>
 
 ```ts
-const FooRoot = styled.div({
+const FooRoot = styled.div`
   // styling
-});
+`;
 
 <FooRoot className="JrFoo-root" />
 ```
@@ -66,9 +66,9 @@ const FooRoot = styled.div({
   <summary>internal component</summary>
 
 ```ts
-const BarRoot = styled.div({
+const BarRoot = styled.div`
   // styling
-});
+`;
 
 <BarRoot className="JrBar-root" />
 ```
