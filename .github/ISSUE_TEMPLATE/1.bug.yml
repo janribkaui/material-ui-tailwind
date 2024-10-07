@@ -54,9 +54,4 @@ body:
           Output from `npx @mui/envinfo` goes here.
         ```
         </details>
-  - type: markdown
-    attributes:
-      value: |
-        ## :heart: Love JanRibka UI?
-
-        #Consider donating $10 to sustain our open-source work: [https://opencollective.com/janribkaui](https://opencollective.com/janribkaui).
+  
