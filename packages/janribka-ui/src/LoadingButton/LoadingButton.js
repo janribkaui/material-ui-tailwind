@@ -13,6 +13,7 @@ const LoadingButtonRoot = styled(Button)`
   &.loading-true {
     & .JrButton-startIcon,
     & .JrButton-endIcon {
+      transition-property: opacity;
       opacity: 0;
     }
   }
@@ -43,8 +44,8 @@ const loadingButtonRootVariants = tv({
   compoundVariants: [
     {
       loadingPosition: 'center',
-      loading: 'true',
-      className: 'text-transparent',
+      loading: true,
+      className: ['text-transparent', 'disabled:text-transparent'],
     },
   ],
 });
@@ -63,17 +64,16 @@ const loadingButtonLoadingIndicatorVariants = tv({
     variant: { text: [], outlined: [], contained: [] },
     fullWidth: { true: [], false: [] },
   },
-  // Vsechny varianty tu nemusi byt
   compoundVariants: [
     { loadingPosition: 'start', size: 'small', className: ['left-2.5'] },
     { loadingPosition: 'start', size: 'medium', className: ['left-3.5'] },
     { loadingPosition: 'start', size: 'large', className: ['left-3.5'] },
-    { loadingPosition: 'start', fullWidth: 'true', className: ['relative', '-left-2.5'] },
+    { loadingPosition: 'start', fullWidth: true, className: ['relative', '-left-2.5'] },
     { variant: 'text', loadingPosition: 'start', className: ['left-2.5'] },
-    { loadingPosition: 'end', size: 'small', className: ['left-2.5'] },
+    { loadingPosition: 'end', size: 'small', className: ['right-2.5'] },
     { loadingPosition: 'end', size: 'medium', className: ['right-3.5'] },
     { loadingPosition: 'end', size: 'large', className: ['right-3.5'] },
-    { loadingPosition: 'end', fullWidth: 'true', className: ['relative', '-right-2.5'] },
+    { loadingPosition: 'end', fullWidth: true, className: ['relative', '-right-2.5'] },
     { variant: 'text', loadingPosition: 'end', className: ['right-2.5'] },
   ],
 });
@@ -84,38 +84,7 @@ const LoadingButtonLabel = styled('span')`
   justify-content: inherit;
 `;
 
-const loadingButtonLabelVariants = tv({
-  // base: ['transition-opacity', 'duration-short', 'opacity-0'],
-  // variants: {
-  //   loading: {
-  //     true: [''],
-  //     false: [],
-  //   },
-  //   loadingPosition: {
-  //     start: [],
-  //     end: [],
-  //     center: [],
-  //   },
-  //   fullWidth: {
-  //     true: [],
-  //     false: [],
-  //   },
-  // },
-  // compoundVariants: [
-  //   {
-  //     loadingPosition: 'start',
-  //     fullWidth: 'true',
-  //     loading: 'true',
-  //     className: ['transition-opacity', 'duration-short', 'opacity-0', '-mr-2'],
-  //   },
-  //   {
-  //     loadingPosition: 'end',
-  //     fullWidth: 'true',
-  //     loading: 'true',
-  //     className: ['transition-opacity', 'duration-short', 'opacity-0', '-ml-2'],
-  //   },
-  // ],
-});
+const loadingButtonLabelVariants = tv({});
 
 const LoadingButton = React.forwardRef(function LoadingButton(inProps, ref) {
   const contextProps = React.useContext(ButtonGroupContext);
@@ -166,6 +135,7 @@ const LoadingButton = React.forwardRef(function LoadingButton(inProps, ref) {
       ref={ref}
       {...other}
       variant={variant}
+      size={size}
     >
       {loadingPosition === 'end' ? (
         <LoadingButtonLabel
