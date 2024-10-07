@@ -1,13 +1,9 @@
 import * as React from 'react';
 
-// import { SxProps } from '@janribka/system';
 import { DistributiveOmit, OverridableStringUnion } from '@janribka/types';
 
 import { ExtendButtonBase, ExtendButtonBaseTypeMap } from '../ButtonBase';
 import { OverridableComponent, OverridableTypeMap, OverrideProps } from '../OverridableComponent';
-
-// import { Theme } from '../styles';
-// import { ButtonClasses } from './buttonClasses';
 
 export interface ButtonPropsVariantOverrides {}
 
