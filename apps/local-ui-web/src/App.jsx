@@ -6,6 +6,7 @@ import { TbArrowBigRightLinesFilled } from 'react-icons/tb';
 import IconButton from '@janribka/ui/IconButton';
 import CircularProgress from '@janribka/ui/CircularProgress';
 import LinearProgress from '@janribka/ui/LinearProgress';
+import LoadingButton from '@janribka/ui/LoadingButton';
 
 function LinearProgressWithLabel(props) {
   return (
@@ -96,6 +97,25 @@ function App() {
       <h4>H4</h4>
       <h5>H5</h5>
       <h6>H6</h6>
+
+      <div className="ml-3 mt-3 flex gap-3">
+        <div className="w-full flex gap-4">
+          <LoadingButton loading variant="outlined">
+            Submit
+          </LoadingButton>
+          <LoadingButton loading loadingIndicator="Loading…" variant="outlined">
+            Fetch data
+          </LoadingButton>
+          <LoadingButton
+            loading
+            loadingPosition="start"
+            startIcon={<AiFillAndroid />}
+            variant="outlined"
+          >
+            Save
+          </LoadingButton>
+        </div>
+      </div>
 
       <div className="ml-3 mt-3 flex gap-3">
         <div className="w-full">

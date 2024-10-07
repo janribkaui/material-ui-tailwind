@@ -1,1 +1,1 @@
-// export { default } from './LoadingButton';
+export { default } from './LoadingButton';
