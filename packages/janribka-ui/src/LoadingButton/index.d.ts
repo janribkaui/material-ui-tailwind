@@ -1,2 +1,2 @@
-// export { default } from './LoadingButton';
-// export * from './LoadingButton';
+export { default } from './LoadingButton';
+export * from './LoadingButton';

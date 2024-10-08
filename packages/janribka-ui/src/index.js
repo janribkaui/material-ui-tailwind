@@ -25,6 +25,9 @@ export * from './IconButton';
 export { default as LinearProgress } from './LinearProgress';
 export * from './LinearProgress';
 
+export { default as LoadingButton } from './LoadingButton';
+export * from './LoadingButton';
+
 // createFilterOptions is exported from Autocomplete
 
 export { default as GlobalStyles } from './GlobalStyles';

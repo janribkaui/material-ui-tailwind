@@ -6,6 +6,7 @@ import { TbArrowBigRightLinesFilled } from 'react-icons/tb';
 import IconButton from '@janribka/ui/IconButton';
 import CircularProgress from '@janribka/ui/CircularProgress';
 import LinearProgress from '@janribka/ui/LinearProgress';
+import LoadingButton from '@janribka/ui/LoadingButton';
 
 function LinearProgressWithLabel(props) {
   return (
@@ -26,6 +27,7 @@ function App() {
   const [progressLinear, setProgressLinear] = React.useState(0);
   const [progressBuffer, setProgressBuffer] = React.useState(0);
   const [buffer, setBuffer] = React.useState(10);
+  const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -96,6 +98,159 @@ function App() {
       <h4>H4</h4>
       <h5>H5</h5>
       <h6>H6</h6>
+
+      <Button size="small" onClick={() => setLoading(true)}>
+        Set Loading
+      </Button>
+      <Button size="medium" onClick={() => setLoading(false)}>
+        Reset Loading
+      </Button>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <LoadingButton
+              loading={loading}
+              variant="outlined"
+              size="medium"
+              fullWidth
+              loadingPosition="start"
+              startIcon={<AiFillAndroid />}
+            >
+              Submit
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              variant="contained"
+              size="medium"
+              fullWidth
+              loadingPosition="start"
+              startIcon={<AiFillAndroid />}
+            >
+              Fetch data
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              variant="outlined"
+              size="medium"
+              fullWidth
+              loadingPosition="end"
+              endIcon={<AiFillAndroid />}
+            >
+              Submit
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              variant="contained"
+              size="medium"
+              fullWidth
+              loadingPosition="end"
+              endIcon={<AiFillAndroid />}
+            >
+              Fetch data
+            </LoadingButton>
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3">
+        <div className="w-full flex gap-4">
+          <div>
+            <LoadingButton loading variant="outlined" size="small">
+              Submit
+            </LoadingButton>
+            <LoadingButton loading loadingIndicator="Loading…" variant="outlined" size="small">
+              Fetch data
+            </LoadingButton>
+            <LoadingButton
+              loading
+              loadingPosition="start"
+              startIcon={<AiFillAndroid />}
+              variant="outlined"
+              size="small"
+            >
+              Save
+            </LoadingButton>
+            <LoadingButton
+              loading
+              loadingPosition="end"
+              endIcon={<AiFillAndroid />}
+              variant="outlined"
+              size="small"
+            >
+              Save
+            </LoadingButton>
+          </div>
+        </div>
+
+        <div className="w-full flex gap-4">
+          <div>
+            <LoadingButton loading={loading} variant="outlined" size="medium">
+              Submit
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              loadingIndicator="Loading…"
+              variant="outlined"
+              size="medium"
+            >
+              Fetch data
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              loadingPosition="start"
+              startIcon={<AiFillAndroid />}
+              variant="contained"
+              size="medium"
+            >
+              Save
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              loadingPosition="end"
+              endIcon={<AiFillAndroid />}
+              variant="contained"
+              size="medium"
+            >
+              Save
+            </LoadingButton>
+          </div>
+        </div>
+
+        <div className="w-full flex gap-4">
+          <div>
+            <LoadingButton loading={loading} variant="outlined" size="large">
+              Submit
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              loadingIndicator="Loading…"
+              variant="outlined"
+              size="large"
+            >
+              Fetch data
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              loadingPosition="start"
+              startIcon={<AiFillAndroid />}
+              variant="outlined"
+              size="large"
+            >
+              Save
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              loadingPosition="end"
+              endIcon={<AiFillAndroid />}
+              variant="outlined"
+              size="large"
+            >
+              Save
+            </LoadingButton>
+          </div>
+        </div>
+      </div>
 
       <div className="ml-3 mt-3 flex gap-3">
         <div className="w-full">

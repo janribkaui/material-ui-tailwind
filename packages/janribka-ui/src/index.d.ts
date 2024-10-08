@@ -75,6 +75,9 @@ export * from './IconButton';
 export { default as LinearProgress } from './LinearProgress';
 export * from './LinearProgress';
 
+export { default as LoadingButton } from './LoadingButton';
+export * from './LoadingButton';
+
 /**
  * @deprecated will be removed in v5.beta, please use StyledEngineProvider from @mui/material/styles instead
  */
