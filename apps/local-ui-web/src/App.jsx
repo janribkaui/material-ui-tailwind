@@ -106,6 +106,53 @@ function App() {
         Reset Loading
       </Button>
 
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <LoadingButton
+              loading={loading}
+              variant="outlined"
+              size="medium"
+              fullWidth
+              loadingPosition="start"
+              startIcon={<AiFillAndroid />}
+            >
+              Submit
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              variant="contained"
+              size="medium"
+              fullWidth
+              loadingPosition="start"
+              startIcon={<AiFillAndroid />}
+            >
+              Fetch data
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              variant="outlined"
+              size="medium"
+              fullWidth
+              loadingPosition="end"
+              endIcon={<AiFillAndroid />}
+            >
+              Submit
+            </LoadingButton>
+            <LoadingButton
+              loading={loading}
+              variant="contained"
+              size="medium"
+              fullWidth
+              loadingPosition="end"
+              endIcon={<AiFillAndroid />}
+            >
+              Fetch data
+            </LoadingButton>
+          </div>
+        </div>
+      </div>
+
       <div className="ml-3 mt-3 flex gap-3">
         <div className="w-full flex gap-4">
           <div>

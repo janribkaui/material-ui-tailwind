@@ -13,8 +13,20 @@ const LoadingButtonRoot = styled(Button)`
   &.loading-true {
     & .JrButton-startIcon,
     & .JrButton-endIcon {
-      transition-property: opacity;
       opacity: 0;
+    }
+
+    &.start-fullWidth-loading {
+      & .JrButton-startIcon,
+      & .JrButton-endIcon {
+        margin-right: -0.5rem;
+      }
+    }
+    &.end-fullWidth-loading {
+      & .JrButton-startIcon,
+      & .JrButton-endIcon {
+        margin-left: -0.5rem;
+      }
     }
   }
 `;
@@ -46,6 +58,18 @@ const loadingButtonRootVariants = tv({
       loadingPosition: 'center',
       loading: true,
       className: ['text-transparent', 'disabled:text-transparent'],
+    },
+    {
+      loadingPosition: 'start',
+      fullWidth: true,
+      loading: true,
+      className: ['start-fullWidth-loading'],
+    },
+    {
+      loadingPosition: 'end',
+      fullWidth: true,
+      loading: true,
+      className: ['end-fullWidth-loading'],
     },
   ],
 });
@@ -136,6 +160,7 @@ const LoadingButton = React.forwardRef(function LoadingButton(inProps, ref) {
       {...other}
       variant={variant}
       size={size}
+      fullWidth={fullWidth}
     >
       {loadingPosition === 'end' ? (
         <LoadingButtonLabel

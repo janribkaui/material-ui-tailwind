@@ -9,7 +9,7 @@ import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
 
 // Styles
 const commonIconStyleVariants = tv({
-  base: ['display-inherit', 'duration-short'],
+  base: ['display-inherit', 'duration-short', 'transition-opacity'],
   variants: {
     size: {
       small: 'text-lg',
