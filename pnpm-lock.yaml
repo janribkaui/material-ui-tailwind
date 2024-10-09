@@ -33,12 +33,12 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.24.7
         version: 7.24.7(@babel/core@7.25.2)
-      '@janribka/ui':
-        specifier: workspace:^
-        version: link:packages/janribka-ui/build
       '@janribka/utils':
         specifier: workspace:^
         version: link:packages/janribka-utils/build
+      '@janribkaui/material-ui-tailwind':
+        specifier: workspace:^
+        version: link:packages/janribkaui-material-ui-tailwind/build
       '@octokit/rest':
         specifier: ^21.0.2
         version: 21.0.2
@@ -136,9 +136,9 @@ importers:
       '@janribka/system':
         specifier: workspace:^
         version: link:../../packages/janribka-system/build
-      '@janribka/ui':
+      '@janribkaui/material-ui-tailwind':
         specifier: workspace:^
-        version: link:../../packages/janribka-ui/build
+        version: link:../../packages/janribkaui-material-ui-tailwind/build
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.5
@@ -409,7 +409,48 @@ importers:
         version: 18.3.5
     publishDirectory: build
 
-  packages/janribka-ui:
+  packages/janribka-utils:
+    dependencies:
+      '@babel/runtime':
+        specifier: ^7.25.6
+        version: 7.25.6
+      '@janribka/types':
+        specifier: workspace:^
+        version: link:../janribka-types/build
+      react-is:
+        specifier: 18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@janribka/internal-babel-macros':
+        specifier: workspace:^
+        version: link:../janribka-babel-macros
+      '@types/mocha':
+        specifier: ^10.0.7
+        version: 10.0.7
+      '@types/node':
+        specifier: ^20.14.10
+        version: 20.16.5
+      '@types/react':
+        specifier: ^18.3.3
+        version: 18.3.5
+      '@types/react-is':
+        specifier: ^18.3.0
+        version: 18.3.0
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      tailwind-merge:
+        specifier: ^2.4.0
+        version: 2.5.2
+      typescript:
+        specifier: ^5.5.3
+        version: 5.6.2
+    publishDirectory: build
+
+  packages/janribkaui-material-ui-tailwind:
     dependencies:
       '@babel/runtime':
         specifier: ^7.25.6
@@ -466,47 +507,6 @@ importers:
       tailwindcss:
         specifier: ^3.4.6
         version: 3.4.11
-      typescript:
-        specifier: ^5.5.3
-        version: 5.6.2
-    publishDirectory: build
-
-  packages/janribka-utils:
-    dependencies:
-      '@babel/runtime':
-        specifier: ^7.25.6
-        version: 7.25.6
-      '@janribka/types':
-        specifier: workspace:^
-        version: link:../janribka-types/build
-      react-is:
-        specifier: 18.3.1
-        version: 18.3.1
-    devDependencies:
-      '@janribka/internal-babel-macros':
-        specifier: workspace:^
-        version: link:../janribka-babel-macros
-      '@types/mocha':
-        specifier: ^10.0.7
-        version: 10.0.7
-      '@types/node':
-        specifier: ^20.14.10
-        version: 20.16.5
-      '@types/react':
-        specifier: ^18.3.3
-        version: 18.3.5
-      '@types/react-is':
-        specifier: ^18.3.0
-        version: 18.3.0
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-      tailwind-merge:
-        specifier: ^2.4.0
-        version: 2.5.2
       typescript:
         specifier: ^5.5.3
         version: 5.6.2

@@ -27,7 +27,9 @@ module.exports = function getBabelConfig(api) {
   const useESModules = api.env(['regressions', 'modern', 'stable']);
 
   const defaultAlias = {
-    '@janribka/ui': resolveAliasPath('./packages/janribka-ui/src'),
+    '@janribkaui/material-ui-tailwind': resolveAliasPath(
+      './packages/janribkaui-material-ui-tailwind/src',
+    ),
     '@janribka/private-theming': resolveAliasPath('./packages/janribka-private-theming/src'),
     '@janribka/styled-engine': resolveAliasPath('./packages/janribka-styled-engine/src'),
     '@janribka/system': resolveAliasPath('./packages/janribka-system/src'),
@@ -220,7 +222,7 @@ module.exports = function getBabelConfig(api) {
 //   const useESModules = api.env(['regressions', 'modern', 'stable']);
 
 //   const defaultAlias = {
-//     '@janribka/ui': resolveAliasPath('./packages/janribka-ui/src'),
+//     '@janribkaui/material-ui-tailwind': resolveAliasPath('./packages/janribka-ui/src'),
 
 //     // '@mui/material': resolveAliasPath('./packages/mui-material/src'),
 //     // '@mui/docs': resolveAliasPath('./packages/mui-docs/src'),

@@ -18,7 +18,7 @@ export type DefaultColorScheme = 'light' | 'dark';
  * The application can add more color-scheme by extending this interface via module augmentation
  *
  * Ex.
- * declare module @janribka/ui/styles {
+ * declare module @janribkaui/material-ui-tailwind/styles {
  *   interface ColorSchemeOverrides {
  *     foo: true;
  *   }

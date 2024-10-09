@@ -1,5 +1,5 @@
 {
-  "name": "@janribka/ui",
+  "name": "@janribkaui/material-ui-tailwind",
   "version": "1.2.0",
   "private": false,
   "author": "Jan Ribka",
@@ -16,13 +16,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/JanRibka/janribka",
-    "directory": "packages/janribka-ui"
+    "url": "https://github.com/janribkaui/material-ui-tailwind",
+    "directory": "packages/janribkaui-material-ui-tailwind"
   },
   "bugs": {
-    "url": "https://github.com/JanRibka/janribka/issues"
+    "url": "https://github.com/janribkaui/material-ui-tailwind/issues"
   },
-  "homepage": "https://github.com/JanRibka/janribka#readme",
+  "homepage": "https://github.com/janribkaui/material-ui-tailwind#readme",
   "scripts": {
     "build": "pnpm build:modern && pnpm build:node && pnpm build:stable && pnpm build:types && pnpm build:copy-files && pnpm build:copy-tailwind-config",
     "build:modern": "node ../../scripts/build.mjs modern",

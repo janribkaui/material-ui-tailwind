@@ -14,7 +14,7 @@ import { Typography, TypographyOptions } from './createTypography';
  * To disable custom properties, use module augmentation
  *
  * @example
- * declare module '@janribka/ui/styles' {
+ * declare module '@janribkaui/material-ui-tailwind/styles' {
  *   interface CssThemeVariables {
  *     enabled: true;
  *   }
@@ -83,7 +83,7 @@ export interface Theme extends BaseTheme, CssVarsProperties {
 
 /**
  * @deprecated
- * Use `import { createTheme } from '@janribka/ui/styles'` instead.
+ * Use `import { createTheme } from '@janribkaui/material-ui-tailwind/styles'` instead.
  */
 export function createJRTheme(options?: ThemeOptions, ...args: object[]): Theme;
 
