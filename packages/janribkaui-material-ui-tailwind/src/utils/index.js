@@ -1,5 +1,5 @@
 'use client';
-import { unstable_ClassNameGenerator as ClassNameGenerator } from '@janribka/utils';
+import { unstable_ClassNameGenerator as ClassNameGenerator } from '@janribkaui/utils';
 
 export { default as capitalize } from './capitalize';
 export { default as debounce } from './debounce';
@@ -18,7 +18,7 @@ export const unstable_ClassNameGenerator = {
         [
           'JR: `ClassNameGenerator` import from `@janribkaui/material-ui-tailwind/utils` is outdated and might cause unexpected issues.',
           '',
-          "You should use `import { unstable_ClassNameGenerator } from '@janribka/className'` instead",
+          "You should use `import { unstable_ClassNameGenerator } from '@janribkaui/className'` instead",
           '',
           'The detail of the issue: https://github.com/mui/material-ui/issues/30011#issuecomment-1024993401',
           '',

@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useRtl } from '@janribka/system/RtlProvider';
+import { useRtl } from '@janribkaui/system/RtlProvider';
 import { useDefaultProps } from '../DefaultPropsProvider';
 import { tv } from 'tailwind-variants';
 import styled, { keyframes, css } from 'styled-components';

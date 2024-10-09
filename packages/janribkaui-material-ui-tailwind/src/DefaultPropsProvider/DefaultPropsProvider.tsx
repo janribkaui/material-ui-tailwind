@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import SystemDefaultPropsProvider, {
   useDefaultProps as useSystemDefaultProps,
-} from '@janribka/system/DefaultPropsProvider';
+} from '@janribkaui/system/DefaultPropsProvider';
 
 import type { ComponentsPropsList } from '../styles/props';
 

@@ -1,3 +1,3 @@
-import debounce from '@janribka/utils/debounce';
+import debounce from '@janribkaui/utils/debounce';
 
 export default debounce;

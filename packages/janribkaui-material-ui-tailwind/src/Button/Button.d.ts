@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { DistributiveOmit, OverridableStringUnion } from '@janribka/types';
+import { DistributiveOmit, OverridableStringUnion } from '@janribkaui/types';
 
 import { ExtendButtonBase, ExtendButtonBaseTypeMap } from '../ButtonBase';
 import { OverridableComponent, OverridableTypeMap, OverrideProps } from '../OverridableComponent';

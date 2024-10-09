@@ -1,5 +1,5 @@
 'use client';
-import createStyled from '@janribka/system/createStyled';
+import createStyled from '@janribkaui/system/createStyled';
 import defaultTheme from './defaultTheme';
 import THEME_ID from './identifier';
 import rootShouldForwardProp from './rootShouldForwardProp';

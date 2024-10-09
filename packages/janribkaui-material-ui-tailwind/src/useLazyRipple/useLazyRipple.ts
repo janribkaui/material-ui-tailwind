@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import useLazyRef from '@janribka/utils/useLazyRef';
+import useLazyRef from '@janribkaui/utils/useLazyRef';
 
 import { TouchRippleActions } from '../ButtonBase/TouchRipple';
 

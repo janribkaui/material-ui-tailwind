@@ -1,4 +1,4 @@
 'use client';
-import useForkRef from '@janribka/utils/useForkRef';
+import useForkRef from '@janribkaui/utils/useForkRef';
 
 export default useForkRef;

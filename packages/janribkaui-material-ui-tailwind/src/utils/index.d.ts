@@ -1,4 +1,4 @@
-export { unstable_ClassNameGenerator } from '@janribka/utils';
+export { unstable_ClassNameGenerator } from '@janribkaui/utils';
 export { default as capitalize } from './capitalize';
 export { default as debounce } from './debounce';
 export { default as unstable_memoTheme } from './memoTheme';

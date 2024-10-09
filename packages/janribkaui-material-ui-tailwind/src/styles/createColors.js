@@ -6,7 +6,7 @@ import orange from '../colors/orange';
 import blue from '../colors/blue';
 import lightBlue from '../colors/lightBlue';
 import green from '../colors/green';
-import { getContrastRatio } from '@janribka/system/colorManipulator';
+import { getContrastRatio } from '@janribkaui/system/colorManipulator';
 
 const light = {
   // The colors used to represent primary interface elements for a user.

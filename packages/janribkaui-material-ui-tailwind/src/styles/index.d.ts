@@ -81,8 +81,8 @@ export {
   // ColorObject,
   StyledEngineProvider,
   // SxProps,
-} from '@janribka/system';
-// export { unstable_createBreakpoints } from '@janribka/system/createBreakpoints';
+} from '@janribkaui/system';
+// export { unstable_createBreakpoints } from '@janribkaui/system/createBreakpoints';
 // TODO: Remove this function in v6.
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export function experimental_sx(): any;

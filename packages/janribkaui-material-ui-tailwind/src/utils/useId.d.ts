@@ -1,3 +1,3 @@
-import useId from '@janribka/utils/useId';
+import useId from '@janribkaui/utils/useId';
 
 export default useId;

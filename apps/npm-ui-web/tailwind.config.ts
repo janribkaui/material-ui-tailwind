@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-import twConfigBase from '@janribkaui/material-ui-tailwind/tailwind.config';
+import twConfigBase from '@janribka/ui/tailwind.config';
 
 const config: Pick<Config, 'content' | 'presets' | 'theme'> = {
   content: [

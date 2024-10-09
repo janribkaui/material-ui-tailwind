@@ -13,13 +13,13 @@ module.exports = {
         __dirname,
         './packages/janribkaui-material-ui-tailwind/src',
       ),
-      '@janribka/private-theming': path.resolve(
+      '@janribkaui/private-theming': path.resolve(
         __dirname,
-        './packages/janribka-private-theming/src',
+        './packages/janribkaui-private-theming/src',
       ),
-      '@janribka/styled-engine': path.resolve(__dirname, './packages/janribka-styled-engine/src'),
-      '@janribka/system': path.resolve(__dirname, './packages/janribka-system/src'),
-      '@janribka/utils': path.resolve(__dirname, './packages/janribka-utils/src'),
+      '@janribkaui/styled-engine': path.resolve(__dirname, './packages/janribkaui-styled-engine/src'),
+      '@janribkaui/system': path.resolve(__dirname, './packages/janribkaui-system/src'),
+      '@janribkaui/utils': path.resolve(__dirname, './packages/janribkaui-utils/src'),
       docs: path.resolve(__dirname, './docs'),
     },
     extensions: ['.js', '.ts', '.tsx', '.d.ts'],
