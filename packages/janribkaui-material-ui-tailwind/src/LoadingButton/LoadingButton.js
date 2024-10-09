@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
-import { unstable_useId as useId, mergeStyles } from '@janribka/ui/utils';
-import { useDefaultProps } from '@janribka/ui/DefaultPropsProvider';
-import Button from '@janribka/ui/Button';
-import { ButtonGroupContext } from '@janribka/ui/ButtonGroup';
-import CircularProgress from '@janribka/ui/CircularProgress';
+import { unstable_useId as useId, mergeStyles } from '@janribkaui/material-ui-tailwind/utils';
+import { useDefaultProps } from '@janribkaui/material-ui-tailwind/DefaultPropsProvider';
+import Button from '@janribkaui/material-ui-tailwind/Button';
+import { ButtonGroupContext } from '@janribkaui/material-ui-tailwind/ButtonGroup';
+import CircularProgress from '@janribkaui/material-ui-tailwind/CircularProgress';
 import resolveProps from '@janribka/utils/resolveProps';
 import { styled } from 'styled-components';
 import { tv } from 'tailwind-variants';

@@ -1,5 +1,5 @@
-import { ExtendButton, ExtendButtonTypeMap } from '@janribka/ui/Button';
-import { OverrideProps } from '@janribka/ui/OverridableComponent';
+import { ExtendButton, ExtendButtonTypeMap } from '@janribkaui/material-ui-tailwind/Button';
+import { OverrideProps } from '@janribkaui/material-ui-tailwind/OverridableComponent';
 
 export interface LoadingButtonOwnProps {
   /**

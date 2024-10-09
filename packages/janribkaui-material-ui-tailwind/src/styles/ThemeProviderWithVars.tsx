@@ -48,7 +48,7 @@ function Experimental_CssVarsProvider(props: any) {
       [
         'JR: The Experimental_CssVarsProvider component has been ported into ThemeProvider.',
         '',
-        "You should use `import { ThemeProvider } from '@janribka/ui/styles'` instead.",
+        "You should use `import { ThemeProvider } from '@janribkaui/material-ui-tailwind/styles'` instead.",
         'For more details, check out https://mui.com/material-ui/customization/css-theme-variables/usage/',
       ].join('\n'),
     );
@@ -68,7 +68,7 @@ const getInitColorSchemeScript: typeof deprecatedGetInitColorSchemeScript = (par
       [
         'JR: The getInitColorSchemeScript function has been deprecated.',
         '',
-        "You should use `import InitColorSchemeScript from '@janribka/ui/InitColorSchemeScript'`",
+        "You should use `import InitColorSchemeScript from '@janribkaui/material-ui-tailwind/InitColorSchemeScript'`",
         'and replace the function call with `<InitColorSchemeScript />` instead.',
       ].join('\n'),
     );
@@ -86,8 +86,8 @@ const getInitColorSchemeScript: typeof deprecatedGetInitColorSchemeScript = (par
  * You should use `ThemeProvider` and `createTheme` instead:
  *
  * ```diff
- * - import { CssVarsProvider, extendTheme } from '@janribka/ui/styles';
- * + import { ThemeProvider, createTheme } from '@janribka/ui/styles';
+ * - import { CssVarsProvider, extendTheme } from '@janribkaui/material-ui-tailwind/styles';
+ * + import { ThemeProvider, createTheme } from '@janribkaui/material-ui-tailwind/styles';
  *
  * - const theme = extendTheme();
  * + const theme = createTheme({

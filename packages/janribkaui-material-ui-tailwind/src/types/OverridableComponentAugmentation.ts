@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { DistributiveOmit } from '@janribka/types';
 
-declare module '@janribka/ui/OverridableComponent' {
+declare module '@janribkaui/material-ui-tailwind/OverridableComponent' {
   /**
    * A component whose root component can be controlled via a `component` prop.
    *

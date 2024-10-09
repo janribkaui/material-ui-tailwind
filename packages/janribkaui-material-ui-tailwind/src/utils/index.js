@@ -16,7 +16,7 @@ export const unstable_ClassNameGenerator = {
     if (process.env.NODE_ENV !== 'production') {
       console.warn(
         [
-          'JR: `ClassNameGenerator` import from `@janribka/ui/utils` is outdated and might cause unexpected issues.',
+          'JR: `ClassNameGenerator` import from `@janribkaui/material-ui-tailwind/utils` is outdated and might cause unexpected issues.',
           '',
           "You should use `import { unstable_ClassNameGenerator } from '@janribka/className'` instead",
           '',

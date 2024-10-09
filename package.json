@@ -39,7 +39,7 @@
     "@babel/preset-env": "^7.25.3",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
-    "@janribka/ui": "workspace:^",
+    "@janribkaui/material-ui-tailwind": "workspace:^",
     "@janribka/utils": "workspace:^",
     "@octokit/rest": "^21.0.2",
     "@types/babel__core": "^7.20.5",

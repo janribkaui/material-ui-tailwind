@@ -1,8 +1,8 @@
 import type { Config } from 'tailwindcss';
 
-import basePlugin from '@janribka/ui/styles/basePlugin';
-import colorsPlugin from '@janribka/ui/styles/colorsPlugin';
-import transitionsPlugin from '@janribka/ui/styles/transitionsPlugin';
+import basePlugin from '@janribkaui/material-ui-tailwind/styles/basePlugin';
+import colorsPlugin from '@janribkaui/material-ui-tailwind/styles/colorsPlugin';
+import transitionsPlugin from '@janribkaui/material-ui-tailwind/styles/transitionsPlugin';
 
 // TODO: Dát zde výchozí font roboto podle mui
 const config: Config = {

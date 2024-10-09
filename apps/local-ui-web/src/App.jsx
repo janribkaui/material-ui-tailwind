@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import Button from '@janribka/ui/Button';
+import Button from '@janribkaui/material-ui-tailwind/Button';
 import { AiFillAndroid } from 'react-icons/ai';
 import { TbArrowBigRightLinesFilled } from 'react-icons/tb';
-import IconButton from '@janribka/ui/IconButton';
-import CircularProgress from '@janribka/ui/CircularProgress';
-import LinearProgress from '@janribka/ui/LinearProgress';
-import LoadingButton from '@janribka/ui/LoadingButton';
+import IconButton from '@janribkaui/material-ui-tailwind/IconButton';
+import CircularProgress from '@janribkaui/material-ui-tailwind/CircularProgress';
+import LinearProgress from '@janribkaui/material-ui-tailwind/LinearProgress';
+import LoadingButton from '@janribkaui/material-ui-tailwind/LoadingButton';
 
 function LinearProgressWithLabel(props) {
   return (

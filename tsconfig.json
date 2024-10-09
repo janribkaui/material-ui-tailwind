@@ -17,8 +17,8 @@
     "noErrorTruncation": false,
     "allowJs": true,
     "paths": {
-      "@janribka/ui": ["./packages/janribka-ui/src"],
-      "@janribka/ui/*": ["./packages/janribka-ui/src/*"],
+      "@janribkaui/material-ui-tailwind": ["./packages/janribkaui-material-ui-tailwind/src"],
+      "@janribkaui/material-ui-tailwind/*": ["./packages/janribkaui-material-ui-tailwind/src/*"],
       "@janribka/types": ["./packages/janribka-types/"],
       "@janribka/utils": ["./packages/janribka-utils/src"],
       "@janribka/utils/*": ["./packages/janribka-utils/src/*"],

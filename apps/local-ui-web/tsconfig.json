@@ -6,7 +6,7 @@
   },
   "references": [
     {
-      "path": "../../packages/janribka-ui/tsconfig.build.json"
+      "path": "../../packages/janribkaui-material-ui-tailwind/tsconfig.build.json"
     }
   ]
 }
