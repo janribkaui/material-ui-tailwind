@@ -34,7 +34,7 @@ pnpm add @janribkaui/material-ui-tailwind
 
 ## Usage
 
-# Tailwind config
+### Tailwind config
 
 ```ts
 import type { Config } from 'tailwindcss';
@@ -51,7 +51,7 @@ const config: Pick<Config, 'content' | 'presets'> = {
 export default config;
 ```
 
-# Button
+### Button
 
 ```ts
 import Button from '@janribkaui/material-ui-tailwind/Button';
@@ -76,7 +76,7 @@ const App = () => {
 }
 ```
 
-# Loading button
+### Loading button
 
 ```ts
 import LoadingButton from '@janribkaui/material-ui-tailwind/LoadingButton';
@@ -103,7 +103,7 @@ const App = () => {
 }
 ```
 
-# Icon button
+### Icon button
 
 ```ts
 import IconButton from '@janribkaui/material-ui-tailwind/IconButton';
@@ -123,7 +123,7 @@ const App = () => {
 }
 ```
 
-# Circular progress
+### Circular progress
 
 ```ts
 import CircularProgress from '@janribkaui/material-ui-tailwind/CircularProgress';
@@ -139,7 +139,7 @@ const App = () => {
 }
 ```
 
-# Linear progress
+### Linear progress
 
 ```ts
 import LinearProgress from '@janribkaui/material-ui-tailwind/LinearProgress';
