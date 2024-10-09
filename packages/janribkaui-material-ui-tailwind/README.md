@@ -9,6 +9,9 @@ JanRibka is an open-source React component library for react projects with tailw
     <a href="https://github.com/nextui-org/@janribkaui/material-ui-tailwind/blob/main/LICENSE">
         <img src="https://img.shields.io/npm/l/@janribkaui/material-ui-tailwind?style=flat" alt="License">
     </a>
+    <a href="https://www.npmjs.com/package/@janribkaui">
+        <img src="https://img.shields.io/npm/dm/@janribkaui.svg?style=flat-round" alt="npm downloads">
+  </a>
 </p>
 
 ## Installation
