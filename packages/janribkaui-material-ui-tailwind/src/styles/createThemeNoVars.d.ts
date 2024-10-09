@@ -1,4 +1,4 @@
-import { Theme as SystemTheme, ThemeOptions as SystemThemeOptions } from '@janribka/system';
+import { Theme as SystemTheme, ThemeOptions as SystemThemeOptions } from '@janribkaui/system';
 
 import { Components } from './components';
 // import { Mixins, MixinsOptions } from './createMixins';

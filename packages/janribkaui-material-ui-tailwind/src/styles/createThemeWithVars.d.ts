@@ -1,6 +1,6 @@
-import { ApplyStyles, CSSObject } from '@janribka/system';
-import { ExtractTypographyTokens } from '@janribka/system/cssVars';
-import { OverridableStringUnion } from '@janribka/types';
+import { ApplyStyles, CSSObject } from '@janribkaui/system';
+import { ExtractTypographyTokens } from '@janribkaui/system/cssVars';
+import { OverridableStringUnion } from '@janribkaui/types';
 
 import { Components } from './components';
 import { Palette, PaletteOptions } from './createPaletteOld';

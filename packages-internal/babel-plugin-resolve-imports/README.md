@@ -1,4 +1,4 @@
-# @janribka/internal-babel-plugin-resolve-imports
+# @janribkaui/internal-babel-plugin-resolve-imports
 
 A babel plugin that resolves import specifiers that are created under the Node.js resolution algorithm to specifiers that adhere to ESM resolution algorithm.
 

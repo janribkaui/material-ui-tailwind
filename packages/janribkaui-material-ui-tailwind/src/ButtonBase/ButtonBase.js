@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useDefaultProps } from '../DefaultPropsProvider';
-import isFocusVisible from '@janribka/utils/isFocusVisible';
+import isFocusVisible from '@janribkaui/utils/isFocusVisible';
 import styled from 'styled-components';
 import useForkRef from '../utils/useForkRef';
 import useEventCallback from '../utils/useEventCallback';

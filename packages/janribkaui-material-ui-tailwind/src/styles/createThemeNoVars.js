@@ -1,10 +1,10 @@
-import deepmerge from '@janribka/utils/deepmerge';
+import deepmerge from '@janribkaui/utils/deepmerge';
 // import styleFunctionSx, {
 //   unstable_defaultSxConfig as defaultSxConfig,
 // } from '@mui/system/styleFunctionSx';
-import systemCreateTheme from '@janribka/system/createTheme';
-import JRError from '@janribka/internal-babel-macros/JRError.macro';
-import generateUtilityClass from '@janribka/utils/generateUtilityClass';
+import systemCreateTheme from '@janribkaui/system/createTheme';
+import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
+import generateUtilityClass from '#janribkaui/utils/generateUtilityClass';
 // import createMixins from './createMixins';
 import createPalette from './createColors';
 // import createTypography from './createTypography';
@@ -48,7 +48,7 @@ function createThemeNoVars(options = {}, ...args) {
   jrTheme = args.reduce((acc, argument) => deepmerge(acc, argument), jrTheme);
 
   if (process.env.NODE_ENV !== 'production') {
-    // TODO v6: Refactor to use globalStateClassesMapping from @janribka/utils once `readOnly` state class is used in Rating component.
+    // TODO v6: Refactor to use globalStateClassesMapping from @janribkaui/utils once `readOnly` state class is used in Rating component.
     const stateClasses = [
       'active',
       'checked',

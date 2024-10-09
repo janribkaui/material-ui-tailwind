@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import SystemInitColorSchemeScript from '@janribka/system/InitColorSchemeScript';
+import SystemInitColorSchemeScript from '@janribkaui/system/InitColorSchemeScript';
 
 export const defaultConfig = {
   attribute: 'data-jr-color-scheme',

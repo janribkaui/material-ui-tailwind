@@ -1,6 +1,6 @@
-import deepmerge from '@janribka/utils/deepmerge';
-import MuiError from '@janribka/internal-babel-macros/JRError.macro';
-import { darken, getContrastRatio, lighten } from '@janribka/system/colorManipulator';
+import deepmerge from '@janribkaui/utils/deepmerge';
+import MuiError from '@janribkaui/internal-babel-macros/JRError.macro';
+import { darken, getContrastRatio, lighten } from '@janribkaui/system/colorManipulator';
 import common from '../colors/common';
 import grey from '../colors/grey';
 import purple from '../colors/purple';

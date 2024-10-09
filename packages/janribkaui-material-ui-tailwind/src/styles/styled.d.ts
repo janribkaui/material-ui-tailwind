@@ -1,4 +1,4 @@
-import { CreateJRStyled } from '@janribka/system';
+import { CreateJRStyled } from '@janribkaui/system';
 
 import { Theme } from './createTheme';
 

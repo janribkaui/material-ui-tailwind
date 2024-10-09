@@ -1,9 +1,7 @@
 import createPalette from './createPaletteOld';
 import createThemeNoVars, { Theme, ThemeOptions } from './createThemeNoVars';
 import createThemeWithVars, {
-  ColorSystem,
-  CssVarsThemeOptions,
-  DefaultColorScheme,
+    ColorSystem, CssVarsThemeOptions, DefaultColorScheme
 } from './createThemeWithVars';
 
 export { createJRTheme } from './createThemeNoVars';
@@ -133,15 +131,15 @@ export default function createTheme(
   );
 }
 
-// import JRError from '@janribka/internal-babel-macros/JRError.macro';
+// import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
 // import {
 //   Theme as SystemTheme,
 //   ThemeOptions as SystemThemeOptions,
 //   Transitions,
 //   TransitionsOptions,
-// } from '@janribka/system';
-// import systemCreateTheme from '@janribka/system/createTheme';
-// import deepmerge from '@janribka/utils/deepmerge';
+// } from '@janribkauisystem';
+// import systemCreateTheme from '@janribkaui/system/createTheme';
+// import deepmerge from '@janribkaui/utils/deepmerge';
 
 // import { Components } from './components';
 // // import styleFunctionSx, {
@@ -229,7 +227,7 @@ export default function createTheme(
 //   theme = args.reduce((acc, argument) => deepmerge(acc, argument), theme);
 
 //   if (process.env.NODE_ENV !== 'production') {
-//     // TODO v6: Refactor to use globalStateClassesMapping from @janribka/utils once `readOnly` state class is used in Rating component.
+//     // TODO v6: Refactor to use globalStateClassesMapping from @janribkaui/utils once `readOnly` state class is used in Rating component.
 //     const stateClasses = [
 //       'active',
 //       'checked',

@@ -1,3 +1,3 @@
-import useEventCallback from '@janribka/utils/useEventCallback';
+import useEventCallback from '@janribkaui/utils/useEventCallback';
 
 export default useEventCallback;
