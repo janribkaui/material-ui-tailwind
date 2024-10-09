@@ -165,7 +165,7 @@ For help, discussion about best practices, or any other conversation that would 
 
 ## Contributing
 
-If you're interested in contributing to JanRibka UI, please read our [contributing docs](https://github.com/janribkaui/material-ui-tailwind/blob/main/janribkaui/CONTRIBUTING.md) **before submitting a pull request**.
+If you're interested in contributing to JanRibka UI, please read our [contributing docs](https://github.com/janribkaui/material-ui-tailwind/blob/master/CONTRIBUTING.md) **before submitting a pull request**.
 
 ## License
 
