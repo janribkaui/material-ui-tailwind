@@ -19,15 +19,15 @@
     "paths": {
       "@janribkaui/material-ui-tailwind": ["./packages/janribkaui-material-ui-tailwind/src"],
       "@janribkaui/material-ui-tailwind/*": ["./packages/janribkaui-material-ui-tailwind/src/*"],
-      "@janribkaui/types": ["packages/janribkaui-types"],
-      "@janribkaui/utils": ["packages/janribkaui-utils/src"],
-      "@janribkaui/utils/*": ["packages/janribkaui-utils/src/*"],
-      "@janribkaui/styled-engine": ["packages/janribkaui-styled-engine/src"],
-      "@janribkaui/styled-engine/*": ["packages/janribkaui-styled-engine/src/*"],
-      "@janribkaui/system": ["packages/janribkaui-system/src"],
-      "@janribkaui/system/*": ["packages/janribkaui-system/src/*"],
-      "@janribkaui/private-theming": ["packages/janribkaui-private-theming/src"],
-      "@janribkaui/private-theming/*": ["packages/janribkaui-private-theming/src/*"]
+      "@janribkaui/types": ["./packages/janribkaui-types"],
+      "@janribkaui/utils": ["./packages/janribkaui-utils/src"],
+      "@janribkaui/utils/*": ["./packages/janribkaui-utils/src/*"],
+      "@janribkaui/styled-engine": ["./packages/janribkaui-styled-engine/src"],
+      "@janribkaui/styled-engine/*": ["./packages/janribkaui-styled-engine/src/*"],
+      "@janribkaui/system": ["./packages/janribkaui-system/src"],
+      "@janribkaui/system/*": [",/packages/janribkaui-system/src/*"],
+      "@janribkaui/private-theming": ["./packages/janribkaui-private-theming/src"],
+      "@janribkaui/private-theming/*": ["./packages/janribkaui-private-theming/src/*"]
       // "@janribkaui/internal-test-utils": ["./packages-internal/test-utils/src"],
       // "@janribkaui/internal-test-utils/*": ["./packages-internal/test-utils/src/*"]
     },

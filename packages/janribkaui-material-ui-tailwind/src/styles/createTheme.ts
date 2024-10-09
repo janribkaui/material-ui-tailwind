@@ -1,7 +1,9 @@
 import createPalette from './createPaletteOld';
 import createThemeNoVars, { Theme, ThemeOptions } from './createThemeNoVars';
 import createThemeWithVars, {
-    ColorSystem, CssVarsThemeOptions, DefaultColorScheme
+  ColorSystem,
+  CssVarsThemeOptions,
+  DefaultColorScheme,
 } from './createThemeWithVars';
 
 export { createJRTheme } from './createThemeNoVars';
@@ -137,7 +139,7 @@ export default function createTheme(
 //   ThemeOptions as SystemThemeOptions,
 //   Transitions,
 //   TransitionsOptions,
-// } from '@janribkauisystem';
+// } from '@janribkaui/system';
 // import systemCreateTheme from '@janribkaui/system/createTheme';
 // import deepmerge from '@janribkaui/utils/deepmerge';
 
