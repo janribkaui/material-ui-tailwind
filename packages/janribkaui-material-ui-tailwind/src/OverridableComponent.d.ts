@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { DistributiveOmit } from '@janribka/types';
+import { DistributiveOmit } from '@janribkaui/types';
 
 import { StyledComponentProps } from './styles';
 

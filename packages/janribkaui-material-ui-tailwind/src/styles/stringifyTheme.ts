@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { isPlainObject } from '@janribka/utils/deepmerge';
+import { isPlainObject } from '@janribkaui/utils/deepmerge';
 
 function isSerializable(val: any) {
   return (

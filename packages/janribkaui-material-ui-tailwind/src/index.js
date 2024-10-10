@@ -33,7 +33,7 @@ export * from './LoadingButton';
 export { default as GlobalStyles } from './GlobalStyles';
 export * from './GlobalStyles';
 
-export { unstable_composeClasses } from '@janribka/utils';
+export { unstable_composeClasses } from '@janribkaui/utils';
 
 export { default as generateUtilityClass } from './generateUtilityClass';
 export * from './generateUtilityClass';

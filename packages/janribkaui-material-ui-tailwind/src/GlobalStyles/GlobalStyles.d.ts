@@ -1,4 +1,4 @@
-import { GlobalStylesProps as StyledGlobalStylesProps } from '@janribka/system';
+import { GlobalStylesProps as StyledGlobalStylesProps } from '@janribkaui/system';
 
 import { Theme } from '../styles';
 

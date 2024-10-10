@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { useTheme as useThemeSystem } from '@janribka/system';
+import { useTheme as useThemeSystem } from '@janribkaui/system';
 import defaultTheme from './defaultTheme';
 import THEME_ID from './identifier';
 

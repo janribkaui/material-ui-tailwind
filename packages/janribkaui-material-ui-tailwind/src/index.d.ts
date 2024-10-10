@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { DistributiveOmit } from '@janribka/types';
+import { DistributiveOmit } from '@janribkaui/types';
 
 // From index.js
 // eslint-disable-next-line import/first
@@ -83,7 +83,7 @@ export * from './LoadingButton';
  */
 export { StyledEngineProvider } from './styles';
 
-export { unstable_composeClasses } from '@janribka/utils';
+export { unstable_composeClasses } from '@janribkaui/utils';
 
 export { default as generateUtilityClass } from './generateUtilityClass';
 export * from './generateUtilityClass';

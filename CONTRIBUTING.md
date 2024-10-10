@@ -31,10 +31,10 @@ If you have an idea for an improvement to the code or the docs, we encourage you
 
 Working on your first pull request? You can learn how in this free video series: [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github).
 
-Get started with [good first issues](https://github.com/JanRibka/material-ui-react/issues?q=is:open+is:issue+label:"good+first+issue"), which have a limited scope and a working solution that's already been discussed.
+Get started with [good first issues](https://github.com/janribkaui/material-ui-tailwind/issues?q=is:open+is:issue+label:"good+first+issue"), which have a limited scope and a working solution that's already been discussed.
 This makes them ideal for newer developers, or those who are new to these libraries and want to see how the contribution process works.
 
-We also have a list of [ready to take issues](https://github.com/JanRibka/material-ui-react/issues?q=is:open+is:issue+label:"ready+to+take"), which are issues that have already been at least partially resolved in discussion, to the point that it's clear what to do next.
+We also have a list of [ready to take issues](https://github.com/janribkaui/material-ui-tailwind/issues?q=is:open+is:issue+label:"ready+to+take"), which are issues that have already been at least partially resolved in discussion, to the point that it's clear what to do next.
 These issues are great for developers who want to reduce their chances of falling down a rabbit hole in search of a solution.
 
 Of course, you can work on any other issue you like—the "good first" and "ready to take" issues are simply those where the scope and timeline may be better defined.
@@ -59,9 +59,9 @@ It's often best to create two smaller PRs rather than one big one.
 2. Clone the fork to your local machine and add the upstream remote:
 
 ```bash
-git clone https://github.com/<your username>/material-ui-react.git
+git clone https://github.com/<your username>/material-ui-tailwind.git
 cd material-ui
-git remote add upstream https://github.com/JanRibka/material-ui-react.git
+git remote add upstream https://github.com/janribkaui/material-ui-tailwind.git
 ```
 
 <!-- #default-branch-switch -->
@@ -91,7 +91,7 @@ git checkout -b my-topic-branch
 git push -u origin HEAD
 ```
 
-7. Go to [the repository](https://github.com/JanRibka/material-ui-react) and open a pull request.
+7. Go to [the repository](https://github.com/janribkaui/material-ui-tailwind) and open a pull request.
 
 The core team actively monitors for new pull requests.
 We will review your PR and either merge it, request changes to it, or close it with an explanation.
@@ -110,9 +110,9 @@ Make sure the following is true:
 - If a feature is being added:
   - If the result was already achievable with the core library, you've explained why this feature needs to be added to the core.
   - If this is a common use case, you've added an example to the documentation.
-- If adding new features or modifying existing ones, you've included tests to confirm the new behavior. You can read more about our test setup in our test [README](https://github.com/JanRibka/material-ui-react/blob/HEAD/test/README.md).
+- If adding new features or modifying existing ones, you've included tests to confirm the new behavior. You can read more about our test setup in our test [README](https://github.com/janribkaui/material-ui-tailwind/blob/HEAD/test/README.md).
 - If props were added or prop types were changed, you've updated the TypeScript declarations.
-- If submitting a new component, you've added it to the [lab](https://github.com/JanRibka/material-ui-react/tree/HEAD/packages/mui-lab).
+- If submitting a new component, you've added it to the [lab](https://github.com/janribkaui/material-ui-tailwind/tree/HEAD/packages/mui-lab).
 - The branch is not [behind its target branch](https://github.community/t/branch-10-commits-behind/2403).
 
 We will only merge a PR when all tests pass.
@@ -205,4 +205,4 @@ When you submit a PR, these checks are run again by our continuous integration t
 
 ## License
 
-By contributing your code to the [JanRibka/material-ui-react](https://github.com/JanRibka/material-ui-react) GitHub repository, you agree to license your contribution under the [MIT license](/LICENSE).
+By contributing your code to the [janribkaui/material-ui-tailwind](https://github.com/janribkaui/material-ui-tailwind) GitHub repository, you agree to license your contribution under the [MIT license](/LICENSE).

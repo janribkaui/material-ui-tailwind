@@ -1,4 +1,4 @@
-import { CSSInterpolation } from '@janribka/system';
+import { CSSInterpolation } from '@janribkaui/system';
 
 import { Theme } from '../styles/createTheme';
 

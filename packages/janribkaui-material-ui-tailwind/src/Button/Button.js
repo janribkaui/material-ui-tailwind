@@ -3,7 +3,7 @@ import * as React from 'react';
 import { tv } from 'tailwind-variants';
 import ButtonBase from '../ButtonBase';
 import { mergeStyles } from '../utils';
-import resolveProps from '@janribka/utils/resolveProps';
+import resolveProps from '@janribkaui/utils/resolveProps';
 import { useDefaultProps } from '../DefaultPropsProvider';
 import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
 

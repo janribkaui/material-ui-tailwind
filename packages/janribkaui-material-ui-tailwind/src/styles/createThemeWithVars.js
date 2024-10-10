@@ -1,15 +1,18 @@
-import JRError from '@janribka/internal-babel-macros/JRError.macro';
-import deepmerge from '@janribka/utils/deepmerge';
-import { unstable_createGetCssVar as systemCreateGetCssVar, createSpacing } from '@janribka/system';
-import { createUnarySpacing } from '@janribka/system/spacing';
+import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
+import deepmerge from '@janribkaui/utils/deepmerge';
+import {
+  unstable_createGetCssVar as systemCreateGetCssVar,
+  createSpacing,
+} from '@janribkaui/system';
+import { createUnarySpacing } from '@janribkaui/system/spacing';
 import {
   prepareCssVars,
   prepareTypographyVars,
   createGetColorSchemeSelector,
-} from '@janribka/system/cssVars';
+} from '@janribkaui/system/cssVars';
 // import styleFunctionSx, {
 //   unstable_defaultSxConfig as defaultSxConfig,
-// } from '@janribka/system/styleFunctionSx';
+// } from '@janribkaui/system/styleFunctionSx';
 
 import {
   private_safeColorChannel as safeColorChannel,
@@ -18,7 +21,7 @@ import {
   private_safeLighten as safeLighten,
   private_safeEmphasize as safeEmphasize,
   hslToRgb,
-} from '@janribka/system/colorManipulator';
+} from '@janribkaui/system/colorManipulator';
 
 import createThemeNoVars from './createThemeNoVars';
 import createColorScheme, { getOpacity, getOverlays } from './createColorScheme';

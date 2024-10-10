@@ -14,8 +14,8 @@ export {
   lighten,
   css,
   keyframes,
-} from '@janribka/system';
-// export { unstable_createBreakpoints } from '@janribka/system/createBreakpoints';
+} from '@janribkaui/system';
+// export { unstable_createBreakpoints } from '@janribkaui/system/createBreakpoints';
 // TODO: Remove this function in v6.
 // eslint-disable-next-line @typescript-eslint/naming-convention
 
@@ -31,7 +31,7 @@ export { default as useTheme } from './useTheme';
 export { default as styled } from './styled';
 export { default as experimentalStyled } from './styled';
 export { default as ThemeProvider } from './ThemeProvider';
-export { StyledEngineProvider } from '@janribka/system';
+export { StyledEngineProvider } from '@janribkaui/system';
 // The legacy utilities from @mui/styles
 // These are just empty functions that throws when invoked
 // export { default as makeStyles } from './makeStyles';

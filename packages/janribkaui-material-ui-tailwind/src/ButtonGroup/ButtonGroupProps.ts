@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { OverridableStringUnion } from '@janribka/types';
+import { OverridableStringUnion } from '@janribkaui/types';
 
 import { OverrideProps } from '../OverridableComponent';
 

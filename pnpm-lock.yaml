@@ -33,12 +33,12 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.24.7
         version: 7.24.7(@babel/core@7.25.2)
-      '@janribka/utils':
-        specifier: workspace:^
-        version: link:packages/janribka-utils/build
       '@janribkaui/material-ui-tailwind':
         specifier: workspace:^
         version: link:packages/janribkaui-material-ui-tailwind/build
+      '@janribkaui/utils':
+        specifier: workspace:^
+        version: link:packages/janribkaui-utils/build
       '@octokit/rest':
         specifier: ^21.0.2
         version: 21.0.2
@@ -133,12 +133,12 @@ importers:
         specifier: 19.0.0-rc-f6cce072-20240723
         version: 19.0.0-rc-f6cce072-20240723(react@19.0.0-rc-f6cce072-20240723)
     devDependencies:
-      '@janribka/system':
-        specifier: workspace:^
-        version: link:../../packages/janribka-system/build
       '@janribkaui/material-ui-tailwind':
         specifier: workspace:^
         version: link:../../packages/janribkaui-material-ui-tailwind/build
+      '@janribkaui/system':
+        specifier: workspace:^
+        version: link:../../packages/janribkaui-system/build
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.5
@@ -266,7 +266,7 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
 
-  packages/janribka-babel-macros:
+  packages/janribkaui-babel-macros:
     dependencies:
       '@babel/helper-module-imports':
         specifier: ^7.24.7
@@ -274,14 +274,11 @@ importers:
       '@babel/runtime':
         specifier: ^7.25.0
         version: 7.25.6
-      '@janribka/utils':
-        specifier: ^1.0.0
-        version: 1.0.0(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)
       babel-plugin-macros:
         specifier: ^3.1.0
         version: 3.1.0
     devDependencies:
-      '@janribka/internal-babel-macros':
+      '@janribkaui/internal-babel-macros':
         specifier: workspace:*
         version: 'link:'
       '@types/babel-plugin-macros':
@@ -294,160 +291,7 @@ importers:
         specifier: ^22.1.0
         version: 22.5.4
 
-  packages/janribka-core-downloads-tracker:
-    publishDirectory: build
-
-  packages/janribka-private-theming:
-    dependencies:
-      '@babel/runtime':
-        specifier: ^7.25.6
-        version: 7.25.6
-      '@janribka/utils':
-        specifier: workspace:^
-        version: link:../janribka-utils/build
-    devDependencies:
-      '@janribka/types':
-        specifier: workspace:^
-        version: link:../janribka-types/build
-      '@types/chai':
-        specifier: ^4.3.16
-        version: 4.3.19
-      '@types/react':
-        specifier: ^18.2.55
-        version: 18.3.5
-      chai:
-        specifier: ^4.4.1
-        version: 4.5.0
-      react:
-        specifier: 19.0.0-rc-f6cce072-20240723
-        version: 19.0.0-rc-f6cce072-20240723
-    publishDirectory: build
-
-  packages/janribka-styled-engine:
-    dependencies:
-      '@babel/runtime':
-        specifier: ^7.25.6
-        version: 7.25.6
-      '@emotion/cache':
-        specifier: 11.13.1
-        version: 11.13.1
-      csstype:
-        specifier: ^3.1.3
-        version: 3.1.3
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-    devDependencies:
-      '@emotion/react':
-        specifier: ^11.13.0
-        version: 11.13.3(@types/react@18.3.5)(react@18.3.1)
-      '@emotion/styled':
-        specifier: ^11.13.0
-        version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
-      '@janribka/styled-engine':
-        specifier: workspace:*
-        version: link:build
-      '@types/chai':
-        specifier: ^4.3.17
-        version: 4.3.19
-      '@types/react':
-        specifier: ^18.3.3
-        version: 18.3.5
-      chai:
-        specifier: ^5.1.1
-        version: 5.1.1
-      typescript:
-        specifier: ^5.5.4
-        version: 5.6.2
-    publishDirectory: build
-
-  packages/janribka-system:
-    dependencies:
-      '@babel/runtime':
-        specifier: ^7.25.6
-        version: 7.25.6
-      '@janribka/private-theming':
-        specifier: workspace:^
-        version: link:../janribka-private-theming/build
-      '@janribka/styled-engine':
-        specifier: workspace:*
-        version: link:../janribka-styled-engine/build
-      '@janribka/types':
-        specifier: workspace:^
-        version: link:../janribka-types/build
-      '@janribka/utils':
-        specifier: workspace:^
-        version: link:../janribka-utils/build
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      csstype:
-        specifier: ^3.1.3
-        version: 3.1.3
-    devDependencies:
-      '@janribka/internal-babel-macros':
-        specifier: workspace:^
-        version: link:../janribka-babel-macros
-      '@types/react':
-        specifier: ^18.3.3
-        version: 18.3.5
-      react:
-        specifier: 19.0.0-rc-f6cce072-20240723
-        version: 19.0.0-rc-f6cce072-20240723
-      typescript:
-        specifier: ^5.5.3
-        version: 5.6.2
-    publishDirectory: build
-
-  packages/janribka-types:
-    devDependencies:
-      '@janribka/types':
-        specifier: workspace:*
-        version: link:build
-      '@types/react':
-        specifier: ^18.3.3
-        version: 18.3.5
-    publishDirectory: build
-
-  packages/janribka-utils:
-    dependencies:
-      '@babel/runtime':
-        specifier: ^7.25.6
-        version: 7.25.6
-      '@janribka/types':
-        specifier: workspace:^
-        version: link:../janribka-types/build
-      react-is:
-        specifier: 18.3.1
-        version: 18.3.1
-    devDependencies:
-      '@janribka/internal-babel-macros':
-        specifier: workspace:^
-        version: link:../janribka-babel-macros
-      '@types/mocha':
-        specifier: ^10.0.7
-        version: 10.0.7
-      '@types/node':
-        specifier: ^20.14.10
-        version: 20.16.5
-      '@types/react':
-        specifier: ^18.3.3
-        version: 18.3.5
-      '@types/react-is':
-        specifier: ^18.3.0
-        version: 18.3.0
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-      tailwind-merge:
-        specifier: ^2.4.0
-        version: 2.5.2
-      typescript:
-        specifier: ^5.5.3
-        version: 5.6.2
+  packages/janribkaui-core-downloads-tracker:
     publishDirectory: build
 
   packages/janribkaui-material-ui-tailwind:
@@ -461,15 +305,15 @@ importers:
       '@emotion/styled':
         specifier: ^11.3.0
         version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723))(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)
-      '@janribka/system':
+      '@janribkaui/system':
         specifier: workspace:^
-        version: link:../janribka-system/build
-      '@janribka/types':
+        version: link:../janribkaui-system/build
+      '@janribkaui/types':
         specifier: workspace:^
-        version: link:../janribka-types/build
-      '@janribka/utils':
+        version: link:../janribkaui-types/build
+      '@janribkaui/utils':
         specifier: workspace:^
-        version: link:../janribka-utils/build
+        version: link:../janribkaui-utils/build
       csstype:
         specifier: ^3.1.3
         version: 3.1.3
@@ -477,9 +321,9 @@ importers:
         specifier: ^4.4.5
         version: 4.4.5(react-dom@19.0.0-rc-f6cce072-20240723(react@19.0.0-rc-f6cce072-20240723))(react@19.0.0-rc-f6cce072-20240723)
     devDependencies:
-      '@janribka/internal-babel-macros':
+      '@janribkaui/internal-babel-macros':
         specifier: workspace:^
-        version: link:../janribka-babel-macros
+        version: link:../janribkaui-babel-macros
       '@types/node':
         specifier: ^20.14.10
         version: 20.16.5
@@ -507,6 +351,159 @@ importers:
       tailwindcss:
         specifier: ^3.4.6
         version: 3.4.11
+      typescript:
+        specifier: ^5.5.3
+        version: 5.6.2
+    publishDirectory: build
+
+  packages/janribkaui-private-theming:
+    dependencies:
+      '@babel/runtime':
+        specifier: ^7.25.6
+        version: 7.25.6
+      '@janribkaui/utils':
+        specifier: workspace:^
+        version: link:../janribkaui-utils/build
+    devDependencies:
+      '@janribkaui/types':
+        specifier: workspace:^
+        version: link:../janribkaui-types/build
+      '@types/chai':
+        specifier: ^4.3.16
+        version: 4.3.19
+      '@types/react':
+        specifier: ^18.2.55
+        version: 18.3.5
+      chai:
+        specifier: ^4.4.1
+        version: 4.5.0
+      react:
+        specifier: 19.0.0-rc-f6cce072-20240723
+        version: 19.0.0-rc-f6cce072-20240723
+    publishDirectory: build
+
+  packages/janribkaui-styled-engine:
+    dependencies:
+      '@babel/runtime':
+        specifier: ^7.25.6
+        version: 7.25.6
+      '@emotion/cache':
+        specifier: 11.13.1
+        version: 11.13.1
+      csstype:
+        specifier: ^3.1.3
+        version: 3.1.3
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@emotion/react':
+        specifier: ^11.13.0
+        version: 11.13.3(@types/react@18.3.5)(react@18.3.1)
+      '@emotion/styled':
+        specifier: ^11.13.0
+        version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
+      '@janribkaui/styled-engine':
+        specifier: workspace:*
+        version: link:build
+      '@types/chai':
+        specifier: ^4.3.17
+        version: 4.3.19
+      '@types/react':
+        specifier: ^18.3.3
+        version: 18.3.5
+      chai:
+        specifier: ^5.1.1
+        version: 5.1.1
+      typescript:
+        specifier: ^5.5.4
+        version: 5.6.2
+    publishDirectory: build
+
+  packages/janribkaui-system:
+    dependencies:
+      '@babel/runtime':
+        specifier: ^7.25.6
+        version: 7.25.6
+      '@janribkaui/private-theming':
+        specifier: workspace:^
+        version: link:../janribkaui-private-theming/build
+      '@janribkaui/styled-engine':
+        specifier: workspace:*
+        version: link:../janribkaui-styled-engine/build
+      '@janribkaui/types':
+        specifier: workspace:^
+        version: link:../janribkaui-types/build
+      '@janribkaui/utils':
+        specifier: workspace:^
+        version: link:../janribkaui-utils/build
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      csstype:
+        specifier: ^3.1.3
+        version: 3.1.3
+    devDependencies:
+      '@janribkaui/internal-babel-macros':
+        specifier: workspace:^
+        version: link:../janribkaui-babel-macros
+      '@types/react':
+        specifier: ^18.3.3
+        version: 18.3.5
+      react:
+        specifier: 19.0.0-rc-f6cce072-20240723
+        version: 19.0.0-rc-f6cce072-20240723
+      typescript:
+        specifier: ^5.5.3
+        version: 5.6.2
+    publishDirectory: build
+
+  packages/janribkaui-types:
+    devDependencies:
+      '@janribkaui/types':
+        specifier: workspace:*
+        version: link:build
+      '@types/react':
+        specifier: ^18.3.3
+        version: 18.3.5
+    publishDirectory: build
+
+  packages/janribkaui-utils:
+    dependencies:
+      '@babel/runtime':
+        specifier: ^7.25.6
+        version: 7.25.6
+      '@janribkaui/types':
+        specifier: workspace:^
+        version: link:../janribkaui-types/build
+      react-is:
+        specifier: 18.3.1
+        version: 18.3.1
+    devDependencies:
+      '@janribkaui/internal-babel-macros':
+        specifier: workspace:^
+        version: link:../janribkaui-babel-macros
+      '@types/mocha':
+        specifier: ^10.0.7
+        version: 10.0.7
+      '@types/node':
+        specifier: ^20.14.10
+        version: 20.16.5
+      '@types/react':
+        specifier: ^18.3.3
+        version: 18.3.5
+      '@types/react-is':
+        specifier: ^18.3.0
+        version: 18.3.0
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      tailwind-merge:
+        specifier: ^2.4.0
+        version: 2.5.2
       typescript:
         specifier: ^5.5.3
         version: 5.6.2
@@ -1683,16 +1680,6 @@ packages:
         optional: true
       '@emotion/styled':
         optional: true
-      '@types/react':
-        optional: true
-
-  '@janribka/utils@1.0.0':
-    resolution: {integrity: sha512-gdkL/QPjQq00ud6ti2RZqku69a6GtqUg/KiqX7CcO1vYX3ted52gtUj1fuNaB05W799n+6jhzPapZbAuz61LcA==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      '@types/react': ^17.0.0 || ^18.0.0 || ^19.0.0
-      react: ^17.0.0 || ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
       '@types/react':
         optional: true
 
@@ -6967,14 +6954,6 @@ snapshots:
     optionalDependencies:
       '@emotion/react': 11.13.3(@types/react@18.3.5)(react@18.3.1)
       '@emotion/styled': 11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
-      '@types/react': 18.3.5
-
-  '@janribka/utils@1.0.0(@types/react@18.3.5)(react@19.0.0-rc-f6cce072-20240723)':
-    dependencies:
-      '@babel/runtime': 7.25.6
-      react: 19.0.0-rc-f6cce072-20240723
-      react-is: 18.3.1
-    optionalDependencies:
       '@types/react': 18.3.5
 
   '@janribka/utils@1.0.1(@types/react@18.3.5)(react@18.3.1)':

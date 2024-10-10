@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import mergeStyles from '@janribka/utils/mergeStyles';
+import mergeStyles from '@janribkaui/utils/mergeStyles';
 import { tv } from 'tailwind-variants';
 import styled, { keyframes } from 'styled-components';
 

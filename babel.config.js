@@ -30,10 +30,10 @@ module.exports = function getBabelConfig(api) {
     '@janribkaui/material-ui-tailwind': resolveAliasPath(
       './packages/janribkaui-material-ui-tailwind/src',
     ),
-    '@janribka/private-theming': resolveAliasPath('./packages/janribka-private-theming/src'),
-    '@janribka/styled-engine': resolveAliasPath('./packages/janribka-styled-engine/src'),
-    '@janribka/system': resolveAliasPath('./packages/janribka-system/src'),
-    '@janribka/utils': resolveAliasPath('./packages/janribka-utils/src'),
+    '@janribkaui/private-theming': resolveAliasPath('./packages/janribkaui-private-theming/src'),
+    '@janribkaui/styled-engine': resolveAliasPath('./packages/janribkaui-styled-engine/src'),
+    '@janribkaui/system': resolveAliasPath('./packages/janribkaui-system/src'),
+    '@janribkaui/utils': resolveAliasPath('./packages/janribkaui-utils/src'),
     docs: resolveAliasPath('./docs'),
     test: resolveAliasPath('./test'),
   };
@@ -109,7 +109,7 @@ module.exports = function getBabelConfig(api) {
     ...(useESModules
       ? [
           [
-            '@janribka/internal-babel-plugin-resolve-imports',
+            '@janribkaui/internal-babel-plugin-resolve-imports',
             {
               // Don't replace the extension when we're using aliases.
               // Essentially only replace in production builds.
@@ -147,7 +147,7 @@ module.exports = function getBabelConfig(api) {
       },
       {
         test: /(\.test\.[^.]+$|\.test\/)/,
-        plugins: [['@janribka/internal-babel-plugin-resolve-imports', false]],
+        plugins: [['@janribkaui/internal-babel-plugin-resolve-imports', false]],
       },
     ],
     env: {
@@ -222,7 +222,7 @@ module.exports = function getBabelConfig(api) {
 //   const useESModules = api.env(['regressions', 'modern', 'stable']);
 
 //   const defaultAlias = {
-//     '@janribkaui/material-ui-tailwind': resolveAliasPath('./packages/janribka-ui/src'),
+//     '@janribkaui/material-ui-tailwind': resolveAliasPath('./packages/janribkaui-ui/src'),
 
 //     // '@mui/material': resolveAliasPath('./packages/mui-material/src'),
 //     // '@mui/docs': resolveAliasPath('./packages/mui-docs/src'),

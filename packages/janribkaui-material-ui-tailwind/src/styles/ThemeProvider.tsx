@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 
-import { DefaultTheme } from '@janribka/system';
+import { DefaultTheme } from '@janribkaui/system';
 
 import { CssThemeVariables } from './createThemeNoVars';
 import { CssVarsTheme } from './createThemeWithVars';

@@ -20,7 +20,7 @@ function execDry(command, options) {
 }
 
 /**
- * Find the remote pointing to JanRibka/janribka.
+ * Find the remote pointing to janribkaui/material-ui-tailwind.
  *
  * Conventionally this should be named `upstream` but some collaborators might've used a different naming scheme.
  */
@@ -36,9 +36,9 @@ async function findJrOrgRemote() {
     .find((remote) => {
       // test: https://regex101.com/r/fBVJUX/1
       // matching:
-      // - https://github.com/JanRibka/janribka
-      // - git@github.com:JanRibka/janribka.git
-      return /JanRibka\/janribka(\.git)?$/.test(remote.url) && remote.method === '(push)';
+      // - https://github.com/janribkaui/material-ui-tailwind.git
+      // - git@github.com:janribkaui/material-ui-tailwind.git
+      return /janribkaui\/material-ui-tailwind(\.git)?$/.test(remote.url) && remote.method === '(push)';
     });
 }
 
@@ -60,8 +60,8 @@ async function main(argv) {
   const jrOrgRemote = await findJrOrgRemote();
   if (jrOrgRemote === undefined) {
     throw new TypeError(
-      'Unable to find the upstream remote. It should be a remote pointing to "JanRibka/janribka". ' +
-        'Did you forget to add it via `git remote add upstream git@github.com:JanRibka/janribka.git`? ' +
+      'Unable to find the upstream remote. It should be a remote pointing to "janribkaui/material-ui-tailwind". ' +
+        'Did you forget to add it via `git remote add upstream git@github.com:janribkaui/material-ui-tailwind.git`? ' +
         'If you think this is a bug please include `git remote -v` in your report.',
     );
   }
@@ -77,7 +77,7 @@ async function main(argv) {
 yargs(process.argv.slice(2))
   .command({
     command: '$0',
-    description: 'Tags the current release and pushes these changes to JanRibka/janribka.',
+    description: 'Tags the current release and pushes these changes to janribkaui/material-ui-tailwind.',
     builder: (command) => {
       return command.option('dryRun', {
         default: false,

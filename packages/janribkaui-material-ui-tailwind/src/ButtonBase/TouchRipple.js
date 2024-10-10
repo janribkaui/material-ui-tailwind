@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { TransitionGroup } from 'react-transition-group';
-import useTimeout from '@janribka/utils/useTimeout';
+import useTimeout from '@janribkaui/utils/useTimeout';
 import TouchRippleRipple from './Ripple';
 import mergeStyles from '../utils/mergeStyles';
 

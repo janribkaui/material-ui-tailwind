@@ -1,4 +1,4 @@
-import deepmerge from '@janribka/utils/deepmerge';
+import deepmerge from '@janribkaui/utils/deepmerge';
 
 function round(value) {
   return Math.round(value * 1e5) / 1e5;

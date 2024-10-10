@@ -1,8 +1,8 @@
 'use client';
 import * as React from 'react';
 
-// import styleFunctionSx from '@janribka/system/styleFunctionSx';
-import { unstable_createCssVarsProvider as createCssVarsProvider } from '@janribka/system';
+// import styleFunctionSx from '@janribkaui/system/styleFunctionSx';
+import { unstable_createCssVarsProvider as createCssVarsProvider } from '@janribkaui/system';
 
 import { defaultConfig } from '../InitColorSchemeScript/InitColorSchemeScript';
 import createTheme from './createTheme';

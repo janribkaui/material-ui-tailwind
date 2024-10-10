@@ -70,13 +70,13 @@ module.exports = {
         patterns: [
           {
             group: [
-              '@janribka/*/*/*',
+              '@janribkaui/*/*/*',
               '@pigment-css/*/*/*',
               '@base_ui/*/*/*',
               // Allow any import depth with any internal packages
-              '!@janribka/internal-*/**',
+              '!@janribkaui/internal-*/**',
               // TODO delete, @mui/docs should be @mui/internal-docs
-              '!@janribka/docs/**',
+              '!@janribkaui/docs/**',
             ],
             message: OneLevelImportMessage,
           },
@@ -360,18 +360,18 @@ module.exports = {
                 message: forbidCreateStylesMessage,
               },
               {
-                name: '@janribka/styles',
+                name: '@janribkaui/styles',
                 importNames: ['createStyles'],
                 message: forbidCreateStylesMessage,
               },
               {
-                name: '@janribka/styles/createStyles',
+                name: '@janribkaui/styles/createStyles',
                 message: forbidCreateStylesMessage,
               },
             ],
             patterns: [
               // Allow deeper imports for TypeScript types. TODO?
-              '@janribka/*/*/*/*',
+              '@janribkaui/*/*/*/*',
             ],
           },
         ],
@@ -430,7 +430,7 @@ module.exports = {
                 message: OneLevelImportMessage,
               },
               {
-                name: '@janribka/lab',
+                name: '@janribkaui/lab',
                 message: OneLevelImportMessage,
               },
             ],
@@ -448,7 +448,7 @@ module.exports = {
         '*.d.ts',
         '*.spec.ts',
         '*.spec.tsx',
-        'packages/janribka-joy/**/*{.ts,.tsx,.js}',
+        'packages/janribkaui-joy/**/*{.ts,.tsx,.js}',
       ],
       rules: {
         'material-ui/mui-name-matches-component-name': 'error',
@@ -468,7 +468,7 @@ module.exports = {
       },
     },
     {
-      files: ['packages/janribka-base/src/**/**{.ts,.tsx}'],
+      files: ['packages/janribkaui-base/src/**/**{.ts,.tsx}'],
       rules: {
         'import/no-default-export': 'error',
         'import/prefer-default-export': 'off',

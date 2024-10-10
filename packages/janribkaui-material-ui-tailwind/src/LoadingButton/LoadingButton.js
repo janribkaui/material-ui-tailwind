@@ -5,7 +5,7 @@ import { useDefaultProps } from '@janribkaui/material-ui-tailwind/DefaultPropsPr
 import Button from '@janribkaui/material-ui-tailwind/Button';
 import { ButtonGroupContext } from '@janribkaui/material-ui-tailwind/ButtonGroup';
 import CircularProgress from '@janribkaui/material-ui-tailwind/CircularProgress';
-import resolveProps from '@janribka/utils/resolveProps';
+import resolveProps from '@janribkaui/utils/resolveProps';
 import { styled } from 'styled-components';
 import { tv } from 'tailwind-variants';
 
