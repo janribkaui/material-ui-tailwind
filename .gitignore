@@ -7,3 +7,4 @@ build/
 *.tsbuildinfo
 .env
 .bashrc
+lerna-debug.log
