@@ -1,3 +1,22 @@
+## 1.3.2
+
+<!-- generated comparing v1.3.0..master -->
+
+_Oct 10, 2024_
+
+A big thanks to the 2 contributors who made this release possible. Here are some highlights ✨:
+
+### Core
+
+- &#8203;<!-- 6 -->Merge pull request #33 from JanRibka/master @WebyRibka
+- &#8203;<!-- 5 -->Merge branch 'master' of https://github.com/JanRibka/material-ui-tailwind @JanRibka
+- &#8203;<!-- 4 -->Merge branch 'janribkaui:master' into master @JanRibka
+- &#8203;<!-- 3 -->Merge pull request #32 from JanRibka/master @WebyRibka
+- &#8203;<!-- 2 -->[Core] Fix errors after merge @JanRibka
+- &#8203;<!-- 1 -->[npm-ui-web] Bump janribka/material-ui-tailwind to 1.3.0 @JanRibka
+
+All contributors of this release in alphabetical order: @JanRibka, @WebyRibka
+
 ## TODO 1.3.1
 
 <!-- generated comparing v1.3.0..master -->

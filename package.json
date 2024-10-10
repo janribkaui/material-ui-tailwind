@@ -1,15 +1,15 @@
 {
   "name": "@janribkaui/monorepo",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "duplicate": "pnpm dedupe",
     "benchmark:browser": "pnpm --filter benchmark browser",
     "build": "lerna run build --ignore docs",
+    "release:changelog": "node scripts/releaseChangelog.mjs",
     "release:version": "lerna version --no-changelog --no-push --no-git-tag-version --no-private --force-publish=@janribkaui/core-downloads-tracker",
     "release:build": "lerna run --concurrency 8 --no-private build --skip-nx-cache",
-    "release:changelog": "node scripts/releaseChangelog.mjs",
     "release:publish": "pnpm publish --recursive --tag latest",
     "release:publish:dry-run": "pnpm publish --recursive --tag latest --registry=\"http://localhost:4873/\"",
     "release:tag": "node scripts/releaseTag.mjs",
