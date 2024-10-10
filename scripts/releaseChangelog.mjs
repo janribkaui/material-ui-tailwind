@@ -82,7 +82,7 @@ async function main(argv) {
    */
   const timeline = octokit.paginate.iterator(
     octokit.repos.compareCommits.endpoint.merge({
-      owner: 'jr',
+      owner: 'janribkaui',
       repo,
       base: lastRelease,
       head: release,
@@ -211,7 +211,7 @@ yargs(process.argv.slice(2))
           type: 'string',
         })
         .option('repo', {
-          default: 'material-ui',
+          default: 'material-ui-tailwind',
           describe: 'Repository to generate a changelog for',
           type: 'string',
         });

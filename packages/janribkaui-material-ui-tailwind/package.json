@@ -1,6 +1,6 @@
 {
   "name": "@janribkaui/material-ui-tailwind",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "private": false,
   "author": "Jan Ribka",
   "description": "An open-source React component library for react projects with tailwind that implements Google's Material Design",
