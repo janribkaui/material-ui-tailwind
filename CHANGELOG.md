@@ -1,3 +1,17 @@
+## TODO 1.3.1
+
+<!-- generated comparing v1.3.0..master -->
+
+_Oct 10, 2024_
+
+A big thanks to the 1 contributors who made this release possible. Here are some highlights ✨:
+
+### Core
+
+- &#8203;<!-- 1 -->Merge pull request #32 from JanRibka/master @WebyRibka
+
+All contributors of this release in alphabetical order: @WebyRibka
+
 ## 1.3.0
 
 <!-- generated comparing v1.2.0..master -->

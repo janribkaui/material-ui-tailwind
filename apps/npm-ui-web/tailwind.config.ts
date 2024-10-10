@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-import twConfigBase from '@janribka/ui/tailwind.config';
+// import twConfigBase from '@janribka/ui/tailwind.config';
 
 const config: Pick<Config, 'content' | 'presets' | 'theme'> = {
   content: [
@@ -10,7 +10,7 @@ const config: Pick<Config, 'content' | 'presets' | 'theme'> = {
     './src/**/*.{js,ts,jsx,tsx}',
     './node_modules/@janribkaui/material-ui-tailwind/**/*.{js,ts,jsx,tsx}',
   ],
-  presets: [twConfigBase],
+  // presets: [twConfigBase],
   theme: {
     extend: {
       colors: {
