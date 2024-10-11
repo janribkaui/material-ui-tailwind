@@ -10,6 +10,7 @@
     "react",
     "react-components",
     "janribka",
+    "janribkaui",
     "styled-engine"
   ],
   "repository": {
