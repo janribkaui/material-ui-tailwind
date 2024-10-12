@@ -266,6 +266,22 @@ importers:
   packages/janribkaui-core-downloads-tracker:
     publishDirectory: build
 
+  packages/janribkaui-envinfo:
+    dependencies:
+      envinfo:
+        specifier: ^7.13.0
+        version: 7.13.0
+    devDependencies:
+      '@types/chai':
+        specifier: ^4.3.19
+        version: 4.3.19
+      chai:
+        specifier: ^4.5.0
+        version: 4.5.0
+      fs-extra:
+        specifier: ^11.2.0
+        version: 11.2.0
+
   packages/janribkaui-internal-babel-macros:
     dependencies:
       '@babel/helper-module-imports':
