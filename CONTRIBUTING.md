@@ -10,18 +10,15 @@ Here are a few guidelines that will help you along the way.
 - [A large spectrum of contributions](#a-large-spectrum-of-contributions)
 - [Your first pull request](#your-first-pull-request)
 - [Sending a pull request](#sending-a-pull-request)
-  - [Trying changes on the documentation site](#trying-changes-on-the-documentation-site)
-  - [Trying changes on the playground](#trying-changes-on-the-playground)
   - [How to increase the chances of being accepted](#how-to-increase-the-chances-of-being-accepted)
   - [CI checks and how to fix them](#ci-checks-and-how-to-fix-them)
-  - [Updating the component API documentation](#updating-the-component-api-documentation)
   - [Coding style](#coding-style)
 - [License](#license)
 
 ## Code of conduct
 
 We have adopted the [Contributor Covenant](https://www.contributor-covenant.org/) as our code of conduct, and we expect project participants to adhere to it.
-Please read [the full text](https://github.com/mui/.github/blob/master/CODE_OF_CONDUCT.md) to understand what actions will and will not be tolerated.
+Please read [the full text](https://github.com/janribkaui/.github/blob/master/CODE_OF_CONDUCT.md) to understand what actions will and will not be tolerated.
 
 ## A large spectrum of contributions
 
@@ -48,7 +45,7 @@ If there has been no activity on the issue for 7 to 14 days, then it's safe to a
 
 ## Sending a pull request
 
-JanRIbka Core projects are community-driven, so pull requests are always welcome, but before working on a large change, it's best to open an issue first to discuss it with the maintainers.
+JanRibka Core projects are community-driven, so pull requests are always welcome, but before working on a large change, it's best to open an issue first to discuss it with the maintainers.
 
 When in doubt, keep your pull requests small.
 For the best chances of being accepted, don't bundle more than one feature or bug fix per PR.
@@ -60,7 +57,7 @@ It's often best to create two smaller PRs rather than one big one.
 
 ```bash
 git clone https://github.com/<your username>/material-ui-tailwind.git
-cd material-ui
+cd material-ui-tailwind
 git remote add upstream https://github.com/janribkaui/material-ui-tailwind.git
 ```
 
@@ -100,7 +97,7 @@ We will review your PR and either merge it, request changes to it, or close it w
 
 Continuous Integration (CI) automatically runs a series of checks when a PR is opened.
 If you're unsure whether your changes will pass, you can always open a PR, and the GitHub UI will display a summary of the results.
-If any of these checks fail, refer to [Checks and how to fix them](#checks-and-how-to-fix-them).
+If any of these checks fail, refer to [Checks and how to fix them](#ci-checks-and-how-to-fix-them).
 
 Make sure the following is true:
 
@@ -112,7 +109,7 @@ Make sure the following is true:
   - If this is a common use case, you've added an example to the documentation.
 - If adding new features or modifying existing ones, you've included tests to confirm the new behavior. You can read more about our test setup in our test [README](https://github.com/janribkaui/material-ui-tailwind/blob/HEAD/test/README.md).
 - If props were added or prop types were changed, you've updated the TypeScript declarations.
-- If submitting a new component, you've added it to the [lab](https://github.com/janribkaui/material-ui-tailwind/tree/HEAD/packages/mui-lab).
+- If submitting a new component, you've added it to the [lab](https://github.com/janribkaui/material-ui-tailwind/tree/HEAD/packages/janribkaui-lab).
 - The branch is not [behind its target branch](https://github.community/t/branch-10-commits-behind/2403).
 
 We will only merge a PR when all tests pass.
@@ -145,30 +142,31 @@ Running `pnpm` and `pnpm deduplicate` should fix most issues.
 
 This checks code format and lints the repository.
 The log of the failed build should explain how to fix any issues.
-It also runs commands that generate or change some files (like `pnpm docs:api` for API documentation).
-If the CI job fails, then you most likely need to run the commands that failed locally and commit the changes.
 
-#### ci/circleci: test_unit-1
+<!-- It also runs commands that generate or change some files (like `pnpm docs:api` for API documentation).
+If the CI job fails, then you most likely need to run the commands that failed locally and commit the changes. -->
+
+<!-- #### ci/circleci: test_unit-1
 
 This runs the unit tests in a `jsdom` environment.
 If it fails then `pnpm test:unit` should<sup>[1](test/README.md#accessibility-tree-exclusion)</sup> fail locally as well.
 You can narrow the scope of tests run with `pnpm test:unit --grep ComponentName`.
-If `pnpm test:unit` passes locally, but fails in CI, consider [Accessibility tree exclusion in CI](test/README.md#accessibility-tree-exclusion).
+If `pnpm test:unit` passes locally, but fails in CI, consider [Accessibility tree exclusion in CI](test/README.md#accessibility-tree-exclusion). -->
 
-#### ci/circleci: test_browser-1
+<!-- #### ci/circleci: test_browser-1
 
 This runs the unit tests in multiple browsers (via BrowserStack).
 The log of the failed build should list which browsers failed.
 If Chrome failed then `pnpm test:karma` should<sup>[1](test/README.md#accessibility-tree-exclusion)</sup> fail locally as well.
 If other browsers failed, then debugging might be trickier.
-If `pnpm test:karma` passes locally, but fails in CI, consider [Accessibility tree exclusion in CI](test/README.md#accessibility-tree-exclusion).
+If `pnpm test:karma` passes locally, but fails in CI, consider [Accessibility tree exclusion in CI](test/README.md#accessibility-tree-exclusion). -->
 
-#### ci/circleci: test_regression-1
+<!-- #### ci/circleci: test_regression-1
 
 This renders tests in `test/regressions/tests` and takes screenshots.
 This step shouldn't fail if the others pass.
 Otherwise, a maintainer will take a look.
-The screenshots are evaluated in another step.
+The screenshots are evaluated in another step. -->
 
 #### ci/circleci: test_types
 
