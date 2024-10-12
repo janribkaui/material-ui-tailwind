@@ -19,11 +19,13 @@ const config: Config = {
         'stroke-dashoffset': 'stroke-dashoffset',
       },
       lineHeight: {
-        '4_67': '1.167',
-        '4_8': '1.2',
-        '4_94': '1.235',
-        '5_34': '1.334',
-        '6_4': '1.6',
+        h1: '1.167',
+        h2: '1.2',
+        h3: '1.167',
+        h4: '1.235',
+        h5: '1.334',
+        h6: '1.6',
+        button: '1.75',
       },
       opacity: {
         hover: '0.04',
