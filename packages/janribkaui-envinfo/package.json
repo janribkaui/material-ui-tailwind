@@ -1,0 +1,33 @@
+{
+  "name": "@janribkaui/envinfo",
+  "version": "2.0.25",
+  "private": false,
+  "author": "Jan Ribka",
+  "description": "Logs infos about the environment relevant to @janribkaui/*",
+  "license": "MIT",
+  "bin": "./envinfo.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janribkaui/material-ui-tailwind",
+    "directory": "packages/janribkaui-envinfo"
+  },
+  "bugs": {
+    "url": "https://github.com/janribkaui/material-ui-tailwind/issues"
+  },
+  "homepage": "https://github.com/janribkaui/material-ui-tailwind/tree/HEAD/packages/janribkaui-envinfo",
+  "files": [],
+  "scripts": {
+    "build": "node scripts/build"
+  },
+  "dependencies": {
+    "envinfo": "^7.13.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.19",
+    "chai": "^4.5.0",
+    "fs-extra": "^11.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
