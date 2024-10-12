@@ -47,11 +47,10 @@ body:
       description: Run `npx @janribkaui/envinfo` and post the results. If you encounter issues with TypeScript please include the used tsconfig.
       value: |
         <details>
-          <summary><code>npx @mui/envinfo</code></summary>
+          <summary><code>npx @janribkaui/envinfo</code></summary>
 
         ```
           Don't forget to mention which browser you used.
-          Output from `npx @mui/envinfo` goes here.
+          Output from `npx @janribkaui/envinfo` goes here.
         ```
         </details>
-  
