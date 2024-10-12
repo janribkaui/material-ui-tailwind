@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { OverridableStringUnion } from '@janribkaui/types';
 
-import { InternalStandardProps as StandardProps, Theme } from '../';
+import { InternalStandardProps as StandardProps } from '../';
 import { SwitchBaseProps } from '../internal/SwitchBase';
 
 export interface CheckboxPropsSizeOverrides {}
@@ -20,10 +20,6 @@ export interface CheckboxProps
    * @default <CheckBoxIcon />
    */
   checkedIcon?: React.ReactNode;
-  /**
-   * Override or extend the styles applied to the component.
-   */
-  classes?: Partial<CheckboxClasses>;
   /**
    * The color of the component.
    * It supports both default and custom theme colors, which can be added as shown in the
@@ -92,10 +88,6 @@ export interface CheckboxProps
    * @default 'medium'
    */
   size?: OverridableStringUnion<'small' | 'medium' | 'large', CheckboxPropsSizeOverrides>;
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx?: SxProps<Theme>;
   /**
    * The value of the component. The DOM API casts this to a string.
    * The browser uses "on" as the default value.
