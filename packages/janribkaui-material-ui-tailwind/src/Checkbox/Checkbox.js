@@ -1,87 +1,82 @@
 'use client';
 import * as React from 'react';
-import clsx from 'clsx';
-import { alpha } from '@mui/system/colorManipulator';
 import SwitchBase from '../internal/SwitchBase';
 import CheckBoxOutlineBlankIcon from '../internal/svg-icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '../internal/svg-icons/CheckBox';
 import IndeterminateCheckBoxIcon from '../internal/svg-icons/IndeterminateCheckBox';
-import capitalize from '../utils/capitalize';
-import rootShouldForwardProp from '../styles/rootShouldForwardProp';
-import checkboxClasses from './checkboxClasses';
-import { styled } from '../zero-styled';
-import memoTheme from '../utils/memoTheme';
+import { styled } from 'styled-components';
+import { tv } from 'tailwind-variants';
 
 import { useDefaultProps } from '../DefaultPropsProvider';
+import { mergeStyles } from '../utils';
 
-const CheckboxRoot = styled(SwitchBase, {
-  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === 'classes',
-  name: 'MuiCheckbox',
-  slot: 'Root',
-  overridesResolver: (props, styles) => {
-    const { ownerState } = props;
+const CheckboxRoot = styled(SwitchBase)`
+  &.disable-ripple {
+    // Reset on touch devices, it doesn't add specificity
+    &:hover {
+      @media (hover: none) {
+        background-color: transparent;
+      },
+    },
+  }
+`;
 
-    return [
-      styles.root,
-      ownerState.indeterminate && styles.indeterminate,
-      styles[`size${capitalize(ownerState.size)}`],
-      ownerState.color !== 'default' && styles[`color${capitalize(ownerState.color)}`],
-    ];
+const checkboxRootVariants = tv({
+  base: ['text-text-secondary', 'hover:bg-action-active/hover'],
+  variants: {
+    color: {
+      primary: [],
+      secondary: [],
+      error: [],
+      info: [],
+      success: [],
+      warning: [],
+      default: [],
+    },
+    disabled: {
+      true: ['text-action-disabled'],
+      false: [],
+    },
+    checked: {
+      true: [],
+      false: [],
+    },
+    disableRipple: {
+      true: ['disable-ripple'],
+      false: [],
+    },
+    indeterminate: {
+      true: [],
+      false: [],
+    },
   },
-})(
-  memoTheme(({ theme }) => ({
-    color: (theme.vars || theme).palette.text.secondary,
-    variants: [
-      {
-        props: { color: 'default', disableRipple: false },
-        style: {
-          '&:hover': {
-            backgroundColor: theme.vars
-              ? `rgba(${theme.vars.palette.action.activeChannel} / ${theme.vars.palette.action.hoverOpacity})`
-              : alpha(theme.palette.action.active, theme.palette.action.hoverOpacity),
-          },
-        },
-      },
-      ...Object.entries(theme.palette)
-        .filter(([, palette]) => palette && palette.main)
-        .map(([color]) => ({
-          props: { color, disableRipple: false },
-          style: {
-            '&:hover': {
-              backgroundColor: theme.vars
-                ? `rgba(${theme.vars.palette[color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})`
-                : alpha(theme.palette[color].main, theme.palette.action.hoverOpacity),
-            },
-          },
-        })),
-      ...Object.entries(theme.palette)
-        .filter(([, palette]) => palette && palette.main)
-        .map(([color]) => ({
-          props: { color },
-          style: {
-            [`&.${checkboxClasses.checked}, &.${checkboxClasses.indeterminate}`]: {
-              color: (theme.vars || theme).palette[color].main,
-            },
-            [`&.${checkboxClasses.disabled}`]: {
-              color: (theme.vars || theme).palette.action.disabled,
-            },
-          },
-        })),
-      {
-        // Should be last to override other colors
-        props: { disableRipple: false },
-        style: {
-          // Reset on touch devices, it doesn't add specificity
-          '&:hover': {
-            '@media (hover: none)': {
-              backgroundColor: 'transparent',
-            },
-          },
-        },
-      },
-    ],
-  })),
-);
+  compoundVariants: [
+    // Colors
+    { color: 'primary', disableRipple: false, className: ['hover:bg-primary/hover'] },
+    { color: 'secondary', disableRipple: false, className: ['hover:bg-secondary/hover'] },
+    { color: 'error', disableRipple: false, className: ['hover:bg-error/hover'] },
+    { color: 'info', disableRipple: false, className: ['hover:bg-info/hover'] },
+    { color: 'success', disableRipple: false, className: ['hover:bg-success/hover'] },
+    { color: 'warning', disableRipple: false, className: ['hover:bg-warning/hover'] },
+    { color: 'default', disableRipple: false, className: ['hover:bg-action-active/hover'] },
+    // Checked
+    { checked: true, color: 'primary', className: ['hover:bg-primary'] },
+    { checked: true, color: 'secondary', className: ['hover:bg-secondary'] },
+    { checked: true, color: 'error', className: ['hover:bg-error'] },
+    { checked: true, color: 'info', className: ['hover:bg-info'] },
+    { checked: true, color: 'success', className: ['hover:bg-success'] },
+    { checked: true, color: 'warning', className: ['hover:bg-warning'] },
+    { checked: true, color: 'default', className: ['hover:bg-action-active'] },
+    // indeterminate
+    { indeterminate: true, color: 'primary', className: ['hover:bg-primary'] },
+    { indeterminate: true, color: 'secondary', className: ['hover:bg-secondary'] },
+    { indeterminate: true, color: 'error', className: ['hover:bg-error'] },
+    { indeterminate: true, color: 'info', className: ['hover:bg-info'] },
+    { indeterminate: true, color: 'success', className: ['hover:bg-success'] },
+    { indeterminate: true, color: 'warning', className: ['hover:bg-warning'] },
+    { indeterminate: true, color: 'default', className: ['hover:bg-action-active'] },
+  ],
+});
 
 const defaultCheckedIcon = <CheckBoxIcon />;
 const defaultIcon = <CheckBoxOutlineBlankIcon />;
@@ -99,6 +94,8 @@ const Checkbox = React.forwardRef(function Checkbox(inProps, ref) {
     size = 'medium',
     disableRipple = false,
     className,
+    disabled = false,
+    checked,
     ...other
   } = props;
 
@@ -118,9 +115,11 @@ const Checkbox = React.forwardRef(function Checkbox(inProps, ref) {
       checkedIcon={React.cloneElement(indeterminateIcon, {
         fontSize: indeterminateIcon.props.fontSize ?? size,
       })}
-      ownerState={ownerState}
       ref={ref}
-      className={clsx(classes.root, className)}
+      className={mergeStyles(
+        'JrCheckbox-root',
+        checkboxRootVariants({ color, disabled, checked, disableRipple, indeterminate }),
+      )}
       {...other}
       classes={classes}
     />

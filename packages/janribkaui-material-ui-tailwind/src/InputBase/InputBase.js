@@ -13,48 +13,50 @@ import { useDefaultProps } from '../DefaultPropsProvider';
 import useForkRef from '../utils/useForkRef';
 import useEnhancedEffect from '../utils/useEnhancedEffect';
 import { isFilled } from './utils';
-import inputBaseClasses, { getInputBaseUtilityClass } from './inputBaseClasses';
+import inputBaseClasses from './inputBaseClasses';
+import { styled } from 'styled-components';
+import { tv } from 'tailwind-variants';
+import { mergeStyles } from '../utils';
 
-export const InputBaseRoot = styled('div', {
-  name: 'MuiInputBase',
-  slot: 'Root',
-  overridesResolver: rootOverridesResolver,
-})(
-  memoTheme(({ theme }) => ({
-    ...theme.typography.body1,
-    color: (theme.vars || theme).palette.text.primary,
-    lineHeight: '1.4375em', // 23px
-    boxSizing: 'border-box', // Prevent padding issue with fullWidth.
-    position: 'relative',
-    cursor: 'text',
-    display: 'inline-flex',
-    alignItems: 'center',
-    [`&.${inputBaseClasses.disabled}`]: {
-      color: (theme.vars || theme).palette.text.disabled,
-      cursor: 'default',
+const InputBaseRoot = styled(div)``;
+
+const inputBaseRootVariants = tv({
+  base: [
+    'JrInputBase-root',
+    'font-normal',
+    'text-base',
+    'tracking-[0.00938em]',
+    'text-text-primary',
+    "leading-['1.4375em']",
+    'box-border',
+    'relative',
+    'cursor-text',
+    'inline-flex',
+    'items-center',
+    'disabled:text-text-disabled disabled:cursor-default',
+  ],
+  variants: {
+    multiline: {
+      true: ['p-[4px 0 5px]'],
+      false: [],
     },
-    variants: [
-      {
-        props: ({ ownerState }) => ownerState.multiline,
-        style: {
-          padding: '4px 0 5px',
-        },
-      },
-      {
-        props: ({ ownerState, size }) => ownerState.multiline && size === 'small',
-        style: {
-          paddingTop: 1,
-        },
-      },
-      {
-        props: ({ ownerState }) => ownerState.fullWidth,
-        style: {
-          width: '100%',
-        },
-      },
-    ],
-  })),
-);
+    size: {
+      small: [''],
+      medium: [],
+    },
+    fullWidth: {
+      true: ['w-full'],
+      false: [],
+    },
+  },
+  compoundVariants: [
+    {
+      multiline: true,
+      size: 'small',
+      className: ['pt-1'],
+    },
+  ],
+});
 
 export const InputBaseInput = styled('input', {
   name: 'MuiInputBase',
@@ -234,7 +236,7 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
       if (instance && instance.nodeName !== 'INPUT' && !instance.focus) {
         console.error(
           [
-            'MUI: You have provided a `inputComponent` to the input component',
+            'JR: You have provided a `inputComponent` to the input component',
             'that does not correctly handle the `ref` prop.',
             'Make sure the `ref` prop is called with a HTMLInputElement.',
           ].join('\n'),
@@ -251,40 +253,40 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
   );
 
   const [focused, setFocused] = React.useState(false);
-  const muiFormControl = useFormControl();
+  const jrFormControl = useFormControl();
 
   if (process.env.NODE_ENV !== 'production') {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     React.useEffect(() => {
-      if (muiFormControl) {
-        return muiFormControl.registerEffect();
+      if (jrFormControl) {
+        return jrFormControl.registerEffect();
       }
 
       return undefined;
-    }, [muiFormControl]);
+    }, [jrFormControl]);
   }
 
   const fcs = formControlState({
     props,
-    muiFormControl,
+    jrFormControl,
     states: ['color', 'disabled', 'error', 'hiddenLabel', 'size', 'required', 'filled'],
   });
 
-  fcs.focused = muiFormControl ? muiFormControl.focused : focused;
+  fcs.focused = jrFormControl ? jrFormControl.focused : focused;
 
   // The blur won't fire when the disabled state is set on a focused input.
   // We need to book keep the focused state manually.
   React.useEffect(() => {
-    if (!muiFormControl && disabled && focused) {
+    if (!jrFormControl && disabled && focused) {
       setFocused(false);
       if (onBlur) {
         onBlur();
       }
     }
-  }, [muiFormControl, disabled, focused, onBlur]);
+  }, [jrFormControl, disabled, focused, onBlur]);
 
-  const onFilled = muiFormControl && muiFormControl.onFilled;
-  const onEmpty = muiFormControl && muiFormControl.onEmpty;
+  const onFilled = jrFormControl && jrFormControl.onFilled;
+  const onEmpty = jrFormControl && jrFormControl.onEmpty;
 
   const checkDirty = React.useCallback(
     (obj) => {
@@ -313,8 +315,8 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
       inputPropsProp.onFocus(event);
     }
 
-    if (muiFormControl && muiFormControl.onFocus) {
-      muiFormControl.onFocus(event);
+    if (jrFormControl && jrFormControl.onFocus) {
+      jrFormControl.onFocus(event);
     } else {
       setFocused(true);
     }
@@ -328,8 +330,8 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
       inputPropsProp.onBlur(event);
     }
 
-    if (muiFormControl && muiFormControl.onBlur) {
-      muiFormControl.onBlur(event);
+    if (jrFormControl && jrFormControl.onBlur) {
+      jrFormControl.onBlur(event);
     } else {
       setFocused(false);
     }
@@ -339,10 +341,9 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
     if (!isControlled) {
       const element = event.target || inputRef.current;
       if (element == null) {
-        throw new MuiError(
-          'MUI: Expected valid input target. ' +
-            'Did you use a custom `inputComponent` and forget to forward refs? ' +
-            'See https://mui.com/r/input-component-ref-interface for more info.',
+        throw new JRError(
+          'JR: Expected valid input target. ' +
+            'Did you use a custom `inputComponent` and forget to forward refs? ',
         );
       }
 
@@ -385,7 +386,7 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
       if (process.env.NODE_ENV !== 'production') {
         if (minRows || maxRows) {
           console.warn(
-            'MUI: You can not use the `minRows` or `maxRows` props when the input `rows` prop is set.',
+            'JR: You can not use the `minRows` or `maxRows` props when the input `rows` prop is set.',
           );
         }
       }
@@ -413,10 +414,10 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
   };
 
   React.useEffect(() => {
-    if (muiFormControl) {
-      muiFormControl.setAdornedStart(Boolean(startAdornment));
+    if (jrFormControl) {
+      jrFormControl.setAdornedStart(Boolean(startAdornment));
     }
-  }, [muiFormControl, startAdornment]);
+  }, [jrFormControl, startAdornment]);
 
   const ownerState = {
     ...props,
@@ -425,7 +426,7 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
     endAdornment,
     error: fcs.error,
     focused: fcs.focused,
-    formControl: muiFormControl,
+    formControl: jrFormControl,
     fullWidth,
     hiddenLabel: fcs.hiddenLabel,
     multiline,
@@ -458,13 +459,8 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
         {...(!isHostComponent(Root) && {
           ownerState: { ...ownerState, ...rootProps.ownerState },
         })}
-        className={clsx(
-          classes.root,
-          {
-            // TODO v6: remove this class as it duplicates with the global state class Mui-readOnly
-            'MuiInputBase-readOnly': readOnly,
-          },
-          rootProps.className,
+        className={mergeStyles(
+          inputBaseRootVariants({ multiline, size: fcs.size, fullWidth }),
           className,
         )}
       >
@@ -495,6 +491,7 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
             })}
             ref={handleInputRef}
             className={clsx(
+              '',
               classes.input,
               {
                 // TODO v6: remove this class as it duplicates with the global state class Mui-readOnly
