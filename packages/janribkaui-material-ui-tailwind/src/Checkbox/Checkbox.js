@@ -121,7 +121,6 @@ const Checkbox = React.forwardRef(function Checkbox(inProps, ref) {
         checkboxRootVariants({ color, disabled, checked, disableRipple, indeterminate }),
       )}
       {...other}
-      classes={classes}
     />
   );
 });

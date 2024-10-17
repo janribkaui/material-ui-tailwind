@@ -7,6 +7,7 @@ import IconButton from '@janribkaui/material-ui-tailwind/IconButton';
 import CircularProgress from '@janribkaui/material-ui-tailwind/CircularProgress';
 import LinearProgress from '@janribkaui/material-ui-tailwind/LinearProgress';
 import LoadingButton from '@janribkaui/material-ui-tailwind/LoadingButton';
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
 
 function LinearProgressWithLabel(props) {
   return (
@@ -90,6 +91,8 @@ function App() {
     };
   }, []);
 
+  const labelCheckbox = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
   return (
     <>
       <h1>H1</h1>
@@ -98,6 +101,14 @@ function App() {
       <h4>H4</h4>
       <h5>H5</h5>
       <h6>H6</h6>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <Checkbox {...labelCheckbox} defaultChecked />
+          </div>
+        </div>
+      </div>
 
       <Button size="small" onClick={() => setLoading(true)}>
         Set Loading

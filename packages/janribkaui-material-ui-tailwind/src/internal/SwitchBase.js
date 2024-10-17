@@ -1,6 +1,5 @@
 'use client';
 import * as React from 'react';
-import { styled } from '../zero-styled';
 import useControlled from '../utils/useControlled';
 import useFormControl from '../FormControl/useFormControl';
 import ButtonBase from '../ButtonBase';
@@ -56,7 +55,7 @@ const switchBaseRootVariants = tv({
   ],
 });
 
-const SwitchBaseInput = styled(input)`
+const SwitchBaseInput = styled('input')`
   cursor: inherit;
 `;
 
@@ -150,7 +149,7 @@ const SwitchBase = React.forwardRef(function SwitchBase(props, ref) {
   return (
     <SwitchBaseRoot
       component="span"
-      className={switchBaseRootVariants({ edge, size })}
+      className={switchBaseRootVariants({ edge, size: props.size })}
       centerRipple
       focusRipple={!disableFocusRipple}
       disabled={disabled}

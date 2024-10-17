@@ -6,5 +6,6 @@ export { default as unstable_memoTheme } from './memoTheme';
 export { default as mergeStyles } from './mergeStyles';
 export { default as useEventCallback } from './useEventCallback';
 export { default as useForkRef } from './useForkRef';
+export { default as unstable_useEnhancedEffect } from './useEnhancedEffect';
 export { default as unstable_useId } from './useId';
 export { default as useControlled } from './useControlled';

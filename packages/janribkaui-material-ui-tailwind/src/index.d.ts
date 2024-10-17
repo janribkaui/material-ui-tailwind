@@ -78,6 +78,9 @@ export * from './LinearProgress';
 export { default as LoadingButton } from './LoadingButton';
 export * from './LoadingButton';
 
+export { default as TextareaAutosize } from './TextareaAutosize';
+export * from './TextareaAutosize';
+
 /**
  * @deprecated will be removed in v5.beta, please use StyledEngineProvider from @mui/material/styles instead
  */

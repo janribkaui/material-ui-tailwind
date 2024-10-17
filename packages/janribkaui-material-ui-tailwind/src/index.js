@@ -28,6 +28,9 @@ export * from './LinearProgress';
 export { default as LoadingButton } from './LoadingButton';
 export * from './LoadingButton';
 
+export { default as TextareaAutosize } from './TextareaAutosize';
+export * from './TextareaAutosize';
+
 // createFilterOptions is exported from Autocomplete
 
 export { default as GlobalStyles } from './GlobalStyles';

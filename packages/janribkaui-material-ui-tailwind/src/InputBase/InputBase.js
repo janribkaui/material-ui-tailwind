@@ -1,22 +1,30 @@
 'use client';
 import * as React from 'react';
-import clsx from 'clsx';
 import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
 import TextareaAutosize from '../TextareaAutosize';
 import isHostComponent from '../utils/isHostComponent';
 import formControlState from '../FormControl/formControlState';
 import FormControlContext from '../FormControl/FormControlContext';
 import useFormControl from '../FormControl/useFormControl';
-import { styled, globalCss } from 'styled-components';
-import memoTheme from '../utils/memoTheme';
+import { styled, keyframes } from 'styled-components';
 import { useDefaultProps } from '../DefaultPropsProvider';
 import useForkRef from '../utils/useForkRef';
 import useEnhancedEffect from '../utils/useEnhancedEffect';
 import { isFilled } from './utils';
-import inputBaseClasses from './inputBaseClasses';
-import { styled } from 'styled-components';
 import { tv } from 'tailwind-variants';
 import { mergeStyles } from '../utils';
+
+const jrAutoFillKeyframe = keyframes`
+  from {
+    display: block;    
+  } 
+`;
+
+const jrAutoFillCancelKeyframe = keyframes`
+  from {
+    display: block;    
+  }
+`;
 
 const InputBaseRoot = styled(div)``;
 
@@ -58,124 +66,124 @@ const inputBaseRootVariants = tv({
   ],
 });
 
-export const InputBaseInput = styled('input', {
-  name: 'MuiInputBase',
-  slot: 'Input',
-  overridesResolver: inputOverridesResolver,
-})(
-  memoTheme(({ theme }) => {
-    const light = theme.palette.mode === 'light';
-    const placeholder = {
-      color: 'currentColor',
-      ...(theme.vars
-        ? {
-            opacity: theme.vars.opacity.inputPlaceholder,
-          }
-        : {
-            opacity: light ? 0.42 : 0.5,
-          }),
-      transition: theme.transitions.create('opacity', {
-        duration: theme.transitions.duration.shorter,
-      }),
-    };
-    const placeholderHidden = {
-      opacity: '0 !important',
-    };
-    const placeholderVisible = theme.vars
-      ? {
-          opacity: theme.vars.opacity.inputPlaceholder,
-        }
-      : {
-          opacity: light ? 0.42 : 0.5,
-        };
+const InputBaseInput = styled(input)`
+  font: inherit;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+  &::-webkit-input-placeholder {
+    color: currentColor;
+    opacity: 0.42;
+    transition: opacity 200ms;
 
-    return {
-      font: 'inherit',
-      letterSpacing: 'inherit',
-      color: 'currentColor',
-      padding: '4px 0 5px',
-      border: 0,
-      boxSizing: 'content-box',
-      background: 'none',
-      height: '1.4375em', // Reset 23pxthe native input line-height
-      margin: 0, // Reset for Safari
-      WebkitTapHighlightColor: 'transparent',
-      display: 'block',
-      // Make the flex item shrink with Firefox
-      minWidth: 0,
-      width: '100%',
-      '&::-webkit-input-placeholder': placeholder,
-      '&::-moz-placeholder': placeholder, // Firefox 19+
-      '&::-ms-input-placeholder': placeholder, // Edge
-      '&:focus': {
-        outline: 0,
-      },
-      // Reset Firefox invalid required input style
-      '&:invalid': {
-        boxShadow: 'none',
-      },
-      '&::-webkit-search-decoration': {
-        // Remove the padding when type=search.
-        WebkitAppearance: 'none',
-      },
-      // Show and hide the placeholder logic
-      [`label[data-shrink=false] + .${inputBaseClasses.formControl} &`]: {
-        '&::-webkit-input-placeholder': placeholderHidden,
-        '&::-moz-placeholder': placeholderHidden, // Firefox 19+
-        '&::-ms-input-placeholder': placeholderHidden, // Edge
-        '&:focus::-webkit-input-placeholder': placeholderVisible,
-        '&:focus::-moz-placeholder': placeholderVisible, // Firefox 19+
-        '&:focus::-ms-input-placeholder': placeholderVisible, // Edge
-      },
-      [`&.${inputBaseClasses.disabled}`]: {
-        opacity: 1, // Reset iOS opacity
-        WebkitTextFillColor: (theme.vars || theme).palette.text.disabled, // Fix opacity Safari bug
-      },
-      variants: [
-        {
-          props: ({ ownerState }) => !ownerState.disableInjectingGlobalStyles,
-          style: {
-            animationName: 'mui-auto-fill-cancel',
-            animationDuration: '10ms',
-            '&:-webkit-autofill': {
-              animationDuration: '5000s',
-              animationName: 'mui-auto-fill',
-            },
-          },
-        },
-        {
-          props: {
-            size: 'small',
-          },
-          style: {
-            paddingTop: 1,
-          },
-        },
-        {
-          props: ({ ownerState }) => ownerState.multiline,
-          style: {
-            height: 'auto',
-            resize: 'none',
-            padding: 0,
-            paddingTop: 0,
-          },
-        },
-        {
-          props: {
-            type: 'search',
-          },
-          style: {
-            MozAppearance: 'textfield', // Improve type search style.
-          },
-        },
-      ],
-    };
-  }),
-);
+    &.theme-dark {
+      opacity: 0.5;
+    }
+  }
+  &::-moz-placeholder {
+    color: currentColor;
+    opacity: 0.42;
+    transition: opacity 200ms;
 
-const InputGlobalStyles = globalCss({
-  '@keyframes mui-auto-fill': { from: { display: 'block' } },
-  '@keyframes mui-auto-fill-cancel': { from: { display: 'block' } },
+    &.theme-dark {
+      opacity: 0.5;
+    }
+  } // Firefox 19+
+  &::-ms-input-placeholder {
+    color: currentColor;
+    opacity: 0.42;
+    transition: opacity 200ms;
+
+    &.theme-dark {
+      opacity: 0.5;
+    }
+  } // Edge
+  &:focus {
+    outline: 0;
+  }
+  // Reset Firefox invalid required input style
+  &:invalid {
+    box-shadow: none;
+  }
+  &::-webkit-search-decoration {
+    // Remove the padding when type=search.
+    -webkit-appearance: none;
+  }
+  // Show and hide the placeholder logic
+  label[data-shrink='false'] + .MuiFormControl-root & {
+    &::-webkit-input-placeholder {
+      opacity: 0 !important;
+    }
+    &::-moz-placeholder {
+      opacity: 0 !important;
+    } // Firefox 19+
+    &::-ms-input-placeholder {
+      opacity: 0 !important;
+    } // Edge
+    &:focus::-webkit-input-placeholder {
+      opacity: 0.42;
+      &.theme-dark {
+        opacity: 0.5;
+      }
+    }
+    &:focus::-moz-placeholder {
+      opacity: 0.42;
+      &.theme-dark {
+        opacity: 0.5;
+      }
+    } // Firefox 19+
+    &:focus::-ms-input-placeholder {
+      opacity: 0.42;
+      &.theme-dark {
+        opacity: 0.5;
+      }
+    } // Edge
+  }
+  &.disable-injection-disabled {
+    animation-name: ${jrAutoFillCancelKeyframe};
+    animation-duration: 10ms;
+    &:-webkit-autofill {
+      animation-name: ${jrAutoFillKeyframe};
+      animation-duration: 5000s;
+    }
+  }
+  &.type-search {
+    -moz-appearance: textfield;
+  }
+`;
+
+const inputBaseInputVariants = tv({
+  base: [
+    'tracking-inherit',
+    'text-current',
+    'p-[4px 0 5px]',
+    'border-0',
+    'box-content',
+    'h-[1.4375em]', // Reset 23px the native input line-height
+    'm-0', // Reset for Safari
+    'block',
+    // Make the flex item shrink with Firefox
+    'min-w-0',
+    'w-full',
+    'dark:theme-dark',
+    'disabled:opacity-100 disabled:webkit-text-fill-text-disabled',
+  ],
+  variants: {
+    disableInjectingGlobalStyles: {
+      true: [],
+      false: ['disable-injection-disabled'],
+    },
+    size: {
+      small: ['pt-px'],
+      medium: [],
+    },
+    multiline: {
+      true: ['h-auto', 'resize-none', 'p-0', 'pt-0'],
+      false: [],
+    },
+    type: {
+      search: ['type-search'],
+    },
+  },
 });
 
 /**
@@ -487,16 +495,15 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
             {...inputProps}
             {...(!isHostComponent(Input) && {
               as: InputComponent,
-              ownerState: { ...ownerState, ...inputProps.ownerState },
             })}
             ref={handleInputRef}
-            className={clsx(
-              '',
-              classes.input,
-              {
-                // TODO v6: remove this class as it duplicates with the global state class Mui-readOnly
-                'MuiInputBase-readOnly': readOnly,
-              },
+            className={mergeStyles(
+              inputBaseInputVariants({
+                disableInjectingGlobalStyles,
+                size: fcs.size,
+                multiline,
+                type,
+              }),
               inputProps.className,
             )}
             onBlur={handleBlur}
