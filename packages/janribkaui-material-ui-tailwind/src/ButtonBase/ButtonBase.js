@@ -34,11 +34,13 @@ const ButtonBase = React.forwardRef(function ButtonBase(inProps, ref) {
     centerRipple = false,
     children,
     className,
+    component = 'button',
     disabled = false,
     disableRipple = false,
     disableTouchRipple = false,
     focusRipple = false,
     focusVisibleClassName,
+    LinkComponent = 'a',
     onBlur,
     onClick,
     onContextMenu,
@@ -152,6 +154,11 @@ const ButtonBase = React.forwardRef(function ButtonBase(inProps, ref) {
     }
   });
 
+  const isNonNativeButton = () => {
+    const button = buttonRef.current;
+    return component && component !== 'button' && !(button.tagName === 'A' && button.href);
+  };
+
   const handleKeyDown = useEventCallback((event) => {
     // Check if key is already down to avoid repeats being counted as multiple activations
     if (focusRipple && !event.repeat && focusVisible && event.key === ' ') {
@@ -160,7 +167,7 @@ const ButtonBase = React.forwardRef(function ButtonBase(inProps, ref) {
       });
     }
 
-    if (event.target === event.currentTarget && event.key === ' ') {
+    if (event.target === event.currentTarget && isNonNativeButton() && event.key === ' ') {
       event.preventDefault();
     }
 
@@ -169,7 +176,12 @@ const ButtonBase = React.forwardRef(function ButtonBase(inProps, ref) {
     }
 
     // Keyboard accessibility for non interactive elements
-    if (event.target === event.currentTarget && event.key === 'Enter' && !disabled) {
+    if (
+      event.target === event.currentTarget &&
+      isNonNativeButton() &&
+      event.key === 'Enter' &&
+      !disabled
+    ) {
       event.preventDefault();
       if (onClick) {
         onClick(event);
@@ -200,10 +212,25 @@ const ButtonBase = React.forwardRef(function ButtonBase(inProps, ref) {
     }
   });
 
+  let ComponentProp = component;
+
+  if (ComponentProp === 'button' && (other.href || other.to)) {
+    ComponentProp = LinkComponent;
+  }
+
   const buttonProps = {};
 
-  buttonProps.type = type === undefined ? 'button' : type;
-  buttonProps.disabled = disabled;
+  if (ComponentProp === 'button') {
+    buttonProps.type = type === undefined ? 'button' : type;
+    buttonProps.disabled = disabled;
+  } else {
+    if (!other.href && !other.to) {
+      buttonProps.role = 'button';
+    }
+    if (disabled) {
+      buttonProps['aria-disabled'] = disabled;
+    }
+  }
 
   const handleRef = useForkRef(ref, buttonRef);
 
@@ -230,6 +257,7 @@ const ButtonBase = React.forwardRef(function ButtonBase(inProps, ref) {
 
   return (
     <ButtonBaseRoot
+      as={ComponentProp}
       className={buttonBaseClassName}
       onBlur={handleBlur}
       onClick={onClick}

@@ -56,6 +56,11 @@ export interface ButtonBaseOwnProps {
    */
   focusVisibleClassName?: string;
   /**
+   * The component used to render a link when the `href` prop is provided.
+   * @default 'a'
+   */
+  LinkComponent?: React.ElementType;
+  /**
    * Callback fired when the component is focused with a keyboard.
    * We trigger a `onFocus` callback too.
    */

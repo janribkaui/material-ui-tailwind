@@ -3,7 +3,7 @@ import * as React from 'react';
 import SvgIcon from '../SvgIcon';
 
 /**
- * Private module reserved for @mui packages.
+ * Private module reserved for @jr packages.
  */
 export default function createSvgIcon(path, displayName) {
   function Component(props, ref) {
@@ -20,7 +20,7 @@ export default function createSvgIcon(path, displayName) {
     Component.displayName = `${displayName}Icon`;
   }
 
-  Component.muiName = SvgIcon.muiName;
+  Component.jrName = SvgIcon.jrName;
 
   return React.memo(React.forwardRef(Component));
 }

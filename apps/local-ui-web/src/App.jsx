@@ -117,6 +117,10 @@ function App() {
         Reset Loading
       </Button>
 
+      <Button className="ml-6" variant="contained" href="#contained-buttons">
+        Link
+      </Button>
+
       <div className="ml-3 mt-3 flex gap-3 w-full">
         <div className="w-full flex gap-4">
           <div className="w-1/3">

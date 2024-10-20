@@ -9,6 +9,15 @@ const SvgIconRoot = styled('svg')`
   &.size-inherit {
     font-size: inherit;
   }
+  &.size-small {
+    font-size: 1.25rem;
+  }
+  &.size-medium {
+    font-size: 1.5rem;
+  }
+  &.size-large {
+    font-size: 2.1875rem;
+  }
 `;
 
 const svgIconRootVariants = tv({
@@ -19,6 +28,7 @@ const svgIconRootVariants = tv({
     'shrink-0',
     'transition-fill',
     'duration-shorter',
+    'ease-in-out',
   ],
   variants: {
     hasSvgAsChild: {
@@ -27,9 +37,9 @@ const svgIconRootVariants = tv({
     },
     fontSize: {
       inherit: ['size-inherit'],
-      small: ['text-sm'],
-      medium: ['text-base'],
-      large: ['text-[2.1875rem]'],
+      small: ['size-small'],
+      medium: ['size-medium'],
+      large: ['size-large'],
     },
     color: {
       primary: 'text-primary',
@@ -38,7 +48,6 @@ const svgIconRootVariants = tv({
       success: 'text-success',
       warning: 'text-warning',
       error: 'text-error',
-      //inherit: 'text-inherit',
       action: 'text-action-active',
       disabled: 'text-action-disabled',
     },
@@ -46,7 +55,7 @@ const svgIconRootVariants = tv({
 });
 
 const SvgIcon = React.forwardRef(function SvgIcon(inProps, ref) {
-  const props = useDefaultProps({ props: inProps, name: 'MuiSvgIcon' });
+  const props = useDefaultProps({ props: inProps, name: 'JrSvgIcon' });
   const {
     children,
     className,
