@@ -5,6 +5,7 @@ import useFormControl from '../FormControl/useFormControl';
 import ButtonBase from '../ButtonBase';
 import { styled } from 'styled-components';
 import { tv } from 'tailwind-variants';
+import { mergeStyles } from '../utils';
 
 const SwitchBaseRoot = styled(ButtonBase)``;
 
@@ -149,7 +150,7 @@ const SwitchBase = React.forwardRef(function SwitchBase(props, ref) {
   return (
     <SwitchBaseRoot
       component="span"
-      className={switchBaseRootVariants({ edge, size: props.size })}
+      className={mergeStyles(switchBaseRootVariants({ edge, size: props.size }), className)}
       centerRipple
       focusRipple={!disableFocusRipple}
       disabled={disabled}

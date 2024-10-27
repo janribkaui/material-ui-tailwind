@@ -106,6 +106,9 @@ function App() {
         <div className="w-full flex gap-4">
           <div className="w-1/3">
             <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} />
+            <Checkbox {...labelCheckbox} disabled />
+            <Checkbox {...labelCheckbox} disabled checked />
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ const CheckboxRoot = styled(SwitchBase)`
 `;
 
 const checkboxRootVariants = tv({
-  base: ['text-text-secondary', 'hover:bg-action-active/hover'],
+  base: ['text-text-secondary', 'hover:bg-action-active/hover', 'disabled:text-action-disabled'],
   variants: {
     color: {
       primary: [],
@@ -32,14 +32,6 @@ const checkboxRootVariants = tv({
       success: [],
       warning: [],
       default: [],
-    },
-    disabled: {
-      true: ['text-action-disabled'],
-      false: [],
-    },
-    checked: {
-      true: [],
-      false: [],
     },
     disableRipple: {
       true: ['disable-ripple'],
@@ -60,21 +52,21 @@ const checkboxRootVariants = tv({
     { color: 'warning', disableRipple: false, className: ['hover:bg-warning/hover'] },
     { color: 'default', disableRipple: false, className: ['hover:bg-action-active/hover'] },
     // Checked
-    { checked: true, color: 'primary', className: ['hover:bg-primary'] },
-    { checked: true, color: 'secondary', className: ['hover:bg-secondary'] },
-    { checked: true, color: 'error', className: ['hover:bg-error'] },
-    { checked: true, color: 'info', className: ['hover:bg-info'] },
-    { checked: true, color: 'success', className: ['hover:bg-success'] },
-    { checked: true, color: 'warning', className: ['hover:bg-warning'] },
-    { checked: true, color: 'default', className: ['hover:bg-action-active'] },
+    { color: 'primary', className: ['checked:text-primary'] },
+    { color: 'secondary', className: ['checked:text-secondary'] },
+    { color: 'error', className: ['checked:text-error'] },
+    { color: 'info', className: ['checked:text-info'] },
+    { color: 'success', className: ['checked:text-success'] },
+    { color: 'warning', className: ['checked:text-warning'] },
+    { color: 'default', className: ['checked:text-action-active'] },
     // indeterminate
-    { indeterminate: true, color: 'primary', className: ['hover:bg-primary'] },
-    { indeterminate: true, color: 'secondary', className: ['hover:bg-secondary'] },
-    { indeterminate: true, color: 'error', className: ['hover:bg-error'] },
-    { indeterminate: true, color: 'info', className: ['hover:bg-info'] },
-    { indeterminate: true, color: 'success', className: ['hover:bg-success'] },
-    { indeterminate: true, color: 'warning', className: ['hover:bg-warning'] },
-    { indeterminate: true, color: 'default', className: ['hover:bg-action-active'] },
+    { indeterminate: true, color: 'primary', className: ['text-primary'] },
+    { indeterminate: true, color: 'secondary', className: ['text-secondary'] },
+    { indeterminate: true, color: 'error', className: ['text-error'] },
+    { indeterminate: true, color: 'info', className: ['text-info'] },
+    { indeterminate: true, color: 'success', className: ['text-success'] },
+    { indeterminate: true, color: 'warning', className: ['text-warning'] },
+    { indeterminate: true, color: 'default', className: ['text-action-active'] },
   ],
 });
 
@@ -94,8 +86,6 @@ const Checkbox = React.forwardRef(function Checkbox(inProps, ref) {
     size = 'medium',
     disableRipple = false,
     className,
-    disabled = false,
-    checked,
     ...other
   } = props;
 
@@ -118,7 +108,12 @@ const Checkbox = React.forwardRef(function Checkbox(inProps, ref) {
       ref={ref}
       className={mergeStyles(
         'JrCheckbox-root',
-        checkboxRootVariants({ color, disabled, checked, disableRipple, indeterminate }),
+        checkboxRootVariants({
+          color: color,
+          disableRipple: disableRipple,
+          indeterminate: indeterminate,
+        }),
+        className,
       )}
       {...other}
     />
