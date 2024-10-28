@@ -252,6 +252,7 @@ const ButtonBase = React.forwardRef(function ButtonBase(inProps, ref) {
     'align-middle',
     'text-inherit',
     'disabled:pointer-events-none disabled:cursor-default',
+    'has-[input:disabled]:pointer-events-none has-[input:disabled]:cursor-default',
     className,
   );
 

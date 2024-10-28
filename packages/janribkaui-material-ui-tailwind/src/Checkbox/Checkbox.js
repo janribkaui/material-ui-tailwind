@@ -22,7 +22,11 @@ const CheckboxRoot = styled(SwitchBase)`
 `;
 
 const checkboxRootVariants = tv({
-  base: ['text-text-secondary', 'hover:bg-action-active/hover', 'disabled:text-action-disabled'],
+  base: [
+    'text-text-secondary',
+    'hover:bg-action-active/hover',
+    'has-[input:disabled]:text-action-disabled',
+  ],
   variants: {
     color: {
       primary: [],
@@ -52,13 +56,13 @@ const checkboxRootVariants = tv({
     { color: 'warning', disableRipple: false, className: ['hover:bg-warning/hover'] },
     { color: 'default', disableRipple: false, className: ['hover:bg-action-active/hover'] },
     // Checked
-    { color: 'primary', className: ['checked:text-primary'] },
-    { color: 'secondary', className: ['checked:text-secondary'] },
-    { color: 'error', className: ['checked:text-error'] },
-    { color: 'info', className: ['checked:text-info'] },
-    { color: 'success', className: ['checked:text-success'] },
-    { color: 'warning', className: ['checked:text-warning'] },
-    { color: 'default', className: ['checked:text-action-active'] },
+    { color: 'primary', className: ['has-[input:checked]:text-primary'] },
+    { color: 'secondary', className: ['has-[input:checked]:text-secondary'] },
+    { color: 'error', className: ['has-[input:checked]:text-error'] },
+    { color: 'info', className: ['has-[input:checked]:text-info'] },
+    { color: 'success', className: ['has-[input:checked]:text-success'] },
+    { color: 'warning', className: ['has-[input:checked]:text-warning'] },
+    { color: 'default', className: ['has-[input:checked]:text-action-active'] },
     // indeterminate
     { indeterminate: true, color: 'primary', className: ['text-primary'] },
     { indeterminate: true, color: 'secondary', className: ['text-secondary'] },
