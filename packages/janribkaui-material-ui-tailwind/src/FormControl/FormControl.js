@@ -7,7 +7,7 @@ import FormControlContext from './FormControlContext';
 import { styled } from 'styled-components';
 import { tv } from 'tailwind-variants';
 
-const FormControlRoot = styled(div)``;
+const FormControlRoot = styled.div``;
 
 const formControlRootVariants = tv({
   base: [
@@ -149,7 +149,7 @@ const FormControl = React.forwardRef(function FormControl(inProps, ref) {
       if (registeredInput.current) {
         console.error(
           [
-            'MUI: There are multiple `InputBase` components inside a FormControl.',
+            'JR: There are multiple `InputBase` components inside a FormControl.',
             'This creates visual inconsistencies, only use one `InputBase`.',
           ].join('\n'),
         );
