@@ -78,6 +78,9 @@ export * from './LinearProgress';
 export { default as LoadingButton } from './LoadingButton';
 export * from './LoadingButton';
 
+export { default as Typography } from './Typography';
+export * from './Typography';
+
 /**
  * @deprecated will be removed in v5.beta, please use StyledEngineProvider from @mui/material/styles instead
  */

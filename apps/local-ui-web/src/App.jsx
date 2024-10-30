@@ -7,6 +7,7 @@ import IconButton from '@janribkaui/material-ui-tailwind/IconButton';
 import CircularProgress from '@janribkaui/material-ui-tailwind/CircularProgress';
 import LinearProgress from '@janribkaui/material-ui-tailwind/LinearProgress';
 import LoadingButton from '@janribkaui/material-ui-tailwind/LoadingButton';
+import Typography from '@janribkaui/material-ui-tailwind/Typography';
 
 function LinearProgressWithLabel(props) {
   return (
@@ -98,6 +99,58 @@ function App() {
       <h4>H4</h4>
       <h5>H5</h5>
       <h6>H6</h6>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="">
+            <Typography variant="h1" gutterBottom>
+              h1. Heading
+            </Typography>
+            <Typography variant="h2" gutterBottom>
+              h2. Heading
+            </Typography>
+            <Typography variant="h3" gutterBottom>
+              h3. Heading
+            </Typography>
+            <Typography variant="h4" gutterBottom>
+              h4. Heading
+            </Typography>
+            <Typography variant="h5" gutterBottom>
+              h5. Heading
+            </Typography>
+            <Typography variant="h6" gutterBottom>
+              h6. Heading
+            </Typography>
+            <Typography variant="subtitle1" gutterBottom>
+              subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+              tenetur
+            </Typography>
+            <Typography variant="subtitle2" gutterBottom>
+              subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+              tenetur
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+              body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+              tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus,
+              cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+              tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus,
+              cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+            </Typography>
+            <Typography variant="button" gutterBottom className="block">
+              button text
+            </Typography>
+            <Typography variant="caption" gutterBottom className="block">
+              caption text
+            </Typography>
+            <Typography variant="overline" gutterBottom className="block">
+              overline text
+            </Typography>
+          </div>
+        </div>
+      </div>
 
       <Button size="small" onClick={() => setLoading(true)}>
         Set Loading
