@@ -52,12 +52,6 @@ export interface TypographyOwnProps extends Omit<SystemProps<Theme>, 'color'> {
    */
   noWrap?: boolean;
   /**
-   * If `true`, the element will be a paragraph element.
-   * @default false
-   * @deprecated Use the `component` prop instead. This prop will be removed in v7. See [Migrating from deprecated APIs](https://mui.com/material-ui/migration/migrating-from-deprecated-apis/) for more details.
-   */
-  paragraph?: boolean;
-  /**
    * Applies the theme typography styles.
    * @default 'body1'
    */
@@ -74,11 +68,11 @@ export interface TypographyOwnProps extends Omit<SystemProps<Theme>, 'color'> {
    *   h4: 'h4',
    *   h5: 'h5',
    *   h6: 'h6',
-  //  *   subtitle1: 'h6',
-  //  *   subtitle2: 'h6',
-  //  *   body1: 'p',
-  //  *   body2: 'p',
-  //  *   inherit: 'p',
+   *   subtitle1: 'h6',
+   *   subtitle2: 'h6',
+   *   body1: 'p',
+   *   body2: 'p',
+   *   inherit: 'p',
    * }
    */
   variantMapping?: Partial<

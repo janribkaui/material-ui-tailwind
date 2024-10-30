@@ -28,6 +28,9 @@ export * from './LinearProgress';
 export { default as LoadingButton } from './LoadingButton';
 export * from './LoadingButton';
 
+export { default as Typography } from './Typography';
+export * from './Typography';
+
 // createFilterOptions is exported from Autocomplete
 
 export { default as GlobalStyles } from './GlobalStyles';
