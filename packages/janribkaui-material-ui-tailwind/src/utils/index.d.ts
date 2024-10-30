@@ -6,3 +6,4 @@ export { default as mergeStyles } from './mergeStyles';
 export { default as useEventCallback } from './useEventCallback';
 export { default as useForkRef } from './useForkRef';
 export { default as unstable_useId } from './useId';
+export * from './types';
