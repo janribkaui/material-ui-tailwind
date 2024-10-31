@@ -22,6 +22,9 @@ export * from './CircularProgress';
 export { default as FormControlLabel } from './FormControlLabel';
 export * from './FormControlLabel';
 
+export { default as FormGroup } from './FormGroup';
+export * from './FormGroup';
+
 export { default as IconButton } from './IconButton';
 export * from './IconButton';
 
