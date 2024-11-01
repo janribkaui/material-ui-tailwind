@@ -9,15 +9,6 @@ const SvgIconRoot = styled('svg')`
   &.size-inherit {
     font-size: inherit;
   }
-  &.size-small {
-    font-size: 1.25rem;
-  }
-  &.size-medium {
-    font-size: 1.5rem;
-  }
-  &.size-large {
-    font-size: 2.1875rem;
-  }
 `;
 
 const svgIconRootVariants = tv({
@@ -37,9 +28,9 @@ const svgIconRootVariants = tv({
     },
     fontSize: {
       inherit: ['size-inherit'],
-      small: ['size-small'],
-      medium: ['size-medium'],
-      large: ['size-large'],
+      small: ['text-[1.25rem]'],
+      medium: ['text-[1.5rem]'],
+      large: ['text-[2.1875rem]'],
     },
     color: {
       primary: 'text-primary',

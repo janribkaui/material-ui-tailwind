@@ -9,6 +9,12 @@ import LinearProgress from '@janribkaui/material-ui-tailwind/LinearProgress';
 import LoadingButton from '@janribkaui/material-ui-tailwind/LoadingButton';
 import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
 import Typography from '@janribkaui/material-ui-tailwind/Typography';
+import FormGroup from '@janribkaui/material-ui-tailwind/FormGroup';
+import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
+import { FaRegBookmark } from 'react-icons/fa';
+import { FaBookmark } from 'react-icons/fa';
+import { MdOutlineFavoriteBorder } from 'react-icons/md';
+import { MdOutlineFavorite } from 'react-icons/md';
 
 function LinearProgressWithLabel(props) {
   return (
@@ -154,14 +160,54 @@ function App() {
           </div>
         </div>
       </div>
-      
+
       <div className="ml-3 mt-3 flex gap-3 w-full">
         <div className="w-full flex gap-4">
           <div className="w-1/3">
-                <Checkbox {...labelCheckbox} defaultChecked />
-                <Checkbox {...labelCheckbox} />
-                <Checkbox {...labelCheckbox} disabled />
-                <Checkbox {...labelCheckbox} disabled checked />
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} />
+            <Checkbox {...labelCheckbox} disabled />
+            <Checkbox {...labelCheckbox} disabled checked />
+          </div>
+
+          <div className="w-1/3">
+            <FormGroup>
+              <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+              <FormControlLabel required control={<Checkbox />} label="Required" />
+              <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
+            </FormGroup>
+          </div>
+
+          <div className="w-1/3">
+            <Checkbox {...labelCheckbox} defaultChecked size="small" />
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} defaultChecked className="[&_.JrSvgIcon-root]:!text-3xl" />
+            <Checkbox {...labelCheckbox} defaultChecked size="large" />
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} defaultChecked color="secondary" />
+            <Checkbox {...labelCheckbox} defaultChecked color="success" />
+            <Checkbox {...labelCheckbox} defaultChecked color="default" />
+            <Checkbox
+              {...labelCheckbox}
+              defaultChecked
+              className="text-dark-secondary has-[input:checked]:text-dark-secondary-dark"
+            />
+          </div>
+
+          <div className="w-1/3">
+            <Checkbox
+              {...labelCheckbox}
+              icon={<MdOutlineFavoriteBorder />}
+              checkedIcon={<MdOutlineFavorite />}
+            />
+            <Checkbox {...labelCheckbox} icon={<FaRegBookmark />} checkedIcon={<FaBookmark />} />
           </div>
         </div>
       </div>

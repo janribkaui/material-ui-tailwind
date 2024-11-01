@@ -6,6 +6,7 @@ import isJrElement from '../utils/isJrElement';
 import FormControlContext from './FormControlContext';
 import { styled } from 'styled-components';
 import { tv } from 'tailwind-variants';
+import { mergeStyles } from '../utils';
 
 const FormControlRoot = styled.div``;
 
@@ -23,9 +24,9 @@ const formControlRootVariants = tv({
   ],
   variants: {
     margin: {
-      dense: ['mt-2', 'mb-1'],
+      dense: ['mt-[0.5rem]', 'mb-[0.25rem]'],
       none: [],
-      normal: ['mt-4', 'mb-2'],
+      normal: ['mt-[1rem]', 'mb-[0.5rem]'],
     },
     fullWidth: {
       true: ['w-full'],
@@ -77,22 +78,6 @@ const FormControl = React.forwardRef(function FormControl(inProps, ref) {
     ...other
   } = props;
 
-  const ownerState = {
-    ...props,
-    color,
-    component,
-    disabled,
-    error,
-    fullWidth,
-    hiddenLabel,
-    margin,
-    required,
-    size,
-    variant,
-  };
-
-  const classes = useUtilityClasses(ownerState);
-
   const [adornedStart, setAdornedStart] = React.useState(() => {
     // We need to iterate through the children and find the Input in order
     // to fully support server-side rendering.
@@ -121,7 +106,7 @@ const FormControl = React.forwardRef(function FormControl(inProps, ref) {
 
     if (children) {
       React.Children.forEach(children, (child) => {
-        if (!isMuiElement(child, ['Input', 'Select'])) {
+        if (!isJrElement(child, ['Input', 'Select'])) {
           return;
         }
 
@@ -207,7 +192,16 @@ const FormControl = React.forwardRef(function FormControl(inProps, ref) {
 
   return (
     <FormControlContext.Provider value={childContext}>
-      <FormControlRoot as={component} ownerState={ownerState} className={''} ref={ref} {...other}>
+      <FormControlRoot
+        as={component}
+        className={mergeStyles(
+          'JrFormControl-root',
+          formControlRootVariants({ margin, fullWidth }),
+          className,
+        )}
+        ref={ref}
+        {...other}
+      >
         {children}
       </FormControlRoot>
     </FormControlContext.Provider>

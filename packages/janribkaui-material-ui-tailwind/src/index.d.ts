@@ -69,6 +69,9 @@ export * from './ButtonBase';
 export { default as CircularProgress } from './CircularProgress';
 export * from './CircularProgress';
 
+export { default as FormControl } from './FormControl';
+export * from './FormControl';
+
 export { default as FormControlLabel } from './FormControlLabel';
 export * from './FormControlLabel';
 

@@ -443,8 +443,6 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
     type,
   };
 
-  const classes = useUtilityClasses(ownerState);
-
   const Root = slots.root || components.Root || InputBaseRoot;
   const rootProps = slotProps.root || componentsProps.root || {};
 

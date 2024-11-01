@@ -103,7 +103,6 @@ const FormControlLabel = React.forwardRef(function FormControlLabel(inProps, ref
   const [TypographySlot, typographySlotProps] = useSlot('typography', {
     elementType: Typography,
     externalForwardedProps,
-    ownerState,
   });
 
   let label = labelProp;
