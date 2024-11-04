@@ -25,6 +25,9 @@ export * from './FormControlLabel';
 export { default as FormGroup } from './FormGroup';
 export * from './FormGroup';
 
+export { default as FormLabel } from './FormLabel';
+export * from './FormLabel';
+
 export { default as IconButton } from './IconButton';
 export * from './IconButton';
 
