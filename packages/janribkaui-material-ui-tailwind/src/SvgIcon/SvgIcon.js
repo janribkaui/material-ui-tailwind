@@ -11,7 +11,7 @@ const SvgIconRoot = styled('svg')`
   }
 `;
 
-const svgIconRootVariants = tv({
+export const svgIconRootVariants = tv({
   base: [
     'select-none',
     'w-[1em] h-[1em]',

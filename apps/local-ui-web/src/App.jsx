@@ -11,6 +11,9 @@ import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
 import Typography from '@janribkaui/material-ui-tailwind/Typography';
 import FormGroup from '@janribkaui/material-ui-tailwind/FormGroup';
 import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
+import FormControl from '@janribkaui/material-ui-tailwind/FormControl';
+import FormLabel from '@janribkaui/material-ui-tailwind/FormLabel';
+import FormHelperText from '@janribkaui/material-ui-tailwind/FormHelperText';
 import { FaRegBookmark } from 'react-icons/fa';
 import { FaBookmark } from 'react-icons/fa';
 import { MdOutlineFavoriteBorder } from 'react-icons/md';
@@ -36,6 +39,8 @@ function App() {
   const [progressBuffer, setProgressBuffer] = React.useState(0);
   const [buffer, setBuffer] = React.useState(10);
   const [loading, setLoading] = React.useState(false);
+  const [checked, setChecked] = React.useState(true);
+  const [checkedIndeterminate, setCheckedIndeterminate] = React.useState([true, false]);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -79,6 +84,22 @@ function App() {
     };
   });
 
+  const handleCheckboxChange = (event) => {
+    setChecked(event.target.checked);
+  };
+
+  const handleChangeIndeterminate1 = (event) => {
+    setCheckedIndeterminate([event.target.checked, event.target.checked]);
+  };
+
+  const handleChangeIndeterminate2 = (event) => {
+    setCheckedIndeterminate([event.target.checked, checkedIndeterminate[1]]);
+  };
+
+  const handleChangeIndeterminate3 = (event) => {
+    setCheckedIndeterminate([checkedIndeterminate[0], event.target.checked]);
+  };
+
   React.useEffect(() => {
     const timer = setInterval(() => {
       progressBufferRef.current();
@@ -99,6 +120,23 @@ function App() {
   }, []);
 
   const labelCheckbox = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
+  const indeterminateChildren = (
+    <div className="flex flex-col ml-3">
+      <FormControlLabel
+        label="Child 1"
+        control={
+          <Checkbox checked={checkedIndeterminate[0]} onChange={handleChangeIndeterminate2} />
+        }
+      />
+      <FormControlLabel
+        label="Child 2"
+        control={
+          <Checkbox checked={checkedIndeterminate[1]} onChange={handleChangeIndeterminate3} />
+        }
+      />
+    </div>
+  );
 
   return (
     <>
@@ -204,10 +242,81 @@ function App() {
           <div className="w-1/3">
             <Checkbox
               {...labelCheckbox}
-              icon={<MdOutlineFavoriteBorder />}
+              icon={<MdOutlineFavoriteBorder className="relative" />}
               checkedIcon={<MdOutlineFavorite />}
             />
             <Checkbox {...labelCheckbox} icon={<FaRegBookmark />} checkedIcon={<FaBookmark />} />
+          </div>
+
+          <div className="w-1/3">
+            <Checkbox
+              checked={checked}
+              onChange={handleCheckboxChange}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <FormControlLabel
+              label="Parent"
+              control={
+                <Checkbox
+                  checked={checkedIndeterminate[0] && checkedIndeterminate[1]}
+                  indeterminate={checkedIndeterminate[0] !== checkedIndeterminate[1]}
+                  onChange={handleChangeIndeterminate1}
+                />
+              }
+            />
+            {indeterminateChildren}
+          </div>
+
+          <div className="w-1/3 flex">
+            <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+              <FormLabel component="legend">Assign responsibility</FormLabel>
+              <FormGroup>
+                <FormControlLabel
+                  control={<Checkbox checked={gilad} onChange={handleChange} name="gilad" />}
+                  label="Gilad Gray"
+                />
+                <FormControlLabel
+                  control={<Checkbox checked={jason} onChange={handleChange} name="jason" />}
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={<Checkbox checked={antoine} onChange={handleChange} name="antoine" />}
+                  label="Antoine Llorca"
+                />
+              </FormGroup>
+              <FormHelperText>Be careful</FormHelperText>
+            </FormControl>
+            <FormControl
+              required
+              error={error}
+              component="fieldset"
+              sx={{ m: 3 }}
+              variant="standard"
+            >
+              <FormLabel component="legend">Pick two</FormLabel>
+              <FormGroup>
+                <FormControlLabel
+                  control={<Checkbox checked={gilad} onChange={handleChange} name="gilad" />}
+                  label="Gilad Gray"
+                />
+                <FormControlLabel
+                  control={<Checkbox checked={jason} onChange={handleChange} name="jason" />}
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={<Checkbox checked={antoine} onChange={handleChange} name="antoine" />}
+                  label="Antoine Llorca"
+                />
+              </FormGroup>
+              <FormHelperText>You can display an error</FormHelperText>
+            </FormControl>
           </div>
         </div>
       </div>

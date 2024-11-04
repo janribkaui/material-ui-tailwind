@@ -9,6 +9,7 @@ import { tv } from 'tailwind-variants';
 
 import { useDefaultProps } from '../DefaultPropsProvider';
 import { mergeStyles } from '../utils';
+import { svgIconRootVariants } from '../SvgIcon/SvgIcon';
 
 const CheckboxRoot = styled(SwitchBase)`
   &.disable-ripple {
@@ -104,9 +105,17 @@ const Checkbox = React.forwardRef(function Checkbox(inProps, ref) {
         ...inputProps,
       }}
       icon={React.cloneElement(icon, {
+        className: mergeStyles(
+          svgIconRootVariants({ hasSvgAsChild: false, fontSize: size, color: color }),
+          icon.className,
+        ),
         fontSize: icon.props.fontSize ?? size,
       })}
       checkedIcon={React.cloneElement(indeterminateIcon, {
+        className: mergeStyles(
+          svgIconRootVariants({ hasSvgAsChild: false, fontSize: size, color: color }),
+          indeterminateIcon.className,
+        ),
         fontSize: indeterminateIcon.props.fontSize ?? size,
       })}
       ref={ref}
