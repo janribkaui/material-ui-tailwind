@@ -7,6 +7,10 @@ import { useDefaultProps } from '../DefaultPropsProvider';
 import { mergeStyles } from '../utils';
 import { tv } from 'tailwind-variants';
 
+function round(value) {
+  return Math.round(value * 1e5) / 1e5;
+}
+
 const FormLabelRoot = styled.label``;
 
 const formLabelRootVariants = tv({

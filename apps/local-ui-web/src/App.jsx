@@ -13,7 +13,7 @@ import FormGroup from '@janribkaui/material-ui-tailwind/FormGroup';
 import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
 import FormControl from '@janribkaui/material-ui-tailwind/FormControl';
 import FormLabel from '@janribkaui/material-ui-tailwind/FormLabel';
-import FormHelperText from '@janribkaui/material-ui-tailwind/FormHelperText';
+// import FormHelperText from '@janribkaui/material-ui-tailwind/FormHelperText';
 import { FaRegBookmark } from 'react-icons/fa';
 import { FaBookmark } from 'react-icons/fa';
 import { MdOutlineFavoriteBorder } from 'react-icons/md';
@@ -41,6 +41,17 @@ function App() {
   const [loading, setLoading] = React.useState(false);
   const [checked, setChecked] = React.useState(true);
   const [checkedIndeterminate, setCheckedIndeterminate] = React.useState([true, false]);
+  const [stateFormLabelCheckbox, setStateFormLabelCheckbox] = React.useState({
+    gilad: true,
+    jason: false,
+    antoine: false,
+  });
+  const errorFormLabelCheckbox =
+    [
+      stateFormLabelCheckbox.gilad,
+      stateFormLabelCheckbox.jason,
+      stateFormLabelCheckbox.antoine,
+    ].filter((v) => v).length !== 2;
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -98,6 +109,13 @@ function App() {
 
   const handleChangeIndeterminate3 = (event) => {
     setCheckedIndeterminate([checkedIndeterminate[0], event.target.checked]);
+  };
+
+  const handleChangeFormLabelCheckbox = (event) => {
+    setStateFormLabelCheckbox({
+      ...stateFormLabelCheckbox,
+      [event.target.name]: event.target.checked,
+    });
   };
 
   React.useEffect(() => {
@@ -279,23 +297,41 @@ function App() {
               <FormLabel component="legend">Assign responsibility</FormLabel>
               <FormGroup>
                 <FormControlLabel
-                  control={<Checkbox checked={gilad} onChange={handleChange} name="gilad" />}
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.gilad}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="gilad"
+                    />
+                  }
                   label="Gilad Gray"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={jason} onChange={handleChange} name="jason" />}
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.jason}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="jason"
+                    />
+                  }
                   label="Jason Killian"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={antoine} onChange={handleChange} name="antoine" />}
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.antoine}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="antoine"
+                    />
+                  }
                   label="Antoine Llorca"
                 />
               </FormGroup>
-              <FormHelperText>Be careful</FormHelperText>
+              {/* <FormHelperText>Be careful</FormHelperText> */}
             </FormControl>
             <FormControl
               required
-              error={error}
+              error={errorFormLabelCheckbox.error}
               component="fieldset"
               sx={{ m: 3 }}
               variant="standard"
@@ -303,19 +339,37 @@ function App() {
               <FormLabel component="legend">Pick two</FormLabel>
               <FormGroup>
                 <FormControlLabel
-                  control={<Checkbox checked={gilad} onChange={handleChange} name="gilad" />}
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.gilad}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="gilad"
+                    />
+                  }
                   label="Gilad Gray"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={jason} onChange={handleChange} name="jason" />}
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.jason}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="jason"
+                    />
+                  }
                   label="Jason Killian"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={antoine} onChange={handleChange} name="antoine" />}
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.antoine}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="antoine"
+                    />
+                  }
                   label="Antoine Llorca"
                 />
               </FormGroup>
-              <FormHelperText>You can display an error</FormHelperText>
+              {/* <FormHelperText>You can display an error</FormHelperText> */}
             </FormControl>
           </div>
         </div>
