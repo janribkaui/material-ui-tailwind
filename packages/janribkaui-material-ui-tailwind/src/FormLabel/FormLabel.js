@@ -9,7 +9,47 @@ import { tv } from 'tailwind-variants';
 
 const FormLabelRoot = styled.label``;
 
-const formLabelRootVariants = tv({});
+const formLabelRootVariants = tv({
+  base: [
+    'text-text-secondary',
+    'font-normal', // V2: Replace with body1 from createTypography
+    'text-[1rem]', // V2: Replace with body1 from createTypography
+    //'leading-[1.5rem]', // V2: Replace with body1 from createTypography
+    `tracking-[${round(16 / 0.15)}em]`, // V2: Replace with body1 from createTypography
+    'leading-[1.4375rem]',
+    'p-0',
+    'relative',
+    'disabled:text-text-disabled',
+  ],
+  variants: {
+    color: {
+      primary: '',
+      secondary: '',
+      info: '',
+      success: '',
+      warning: '',
+      error: '',
+      // inherit: '',
+    },
+    error: {
+      true: ['text-error'],
+      false: [],
+    },
+    focused: {
+      true: [],
+      false: [],
+    },
+  },
+  compoundVariants: [
+    { focused: true, color: 'primary', className: ['text-primary'] },
+    { focused: true, color: 'secondary', className: ['text-primary'] },
+    { focused: true, color: 'info', className: ['text-primary'] },
+    { focused: true, color: 'success', className: ['text-primary'] },
+    { focused: true, color: 'warning', className: ['text-primary'] },
+    { focused: true, color: 'error', className: ['text-primary'] },
+    { focused: true, color: 'primary', className: ['text-primary'] },
+  ],
+});
 
 const AsteriskComponent = styled.span``;
 
@@ -47,7 +87,20 @@ const FormLabel = React.forwardRef(function FormLabel(inProps, ref) {
   return (
     <FormLabelRoot
       as={component}
-      className={mergeStyles('JrFormLabel-root', formLabelRootVariants({}), className)}
+      disabled={fcs.disabled}
+      error={fcs.error}
+      filled={fcs.filled}
+      focused={fcs.focused}
+      required={fcs.required}
+      className={mergeStyles(
+        'JrFormLabel-root',
+        formLabelRootVariants({
+          color: fcs.color || 'primary',
+          error: fcs.error,
+          focused: fcs.focused,
+        }),
+        className,
+      )}
       ref={ref}
       {...other}
     >
