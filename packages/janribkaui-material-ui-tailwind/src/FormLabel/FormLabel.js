@@ -35,23 +35,23 @@ const formLabelRootVariants = tv({
       error: '',
       // inherit: '',
     },
-    error: {
-      true: ['text-error'],
-      false: [],
-    },
     focused: {
       true: [],
       false: [],
     },
+    error: {
+      true: ['text-error'],
+      false: [],
+    },
   },
   compoundVariants: [
-    { focused: true, color: 'primary', className: ['text-primary'] },
-    { focused: true, color: 'secondary', className: ['text-primary'] },
-    { focused: true, color: 'info', className: ['text-primary'] },
-    { focused: true, color: 'success', className: ['text-primary'] },
-    { focused: true, color: 'warning', className: ['text-primary'] },
-    { focused: true, color: 'error', className: ['text-primary'] },
-    { focused: true, color: 'primary', className: ['text-primary'] },
+    { focused: true, error: false, color: 'primary', className: ['text-primary'] },
+    { focused: true, error: false, color: 'secondary', className: ['text-primary'] },
+    { focused: true, error: false, color: 'info', className: ['text-primary'] },
+    { focused: true, error: false, color: 'success', className: ['text-primary'] },
+    { focused: true, error: false, color: 'warning', className: ['text-primary'] },
+    { focused: true, error: false, color: 'error', className: ['text-primary'] },
+    { focused: true, error: false, color: 'primary', className: ['text-primary'] },
   ],
 });
 
@@ -92,10 +92,6 @@ const FormLabel = React.forwardRef(function FormLabel(inProps, ref) {
     <FormLabelRoot
       as={component}
       disabled={fcs.disabled}
-      error={fcs.error}
-      filled={fcs.filled}
-      focused={fcs.focused}
-      required={fcs.required}
       className={mergeStyles(
         'JrFormLabel-root',
         formLabelRootVariants({

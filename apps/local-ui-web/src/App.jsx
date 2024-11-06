@@ -331,7 +331,7 @@ function App() {
             </FormControl>
             <FormControl
               required
-              error={errorFormLabelCheckbox.error}
+              error={errorFormLabelCheckbox}
               component="fieldset"
               sx={{ m: 3 }}
               variant="standard"
