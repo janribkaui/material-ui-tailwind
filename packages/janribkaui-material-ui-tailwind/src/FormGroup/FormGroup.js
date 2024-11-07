@@ -40,7 +40,7 @@ const FormGroup = React.forwardRef(function FormGroup(inProps, ref) {
 
   return (
     <FormGroupRoot
-      className={mergeStyles('JrFormGroup-root', formGroupRootVariants({}), className)}
+      className={mergeStyles('JrFormGroup-root', formGroupRootVariants({ row }), className)}
       ref={ref}
       {...other}
     />

@@ -13,7 +13,7 @@ import FormGroup from '@janribkaui/material-ui-tailwind/FormGroup';
 import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
 import FormControl from '@janribkaui/material-ui-tailwind/FormControl';
 import FormLabel from '@janribkaui/material-ui-tailwind/FormLabel';
-// import FormHelperText from '@janribkaui/material-ui-tailwind/FormHelperText';
+import FormHelperText from '@janribkaui/material-ui-tailwind/FormHelperText';
 import { FaRegBookmark } from 'react-icons/fa';
 import { FaBookmark } from 'react-icons/fa';
 import { MdOutlineFavoriteBorder } from 'react-icons/md';
@@ -293,7 +293,7 @@ function App() {
           </div>
 
           <div className="w-1/3 flex">
-            <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+            <FormControl component="fieldset" variant="standard" className="m-6">
               <FormLabel component="legend">Assign responsibility</FormLabel>
               <FormGroup>
                 <FormControlLabel
@@ -327,14 +327,14 @@ function App() {
                   label="Antoine Llorca"
                 />
               </FormGroup>
-              {/* <FormHelperText>Be careful</FormHelperText> */}
+              <FormHelperText>Be careful</FormHelperText>
             </FormControl>
             <FormControl
               required
               error={errorFormLabelCheckbox}
               component="fieldset"
-              sx={{ m: 3 }}
               variant="standard"
+              className="m-6"
             >
               <FormLabel component="legend">Pick two</FormLabel>
               <FormGroup>
@@ -369,7 +369,30 @@ function App() {
                   label="Antoine Llorca"
                 />
               </FormGroup>
-              {/* <FormHelperText>You can display an error</FormHelperText> */}
+              <FormHelperText>You can display an error</FormHelperText>
+            </FormControl>
+          </div>
+
+          <div className="w-1/3">
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Label placement</FormLabel>
+              <FormGroup aria-label="position" row>
+                <FormControlLabel
+                  value="bottom"
+                  control={<Checkbox />}
+                  label="Bottom"
+                  labelPlacement="bottom"
+                  disabled
+                  required
+                  error
+                />
+                <FormControlLabel
+                  value="end"
+                  control={<Checkbox />}
+                  label="End"
+                  labelPlacement="end"
+                />
+              </FormGroup>
             </FormControl>
           </div>
         </div>

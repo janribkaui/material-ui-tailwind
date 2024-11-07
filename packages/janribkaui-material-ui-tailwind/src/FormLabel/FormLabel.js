@@ -7,9 +7,9 @@ import { useDefaultProps } from '../DefaultPropsProvider';
 import { mergeStyles } from '../utils';
 import { tv } from 'tailwind-variants';
 
-function round(value) {
-  return Math.round(value * 1e5) / 1e5;
-}
+// function round(value) {
+//   return Math.round(value * 1e5) / 1e5;
+// }
 
 const FormLabelRoot = styled.label``;
 
@@ -19,8 +19,9 @@ const formLabelRootVariants = tv({
     'font-normal', // V2: Replace with body1 from createTypography
     'text-[1rem]', // V2: Replace with body1 from createTypography
     //'leading-[1.5rem]', // V2: Replace with body1 from createTypography
-    `tracking-[${round(0.15 / 16)}em]`, // V2: Replace with body1 from createTypography
-    'leading-[1.4375rem]',
+    // `tracking-[${round(0.15 / 16)}em]`, // V2: Replace with body1 from createTypography
+    'tracking-[0.00938em]', // V2: Replace with body1 from createTypography
+    'leading-[1.4375em]',
     'p-0',
     'relative',
     'disabled:text-text-disabled',

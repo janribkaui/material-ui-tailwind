@@ -2,10 +2,14 @@
 import * as React from 'react';
 import formControlState from '../FormControl/formControlState';
 import useFormControl from '../FormControl/useFormControl';
-import { styled } from '../zero-styled';
+import { styled } from 'styled-components';
 import { useDefaultProps } from '../DefaultPropsProvider';
 import { tv } from 'tailwind-variants';
 import { mergeStyles } from '../utils';
+
+// function round(value) {
+//   return Math.round(value * 1e5) / 1e5;
+// }
 
 const FormHelperTextRoot = styled.p``;
 
@@ -14,8 +18,9 @@ const formHelperTextRootVariants = tv({
     'text-text-secondary',
     'font-normal', // V2: Replace with caption from createTypography
     'text-[0.75rem]', // V2: Replace with caption from createTypography
-    'leading-[1.66rem]', // V2: Replace with caption from createTypography
-    `tracking-[${round(0.4 / 12)}em]`, // V2: Replace with caption from createTypography
+    'leading-[1.66]', // V2: Replace with caption from createTypography
+    // `tracking-[${round(0.4 / 12)}em]`, // V2: Replace with caption from createTypography
+    `tracking-[0.03333em]`, // V2: Replace with caption from createTypography
     'text-left',
     'mt-[0.188rem]',
     'mr-0',

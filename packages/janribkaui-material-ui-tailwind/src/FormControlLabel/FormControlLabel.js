@@ -22,7 +22,7 @@ const formControlLabelVariants = tv({
     '-ml-[0.688rem]',
     'mr-[1rem]',
     'disabled:cursor-default',
-    'has-[label:disabled]:text-text-disabled',
+    'disabled:text-text-disabled',
   ],
   variants: {
     labelPlacement: {
@@ -107,12 +107,14 @@ const FormControlLabel = React.forwardRef(function FormControlLabel(inProps, ref
 
   let label = labelProp;
 
+  // TODO: Pridat styly pro body1. N2jak se to mus9 nastavot z typography a disabled
   if (label != null && label.type !== Typography && !disableTypography) {
     label = (
       <TypographySlot
         component="span"
+        disabled={disabled}
+        className={mergeStyles('JrFormControlLabel-label', 'disabled:text-text-disabled')}
         {...typographySlotProps}
-        className={typographySlotProps?.className}
       >
         {label}
       </TypographySlot>
@@ -121,11 +123,11 @@ const FormControlLabel = React.forwardRef(function FormControlLabel(inProps, ref
 
   return (
     <FormControlLabelRoot
+      disabled={disabled}
       className={mergeStyles(
         'JrFormControlLabel-root',
-        formControlLabelVariants({}),
+        formControlLabelVariants({ labelPlacement }),
         className,
-        '',
       )}
       ref={ref}
       {...other}
@@ -138,7 +140,7 @@ const FormControlLabel = React.forwardRef(function FormControlLabel(inProps, ref
             aria-hidden
             className={mergeStyles(
               'JrFormControlLabel-asterisk',
-              asteriskComponentVariants({ error: props.error }),
+              asteriskComponentVariants({ error: fcs.error }),
             )}
           >
             &thinsp;{'*'}
