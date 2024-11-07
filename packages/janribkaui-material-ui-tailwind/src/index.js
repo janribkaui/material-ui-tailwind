@@ -28,6 +28,9 @@ export * from './FormControlLabel';
 export { default as FormGroup } from './FormGroup';
 export * from './FormGroup';
 
+export { default as FormHelperText } from './FormHelperText';
+export * from './FormHelperText';
+
 export { default as FormLabel } from './FormLabel';
 export * from './FormLabel';
 

@@ -19,7 +19,7 @@ const formLabelRootVariants = tv({
     'font-normal', // V2: Replace with body1 from createTypography
     'text-[1rem]', // V2: Replace with body1 from createTypography
     //'leading-[1.5rem]', // V2: Replace with body1 from createTypography
-    `tracking-[${round(16 / 0.15)}em]`, // V2: Replace with body1 from createTypography
+    `tracking-[${round(0.15 / 16)}em]`, // V2: Replace with body1 from createTypography
     'leading-[1.4375rem]',
     'p-0',
     'relative',
