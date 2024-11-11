@@ -45,20 +45,27 @@ const Typography = React.forwardRef(function Typography(inProps, ref) {
     component,
     gutterBottom = false,
     noWrap = false,
+    paragraph = false,
     variant = 'body1',
     variantMapping = defaultVariantMapping,
     ...other
   } = props;
 
   const Component =
-    component || variantMapping[variant] || defaultVariantMapping[variant] || 'span';
+    component ||
+    (paragraph ? 'p' : variantMapping[variant] || defaultVariantMapping[variant]) ||
+    'span';
 
   return (
     <TypographyRoot
       as={Component}
       ref={ref}
       $align={align}
-      className={mergeStyles('JrTypography-root', typographyRootVariants({}), className, '')}
+      className={mergeStyles(
+        'JrTypography-root',
+        typographyRootVariants({ noWrap, gutterBottom }),
+        className,
+      )}
       style={{
         ...(align !== 'inherit' && { '--Typography-textAlign': align }),
         ...other.style,

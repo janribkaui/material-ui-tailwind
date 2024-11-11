@@ -11,6 +11,12 @@ const buildVariant = (theme, fontWeight, size, lineHeight, letterSpacing, casing
     textTransform: casing,
   };
 };
+// TODO: V2: Remove typography and make font size instead in tailwind.config
+// 'h1': ['1.5rem', {
+//   lineHeight: '2rem',
+//   letterSpacing: '-0.01em',
+//   fontWeight: '500',
+// }],
 
 const basePlugin = plugin.withOptions(
   () => {

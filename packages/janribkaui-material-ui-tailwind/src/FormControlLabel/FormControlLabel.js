@@ -21,14 +21,16 @@ const formControlLabelVariants = tv({
     'align-middle',
     '-ml-[0.688rem]',
     'mr-[1rem]',
-    'disabled:cursor-default',
-    'disabled:text-text-disabled',
   ],
   variants: {
     labelPlacement: {
       start: ['flex-row-reverse', 'ml-[1rem]', 'mr-[0.688rem]'],
       top: ['flex-col-reverse', 'ml-[1rem]'],
       bottom: ['flex-col', 'ml-[1rem]'],
+    },
+    disabled: {
+      true: ['cursor-default', 'has-[.JrTypography-root]:text-action-disabled'],
+      false: [],
     },
   },
 });
@@ -67,6 +69,7 @@ const FormControlLabel = React.forwardRef(function FormControlLabel(inProps, ref
     slots = {},
     slotProps = {},
     value,
+    error,
     ...other
   } = props;
 
@@ -112,8 +115,7 @@ const FormControlLabel = React.forwardRef(function FormControlLabel(inProps, ref
     label = (
       <TypographySlot
         component="span"
-        disabled={disabled}
-        className={mergeStyles('JrFormControlLabel-label', 'disabled:text-text-disabled')}
+        className={mergeStyles('JrFormControlLabel-label')}
         {...typographySlotProps}
       >
         {label}
@@ -123,10 +125,9 @@ const FormControlLabel = React.forwardRef(function FormControlLabel(inProps, ref
 
   return (
     <FormControlLabelRoot
-      disabled={disabled}
       className={mergeStyles(
         'JrFormControlLabel-root',
-        formControlLabelVariants({ labelPlacement }),
+        formControlLabelVariants({ labelPlacement, disabled }),
         className,
       )}
       ref={ref}

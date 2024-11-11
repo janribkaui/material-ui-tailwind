@@ -41,6 +41,22 @@ const config: Pick<Config, 'content' | 'presets'> = {
     './src/**/*.{js,ts,jsx,tsx}',
     './node_modules/@janribkaui/material-ui-tailwind/**/*.{js,ts,jsx,tsx}',
   ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          light: blue[400],
+          DEFAULT: blue[700],
+          dark: blue[800],
+        },
+        secondary: {
+          light: purple[300],
+          DEFAULT: purple[500],
+          dark: purple[700],
+        },
+      },
+    },
+  },
   presets: [twConfigBase],
 };
 
@@ -150,6 +166,132 @@ const App = () => {
             <LinearProgress variant="buffer" value={progress} valueBuffer={buffer} />
         </>
     )
+}
+```
+
+### Checkbox
+
+#### Basic checkbox
+
+```ts
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+
+const App = () => {
+    const labelCheckbox = { inputProps: { 'aria-label': 'Basic checkbox' } };
+
+    return (
+        <>
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} />
+            <Checkbox {...labelCheckbox} disabled />
+            <Checkbox {...labelCheckbox} disabled checked />
+        </>
+    )
+}
+```
+
+#### Label
+
+```ts
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+import FormGroup from '@janribkaui/material-ui-tailwind/FormGroup';
+import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
+
+const App = () => {
+    const labelCheckbox = { inputProps: { 'aria-label': 'Label checkbox' } };
+
+    return (
+        <FormGroup>
+            <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+            <FormControlLabel required control={<Checkbox />} label="Required" />
+            <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
+        </FormGroup>
+    )
+}
+```
+
+#### Size
+
+```ts
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+
+const App = () => {
+    const labelCheckbox = { inputProps: { 'aria-label': 'Size checkbox' } };
+
+    return (
+        <>
+            <Checkbox {...labelCheckbox} defaultChecked size="small" />
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} defaultChecked className="[&_.JrSvgIcon-root]:!text-3xl" />
+            <Checkbox {...labelCheckbox} defaultChecked size="large" />
+        </>
+    )
+}
+```
+
+#### Color
+
+```ts
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+
+const App = () => {
+    const labelCheckbox = { inputProps: { 'aria-label': 'Colored checkbox' } };
+
+    return (
+        <>
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} defaultChecked color="secondary" />
+            <Checkbox {...labelCheckbox} defaultChecked color="success" />
+            <Checkbox {...labelCheckbox} defaultChecked color="default" />
+            <Checkbox {...labelCheckbox} defaultChecked
+              className="text-dark-secondary has-[input:checked]:text-dark-secondary-dark"
+            />
+        </>
+    )
+}
+```
+
+#### Icon
+
+```ts
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+
+const App = () => {
+    import { FaRegBookmark } from 'react-icons/fa';
+    import { FaBookmark } from 'react-icons/fa';
+    import { MdOutlineFavoriteBorder } from 'react-icons/md';
+    import { MdOutlineFavorite } from 'react-icons/md';
+
+    const labelCheckbox = { inputProps: { 'aria-label': 'Icon Checkbox' } };
+
+    return (
+        <>
+            <Checkbox {...labelCheckbox} icon={<MdOutlineFavoriteBorder className="relative" />} checkedIcon={<MdOutlineFavorite />} />
+            <Checkbox {...labelCheckbox} icon={<FaRegBookmark />} checkedIcon={<FaBookmark />} />
+        </>
+    )
+}
+```
+
+#### Controlled
+
+```ts
+import * as React from 'react';
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+
+const App = () => {
+    const [checked, setChecked] = React.useState(true);
+
+    const handleCheckboxChange = (event) => {
+        setChecked(event.target.checked);
+    };
+
+    return (
+        <Checkbox
+            checked={checked}
+            onChange={handleCheckboxChange}
+            inputProps={{ 'aria-label': 'controlled' }}
+        />
 }
 ```
 
