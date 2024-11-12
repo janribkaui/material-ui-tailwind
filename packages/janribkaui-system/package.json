@@ -1,6 +1,6 @@
 {
   "name": "@janribkaui/system",
-  "version": "1.4.0",
+  "version": "1.3.2",
   "private": false,
   "author": "Jan Ribka",
   "description": "JanRibka System is a set of CSS utilities to help you build custom designs more efficiently. It makes it possible to rapidly lay out custom designs.",
