@@ -139,23 +139,6 @@ function App() {
 
   const labelCheckbox = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-  const indeterminateChildren = (
-    <div className="flex flex-col ml-3">
-      <FormControlLabel
-        label="Child 1"
-        control={
-          <Checkbox checked={checkedIndeterminate[0]} onChange={handleChangeIndeterminate2} />
-        }
-      />
-      <FormControlLabel
-        label="Child 2"
-        control={
-          <Checkbox checked={checkedIndeterminate[1]} onChange={handleChangeIndeterminate3} />
-        }
-      />
-    </div>
-  );
-
   return (
     <>
       <h1>H1</h1>
@@ -280,7 +263,7 @@ function App() {
         <div className="w-full flex gap-4">
           <div className="w-1/3">
             <FormControlLabel
-              label="Parent"
+              label="All"
               control={
                 <Checkbox
                   checked={checkedIndeterminate[0] && checkedIndeterminate[1]}
@@ -289,7 +272,26 @@ function App() {
                 />
               }
             />
-            {indeterminateChildren}
+            <div className="flex flex-col ml-3">
+              <FormControlLabel
+                label="Item 1"
+                control={
+                  <Checkbox
+                    checked={checkedIndeterminate[0]}
+                    onChange={handleChangeIndeterminate2}
+                  />
+                }
+              />
+              <FormControlLabel
+                label="Item 2"
+                control={
+                  <Checkbox
+                    checked={checkedIndeterminate[1]}
+                    onChange={handleChangeIndeterminate3}
+                  />
+                }
+              />
+            </div>
           </div>
 
           <div className="w-1/3 flex">
@@ -336,7 +338,7 @@ function App() {
               variant="standard"
               className="m-6"
             >
-              <FormLabel component="legend">Pick two</FormLabel>
+              <FormLabel component="legend">Pick all</FormLabel>
               <FormGroup>
                 <FormControlLabel
                   control={
@@ -378,19 +380,17 @@ function App() {
               <FormLabel component="legend">Label placement</FormLabel>
               <FormGroup aria-label="position" row>
                 <FormControlLabel
-                  value="bottom"
+                  value="start"
                   control={<Checkbox />}
-                  label="Bottom"
-                  labelPlacement="bottom"
+                  label="Start"
+                  labelPlacement="end"
                   disabled
-                  required
-                  error
                 />
                 <FormControlLabel
-                  value="end"
+                  value="top"
                   control={<Checkbox />}
-                  label="End"
-                  labelPlacement="end"
+                  label="Top"
+                  labelPlacement="top"
                 />
               </FormGroup>
             </FormControl>
