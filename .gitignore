@@ -8,3 +8,4 @@ build/
 .env
 .bashrc
 lerna-debug.log
+/packages/janribkaui-envinfo/*.tgz
