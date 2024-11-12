@@ -297,65 +297,6 @@ const App = () => {
 }
 ```
 
-#### Indeterminate
-
-```ts
-import * as React from 'react';
-import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
-import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
-
-const App = () => {
-    const [checked, setChecked] = React.useState([true, false]);
-
-  const handleChange1 = (event) => {
-    setChecked([event.target.checked, event.target.checked]);
-  };
-
-  const handleChange2 = (event) => {
-    setChecked([event.target.checked, checked[1]]);
-  };
-
-  const handleChange3 = (event) => {
-    setChecked([checked[0], event.target.checked]);
-  };
-
-    return (
-        <div>
-            <FormControlLabel
-                label="All"
-                control={
-                    <Checkbox
-                        checked={checked[0] && checked[1]}
-                        indeterminate={checked[0] !== checked[1]}
-                        onChange={handleOnChange1}
-                    />
-                }
-            />
-            <div className="flex flex-col ml-3">
-                <FormControlLabel
-                    label="Item 1"
-                    control={
-                        <Checkbox
-                            checked={checked[0]}
-                            onChange={handleOnChange2}
-                        />
-                    }
-              />
-              <FormControlLabel
-                    label="Item 2"
-                    control={
-                        <Checkbox
-                            checked={checked[1]}
-                            onChange={handleOnChange3}
-                        />
-                    }
-              />
-            </div>
-        </div>
-    )
-}
-```
-
 #### Label placement
 
 ```ts
