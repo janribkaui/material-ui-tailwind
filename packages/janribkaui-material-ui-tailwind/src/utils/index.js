@@ -3,11 +3,14 @@ import { unstable_ClassNameGenerator as ClassNameGenerator } from '@janribkaui/u
 
 export { default as capitalize } from './capitalize';
 export { default as debounce } from './debounce';
+export { default as isJrElement } from './isJrElement';
 export { default as unstable_memoTheme } from './memoTheme';
 export { default as mergeStyles } from './mergeStyles';
 export { default as useEventCallback } from './useEventCallback';
 export { default as useForkRef } from './useForkRef';
+export { default as unstable_useEnhancedEffect } from './useEnhancedEffect';
 export { default as unstable_useId } from './useId';
+export { default as useControlled } from './useControlled';
 
 // TODO: remove this export once ClassNameGenerator is stable
 // eslint-disable-next-line @typescript-eslint/naming-convention

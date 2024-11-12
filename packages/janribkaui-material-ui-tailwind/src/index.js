@@ -19,6 +19,9 @@ export * from './ButtonBase';
 export { default as CircularProgress } from './CircularProgress';
 export * from './CircularProgress';
 
+export { default as FormControl } from './FormControl';
+export * from './FormControl';
+
 export { default as FormControlLabel } from './FormControlLabel';
 export * from './FormControlLabel';
 
@@ -39,6 +42,9 @@ export * from './LinearProgress';
 
 export { default as LoadingButton } from './LoadingButton';
 export * from './LoadingButton';
+
+export { default as TextareaAutosize } from './TextareaAutosize';
+export * from './TextareaAutosize';
 
 export { default as Typography } from './Typography';
 export * from './Typography';

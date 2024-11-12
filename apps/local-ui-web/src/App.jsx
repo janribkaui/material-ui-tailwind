@@ -7,7 +7,17 @@ import IconButton from '@janribkaui/material-ui-tailwind/IconButton';
 import CircularProgress from '@janribkaui/material-ui-tailwind/CircularProgress';
 import LinearProgress from '@janribkaui/material-ui-tailwind/LinearProgress';
 import LoadingButton from '@janribkaui/material-ui-tailwind/LoadingButton';
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
 import Typography from '@janribkaui/material-ui-tailwind/Typography';
+import FormGroup from '@janribkaui/material-ui-tailwind/FormGroup';
+import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
+import FormControl from '@janribkaui/material-ui-tailwind/FormControl';
+import FormLabel from '@janribkaui/material-ui-tailwind/FormLabel';
+import FormHelperText from '@janribkaui/material-ui-tailwind/FormHelperText';
+import { FaRegBookmark } from 'react-icons/fa';
+import { FaBookmark } from 'react-icons/fa';
+import { MdOutlineFavoriteBorder } from 'react-icons/md';
+import { MdOutlineFavorite } from 'react-icons/md';
 
 function LinearProgressWithLabel(props) {
   return (
@@ -29,6 +39,19 @@ function App() {
   const [progressBuffer, setProgressBuffer] = React.useState(0);
   const [buffer, setBuffer] = React.useState(10);
   const [loading, setLoading] = React.useState(false);
+  const [checked, setChecked] = React.useState(true);
+  const [checkedIndeterminate, setCheckedIndeterminate] = React.useState([true, false]);
+  const [stateFormLabelCheckbox, setStateFormLabelCheckbox] = React.useState({
+    gilad: true,
+    jason: false,
+    antoine: false,
+  });
+  const errorFormLabelCheckbox =
+    [
+      stateFormLabelCheckbox.gilad,
+      stateFormLabelCheckbox.jason,
+      stateFormLabelCheckbox.antoine,
+    ].filter((v) => v).length !== 2;
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -72,6 +95,29 @@ function App() {
     };
   });
 
+  const handleCheckboxChange = (event) => {
+    setChecked(event.target.checked);
+  };
+
+  const handleChangeIndeterminate1 = (event) => {
+    setCheckedIndeterminate([event.target.checked, event.target.checked]);
+  };
+
+  const handleChangeIndeterminate2 = (event) => {
+    setCheckedIndeterminate([event.target.checked, checkedIndeterminate[1]]);
+  };
+
+  const handleChangeIndeterminate3 = (event) => {
+    setCheckedIndeterminate([checkedIndeterminate[0], event.target.checked]);
+  };
+
+  const handleChangeFormLabelCheckbox = (event) => {
+    setStateFormLabelCheckbox({
+      ...stateFormLabelCheckbox,
+      [event.target.name]: event.target.checked,
+    });
+  };
+
   React.useEffect(() => {
     const timer = setInterval(() => {
       progressBufferRef.current();
@@ -90,6 +136,8 @@ function App() {
       clearInterval(timer);
     };
   }, []);
+
+  const labelCheckbox = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
   return (
     <>
@@ -152,11 +200,213 @@ function App() {
         </div>
       </div>
 
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} />
+            <Checkbox {...labelCheckbox} disabled />
+            <Checkbox {...labelCheckbox} disabled checked />
+          </div>
+
+          <div className="w-1/3">
+            <FormGroup>
+              <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+              <FormControlLabel required control={<Checkbox />} label="Required" />
+              <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
+            </FormGroup>
+          </div>
+
+          <div className="w-1/3">
+            <Checkbox {...labelCheckbox} defaultChecked size="small" />
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} defaultChecked className="[&_.JrSvgIcon-root]:!text-3xl" />
+            <Checkbox {...labelCheckbox} defaultChecked size="large" />
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} defaultChecked color="secondary" />
+            <Checkbox {...labelCheckbox} defaultChecked color="success" />
+            <Checkbox {...labelCheckbox} defaultChecked color="default" />
+            <Checkbox
+              {...labelCheckbox}
+              defaultChecked
+              className="text-dark-secondary has-[input:checked]:text-dark-secondary-dark"
+            />
+          </div>
+
+          <div className="w-1/3">
+            <Checkbox
+              {...labelCheckbox}
+              icon={<MdOutlineFavoriteBorder className="relative" />}
+              checkedIcon={<MdOutlineFavorite />}
+            />
+            <Checkbox {...labelCheckbox} icon={<FaRegBookmark />} checkedIcon={<FaBookmark />} />
+          </div>
+
+          <div className="w-1/3">
+            <Checkbox
+              checked={checked}
+              onChange={handleCheckboxChange}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <FormControlLabel
+              label="All"
+              control={
+                <Checkbox
+                  checked={checkedIndeterminate[0] && checkedIndeterminate[1]}
+                  indeterminate={checkedIndeterminate[0] !== checkedIndeterminate[1]}
+                  onChange={handleChangeIndeterminate1}
+                />
+              }
+            />
+            <div className="flex flex-col ml-3">
+              <FormControlLabel
+                label="Item 1"
+                control={
+                  <Checkbox
+                    checked={checkedIndeterminate[0]}
+                    onChange={handleChangeIndeterminate2}
+                  />
+                }
+              />
+              <FormControlLabel
+                label="Item 2"
+                control={
+                  <Checkbox
+                    checked={checkedIndeterminate[1]}
+                    onChange={handleChangeIndeterminate3}
+                  />
+                }
+              />
+            </div>
+          </div>
+
+          <div className="w-1/3 flex">
+            <FormControl component="fieldset" variant="standard" className="m-6">
+              <FormLabel component="legend">Assign responsibility</FormLabel>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.gilad}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="gilad"
+                    />
+                  }
+                  label="Gilad Gray"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.jason}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.antoine}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="antoine"
+                    />
+                  }
+                  label="Antoine Llorca"
+                />
+              </FormGroup>
+              <FormHelperText>Be careful</FormHelperText>
+            </FormControl>
+            <FormControl
+              required
+              error={errorFormLabelCheckbox}
+              component="fieldset"
+              variant="standard"
+              className="m-6"
+            >
+              <FormLabel component="legend">Pick all</FormLabel>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.gilad}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="gilad"
+                    />
+                  }
+                  label="Gilad Gray"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.jason}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.antoine}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="antoine"
+                    />
+                  }
+                  label="Antoine Llorca"
+                />
+              </FormGroup>
+              <FormHelperText>You can display an error</FormHelperText>
+            </FormControl>
+          </div>
+
+          <div className="w-1/3">
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Label placement</FormLabel>
+              <FormGroup aria-label="position" row>
+                <FormControlLabel
+                  value="start"
+                  control={<Checkbox />}
+                  label="Start"
+                  labelPlacement="end"
+                  disabled
+                />
+                <FormControlLabel
+                  value="top"
+                  control={<Checkbox />}
+                  label="Top"
+                  labelPlacement="top"
+                />
+              </FormGroup>
+            </FormControl>
+          </div>
+        </div>
+      </div>
+
       <Button size="small" onClick={() => setLoading(true)}>
         Set Loading
       </Button>
       <Button size="medium" onClick={() => setLoading(false)}>
         Reset Loading
+      </Button>
+
+      <Button className="ml-6" variant="contained" href="#contained-buttons">
+        Link
       </Button>
 
       <div className="ml-3 mt-3 flex gap-3 w-full">

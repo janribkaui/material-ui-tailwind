@@ -21,14 +21,16 @@ const formControlLabelVariants = tv({
     'align-middle',
     '-ml-[0.688rem]',
     'mr-[1rem]',
-    'disabled:cursor-default',
-    'has-[label:disabled]:text-text-disabled',
   ],
   variants: {
     labelPlacement: {
       start: ['flex-row-reverse', 'ml-[1rem]', 'mr-[0.688rem]'],
       top: ['flex-col-reverse', 'ml-[1rem]'],
       bottom: ['flex-col', 'ml-[1rem]'],
+    },
+    disabled: {
+      true: ['cursor-default', 'has-[.JrTypography-root]:text-action-disabled'],
+      false: [],
     },
   },
 });
@@ -67,6 +69,7 @@ const FormControlLabel = React.forwardRef(function FormControlLabel(inProps, ref
     slots = {},
     slotProps = {},
     value,
+    error,
     ...other
   } = props;
 
@@ -103,17 +106,17 @@ const FormControlLabel = React.forwardRef(function FormControlLabel(inProps, ref
   const [TypographySlot, typographySlotProps] = useSlot('typography', {
     elementType: Typography,
     externalForwardedProps,
-    ownerState,
   });
 
   let label = labelProp;
 
+  // TODO: Pridat styly pro body1. N2jak se to mus9 nastavot z typography a disabled
   if (label != null && label.type !== Typography && !disableTypography) {
     label = (
       <TypographySlot
         component="span"
+        className={mergeStyles('JrFormControlLabel-label')}
         {...typographySlotProps}
-        className={typographySlotProps?.className}
       >
         {label}
       </TypographySlot>
@@ -124,9 +127,8 @@ const FormControlLabel = React.forwardRef(function FormControlLabel(inProps, ref
     <FormControlLabelRoot
       className={mergeStyles(
         'JrFormControlLabel-root',
-        formControlLabelVariants({}),
+        formControlLabelVariants({ labelPlacement, disabled }),
         className,
-        '',
       )}
       ref={ref}
       {...other}
@@ -139,7 +141,7 @@ const FormControlLabel = React.forwardRef(function FormControlLabel(inProps, ref
             aria-hidden
             className={mergeStyles(
               'JrFormControlLabel-asterisk',
-              asteriskComponentVariants({ error: props.error }),
+              asteriskComponentVariants({ error: fcs.error }),
             )}
           >
             &thinsp;{'*'}

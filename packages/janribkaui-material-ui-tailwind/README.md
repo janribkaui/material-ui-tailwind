@@ -26,6 +26,7 @@ pnpm add @janribkaui/material-ui-tailwind
 - Icon button
 - Circular progress
 - Linear progress
+- Checkbox
 - Still working on new components
 
 ## Usage
@@ -41,6 +42,22 @@ const config: Pick<Config, 'content' | 'presets'> = {
     './src/**/*.{js,ts,jsx,tsx}',
     './node_modules/@janribkaui/material-ui-tailwind/**/*.{js,ts,jsx,tsx}',
   ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          light: blue[400],
+          DEFAULT: blue[700],
+          dark: blue[800],
+        },
+        secondary: {
+          light: purple[300],
+          DEFAULT: purple[500],
+          dark: purple[700],
+        },
+      },
+    },
+  },
   presets: [twConfigBase],
 };
 
@@ -150,6 +167,302 @@ const App = () => {
             <LinearProgress variant="buffer" value={progress} valueBuffer={buffer} />
         </>
     )
+}
+```
+
+### Checkbox
+
+#### Basic checkbox
+
+```ts
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+
+const App = () => {
+    const labelCheckbox = { inputProps: { 'aria-label': 'Basic checkbox' } };
+
+    return (
+        <>
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} />
+            <Checkbox {...labelCheckbox} disabled />
+            <Checkbox {...labelCheckbox} disabled checked />
+        </>
+    )
+}
+```
+
+#### Label
+
+```ts
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+import FormGroup from '@janribkaui/material-ui-tailwind/FormGroup';
+import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
+
+const App = () => {
+    const labelCheckbox = { inputProps: { 'aria-label': 'Label checkbox' } };
+
+    return (
+        <FormGroup>
+            <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+            <FormControlLabel required control={<Checkbox />} label="Required" />
+            <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
+        </FormGroup>
+    )
+}
+```
+
+#### Size
+
+```ts
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+
+const App = () => {
+    const labelCheckbox = { inputProps: { 'aria-label': 'Size checkbox' } };
+
+    return (
+        <>
+            <Checkbox {...labelCheckbox} defaultChecked size="small" />
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} defaultChecked className="[&_.JrSvgIcon-root]:!text-3xl" />
+            <Checkbox {...labelCheckbox} defaultChecked size="large" />
+        </>
+    )
+}
+```
+
+#### Color
+
+```ts
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+
+const App = () => {
+    const labelCheckbox = { inputProps: { 'aria-label': 'Colored checkbox' } };
+
+    return (
+        <>
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} defaultChecked color="secondary" />
+            <Checkbox {...labelCheckbox} defaultChecked color="success" />
+            <Checkbox {...labelCheckbox} defaultChecked color="default" />
+            <Checkbox {...labelCheckbox} defaultChecked
+              className="text-dark-secondary has-[input:checked]:text-dark-secondary-dark"
+            />
+        </>
+    )
+}
+```
+
+#### Icon
+
+```ts
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+
+const App = () => {
+    import { FaRegBookmark } from 'react-icons/fa';
+    import { FaBookmark } from 'react-icons/fa';
+    import { MdOutlineFavoriteBorder } from 'react-icons/md';
+    import { MdOutlineFavorite } from 'react-icons/md';
+
+    const labelCheckbox = { inputProps: { 'aria-label': 'Icon Checkbox' } };
+
+    return (
+        <>
+            <Checkbox {...labelCheckbox} icon={<MdOutlineFavoriteBorder className="relative" />} checkedIcon={<MdOutlineFavorite />} />
+            <Checkbox {...labelCheckbox} icon={<FaRegBookmark />} checkedIcon={<FaBookmark />} />
+        </>
+    )
+}
+```
+
+#### Controlled
+
+```ts
+import * as React from 'react';
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+
+const App = () => {
+    const [checked, setChecked] = React.useState(true);
+
+    const handleOnChange = (event) => {
+        setChecked(event.target.checked);
+    };
+
+    return (
+        <Checkbox
+            checked={checked}
+            onChange={handleOnChange}
+            inputProps={{ 'aria-label': 'controlled' }}
+        />
+    )
+}
+```
+
+#### Label placement
+
+```ts
+import * as React from 'react';
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+import FormControl from '@janribkaui/material-ui-tailwind/FormControl';
+import FormLabel from '@janribkaui/material-ui-tailwind/FormLabel';
+import FormGroup from '@janribkaui/material-ui-tailwind/FormGroup';
+import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
+
+const App = () => {
+    return (
+        <FormControl component="fieldset">
+            <FormLabel component="legend">Label placement</FormLabel>
+            <FormGroup aria-label="position" row>
+                <FormControlLabel
+                    value="start"
+                    control={<Checkbox />}
+                    label="Start"
+                    labelPlacement="end"
+                    disabled
+                />
+                <FormControlLabel
+                    value="top"
+                    control={<Checkbox />}
+                    label="Top"
+                    labelPlacement="top"
+                />
+            </FormGroup>
+        </FormControl>
+    )
+}
+```
+
+#### Group
+
+```ts
+import * as React from 'react';
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+import FormControl from '@janribkaui/material-ui-tailwind/FormControl';
+import FormLabel from '@janribkaui/material-ui-tailwind/FormLabel';
+import FormGroup from '@janribkaui/material-ui-tailwind/FormGroup';
+import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
+
+const App = () => {
+    const [state, setState] = React.useState({
+        item1: true,
+        item2: false,
+        item3: false,
+    });
+
+    const error =
+        [
+            state.item1,
+            state.item2,
+            state.item3,
+        ].some(f => !f);
+
+    const handleOnChange = (event) => {
+        setState({
+            ...state,
+            [event.target.name]: event.target.checked,
+        });
+    };
+
+    return (
+        <FormControl
+            required
+            error={error}
+            component="fieldset"
+            variant="standard"
+            className="m-6"
+        >
+            <FormLabel component="legend">Pick all</FormLabel>
+            <FormGroup>
+                <FormControlLabel
+                    control={
+                        <Checkbox
+                            checked={state.item1}
+                            onChange={handleOnChange}
+                            name="item1"
+                        />
+                    }
+                    label="Item 1"
+                />
+                <FormControlLabel
+                    control={
+                        <Checkbox
+                            checked={state.item2}
+                            onChange={handleOnChange}
+                            name="item2"
+                        />
+                    }
+                    label="Item 2"
+                />
+                <FormControlLabel
+                    control={
+                        <Checkbox
+                            checked={state.item3}
+                            onChange={handleOnChange}
+                            name="item3"
+                        />
+                    }
+                    label="Item 3"
+                />
+            </FormGroup>
+            <FormHelperText>You can display an error</FormHelperText>
+        </FormControl>
+    )
+}
+```
+
+#### Indeterminate
+
+```ts
+import * as React from 'react';
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
+
+const App = () => {
+    const [checked, setChecked] = React.useState([true, false]);
+
+    const handleOnChange1 = (event) => {
+        setChecked([event.target.checked, event.target.checked]);
+    };
+
+    const handleOnChange2 = (event) => {
+        setChecked([event.target.checked, checked[1]]);
+    };
+
+    const handleOnChange3 = (event) => {
+            setChecked([checked[0], event.target.checked]);
+    };
+
+    const children = (
+        <div className="flex flex-col ml-3">
+        <FormControlLabel
+            label="Child 1"
+            control={
+                <Checkbox checked={checked[0]} onChange={handleOnChange2} />
+            }
+        />
+        <FormControlLabel
+            label="Child 2"
+            control={
+                <Checkbox checked={checked[1]} onChange={handleOnChange3} />
+            }
+        />
+        </div>
+    );
+
+    return (
+          <>
+            <FormControlLabel
+                label="Parent"
+                control={
+                    <Checkbox
+                    checked={checked[0] && checked[1]}
+                    indeterminate={checked[0] !== checked[1]}
+                    onChange={handleOnChange1}
+                    />
+                }
+            />
+            {children}
+          </>
+    );
 }
 ```
 

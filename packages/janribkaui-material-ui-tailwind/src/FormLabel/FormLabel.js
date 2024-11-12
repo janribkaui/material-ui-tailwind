@@ -7,6 +7,10 @@ import { useDefaultProps } from '../DefaultPropsProvider';
 import { mergeStyles } from '../utils';
 import { tv } from 'tailwind-variants';
 
+// function round(value) {
+//   return Math.round(value * 1e5) / 1e5;
+// }
+
 const FormLabelRoot = styled.label``;
 
 const formLabelRootVariants = tv({
@@ -15,8 +19,9 @@ const formLabelRootVariants = tv({
     'font-normal', // V2: Replace with body1 from createTypography
     'text-[1rem]', // V2: Replace with body1 from createTypography
     //'leading-[1.5rem]', // V2: Replace with body1 from createTypography
-    `tracking-[${round(0.15 / 16)}em]`, // V2: Replace with body1 from createTypography
-    'leading-[1.4375rem]',
+    // `tracking-[${round(0.15 / 16)}em]`, // V2: Replace with body1 from createTypography
+    'tracking-[0.00938em]', // V2: Replace with body1 from createTypography
+    'leading-[1.4375em]',
     'p-0',
     'relative',
     'disabled:text-text-disabled',
@@ -31,23 +36,23 @@ const formLabelRootVariants = tv({
       error: '',
       // inherit: '',
     },
-    error: {
-      true: ['text-error'],
-      false: [],
-    },
     focused: {
       true: [],
       false: [],
     },
+    error: {
+      true: ['text-error'],
+      false: [],
+    },
   },
   compoundVariants: [
-    { focused: true, color: 'primary', className: ['text-primary'] },
-    { focused: true, color: 'secondary', className: ['text-primary'] },
-    { focused: true, color: 'info', className: ['text-primary'] },
-    { focused: true, color: 'success', className: ['text-primary'] },
-    { focused: true, color: 'warning', className: ['text-primary'] },
-    { focused: true, color: 'error', className: ['text-primary'] },
-    { focused: true, color: 'primary', className: ['text-primary'] },
+    { focused: true, error: false, color: 'primary', className: ['text-primary'] },
+    { focused: true, error: false, color: 'secondary', className: ['text-primary'] },
+    { focused: true, error: false, color: 'info', className: ['text-primary'] },
+    { focused: true, error: false, color: 'success', className: ['text-primary'] },
+    { focused: true, error: false, color: 'warning', className: ['text-primary'] },
+    { focused: true, error: false, color: 'error', className: ['text-primary'] },
+    { focused: true, error: false, color: 'primary', className: ['text-primary'] },
   ],
 });
 
@@ -88,10 +93,6 @@ const FormLabel = React.forwardRef(function FormLabel(inProps, ref) {
     <FormLabelRoot
       as={component}
       disabled={fcs.disabled}
-      error={fcs.error}
-      filled={fcs.filled}
-      focused={fcs.focused}
-      required={fcs.required}
       className={mergeStyles(
         'JrFormLabel-root',
         formLabelRootVariants({
