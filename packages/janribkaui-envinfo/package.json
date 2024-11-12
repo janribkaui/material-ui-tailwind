@@ -1,6 +1,6 @@
 {
   "name": "@janribkaui/envinfo",
-  "version": "2.0.25",
+  "version": "1.4.0",
   "private": false,
   "author": "Jan Ribka",
   "description": "Logs infos about the environment relevant to @janribkaui/*",
