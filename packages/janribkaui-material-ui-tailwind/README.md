@@ -432,26 +432,13 @@ const App = () => {
     };
 
     const children = (
-        <div className="flex flex-col ml-3">
-        <FormControlLabel
-            label="Child 1"
-            control={
-                <Checkbox checked={checked[0]} onChange={handleOnChange2} />
-            }
-        />
-        <FormControlLabel
-            label="Child 2"
-            control={
-                <Checkbox checked={checked[1]} onChange={handleOnChange3} />
-            }
-        />
-        </div>
+
     );
 
     return (
           <>
             <FormControlLabel
-                label="Parent"
+                label="All"
                 control={
                     <Checkbox
                     checked={checked[0] && checked[1]}
@@ -460,7 +447,20 @@ const App = () => {
                     />
                 }
             />
-            {children}
+            <div className="flex flex-col ml-3">
+                <FormControlLabel
+                    label="Item 1"
+                    control={
+                        <Checkbox checked={checked[0]} onChange={handleOnChange2} />
+                    }
+                />
+                <FormControlLabel
+                    label="Item 2"
+                    control={
+                        <Checkbox checked={checked[1]} onChange={handleOnChange3} />
+                    }
+                />
+            </div>
           </>
     );
 }
