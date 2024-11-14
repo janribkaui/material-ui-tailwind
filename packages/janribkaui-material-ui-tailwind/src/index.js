@@ -43,6 +43,9 @@ export * from './LinearProgress';
 export { default as LoadingButton } from './LoadingButton';
 export * from './LoadingButton';
 
+export { default as Switch } from './Switch';
+export * from './Switch';
+
 export { default as TextareaAutosize } from './TextareaAutosize';
 export * from './TextareaAutosize';
 

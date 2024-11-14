@@ -14,6 +14,7 @@ import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel'
 import FormControl from '@janribkaui/material-ui-tailwind/FormControl';
 import FormLabel from '@janribkaui/material-ui-tailwind/FormLabel';
 import FormHelperText from '@janribkaui/material-ui-tailwind/FormHelperText';
+import Switch from '@janribkaui/material-ui-tailwind/Switch';
 import { FaRegBookmark } from 'react-icons/fa';
 import { FaBookmark } from 'react-icons/fa';
 import { MdOutlineFavoriteBorder } from 'react-icons/md';
@@ -138,6 +139,7 @@ function App() {
   }, []);
 
   const labelCheckbox = { inputProps: { 'aria-label': 'Checkbox demo' } };
+  const labelSwitch = { inputProps: { 'aria-label': 'Switch demo' } };
 
   return (
     <>
@@ -196,6 +198,32 @@ function App() {
             <Typography variant="overline" gutterBottom className="block">
               overline text
             </Typography>
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <Switch {...labelSwitch} defaultChecked />
+            <Switch {...labelSwitch} />
+            <Switch {...labelSwitch} disabled defaultChecked />
+            <Switch {...labelSwitch} disabled />
+          </div>
+
+          <div className="w-1/3">
+            {/* <FormGroup>
+              <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+              <FormControlLabel required control={<Checkbox />} label="Required" />
+              <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
+            </FormGroup> */}
+          </div>
+
+          <div className="w-1/3">
+            {/* <Checkbox {...labelCheckbox} defaultChecked size="small" />
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} defaultChecked className="[&_.JrSvgIcon-root]:!text-3xl" />
+            <Checkbox {...labelCheckbox} defaultChecked size="large" /> */}
           </div>
         </div>
       </div>

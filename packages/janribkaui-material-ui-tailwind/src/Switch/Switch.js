@@ -1,15 +1,11 @@
 'use client';
 // @inheritedComponent IconButton
 import * as React from 'react';
-import { alpha, darken, lighten } from '@mui/system/colorManipulator';
-import capitalize from '../utils/capitalize';
-import SwitchBase from '../internal/SwitchBase';
 import { styled } from 'styled-components';
-import memoTheme from '../utils/memoTheme';
 import { useDefaultProps } from '../DefaultPropsProvider';
-import switchClasses from './switchClasses';
 import { tv } from 'tailwind-variants';
 import { mergeStyles } from '../utils';
+import SwitchBase from '../internal/SwitchBase';
 
 const SwitchRoot = styled.span`
   @media print {
@@ -43,156 +39,105 @@ const switchRootVariants = tv({
         '[&_.JrSwitch-thumb]:w-[16px]',
         '[&_.JrSwitch-thumb]:h-[16px]',
         '[&_.JrSwitch-switchBase]:p-[4px]',
-        '[&_.JrSwitch-switchBase]:h-[16px]', //TODO: checked
+        '[&_.JrSwitch-switchBase]:h-[16px]',
+        '',
       ],
       medium: [''],
     },
   },
 });
+// TODO: Checked
 
-const SwitchSwitchBase = styled(SwitchBase, {
-  name: 'MuiSwitch',
-  slot: 'SwitchBase',
-  overridesResolver: (props, styles) => {
-    const { ownerState } = props;
+const SwitchSwitchBase = styled(SwitchBase)`
+  .hover {
+    // Reset on touch devices, it doesn't add specificity
+    @media (hover: none) {
+      background-color: transparent;
+    }
+  }
 
-    return [
-      styles.switchBase,
-      { [`& .${switchClasses.input}`]: styles.input },
-      ownerState.color !== 'default' && styles[`color${capitalize(ownerState.color)}`],
-    ];
+  // .hover-checked {
+  //     // Reset on touch devices, it doesn't add specificity
+  //     @media (hover: none) {
+  //       background-color: transparent;
+  //   }
+  // }
+`;
+
+const switchSwitchBaseVariants = tv({
+  base: [
+    'peer',
+    'absolute',
+    'top-0',
+    'left-0',
+    'z-[1]',
+    'text-common-white dark:text-grey-300',
+    'transition-left duration-shortest',
+    'transition-transform duration-shortest',
+    'disabled:text-grey-100 dark:disabled:text-grey-600',
+    '[&_input]:-left-full',
+    '[&_input]:w-[300%]',
+    'hover:bg-action-active/hover hover:hover',
+    'checked:translate-x-[20px]',
+  ],
+  variants: {
+    color: {
+      primary: 'checked:text-primary',
+      secondary: 'checked:text-secondary',
+      info: 'checked:text-info',
+      success: 'checked:text-success',
+      warning: 'checked:text-warning',
+      error: 'checked:text-error',
+    },
   },
-})(
-  memoTheme(({ theme }) => ({
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    zIndex: 1, // Render above the focus ripple.
-    color: theme.vars
-      ? theme.vars.palette.Switch.defaultColor
-      : `${theme.palette.mode === 'light' ? theme.palette.common.white : theme.palette.grey[300]}`,
-    transition: theme.transitions.create(['left', 'transform'], {
-      duration: theme.transitions.duration.shortest,
-    }),
-    [`&.${switchClasses.checked}`]: {
-      transform: 'translateX(20px)',
-    },
-    [`&.${switchClasses.disabled}`]: {
-      color: theme.vars
-        ? theme.vars.palette.Switch.defaultDisabledColor
-        : `${theme.palette.mode === 'light' ? theme.palette.grey[100] : theme.palette.grey[600]}`,
-    },
-    [`&.${switchClasses.checked} + .${switchClasses.track}`]: {
-      opacity: 0.5,
-    },
-    [`&.${switchClasses.disabled} + .${switchClasses.track}`]: {
-      opacity: theme.vars
-        ? theme.vars.opacity.switchTrackDisabled
-        : `${theme.palette.mode === 'light' ? 0.12 : 0.2}`,
-    },
-    [`& .${switchClasses.input}`]: {
-      left: '-100%',
-      width: '300%',
-    },
-  })),
-  memoTheme(({ theme }) => ({
-    '&:hover': {
-      backgroundColor: theme.vars
-        ? `rgba(${theme.vars.palette.action.activeChannel} / ${theme.vars.palette.action.hoverOpacity})`
-        : alpha(theme.palette.action.active, theme.palette.action.hoverOpacity),
-      // Reset on touch devices, it doesn't add specificity
-      '@media (hover: none)': {
-        backgroundColor: 'transparent',
-      },
-    },
-    variants: [
-      ...Object.entries(theme.palette)
-        .filter(([, value]) => value && value.main && value.light) // check all the used fields in the style below
-        .map(([color]) => ({
-          props: { color },
-          style: {
-            [`&.${switchClasses.checked}`]: {
-              color: (theme.vars || theme).palette[color].main,
-              '&:hover': {
-                backgroundColor: theme.vars
-                  ? `rgba(${theme.vars.palette[color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})`
-                  : alpha(theme.palette[color].main, theme.palette.action.hoverOpacity),
-                '@media (hover: none)': {
-                  backgroundColor: 'transparent',
-                },
-              },
-              [`&.${switchClasses.disabled}`]: {
-                color: theme.vars
-                  ? theme.vars.palette.Switch[`${color}DisabledColor`]
-                  : `${
-                      theme.palette.mode === 'light'
-                        ? lighten(theme.palette[color].main, 0.62)
-                        : darken(theme.palette[color].main, 0.55)
-                    }`,
-              },
-            },
-            [`&.${switchClasses.checked} + .${switchClasses.track}`]: {
-              backgroundColor: (theme.vars || theme).palette[color].main,
-            },
-          },
-        })),
-    ],
-  })),
-);
+});
 
-const SwitchTrack = styled('span', {
-  name: 'MuiSwitch',
-  slot: 'Track',
-  overridesResolver: (props, styles) => styles.track,
-})(
-  memoTheme(({ theme }) => ({
-    height: '100%',
-    width: '100%',
-    borderRadius: 14 / 2,
-    zIndex: -1,
-    transition: theme.transitions.create(['opacity', 'background-color'], {
-      duration: theme.transitions.duration.shortest,
-    }),
-    backgroundColor: theme.vars
-      ? theme.vars.palette.common.onBackground
-      : `${theme.palette.mode === 'light' ? theme.palette.common.black : theme.palette.common.white}`,
-    opacity: theme.vars
-      ? theme.vars.opacity.switchTrack
-      : `${theme.palette.mode === 'light' ? 0.38 : 0.3}`,
-  })),
-);
+const SwitchTrack = styled.span``;
 
-const SwitchThumb = styled('span', {
-  name: 'MuiSwitch',
-  slot: 'Thumb',
-  overridesResolver: (props, styles) => styles.thumb,
-})(
-  memoTheme(({ theme }) => ({
-    boxShadow: (theme.vars || theme).shadows[1],
-    backgroundColor: 'currentColor',
-    width: 20,
-    height: 20,
-    borderRadius: '50%',
-  })),
-);
+const switchTrackVariants = tv({
+  base: [
+    'h-full',
+    'w-full',
+    'rounded-[7px]',
+    'z-[-1px]',
+    'transition-opacity duration-shorter',
+    'transition-background-color duration-shorter',
+    'bg-common-black/[0.38] dark:bg-common-white/[0.3]',
+    'peer-checked:opacity-50',
+    'peer-disabled:opacity-[0.12]',
+    'dark:peer-disabled:opacity-[0.2]',
+  ],
+});
+
+const SwitchThumb = styled.span``;
+
+const switchThumbVariants = tv({
+  base: ['shadow-1', 'bg-current', 'w-[20px]', 'h-[20px]', 'rounded-[50%]'],
+});
 
 const Switch = React.forwardRef(function Switch(inProps, ref) {
-  const props = useDefaultProps({ props: inProps, name: 'MuiSwitch' });
-  const { className, color = 'primary', edge = false, size = 'medium', sx, ...other } = props;
+  const props = useDefaultProps({ props: inProps, name: 'JrSwitch' });
+  const { className, color = 'primary', edge = false, size = 'medium', ...other } = props;
 
-  const ownerState = {
-    ...props,
-    color,
-    edge,
-    size,
-  };
-
-  const icon = <SwitchThumb className={classes.thumb} />;
+  const icon = <SwitchThumb className={mergeStyles('JrSwitch-thumb', switchThumbVariants({}))} />;
 
   return (
-    <SwitchRoot className={mergeStyles('JrSwitch-root', switchRootVariants({}), className, '')}>
-      <SwitchSwitchBase type="checkbox" icon={icon} checkedIcon={icon} ref={ref} {...other} />
-      <SwitchTrack className={classes.track} />
+    <SwitchRoot
+      className={mergeStyles(
+        'JrSwitch-root -left-full',
+        switchRootVariants({ edge, size }),
+        className,
+      )}
+    >
+      <SwitchSwitchBase
+        type="checkbox"
+        icon={icon}
+        checkedIcon={icon}
+        className={mergeStyles('JrSwitch-switchBase', switchSwitchBaseVariants({ color }))}
+        ref={ref}
+        {...other}
+      />
+      <SwitchTrack className={mergeStyles('JrSwitch-track', switchTrackVariants({}))} />
     </SwitchRoot>
   );
 });

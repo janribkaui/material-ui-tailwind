@@ -16,6 +16,7 @@ const config: Config = {
         'border-color': 'border-color',
         color: 'color',
         fill: 'fill',
+        left: 'left',
         button: 'background-color, color, box-shadow, border-color',
         'stroke-dashoffset': 'stroke-dashoffset',
       },
