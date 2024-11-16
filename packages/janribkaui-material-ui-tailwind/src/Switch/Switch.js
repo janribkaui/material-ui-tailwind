@@ -15,9 +15,10 @@ const SwitchRoot = styled.span`
 
 const switchRootVariants = tv({
   base: [
+    'group',
     'inline-flex',
-    `w-[${34 + 12 * 2}px]`,
-    `h-[${14 + 12 * 2}px]`,
+    `w-[58px]`, // 34 + 12 *2
+    `h-[38px]`, // 14 + 12 *2
     'overflow-hidden',
     'p-[12px]',
     'box-border',
@@ -32,21 +33,11 @@ const switchRootVariants = tv({
       end: ['mr-[-8px]'],
     },
     size: {
-      small: [
-        'w-[40px]',
-        'h-[24px]',
-        'p-[7px]',
-        '[&_.JrSwitch-thumb]:w-[16px]',
-        '[&_.JrSwitch-thumb]:h-[16px]',
-        '[&_.JrSwitch-switchBase]:p-[4px]',
-        '[&_.JrSwitch-switchBase]:h-[16px]',
-        '',
-      ],
+      small: ['w-[40px]', 'h-[24px]', 'p-[7px]'],
       medium: [''],
     },
   },
 });
-// TODO: Checked
 
 const SwitchSwitchBase = styled(SwitchBase)`
   .hover {
@@ -66,30 +57,39 @@ const SwitchSwitchBase = styled(SwitchBase)`
 
 const switchSwitchBaseVariants = tv({
   base: [
-    'peer',
     'absolute',
     'top-0',
     'left-0',
-    'z-[1]',
+    'z-[1]', // Render above the focus ripple.
     'text-common-white dark:text-grey-300',
+    'has-[input:checked]:translate-x-[20px]',
     'transition-left duration-shortest',
     'transition-transform duration-shortest',
-    'disabled:text-grey-100 dark:disabled:text-grey-600',
     '[&_input]:-left-full',
     '[&_input]:w-[300%]',
     'hover:bg-action-active/hover hover:hover',
-    'checked:translate-x-[20px]',
   ],
   variants: {
     color: {
-      primary: 'checked:text-primary',
-      secondary: 'checked:text-secondary',
-      info: 'checked:text-info',
-      success: 'checked:text-success',
-      warning: 'checked:text-warning',
-      error: 'checked:text-error',
+      primary: 'has-[input:checked]:text-primary',
+      secondary: 'has-[input:checked]:text-secondary',
+      info: 'has-[input:checked]:text-info',
+      success: 'has-[input:checked]:text-success',
+      warning: 'has-[input:checked]:text-warning',
+      error: 'has-[input:checked]:text-error',
+    },
+    size: {
+      small: ['p-[4px]', 'has-[input:checked]:translate-x-[16px]'],
+    },
+    disabled: {
+      true: [
+        'text-grey-100 dark:text-grey-600',
+        'has-[input:checked]:text-opacity-[0.38] dark:text-opacity-[0.45]',
+      ],
+      false: [],
     },
   },
+  defaultVariants: { disabled: false },
 });
 
 const SwitchTrack = styled.span``;
@@ -99,45 +99,68 @@ const switchTrackVariants = tv({
     'h-full',
     'w-full',
     'rounded-[7px]',
-    'z-[-1px]',
+    'z-[-1]',
     'transition-opacity duration-shorter',
     'transition-background-color duration-shorter',
     'bg-common-black/[0.38] dark:bg-common-white/[0.3]',
-    'peer-checked:opacity-50',
-    'peer-disabled:opacity-[0.12]',
-    'dark:peer-disabled:opacity-[0.2]',
   ],
+  variants: {
+    color: {
+      primary: 'group-has-[input:checked]:bg-primary group-has-[input:checked]:opacity-50',
+      secondary: 'group-has-[input:checked]:bg-secondary group-has-[input:checked]:opacity-50',
+      info: 'group-has-[input:checked]:bg-info group-has-[input:checked]:opacity-50',
+      success: 'group-has-[input:checked]:bg-success group-has-[input:checked]:opacity-50',
+      warning: 'group-has-[input:checked]:bg-warning group-has-[input:checked]:opacity-50',
+      error: 'group-has-[input:checked]:bg-error group-has-[input:checked]:opacity-50',
+    },
+    disabled: {
+      true: ['!opacity-[0.12] dark:!opacity-[0.2]'],
+      false: [],
+    },
+  },
+  defaultVariants: { disabled: false },
 });
 
 const SwitchThumb = styled.span``;
 
 const switchThumbVariants = tv({
   base: ['shadow-1', 'bg-current', 'w-[20px]', 'h-[20px]', 'rounded-[50%]'],
+  variants: {
+    size: {
+      small: ['w-[16px]', 'h-[16px]'],
+    },
+  },
 });
 
 const Switch = React.forwardRef(function Switch(inProps, ref) {
   const props = useDefaultProps({ props: inProps, name: 'JrSwitch' });
   const { className, color = 'primary', edge = false, size = 'medium', ...other } = props;
 
-  const icon = <SwitchThumb className={mergeStyles('JrSwitch-thumb', switchThumbVariants({}))} />;
+  const icon = (
+    <SwitchThumb className={mergeStyles('JrSwitch-thumb', switchThumbVariants({ size }))} />
+  );
 
   return (
     <SwitchRoot
-      className={mergeStyles(
-        'JrSwitch-root -left-full',
-        switchRootVariants({ edge, size }),
-        className,
-      )}
+      className={mergeStyles('JrSwitch-root', switchRootVariants({ edge, size, color }), className)}
     >
       <SwitchSwitchBase
         type="checkbox"
         icon={icon}
         checkedIcon={icon}
-        className={mergeStyles('JrSwitch-switchBase', switchSwitchBaseVariants({ color }))}
+        className={mergeStyles(
+          'JrSwitch-switchBase',
+          switchSwitchBaseVariants({ color, size, disabled: props.disabled }),
+        )}
         ref={ref}
         {...other}
       />
-      <SwitchTrack className={mergeStyles('JrSwitch-track', switchTrackVariants({}))} />
+      <SwitchTrack
+        className={mergeStyles(
+          'JrSwitch-track',
+          switchTrackVariants({ color, disabled: props.disabled }),
+        )}
+      />
     </SwitchRoot>
   );
 });
