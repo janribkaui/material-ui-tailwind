@@ -19,7 +19,7 @@ const config: Pick<Config, 'content' | 'presets' | 'theme'> = {
           light: 'rgb(254, 205, 210)',
           DEFAULT: 'rgb(253, 126, 143)',
           dark: 'rgb(227, 113, 128)',
-          contrastText: getContrastText('rgb(238, 238, 238)'),
+          contrastText: getContrastText('rgb(253, 126, 143)'),
         },
         blue,
       },
