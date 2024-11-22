@@ -253,7 +253,7 @@ function App() {
             <Switch {...labelSwitch} defaultChecked color="warning" />
             <Switch {...labelSwitch} defaultChecked color="default" />
             <Switch
-              className="[&_.JrSwitch-switchBase]:has-[input:checked]:text-error [&_.JrSwitch-switchBase]:has-[input:checked]:hover:bg-error/hover [&_.JrSwitch-track]:has-[input:checked]:bg-error"
+              className="[&_.JrSwitch-switchBase]:has-[input:checked]:text-yellow-600 [&_.JrSwitch-switchBase]:has-[input:checked]:hover:bg-yellow-600/hover [&_.JrSwitch-track]:has-[input:checked]:bg-yellow-600"
               {...labelSwitch}
               defaultChecked
             />
