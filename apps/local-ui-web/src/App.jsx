@@ -47,6 +47,12 @@ function App() {
     jason: false,
     antoine: false,
   });
+  const [checkedSwitch, setCheckedSwitch] = React.useState(true);
+  const [stateSwitchFormGroup, setStateSwitchFormGroup] = React.useState({
+    gilad: true,
+    jason: false,
+    antoine: true,
+  });
   const errorFormLabelCheckbox =
     [
       stateFormLabelCheckbox.gilad,
@@ -116,6 +122,19 @@ function App() {
     setStateFormLabelCheckbox({
       ...stateFormLabelCheckbox,
       [event.target.name]: event.target.checked,
+    });
+  };
+
+  const handleChangeSwitch = (event) => {
+    setCheckedSwitch(event.target.checked);
+  };
+
+  const handleChangeSwitchFormGroup = (event) => {
+    setStateSwitchFormGroup((prev) => {
+      return {
+        ...prev,
+        [event.target.name]: event.target.checked,
+      };
     });
   };
 
@@ -212,19 +231,117 @@ function App() {
           </div>
 
           <div className="w-1/3">
-            {/* <FormGroup>
-              <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-              <FormControlLabel required control={<Checkbox />} label="Required" />
-              <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
-            </FormGroup> */}
+            <FormGroup>
+              <FormControlLabel control={<Switch defaultChecked />} label="Label" />
+              <FormControlLabel required control={<Switch />} label="Required" />
+              <FormControlLabel disabled control={<Switch />} label="Disabled" />
+            </FormGroup>
           </div>
 
           <div className="w-1/3">
-            {/* <Checkbox {...labelCheckbox} defaultChecked size="small" />
-            <Checkbox {...labelCheckbox} defaultChecked />
-            <Checkbox {...labelCheckbox} defaultChecked className="[&_.JrSvgIcon-root]:!text-3xl" />
-            <Checkbox {...labelCheckbox} defaultChecked size="large" /> */}
+            <Switch {...labelSwitch} defaultChecked size="small" />
+            <Switch {...labelSwitch} defaultChecked />
           </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <Switch {...labelSwitch} defaultChecked />
+            <Switch {...labelSwitch} defaultChecked color="secondary" />
+            <Switch {...labelSwitch} defaultChecked color="warning" />
+            <Switch {...labelSwitch} defaultChecked color="default" />
+            <Switch
+              className="[&_.JrSwitch-switchBase]:has-[input:checked]:text-error [&_.JrSwitch-switchBase]:has-[input:checked]:hover:bg-error/hover"
+              {...labelSwitch}
+              defaultChecked
+            />
+          </div>
+
+          <div className="w-1/3">
+            <Switch
+              checked={checkedSwitch}
+              onChange={handleChangeSwitch}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+          </div>
+
+          <div className="w-1/3">
+            <FormControl component="fieldset" variant="standard">
+              <FormLabel component="legend">Assign responsibility</FormLabel>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={stateSwitchFormGroup.gilad}
+                      onChange={handleChangeSwitchFormGroup}
+                      name="gilad"
+                    />
+                  }
+                  label="Gilad Gray"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={stateSwitchFormGroup.jason}
+                      onChange={handleChangeSwitchFormGroup}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={stateSwitchFormGroup.antoine}
+                      onChange={handleChangeSwitchFormGroup}
+                      name="antoine"
+                    />
+                  }
+                  label="Antoine Llorca"
+                />
+              </FormGroup>
+              <FormHelperText>Be careful</FormHelperText>
+            </FormControl>
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Label placement</FormLabel>
+              <FormGroup aria-label="position" row>
+                <FormControlLabel
+                  value="bottom"
+                  control={<Switch color="primary" />}
+                  label="Bottom"
+                  labelPlacement="bottom"
+                />
+                <FormControlLabel
+                  value="end"
+                  control={<Switch color="primary" />}
+                  label="End"
+                  labelPlacement="end"
+                />
+              </FormGroup>
+            </FormControl>
+          </div>
+
+          {/* <div className="w-1/3">
+            <FormGroup>
+              <FormControlLabel control={<Switch defaultChecked />} label="Label" />
+              <FormControlLabel required control={<Switch />} label="Required" />
+              <FormControlLabel disabled control={<Switch />} label="Disabled" />
+            </FormGroup>
+          </div> */}
+
+          {/* <div className="w-1/3">
+            <Switch {...labelSwitch} defaultChecked size="small" />
+            <Switch {...labelSwitch} defaultChecked />
+          </div> */}
         </div>
       </div>
 

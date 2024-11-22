@@ -71,12 +71,12 @@ const switchSwitchBaseVariants = tv({
   ],
   variants: {
     color: {
-      primary: 'has-[input:checked]:text-primary',
-      secondary: 'has-[input:checked]:text-secondary',
-      info: 'has-[input:checked]:text-info',
-      success: 'has-[input:checked]:text-success',
-      warning: 'has-[input:checked]:text-warning',
-      error: 'has-[input:checked]:text-error',
+      primary: 'has-[input:checked]:text-primary hover:has-[input:checked]:bg-primary/hover',
+      secondary: 'has-[input:checked]:text-secondary hover:has-[input:checked]:bg-secondary/hover',
+      info: 'has-[input:checked]:text-info hover:has-[input:checked]:bg-info/hover',
+      success: 'has-[input:checked]:text-success hover:has-[input:checked]:bg-success/hover',
+      warning: 'has-[input:checked]:text-warning hover:has-[input:checked]:bg-warning/hover',
+      error: 'has-[input:checked]:text-error hover:has-[input:checked]:bg-error/hover',
     },
     size: {
       small: ['p-[4px]', 'has-[input:checked]:translate-x-[16px]'],
@@ -102,16 +102,18 @@ const switchTrackVariants = tv({
     'z-[-1]',
     'transition-opacity duration-shorter',
     'transition-background-color duration-shorter',
-    'bg-common-black/[0.38] dark:bg-common-white/[0.3]',
+    'bg-common-black dark:bg-common-white',
+    'opacity-[0.38] dark:opacity-[0.3]',
+    'group-has-[input:checked]:opacity-50',
   ],
   variants: {
     color: {
-      primary: 'group-has-[input:checked]:bg-primary group-has-[input:checked]:opacity-50',
-      secondary: 'group-has-[input:checked]:bg-secondary group-has-[input:checked]:opacity-50',
-      info: 'group-has-[input:checked]:bg-info group-has-[input:checked]:opacity-50',
-      success: 'group-has-[input:checked]:bg-success group-has-[input:checked]:opacity-50',
-      warning: 'group-has-[input:checked]:bg-warning group-has-[input:checked]:opacity-50',
-      error: 'group-has-[input:checked]:bg-error group-has-[input:checked]:opacity-50',
+      primary: 'group-has-[input:checked]:bg-primary ',
+      secondary: 'group-has-[input:checked]:bg-secondary',
+      info: 'group-has-[input:checked]:bg-info',
+      success: 'group-has-[input:checked]:bg-success',
+      warning: 'group-has-[input:checked]:bg-warning',
+      error: 'group-has-[input:checked]:bg-error',
     },
     disabled: {
       true: ['!opacity-[0.12] dark:!opacity-[0.2]'],
@@ -124,7 +126,15 @@ const switchTrackVariants = tv({
 const SwitchThumb = styled.span``;
 
 const switchThumbVariants = tv({
-  base: ['shadow-1', 'bg-current', 'w-[20px]', 'h-[20px]', 'rounded-[50%]'],
+  base: [
+    'shadow-1',
+    'bg-current',
+    'w-[20px]',
+    'h-[20px]',
+    'rounded-[50%]',
+    'relative',
+    'before:absolute before:content-[""] before:inset-0 before:bg-common-white before:z-[-1] before:rounded-full',
+  ],
   variants: {
     size: {
       small: ['w-[16px]', 'h-[16px]'],
