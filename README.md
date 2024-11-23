@@ -9,7 +9,7 @@ JanRibka is an open-source React component library for react projects with tailw
 
 ## Community
 
-For help, discussion about best practices, or any other conversation that would benefit from being searchable:
+<summary>For help, discussion about best practices, or any other conversation that would benefit from being searchable:</summary>
 
 [Discuss JanRibka UI on GitHub](https://github.com/janribkaui/material-ui-tailwind/discussions)
 
