@@ -61,7 +61,18 @@ const SwitchBaseInput = styled('input')`
 `;
 
 const switchBaseInputVariants = tv({
-  base: ['absolute', 'opacity-0', 'w-full', 'h-full', 'top-0', 'left-0', 'm-0', 'p-0', 'z-[1]'],
+  base: [
+    'peer',
+    'absolute',
+    'opacity-0',
+    'w-full',
+    'h-full',
+    'top-0',
+    'left-0',
+    'm-0',
+    'p-0',
+    'z-[1]',
+  ],
 });
 
 /**

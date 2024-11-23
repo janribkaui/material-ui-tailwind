@@ -5,6 +5,8 @@ export interface Easing {
   sharp: string;
 }
 
+export const easing: Easing;
+
 export interface Duration {
   shortest: number;
   shorter: number;
@@ -14,6 +16,8 @@ export interface Duration {
   'entering-screen': number;
   'leaving-screen': number;
 }
+
+export const duration: Duration;
 
 export interface Transitions {
   transitionTimingFunction: Easing;

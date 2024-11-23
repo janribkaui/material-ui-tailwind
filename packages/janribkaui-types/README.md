@@ -1,3 +1,3 @@
 # @janribkaui/types
 
-Utility types for JanRibka.
+Utility types for JanRibka UI.
