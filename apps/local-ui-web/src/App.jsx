@@ -598,6 +598,15 @@ function App() {
               Fetch data
             </LoadingButton>
           </div>
+
+          <div className="w-1/3">
+            <Button
+              variant="contained"
+              className={`bg-yellow-500 hover:bg-yellow-700 text-common-black`}
+            >
+              Custom
+            </Button>
+          </div>
         </div>
       </div>
 
