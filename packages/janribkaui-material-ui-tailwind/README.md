@@ -1,6 +1,6 @@
 <h1 align="center">JanRibka UI</h1>
 
-JanRibka is an open-source React component library for react projects with tailwind that implements Google's [Material Design](https://m2.material.io/design/introduction/)
+JanRibka UI is an open-source React component library for react projects with tailwind that implements Google's [Material Design](https://m2.material.io/design/introduction/)
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/janribkaui/material-ui-tailwind/blob/HEAD/LICENSE)
 [![npm latest package](https://img.shields.io/npm/v/@janribkaui/material-ui-tailwind/latest.svg)](https://www.npmjs.com/package/@janribkaui/material-ui-tailwind)
@@ -42,8 +42,8 @@ pnpm add @janribkaui/material-ui-tailwind
 import type { Config } from 'tailwindcss';
 import twConfigBase from '@janribkaui/material-ui-tailwind/tailwind.config';
 import { getContrastText } from '@janribkaui/material-ui-tailwind/styles';
-import green from '../colors/green';
-import red from '../colors/red';
+import green from '@janribkaui/material-ui-tailwind/colors/green';
+import red from '@janribkaui/material-ui-tailwind/colors/red';
 
 const config: Pick<Config, 'content' | 'presets'> = {
   content: [
@@ -278,13 +278,12 @@ const App = () => {
 
 ```ts
 import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+import { FaRegBookmark } from 'react-icons/fa';
+import { FaBookmark } from 'react-icons/fa';
+import { MdOutlineFavoriteBorder } from 'react-icons/md';
+import { MdOutlineFavorite } from 'react-icons/md';
 
 const App = () => {
-    import { FaRegBookmark } from 'react-icons/fa';
-    import { FaBookmark } from 'react-icons/fa';
-    import { MdOutlineFavoriteBorder } from 'react-icons/md';
-    import { MdOutlineFavorite } from 'react-icons/md';
-
     const labelCheckbox = { inputProps: { 'aria-label': 'Icon Checkbox' } };
 
     return (
@@ -631,7 +630,7 @@ const App = () => {
 
 ```ts
 import * as React from 'react';
-import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+import Switch from '@janribkaui/material-ui-tailwind/Switch';
 import FormControl from '@janribkaui/material-ui-tailwind/FormControl';
 import FormLabel from '@janribkaui/material-ui-tailwind/FormLabel';
 import FormGroup from '@janribkaui/material-ui-tailwind/FormGroup';
@@ -644,13 +643,6 @@ const App = () => {
         item3: false,
     });
 
-    const error =
-        [
-            state.item1,
-            state.item2,
-            state.item3,
-        ].some(f => !f);
-
     const handleOnChange = (event) => {
         setState({
             ...state,
@@ -661,7 +653,6 @@ const App = () => {
     return (
         <FormControl
             required
-            error={error}
             component="fieldset"
             variant="standard"
             className="m-6"
@@ -670,7 +661,7 @@ const App = () => {
             <FormGroup>
                 <FormControlLabel
                     control={
-                        <Checkbox
+                        <Switch
                             checked={state.item1}
                             onChange={handleOnChange}
                             name="item1"
@@ -680,7 +671,7 @@ const App = () => {
                 />
                 <FormControlLabel
                     control={
-                        <Checkbox
+                        <Switch
                             checked={state.item2}
                             onChange={handleOnChange}
                             name="item2"
@@ -690,7 +681,7 @@ const App = () => {
                 />
                 <FormControlLabel
                     control={
-                        <Checkbox
+                        <Switch
                             checked={state.item3}
                             onChange={handleOnChange}
                             name="item3"
@@ -702,63 +693,6 @@ const App = () => {
             <FormHelperText>You can display an error</FormHelperText>
         </FormControl>
     )
-}
-```
-
-#### Indeterminate
-
-```ts
-import * as React from 'react';
-import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
-import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
-
-const App = () => {
-    const [checked, setChecked] = React.useState([true, false]);
-
-    const handleOnChange1 = (event) => {
-        setChecked([event.target.checked, event.target.checked]);
-    };
-
-    const handleOnChange2 = (event) => {
-        setChecked([event.target.checked, checked[1]]);
-    };
-
-    const handleOnChange3 = (event) => {
-            setChecked([checked[0], event.target.checked]);
-    };
-
-    const children = (
-
-    );
-
-    return (
-          <>
-            <FormControlLabel
-                label="All"
-                control={
-                    <Checkbox
-                    checked={checked[0] && checked[1]}
-                    indeterminate={checked[0] !== checked[1]}
-                    onChange={handleOnChange1}
-                    />
-                }
-            />
-            <div className="flex flex-col ml-3">
-                <FormControlLabel
-                    label="Item 1"
-                    control={
-                        <Checkbox checked={checked[0]} onChange={handleOnChange2} />
-                    }
-                />
-                <FormControlLabel
-                    label="Item 2"
-                    control={
-                        <Checkbox checked={checked[1]} onChange={handleOnChange3} />
-                    }
-                />
-            </div>
-          </>
-    );
 }
 ```
 

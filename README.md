@@ -1,6 +1,6 @@
 <h1 align="center">JanRibka UI</h1>
 
-JanRibka is an open-source React component library for react projects with tailwind that implements Google's [Material Design](https://m2.material.io/design/introduction/)
+JanRibka UI is an open-source React component library for react projects with tailwind that implements Google's [Material Design](https://m2.material.io/design/introduction/)
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/janribkaui/material-ui-tailwind/blob/HEAD/LICENSE)
 [![npm latest package](https://img.shields.io/npm/v/@janribkaui/material-ui-tailwind/latest.svg)](https://www.npmjs.com/package/@janribkaui/material-ui-tailwind)
