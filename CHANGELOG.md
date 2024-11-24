@@ -1,3 +1,19 @@
+## v1.5.0
+
+<!-- generated comparing v1.4.0..master -->
+
+_Nov 24, 2024_
+
+A big thanks to the 1 contributors who made this release possible. Here are some highlights ✨:
+
+### @janribkaui/material-ui-tailwind@1.5.0
+
+- &#8203;<!-- 1 -->[Switch] Create component Switch (#73) @JanRibka
+- &#8203;<!-- 2 -->Create a helper function for merging base and Tailwind configuration (#75) @JanRibka
+- &#8203;<!-- 3 -->Add all colors from material-ui-tailwind/colors to tailwind config (#76) @JanRibka
+
+All contributors of this release in alphabetical order: @JanRibka
+
 ## v1.4.0
 
 <!-- generated comparing v1.3.2..master -->
