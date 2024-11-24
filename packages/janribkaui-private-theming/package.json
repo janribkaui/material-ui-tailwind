@@ -1,6 +1,6 @@
 {
   "name": "@janribkaui/private-theming",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": false,
   "author": "Jan Ribka",
   "description": "Private - The React theme context to be shared between `@janribkaui/styles` and `@janribkaui/material-ui-tailwind`.",
