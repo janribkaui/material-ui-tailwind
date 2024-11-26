@@ -93,7 +93,6 @@ const basePlugin = plugin.withOptions(
           ...shadows,
         },
       },
-      // darkMode: 'class',
     };
   },
 );
