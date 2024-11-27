@@ -247,7 +247,8 @@ const linearProgressBar2Variants = tv({
     'transition-transform',
     'ease-linear',
     'origin-left',
-    'before:absolute before:content-[""] before:inset-0 before:bg-common-white before:z-[-1]',
+    "before:absolute before:content-[''] before:inset-0 before:bg-common-white",
+    "after:absolute after:content-[''] after:inset-0 after:bg-inherit", // After is above before
   ],
   variants: {
     color: {
@@ -455,10 +456,10 @@ const LinearProgress = React.forwardRef(function LinearProgress(inProps, ref) {
         linearProgressRootVariants({ color: color, variant: variant }, className),
       )}
       role="progressbar"
-      ref={ref}
-      color={color}
       {...rootProps}
+      ref={ref}
       {...other}
+      color={color}
     >
       {variant === 'buffer' ? (
         <LinearProgressDashed

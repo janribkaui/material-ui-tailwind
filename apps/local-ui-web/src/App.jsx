@@ -87,9 +87,10 @@ function App() {
   }, []);
 
   const progressBufferRef = React.useRef(() => {});
+
   React.useEffect(() => {
     progressBufferRef.current = () => {
-      if (progress === 100) {
+      if (progressBuffer === 100) {
         setProgressBuffer(0);
         setBuffer(10);
       } else {
@@ -729,8 +730,7 @@ function App() {
           <LinearProgress variant="determinate" value={progressLinear} />
         </div>
         <div className="w-full">
-          <LinearProgress variant="buffer" value={0} valueBuffer={50} />
-          {/* <LinearProgress variant="buffer" value={progressBuffer} valueBuffer={buffer} /> */}
+          <LinearProgress variant="buffer" value={progressBuffer} valueBuffer={buffer} />
         </div>
         <div className="w-full">
           <LinearProgressWithLabel value={progressNumber} />
