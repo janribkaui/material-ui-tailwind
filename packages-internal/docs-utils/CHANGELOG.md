@@ -2,7 +2,7 @@
 
 ## 1.0.3
 
-Renamed the package to @mui/internal-docs-utils
+Renamed the package to @janribkaui/internal-docs-utils
 
 ## 1.0.2
 

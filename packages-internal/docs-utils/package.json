@@ -1,6 +1,6 @@
 {
   "name": "@janribkaui/internal-docs-utils",
-  "version": "1.0.15",
+  "version": "1.0.0",
   "author": "Jan Ribka",
   "description": "Utilities for JR docs. This is an internal package not meant for general use.",
   "main": "./build/index.js",
