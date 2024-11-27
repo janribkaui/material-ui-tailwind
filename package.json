@@ -43,9 +43,9 @@
     "@babel/preset-env": "^7.25.3",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
+    "@janribkaui-internal/api-docs-builder": "workspace:^",
     "@janribkaui/material-ui-tailwind": "workspace:^",
     "@janribkaui/utils": "workspace:^",
-    "@janribkaui-internal/api-docs-builder": "workspace:^",
     "@octokit/rest": "^21.0.2",
     "@types/babel__core": "^7.20.5",
     "@types/fs-extra": "^11.0.4",
@@ -75,6 +75,7 @@
     "stylelint": "^16.7.0",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-processor-styled-components": "^1.10.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.5.3",
     "yargs": "^17.7.2"
   },
