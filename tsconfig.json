@@ -27,7 +27,8 @@
       "@janribkaui/system": ["./packages/janribkaui-system/src"],
       "@janribkaui/system/*": [",/packages/janribkaui-system/src/*"],
       "@janribkaui/private-theming": ["./packages/janribkaui-private-theming/src"],
-      "@janribkaui/private-theming/*": ["./packages/janribkaui-private-theming/src/*"]
+      "@janribkaui/private-theming/*": ["./packages/janribkaui-private-theming/src/*"],
+      "@janribkaui/internal-docs-utils": ["./packages-internal/docs-utils/src"]
       // "@janribkaui/internal-test-utils": ["./packages-internal/test-utils/src"],
       // "@janribkaui/internal-test-utils/*": ["./packages-internal/test-utils/src/*"]
     },
