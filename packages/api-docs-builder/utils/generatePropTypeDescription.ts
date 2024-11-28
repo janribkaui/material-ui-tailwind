@@ -1,5 +1,6 @@
-import * as recast from 'recast';
 import { parse as docgenParse, PropTypeDescriptor } from 'react-docgen';
+import * as recast from 'recast';
+
 import escapeCell from './escapeCell';
 
 function getDeprecatedInfo(type: PropTypeDescriptor) {

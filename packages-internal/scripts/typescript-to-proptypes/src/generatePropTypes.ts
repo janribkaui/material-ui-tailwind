@@ -1,6 +1,7 @@
 import _ from 'lodash';
-import { PropTypeDefinition, PropTypesComponent, PropType, LiteralType } from './models';
-import { createDOMElementType, createBooleanType, uniqueUnionTypes } from './createType';
+
+import { createBooleanType, createDOMElementType, uniqueUnionTypes } from './createType';
+import { LiteralType, PropType, PropTypeDefinition, PropTypesComponent } from './models';
 
 export interface GeneratePropTypesOptions {
   /**

@@ -333,7 +333,7 @@ async function run(argv: HandlerArgv) {
     [
       // path.resolve(__dirname, '../packages/janribkaui-system/src'),
       path.resolve(__dirname, '../packages/janribkaui-material-ui-tailwind/src'),
-      // path.resolve(__dirname, '../packages/mui-lab/src'),
+      // path.resolve(__dirname, '../packages/janribkaui-lab/src'),
     ].map((folderPath) =>
       glob('+([A-Z])*/+([A-Z])*.*@(d.ts|ts|tsx)', {
         absolute: true,
