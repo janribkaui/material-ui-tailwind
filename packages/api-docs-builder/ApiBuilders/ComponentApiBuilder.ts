@@ -15,14 +15,11 @@ import { renderMarkdown } from '@janribkaui/internal-markdown';
 import { toGitHubPath, writePrettifiedFile } from '../buildApiUtils';
 import { ProjectSettings, SortingStrategiesType } from '../ProjectSettings';
 import {
-  AdditionalPropsInfo,
-  ComponentApiContent,
-  ComponentReactApi,
+    AdditionalPropsInfo, ComponentApiContent, ComponentReactApi
 } from '../types/ApiBuilder.types';
 import { ComponentInfo, Slot } from '../types/utils.types';
 import createDescribeableProp, {
-  CreateDescribeablePropSettings,
-  DescribeablePropDescriptor,
+    CreateDescribeablePropSettings, DescribeablePropDescriptor
 } from '../utils/createDescribeableProp';
 import { TypeScriptProject } from '../utils/createTypeScriptProject';
 import muiDefaultPropsHandler from '../utils/defaultPropsHandler';
@@ -582,13 +579,13 @@ const attachPropsTable = (
 const defaultGetComponentImports = (name: string, filename: string) => {
   const githubPath = toGitHubPath(filename);
   const rootImportPath = githubPath.replace(
-    /\/packages\/mui(?:-(.+?))?\/src\/.*/,
-    (match, pkg) => `@mui/${pkg}`,
+    /\/packages\/janribkaui(?:-(.+?))?\/src\/.*/,
+    (match, pkg) => `@janribkaui/${pkg}`,
   );
 
   const subdirectoryImportPath = githubPath.replace(
-    /\/packages\/mui(?:-(.+?))?\/src\/([^\\/]+)\/.*/,
-    (match, pkg, directory) => `@mui/${pkg}/${directory}`,
+    /\/packages\/janribkaui(?:-(.+?))?\/src\/([^\\/]+)\/.*/,
+    (match, pkg, directory) => `@janribkaui/${pkg}/${directory}`,
   );
 
   let namedImportName = name;
@@ -598,7 +595,7 @@ const defaultGetComponentImports = (name: string, filename: string) => {
     namedImportName = `Unstable_${name} as ${name}`;
   }
 
-  const useNamedImports = rootImportPath === '@mui/base';
+  const useNamedImports = rootImportPath === '@janribkaui/base';
 
   const subpathImport = useNamedImports
     ? `import { ${namedImportName} } from '${subdirectoryImportPath}';`

@@ -13,11 +13,7 @@ import traverse from '@babel/traverse';
 import { renderMarkdown } from '@janribkaui/internal-markdown';
 
 import {
-  getSymbolDescription,
-  getSymbolJSDocTags,
-  stringifySymbol,
-  toGitHubPath,
-  writePrettifiedFile,
+    getSymbolDescription, getSymbolJSDocTags, stringifySymbol, toGitHubPath, writePrettifiedFile
 } from '../buildApiUtils';
 import { ProjectSettings } from '../ProjectSettings';
 import { HookApiContent, HookReactApi, ParsedProperty } from '../types/ApiBuilder.types';
@@ -71,7 +67,7 @@ async function annotateHookDefinition(
   let end = null;
   traverse(typesAST, {
     ExportDefaultDeclaration(babelPath) {
-      if (api.filename.includes('mui-base')) {
+      if (api.filename.includes('janribkaui-base')) {
         // Base UI does not use default exports.
         return;
       }
@@ -129,7 +125,7 @@ async function annotateHookDefinition(
     },
 
     ExportNamedDeclaration(babelPath) {
-      if (!api.filename.includes('mui-base')) {
+      if (!api.filename.includes('janribkaui-base')) {
         return;
       }
 
@@ -439,13 +435,13 @@ const extractInfoFromType = async (
 const defaultGetHookImports = (name: string, filename: string) => {
   const githubPath = toGitHubPath(filename);
   const rootImportPath = githubPath.replace(
-    /\/packages\/mui(?:-(.+?))?\/src\/.*/,
-    (match, pkg) => `@mui/${pkg}`,
+    /\/packages\/janribkaui(?:-(.+?))?\/src\/.*/,
+    (match, pkg) => `@janribkaui/${pkg}`,
   );
 
   const subdirectoryImportPath = githubPath.replace(
-    /\/packages\/mui(?:-(.+?))?\/src\/([^\\/]+)\/.*/,
-    (match, pkg, directory) => `@mui/${pkg}/${directory}`,
+    /\/packages\/janribkaui(?:-(.+?))?\/src\/([^\\/]+)\/.*/,
+    (match, pkg, directory) => `@janribkaui/${pkg}/${directory}`,
   );
 
   let namedImportName = name;
@@ -455,7 +451,7 @@ const defaultGetHookImports = (name: string, filename: string) => {
     namedImportName = `unstable_${name} as ${name}`;
   }
 
-  const useNamedImports = rootImportPath === '@mui/base';
+  const useNamedImports = rootImportPath === '@janribkaui/base';
 
   const subpathImport = useNamedImports
     ? `import { ${namedImportName} } from '${subdirectoryImportPath}';`
