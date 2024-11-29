@@ -24,14 +24,14 @@ export function fixLineEndings(source: string, target: string): string {
  * @param filename - the file of the styled or regular mui component
  */
 export function getUnstyledFilename(filename: string, definitionFile: boolean = false): string {
-  if (filename.includes('mui-base')) {
+  if (filename.includes('janribkaui-base')) {
     return filename;
   }
   let unstyledFile = '';
 
   const separator = filename.includes('/') ? '/' : '\\';
 
-  if (!filename.includes('mui-base')) {
+  if (!filename.includes('janribkaui-base')) {
     unstyledFile = filename
       .replace(/.d.ts$/, '')
       .replace(/.tsx?$/, '')
@@ -40,13 +40,13 @@ export function getUnstyledFilename(filename: string, definitionFile: boolean = 
 
     if (separator === '/') {
       unstyledFile = unstyledFile.replace(
-        /packages\/mui-lab|packages\/mui-material/g,
-        'packages/mui-base',
+        /packages\/janribkaui-lab|packages\/janribkaui-material-ui-tailwind/g,
+        'packages/janribkaui-base',
       );
     } else {
       unstyledFile = unstyledFile.replace(
-        /packages\\mui-lab|packages\\mui-material/g,
-        'packages\\mui-base',
+        /packages\\janribkaui-lab|packages\\janribkaui-material-ui-tailwind/g,
+        'packages\\janribkaui-base',
       );
     }
   }

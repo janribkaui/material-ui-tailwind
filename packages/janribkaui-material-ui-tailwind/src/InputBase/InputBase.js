@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
+import JrError from '@janribkaui/internal-babel-macros/JrError.macro';
 import TextareaAutosize from '../TextareaAutosize';
 import isHostComponent from '../utils/isHostComponent';
 import formControlState from '../FormControl/formControlState';
@@ -349,7 +349,7 @@ const InputBase = React.forwardRef(function InputBase(inProps, ref) {
     if (!isControlled) {
       const element = event.target || inputRef.current;
       if (element == null) {
-        throw new JRError(
+        throw new JrError(
           'JR: Expected valid input target. ' +
             'Did you use a custom `inputComponent` and forget to forward refs? ',
         );

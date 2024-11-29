@@ -4,7 +4,6 @@ import * as _ from 'lodash';
 /* eslint-disable no-console */
 import * as path from 'path';
 import * as prettier from 'prettier';
-import * as ts from 'typescript';
 import * as yargs from 'yargs';
 
 import {
@@ -21,6 +20,7 @@ import {
   injectPropTypesInFile,
   InjectPropTypesInFileOptions,
 } from '@janribkaui/internal-scripts/typescript-to-proptypes';
+import { LiteralType } from '@janribkaui/internal-scripts/typescript-to-proptypes/src/models';
 
 import CORE_TYPESCRIPT_PROJECTS from './coreTypeScriptProjects';
 
@@ -132,14 +132,14 @@ const ignoreExternalDocumentation: Record<string, readonly string[]> = {
   Zoom: transitionCallbacks,
 };
 
-function sortBreakpointsLiteralByViewportAscending(a: ts.LiteralType, b: ts.LiteralType) {
+function sortBreakpointsLiteralByViewportAscending(a: LiteralType, b: LiteralType) {
   // default breakpoints ordered by their size ascending
   const breakpointOrder: readonly unknown[] = ['"xs"', '"sm"', '"md"', '"lg"', '"xl"'];
 
   return breakpointOrder.indexOf(a.value) - breakpointOrder.indexOf(b.value);
 }
 
-function sortSizeByScaleAscending(a: ts.LiteralType, b: ts.LiteralType) {
+function sortSizeByScaleAscending(a: LiteralType, b: LiteralType) {
   const sizeOrder: readonly unknown[] = ['"small"', '"medium"', '"large"'];
   return sizeOrder.indexOf(a.value) - sizeOrder.indexOf(b.value);
 }
@@ -331,9 +331,11 @@ async function run(argv: HandlerArgv) {
   // Example: AppBar/AppBar.d.ts
   const allFiles = await Promise.all(
     [
-      // path.resolve(__dirname, '../packages/janribkaui-system/src'),
-      path.resolve(__dirname, '../packages/janribkaui-material-ui-tailwind/src'),
-      // path.resolve(__dirname, '../packages/janribkaui-lab/src'),
+      path.resolve(__dirname, '../packages/mui-system/src'),
+      path.resolve(__dirname, '../packages/mui-base/src'),
+      path.resolve(__dirname, '../packages/mui-material/src'),
+      path.resolve(__dirname, '../packages/mui-lab/src'),
+      path.resolve(__dirname, '../packages/mui-joy/src'),
     ].map((folderPath) =>
       glob('+([A-Z])*/+([A-Z])*.*@(d.ts|ts|tsx)', {
         absolute: true,
@@ -362,9 +364,7 @@ async function run(argv: HandlerArgv) {
   const promises = files.map<Promise<void>>(async (tsFile) => {
     const sourceFile = tsFile.includes('.d.ts') ? tsFile.replace('.d.ts', '.js') : tsFile;
     try {
-      const projectName = tsFile.match(
-        /packages\/janribkaui-([a-zA-Z-]+)\/src/,
-      )![1] as CoreTypeScriptProjects;
+      const projectName = tsFile.match(/packages\/mui-([a-zA-Z-]+)\/src/)![1];
       const project = buildProject(projectName);
       await generateProptypes(project, sourceFile, tsFile);
     } catch (error: any) {

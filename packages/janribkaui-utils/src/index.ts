@@ -4,7 +4,7 @@ export { isPlainObject } from './deepmerge';
 export { default as elementAcceptingRef } from './elementAcceptingRef';
 export { default as elementTypeAcceptingRef } from './elementTypeAcceptingRef';
 export { default as exactProp } from './exactProp';
-// export { default as formatMuiErrorMessage } from './formatMuiErrorMessage';
+export { default as formatJrErrorMessage } from './formatJrErrorMessage';
 // export { default as getDisplayName } from './getDisplayName';
 // export { default as HTMLElementType } from './HTMLElementType';
 // export { default as ponyfillGlobal } from './ponyfillGlobal';

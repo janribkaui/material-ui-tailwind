@@ -1,12 +1,12 @@
 // TODO: Remove this function
 
-import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
+import JrError from '@janribkaui/internal-babel-macros/JrError.macro';
 
 function splitTailwindClassByFirstDash(tailwindClass: string): [string, string] {
   const index = tailwindClass.indexOf('-');
 
   if (index === -1) {
-    throw new JRError('JR: `getTailwindClassPrefix(string)` expects a tailwind class.');
+    throw new JrError('JR: `getTailwindClassPrefix(string)` expects a tailwind class.');
   }
 
   const prefix = tailwindClass.slice(0, index);

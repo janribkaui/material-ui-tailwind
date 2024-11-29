@@ -1,4 +1,4 @@
-# @mui/internal-scripts
+# @janribkaui/internal-scripts
 
 This is that code infra scripts for the MUI organization repositories.
 It is not meant for general use.

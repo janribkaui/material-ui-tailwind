@@ -1,9 +1,9 @@
 /**
  * WARNING: Don't import this directly.
- * Use `JRError` from `@janribkaui/internal-babel-macros/JRError.macro` instead.
+ * Use `JrError` from `@janribkaui/internal-babel-macros/JrError.macro` instead.
  * @param {number} code
  */
-export default function formatJRErrorMessage(code: number): string {
+export default function formatJrErrorMessage(code: number): string {
   // Apply babel-plugin-transform-template-literals in loose mode
   // loose mode is safe if we're concatenating primitives
   // see https://babeljs.io/docs/en/babel-plugin-transform-template-literals#loose

@@ -41,7 +41,7 @@
   "devDependencies": {
     "@janribkaui/types": "workspace:^",
     "@types/chai": "^4.3.16",
-    "@types/react": "^18.2.55",
+    "@types/react": "^18.3.12",
     "chai": "^4.4.1",
     "react": "19.0.0-rc-f6cce072-20240723"
   },

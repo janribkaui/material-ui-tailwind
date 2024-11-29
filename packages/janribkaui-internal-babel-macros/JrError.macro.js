@@ -12,7 +12,7 @@ function invertObject(object) {
 
 /**
  * Supported import:
- * Bare specifier `'@janribkaui/internal-babel-macros/JRError.macro'`
+ * Bare specifier `'@janribkaui/internal-babel-macros/JrError.macro'`
  * @param {import('babel-plugin-macros').MacroParams} param0
  */
 function jrError({ references, babel, config, source }) {
@@ -83,20 +83,20 @@ function jrError({ references, babel, config, source }) {
   }
 
   /**
-   * The identifier for the callee in `formatJRErrorMessage()`
-   * Creating an identifier per JRError reference would create duplicate imports.
+   * The identifier for the callee in `formatJrErrorMessage()`
+   * Creating an identifier per JrError reference would create duplicate imports.
    * It's not obvious that these will be deduplicated by bundlers.
    * We can already do this at transpile-time
    *
    * @type {import('@babel/core').NodePath | null}
    */
-  let formatJRErrorMessageIdentifier = null;
+  let formatJrErrorMessageIdentifier = null;
 
   references.default.forEach((babelPath) => {
     const newExpressionPath = babelPath.parentPath;
     if (!newExpressionPath.isNewExpression()) {
       throw new MacroError(
-        'Encountered `JRError` outside of a "new expression" i.e. `new JRError()`. Use `throw new JRError(message)` over `throw JRError(message)`.',
+        'Encountered `JrError` outside of a "new expression" i.e. `new JrError()`. Use `throw new JrError(message)` over `throw JrError(message)`.',
       );
     }
 
@@ -126,26 +126,28 @@ function jrError({ references, babel, config, source }) {
     }
     errorCode = parseInt(errorCode, 10);
 
-    if (formatJRErrorMessageIdentifier === null) {
+    if (formatJrErrorMessageIdentifier === null) {
       const isBareImportSourceIdentifier = source.startsWith('@janribkaui/internal-babel-macros');
       if (isBareImportSourceIdentifier) {
-        // Input: import JRError from '@janribkaui/internal-babel-macros/JRError.macro'
+        // Input: import JrError from '@janribkaui/internal-babel-macros/JrError.macro'
         // Outputs:
-        // import { formatJRErrorMessage } from '@janribkaui/utils';
-        formatJRErrorMessageIdentifier = helperModuleImports.addDefault(
+        // import { formatJrErrorMessage } from '@janribkaui/utils';
+        formatJrErrorMessageIdentifier = helperModuleImports.addDefault(
           babelPath,
-          '@janribkaui/utils/formatJRErrorMessage',
-          { nameHint: '_formatJRErrorMessage' },
+          '@janribkaui/utils/formatJrErrorMessage',
+          { nameHint: '_formatJrErrorMessage' },
         );
       } else {
-        throw new Error('Only package imports from @janribkaui/internal-babel-macros are supported');
+        throw new Error(
+          'Only package imports from @janribkaui/internal-babel-macros are supported',
+        );
       }
     }
 
     // Outputs:
-    // formatJRErrorMessage(ERROR_CODE, adj, noun)
+    // formatJrErrorMessage(ERROR_CODE, adj, noun)
     const prodMessage = babel.types.callExpression(
-      babel.types.cloneDeep(formatJRErrorMessageIdentifier),
+      babel.types.cloneDeep(formatJrErrorMessageIdentifier),
       [babel.types.numericLiteral(errorCode), ...errorMessageExpressions],
     );
     // TODO: Porovnat ty zakomnetovane veci s origin8lem
