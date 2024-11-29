@@ -44,6 +44,8 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@janribkaui-internal/api-docs-builder": "workspace:^",
+    "@janribkaui/internal-docs-utils": "workspace:^",
+    "@janribkaui/internal-scripts": "workspace:^",
     "@janribkaui/material-ui-tailwind": "workspace:^",
     "@janribkaui/utils": "workspace:^",
     "@octokit/rest": "^21.0.2",

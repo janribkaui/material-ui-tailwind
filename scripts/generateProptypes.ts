@@ -331,11 +331,11 @@ async function run(argv: HandlerArgv) {
   // Example: AppBar/AppBar.d.ts
   const allFiles = await Promise.all(
     [
-      path.resolve(__dirname, '../packages/mui-system/src'),
-      path.resolve(__dirname, '../packages/mui-base/src'),
-      path.resolve(__dirname, '../packages/mui-material/src'),
-      path.resolve(__dirname, '../packages/mui-lab/src'),
-      path.resolve(__dirname, '../packages/mui-joy/src'),
+      // path.resolve(__dirname, '../packages/janribkaui-system/src'),
+      // path.resolve(__dirname, '../packages/janribkaui-base/src'),
+      path.resolve(__dirname, '../packages/janribkaui-material-ui-tailwind/src'),
+      path.resolve(__dirname, '../packages/janribkaui-lab/src'),
+      // path.resolve(__dirname, '../packages/janribkaui-joy/src'),
     ].map((folderPath) =>
       glob('+([A-Z])*/+([A-Z])*.*@(d.ts|ts|tsx)', {
         absolute: true,
@@ -364,7 +364,7 @@ async function run(argv: HandlerArgv) {
   const promises = files.map<Promise<void>>(async (tsFile) => {
     const sourceFile = tsFile.includes('.d.ts') ? tsFile.replace('.d.ts', '.js') : tsFile;
     try {
-      const projectName = tsFile.match(/packages\/mui-([a-zA-Z-]+)\/src/)![1];
+      const projectName = tsFile.match(/packages\/janribkaui-([a-zA-Z-]+)\/src/)![1];
       const project = buildProject(projectName);
       await generateProptypes(project, sourceFile, tsFile);
     } catch (error: any) {

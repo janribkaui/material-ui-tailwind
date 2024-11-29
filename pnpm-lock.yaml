@@ -36,6 +36,12 @@ importers:
       '@janribkaui-internal/api-docs-builder':
         specifier: workspace:^
         version: link:packages/api-docs-builder
+      '@janribkaui/internal-docs-utils':
+        specifier: workspace:^
+        version: link:packages-internal/docs-utils
+      '@janribkaui/internal-scripts':
+        specifier: workspace:^
+        version: link:packages-internal/scripts
       '@janribkaui/material-ui-tailwind':
         specifier: workspace:^
         version: link:packages/janribkaui-material-ui-tailwind/build
