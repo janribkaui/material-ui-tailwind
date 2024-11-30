@@ -50,7 +50,7 @@ export function stringifyTheme(baseTheme: Record<string, any> = {}) {
 
   serializeTheme(serializableTheme);
 
-  return `import { unstable_createBreakpoints as createBreakpoints, createTransitions } from '@mui/material/styles';
+  return `import { unstable_createBreakpoints as createBreakpoints, createTransitions } from '@janribkaui/material/styles';
 
 const theme = ${JSON.stringify(serializableTheme, null, 2)};
 

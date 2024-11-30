@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import clamp from '@janribkaui/utils/clamp';
 import splitTailwindClassByFirstDash from '@janribkaui/utils/splitTailwindClassByFirstDash';
-import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
+import JrError from '@janribkaui/internal-babel-macros/JrError.macro';
 
 /**
  * Returns an object with the type and values of a color.
@@ -24,7 +24,7 @@ export function decomposeColor(color) {
   const type = color.substring(0, marker);
 
   if (!['rgb', 'rgba', 'hsl', 'hsla', 'color'].includes(type)) {
-    throw new JRError(
+    throw new JrError(
       'JR: Unsupported `%s` color.\n' +
         'The following formats are supported: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color().',
       color,
@@ -41,7 +41,7 @@ export function decomposeColor(color) {
       values[3] = values[3].slice(1);
     }
     if (!['srgb', 'display-p3', 'a98-rgb', 'prophoto-rgb', 'rec-2020'].includes(colorSpace)) {
-      throw new JRError(
+      throw new JrError(
         'JR: unsupported `%s` color space.\n' +
           'The following color spaces are supported: srgb, display-p3, a98-rgb, prophoto-rgb, rec-2020.',
         colorSpace,

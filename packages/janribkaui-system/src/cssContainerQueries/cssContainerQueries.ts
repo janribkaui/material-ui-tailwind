@@ -1,4 +1,4 @@
-import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
+import JrError from '@janribkaui/internal-babel-macros/JrError.macro';
 
 import { Breakpoint, Breakpoints } from '../createBreakpoints/createBreakpoints';
 
@@ -59,7 +59,7 @@ export function getContainerQuery(theme: CssContainerQueries, shorthand: string)
   const matches = shorthand.match(/^@([^/]+)?\/?(.+)?$/);
   if (!matches) {
     if (process.env.NODE_ENV !== 'production') {
-      throw new JRError(
+      throw new JrError(
         'JR: The provided shorthand %s is invalid. The format should be `@<breakpoint | number>` or `@<breakpoint | number>/<container>`.\n' +
           'For example, `@sm` or `@600` or `@40rem/sidebar`.',
         `(${shorthand})`,

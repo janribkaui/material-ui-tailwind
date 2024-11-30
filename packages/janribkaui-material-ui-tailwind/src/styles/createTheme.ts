@@ -133,7 +133,7 @@ export default function createTheme(
   );
 }
 
-// import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
+// import JrError from '@janribkaui/internal-babel-macros/JrError.macro';
 // import {
 //   Theme as SystemTheme,
 //   ThemeOptions as SystemThemeOptions,
@@ -206,7 +206,7 @@ export default function createTheme(
 //   } = options;
 
 //   if ((options as any).vars) {
-//     throw new JRError(
+//     throw new JrError(
 //       'JR: `vars` is a private field used for CSS variables support.\n' +
 //         'Please use another name.',
 //     );

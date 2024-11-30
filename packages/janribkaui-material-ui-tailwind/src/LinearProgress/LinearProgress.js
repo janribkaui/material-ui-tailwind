@@ -1,5 +1,6 @@
 'use client';
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import { useRtl } from '@janribkaui/system/RtlProvider';
 import { useDefaultProps } from '../DefaultPropsProvider';
 import { tv } from 'tailwind-variants';
@@ -488,5 +489,46 @@ const LinearProgress = React.forwardRef(function LinearProgress(inProps, ref) {
     </LinearProgressRoot>
   );
 });
+
+LinearProgress.propTypes /* remove-proptypes */ = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * @default 'primary'
+   */
+  color: PropTypes.oneOf([
+    'error',
+    'info',
+    'inherit',
+    'primary',
+    'secondary',
+    'success',
+    'warning',
+  ]),
+  /**
+   * The value of the progress indicator for the determinate and buffer variants.
+   * Value between 0 and 100.
+   */
+  value: PropTypes.number,
+  /**
+   * The value for the buffer variant.
+   * Value between 0 and 100.
+   */
+  valueBuffer: PropTypes.number,
+  /**
+   * The variant to use.
+   * Use indeterminate or query when there is no progress value.
+   * @default 'indeterminate'
+   */
+  variant: PropTypes.oneOf(['buffer', 'determinate', 'indeterminate', 'query']),
+};
 
 export default LinearProgress;
