@@ -1,4 +1,4 @@
-import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
+import JrError from '@janribkaui/internal-babel-macros/JrError.macro';
 import deepmerge from '@janribkaui/utils/deepmerge';
 import {
   unstable_createGetCssVar as systemCreateGetCssVar,
@@ -160,7 +160,7 @@ export default function createThemeWithVars(options = {}, ...args) {
   }
 
   if (!defaultScheme) {
-    throw new JRError(
+    throw new JrError(
       'JR: The `colorSchemes.%s` option is either missing or invalid.',
       defaultColorScheme,
     );

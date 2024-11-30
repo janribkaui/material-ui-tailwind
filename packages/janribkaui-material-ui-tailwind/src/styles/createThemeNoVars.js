@@ -3,7 +3,7 @@ import deepmerge from '@janribkaui/utils/deepmerge';
 //   unstable_defaultSxConfig as defaultSxConfig,
 // } from '@mui/system/styleFunctionSx';
 import systemCreateTheme from '@janribkaui/system/createTheme';
-import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
+import JrError from '@janribkaui/internal-babel-macros/JrError.macro';
 // import generateUtilityClass from '#janribkaui/utils/generateUtilityClass';
 // import createMixins from './createMixins';
 import createPalette from './createColors';
@@ -25,7 +25,7 @@ function createThemeNoVars(options = {}, ...args) {
   } = options;
 
   if (options.vars) {
-    throw new JRError(
+    throw new JrError(
       'JR: `vars` is a private field used for CSS variables support.\n' +
         'Please use another name.',
     );

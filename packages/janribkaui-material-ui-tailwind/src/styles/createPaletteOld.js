@@ -1,5 +1,5 @@
 import deepmerge from '@janribkaui/utils/deepmerge';
-import MuiError from '@janribkaui/internal-babel-macros/JRError.macro';
+import MuiError from '@janribkaui/internal-babel-macros/JrError.macro';
 import { darken, getContrastRatio, lighten } from '@janribkaui/system/colorManipulator';
 import common from '../colors/common';
 import grey from '../colors/grey';
