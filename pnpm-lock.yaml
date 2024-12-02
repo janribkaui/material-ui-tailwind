@@ -53,7 +53,7 @@ importers:
         version: 21.0.2
       '@testing-library/react':
         specifier: ^16.0.1
-        version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@19.0.0-rc-f6cce072-20240723(react@19.0.0-rc-f6cce072-20240723))(react@19.0.0-rc-f6cce072-20240723)
+        version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-f6cce072-20240723(react@19.0.0-rc-f6cce072-20240723))(react@19.0.0-rc-f6cce072-20240723)
       '@types/babel__core':
         specifier: ^7.20.5
         version: 7.20.5
@@ -114,12 +114,12 @@ importers:
       lerna:
         specifier: ^8.1.6
         version: 8.1.8(babel-plugin-macros@3.1.0)(encoding@0.1.13)
-      mocha:
-        specifier: ^10.7.3
-        version: 10.7.3
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
+      mocha:
+        specifier: ^10.7.3
+        version: 10.8.2
       nx:
         specifier: ^19.7.2
         version: 19.7.2
@@ -8984,6 +8984,16 @@ snapshots:
       '@testing-library/dom': 10.4.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+    optionalDependencies:
+      '@types/react': 18.3.12
+      '@types/react-dom': 18.3.1
+
+  '@testing-library/react@16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-f6cce072-20240723(react@19.0.0-rc-f6cce072-20240723))(react@19.0.0-rc-f6cce072-20240723)':
+    dependencies:
+      '@babel/runtime': 7.26.0
+      '@testing-library/dom': 10.4.0
+      react: 19.0.0-rc-f6cce072-20240723
+      react-dom: 19.0.0-rc-f6cce072-20240723(react@19.0.0-rc-f6cce072-20240723)
     optionalDependencies:
       '@types/react': 18.3.12
       '@types/react-dom': 18.3.1
