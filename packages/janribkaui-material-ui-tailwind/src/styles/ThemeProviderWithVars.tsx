@@ -4,9 +4,9 @@ import * as React from 'react';
 // import styleFunctionSx from '@janribkaui/system/styleFunctionSx';
 import { unstable_createCssVarsProvider as createCssVarsProvider } from '@janribkaui/system';
 
-import { defaultConfig } from '../InitColorSchemeScript/InitColorSchemeScript';
+// import { defaultConfig } from '../InitColorSchemeScript/InitColorSchemeScript';
 import createTheme from './createTheme';
-import { CssVarsTheme, SupportedColorScheme } from './createThemeWithVars';
+import { SupportedColorScheme } from './createThemeWithVars';
 import createTypography from './createTypography';
 import THEME_ID from './identifier';
 
@@ -18,11 +18,11 @@ const {
   themeId: THEME_ID,
   // @ts-ignore ignore module augmentation tests
   theme: () => createTheme({ cssVariables: true }),
-  colorSchemeStorageKey: defaultConfig.colorSchemeStorageKey,
-  modeStorageKey: defaultConfig.modeStorageKey,
+  colorSchemeStorageKey: '',
+  modeStorageKey: '',
   defaultColorScheme: {
-    light: defaultConfig.defaultLightColorScheme,
-    dark: defaultConfig.defaultDarkColorScheme,
+    light: 'light',
+    dark: 'dark',
   },
   resolveTheme: (theme) => {
     const newTheme = {
