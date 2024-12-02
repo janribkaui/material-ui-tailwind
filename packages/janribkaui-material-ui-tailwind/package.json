@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@janribkaui/internal-babel-macros": "workspace:^",
-    "@types/node": "^20.14.10",
+    "@types/node": "catalog:",
     "@types/prop-types": "^15.7.13",
     "@types/react": "catalog:",
     "@types/react-transition-group": "^4.4.10",
