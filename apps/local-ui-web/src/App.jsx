@@ -7,6 +7,18 @@ import IconButton from '@janribkaui/material-ui-tailwind/IconButton';
 import CircularProgress from '@janribkaui/material-ui-tailwind/CircularProgress';
 import LinearProgress from '@janribkaui/material-ui-tailwind/LinearProgress';
 import LoadingButton from '@janribkaui/material-ui-tailwind/LoadingButton';
+import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+import Typography from '@janribkaui/material-ui-tailwind/Typography';
+import FormGroup from '@janribkaui/material-ui-tailwind/FormGroup';
+import FormControlLabel from '@janribkaui/material-ui-tailwind/FormControlLabel';
+import FormControl from '@janribkaui/material-ui-tailwind/FormControl';
+import FormLabel from '@janribkaui/material-ui-tailwind/FormLabel';
+import FormHelperText from '@janribkaui/material-ui-tailwind/FormHelperText';
+import Switch from '@janribkaui/material-ui-tailwind/Switch';
+import { FaRegBookmark } from 'react-icons/fa';
+import { FaBookmark } from 'react-icons/fa';
+import { MdOutlineFavoriteBorder } from 'react-icons/md';
+import { MdOutlineFavorite } from 'react-icons/md';
 
 function LinearProgressWithLabel(props) {
   return (
@@ -28,6 +40,25 @@ function App() {
   const [progressBuffer, setProgressBuffer] = React.useState(0);
   const [buffer, setBuffer] = React.useState(10);
   const [loading, setLoading] = React.useState(false);
+  const [checked, setChecked] = React.useState(true);
+  const [checkedIndeterminate, setCheckedIndeterminate] = React.useState([true, false]);
+  const [stateFormLabelCheckbox, setStateFormLabelCheckbox] = React.useState({
+    gilad: true,
+    jason: false,
+    antoine: false,
+  });
+  const [checkedSwitch, setCheckedSwitch] = React.useState(true);
+  const [stateSwitchFormGroup, setStateSwitchFormGroup] = React.useState({
+    gilad: true,
+    jason: false,
+    antoine: true,
+  });
+  const errorFormLabelCheckbox =
+    [
+      stateFormLabelCheckbox.gilad,
+      stateFormLabelCheckbox.jason,
+      stateFormLabelCheckbox.antoine,
+    ].filter((v) => v).length !== 2;
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -71,6 +102,42 @@ function App() {
     };
   });
 
+  const handleCheckboxChange = (event) => {
+    setChecked(event.target.checked);
+  };
+
+  const handleChangeIndeterminate1 = (event) => {
+    setCheckedIndeterminate([event.target.checked, event.target.checked]);
+  };
+
+  const handleChangeIndeterminate2 = (event) => {
+    setCheckedIndeterminate([event.target.checked, checkedIndeterminate[1]]);
+  };
+
+  const handleChangeIndeterminate3 = (event) => {
+    setCheckedIndeterminate([checkedIndeterminate[0], event.target.checked]);
+  };
+
+  const handleChangeFormLabelCheckbox = (event) => {
+    setStateFormLabelCheckbox({
+      ...stateFormLabelCheckbox,
+      [event.target.name]: event.target.checked,
+    });
+  };
+
+  const handleChangeSwitch = (event) => {
+    setCheckedSwitch(event.target.checked);
+  };
+
+  const handleChangeSwitchFormGroup = (event) => {
+    setStateSwitchFormGroup((prev) => {
+      return {
+        ...prev,
+        [event.target.name]: event.target.checked,
+      };
+    });
+  };
+
   React.useEffect(() => {
     const timer = setInterval(() => {
       progressBufferRef.current();
@@ -90,6 +157,9 @@ function App() {
     };
   }, []);
 
+  const labelCheckbox = { inputProps: { 'aria-label': 'Checkbox demo' } };
+  const labelSwitch = { inputProps: { 'aria-label': 'Switch demo' } };
+
   return (
     <>
       <h1>H1</h1>
@@ -99,11 +169,389 @@ function App() {
       <h5>H5</h5>
       <h6>H6</h6>
 
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="">
+            <Typography variant="h1" gutterBottom>
+              h1. Heading
+            </Typography>
+            <Typography variant="h2" gutterBottom>
+              h2. Heading
+            </Typography>
+            <Typography variant="h3" gutterBottom>
+              h3. Heading
+            </Typography>
+            <Typography variant="h4" gutterBottom>
+              h4. Heading
+            </Typography>
+            <Typography variant="h5" gutterBottom>
+              h5. Heading
+            </Typography>
+            <Typography variant="h6" gutterBottom>
+              h6. Heading
+            </Typography>
+            <Typography variant="subtitle1" gutterBottom>
+              subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+              tenetur
+            </Typography>
+            <Typography variant="subtitle2" gutterBottom>
+              subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+              tenetur
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+              body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+              tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus,
+              cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+            </Typography>
+            <Typography variant="body2" gutterBottom>
+              body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+              tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus,
+              cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+            </Typography>
+            <Typography variant="button" gutterBottom className="block">
+              button text
+            </Typography>
+            <Typography variant="caption" gutterBottom className="block">
+              caption text
+            </Typography>
+            <Typography variant="overline" gutterBottom className="block">
+              overline text
+            </Typography>
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <Switch {...labelSwitch} defaultChecked />
+            <Switch {...labelSwitch} />
+            <Switch {...labelSwitch} disabled defaultChecked />
+            <Switch {...labelSwitch} disabled />
+          </div>
+
+          <div className="w-1/3">
+            <FormGroup>
+              <FormControlLabel control={<Switch defaultChecked />} label="Label" />
+              <FormControlLabel required control={<Switch />} label="Required" />
+              <FormControlLabel disabled control={<Switch />} label="Disabled" />
+            </FormGroup>
+          </div>
+
+          <div className="w-1/3">
+            <Switch {...labelSwitch} defaultChecked size="small" />
+            <Switch {...labelSwitch} defaultChecked />
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <Switch {...labelSwitch} defaultChecked />
+            <Switch {...labelSwitch} defaultChecked color="secondary" />
+            <Switch {...labelSwitch} defaultChecked color="warning" />
+            <Switch {...labelSwitch} defaultChecked color="default" />
+            <Switch
+              className="[&_.JrSwitch-switchBase]:has-[input:checked]:text-yellow-600 [&_.JrSwitch-switchBase]:has-[input:checked]:hover:bg-yellow-600/hover [&_.JrSwitch-track]:has-[input:checked]:bg-yellow-600"
+              {...labelSwitch}
+              defaultChecked
+            />
+          </div>
+
+          <div className="w-1/3">
+            <Switch
+              checked={checkedSwitch}
+              onChange={handleChangeSwitch}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+          </div>
+
+          <div className="w-1/3">
+            <FormControl component="fieldset" variant="standard">
+              <FormLabel component="legend">Assign responsibility</FormLabel>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={stateSwitchFormGroup.gilad}
+                      onChange={handleChangeSwitchFormGroup}
+                      name="gilad"
+                    />
+                  }
+                  label="Gilad Gray"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={stateSwitchFormGroup.jason}
+                      onChange={handleChangeSwitchFormGroup}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={stateSwitchFormGroup.antoine}
+                      onChange={handleChangeSwitchFormGroup}
+                      name="antoine"
+                    />
+                  }
+                  label="Antoine Llorca"
+                />
+              </FormGroup>
+              <FormHelperText>Be careful</FormHelperText>
+            </FormControl>
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Label placement</FormLabel>
+              <FormGroup aria-label="position" row>
+                <FormControlLabel
+                  value="bottom"
+                  control={<Switch color="primary" />}
+                  label="Bottom"
+                  labelPlacement="bottom"
+                />
+                <FormControlLabel
+                  value="end"
+                  control={<Switch color="primary" />}
+                  label="End"
+                  labelPlacement="end"
+                />
+              </FormGroup>
+            </FormControl>
+          </div>
+
+          {/* <div className="w-1/3">
+            <FormGroup>
+              <FormControlLabel control={<Switch defaultChecked />} label="Label" />
+              <FormControlLabel required control={<Switch />} label="Required" />
+              <FormControlLabel disabled control={<Switch />} label="Disabled" />
+            </FormGroup>
+          </div> */}
+
+          {/* <div className="w-1/3">
+            <Switch {...labelSwitch} defaultChecked size="small" />
+            <Switch {...labelSwitch} defaultChecked />
+          </div> */}
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} />
+            <Checkbox {...labelCheckbox} disabled />
+            <Checkbox {...labelCheckbox} disabled checked />
+          </div>
+
+          <div className="w-1/3">
+            <FormGroup>
+              <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+              <FormControlLabel required control={<Checkbox />} label="Required" />
+              <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
+            </FormGroup>
+          </div>
+
+          <div className="w-1/3">
+            <Checkbox {...labelCheckbox} defaultChecked size="small" />
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} defaultChecked className="[&_.JrSvgIcon-root]:!text-3xl" />
+            <Checkbox {...labelCheckbox} defaultChecked size="large" />
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <Checkbox {...labelCheckbox} defaultChecked />
+            <Checkbox {...labelCheckbox} defaultChecked color="secondary" />
+            <Checkbox {...labelCheckbox} defaultChecked color="success" />
+            <Checkbox {...labelCheckbox} defaultChecked color="default" />
+            <Checkbox
+              {...labelCheckbox}
+              defaultChecked
+              className="text-dark-secondary has-[input:checked]:text-dark-secondary-dark"
+            />
+          </div>
+
+          <div className="w-1/3">
+            <Checkbox
+              {...labelCheckbox}
+              icon={<MdOutlineFavoriteBorder className="relative" />}
+              checkedIcon={<MdOutlineFavorite />}
+            />
+            <Checkbox {...labelCheckbox} icon={<FaRegBookmark />} checkedIcon={<FaBookmark />} />
+          </div>
+
+          <div className="w-1/3">
+            <Checkbox
+              checked={checked}
+              onChange={handleCheckboxChange}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="ml-3 mt-3 flex gap-3 w-full">
+        <div className="w-full flex gap-4">
+          <div className="w-1/3">
+            <FormControlLabel
+              label="All"
+              control={
+                <Checkbox
+                  checked={checkedIndeterminate[0] && checkedIndeterminate[1]}
+                  indeterminate={checkedIndeterminate[0] !== checkedIndeterminate[1]}
+                  onChange={handleChangeIndeterminate1}
+                />
+              }
+            />
+            <div className="flex flex-col ml-3">
+              <FormControlLabel
+                label="Item 1"
+                control={
+                  <Checkbox
+                    checked={checkedIndeterminate[0]}
+                    onChange={handleChangeIndeterminate2}
+                  />
+                }
+              />
+              <FormControlLabel
+                label="Item 2"
+                control={
+                  <Checkbox
+                    checked={checkedIndeterminate[1]}
+                    onChange={handleChangeIndeterminate3}
+                  />
+                }
+              />
+            </div>
+          </div>
+
+          <div className="w-1/3 flex">
+            <FormControl component="fieldset" variant="standard" className="m-6">
+              <FormLabel component="legend">Assign responsibility</FormLabel>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.gilad}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="gilad"
+                    />
+                  }
+                  label="Gilad Gray"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.jason}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.antoine}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="antoine"
+                    />
+                  }
+                  label="Antoine Llorca"
+                />
+              </FormGroup>
+              <FormHelperText>Be careful</FormHelperText>
+            </FormControl>
+            <FormControl
+              required
+              error={errorFormLabelCheckbox}
+              component="fieldset"
+              variant="standard"
+              className="m-6"
+            >
+              <FormLabel component="legend">Pick all</FormLabel>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.gilad}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="gilad"
+                    />
+                  }
+                  label="Gilad Gray"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.jason}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="jason"
+                    />
+                  }
+                  label="Jason Killian"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={stateFormLabelCheckbox.antoine}
+                      onChange={handleChangeFormLabelCheckbox}
+                      name="antoine"
+                    />
+                  }
+                  label="Antoine Llorca"
+                />
+              </FormGroup>
+              <FormHelperText>You can display an error</FormHelperText>
+            </FormControl>
+          </div>
+
+          <div className="w-1/3">
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Label placement</FormLabel>
+              <FormGroup aria-label="position" row>
+                <FormControlLabel
+                  value="start"
+                  control={<Checkbox />}
+                  label="Start"
+                  labelPlacement="end"
+                  disabled
+                />
+                <FormControlLabel
+                  value="top"
+                  control={<Checkbox />}
+                  label="Top"
+                  labelPlacement="top"
+                />
+              </FormGroup>
+            </FormControl>
+          </div>
+        </div>
+      </div>
+
       <Button size="small" onClick={() => setLoading(true)}>
         Set Loading
       </Button>
       <Button size="medium" onClick={() => setLoading(false)}>
         Reset Loading
+      </Button>
+
+      <Button className="ml-6" variant="contained" href="#contained-buttons">
+        Link
       </Button>
 
       <div className="ml-3 mt-3 flex gap-3 w-full">
@@ -149,6 +597,15 @@ function App() {
             >
               Fetch data
             </LoadingButton>
+          </div>
+
+          <div className="w-1/3">
+            <Button
+              variant="contained"
+              className={`bg-yellow-500 hover:bg-yellow-700 text-common-black`}
+            >
+              Custom
+            </Button>
           </div>
         </div>
       </div>

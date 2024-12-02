@@ -1,5 +1,6 @@
 'use client';
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import { tv } from 'tailwind-variants';
 import ButtonBase from '../ButtonBase';
 import { mergeStyles } from '../utils';
@@ -52,7 +53,6 @@ const buttonVariants = tv({
     'hover:no-underline decoration-transparent',
     'disabled:text-action-disabled',
   ],
-
   variants: {
     variant: {
       contained: [
@@ -310,5 +310,95 @@ const Button = React.forwardRef(function Button(inProps, ref) {
     </ButtonBase>
   );
 });
+
+Button.propTypes /* remove-proptypes */ = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'primary'
+   */
+  color: PropTypes.oneOf([
+    'error',
+    'info',
+    'inherit',
+    'primary',
+    'secondary',
+    'success',
+    'warning',
+  ]),
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, no elevation is used.
+   * @default false
+   */
+  disableElevation: PropTypes.bool,
+  /**
+   * If `true`, the  keyboard focus ripple is disabled.
+   * @default false
+   */
+  disableFocusRipple: PropTypes.bool,
+  /**
+   * If `true`, the ripple effect is disabled.
+   *
+   * ⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure
+   * to highlight the element by applying separate styles with the `.Mui-focusVisible` class.
+   * @default false
+   */
+  disableRipple: PropTypes.bool,
+  /**
+   * Element placed after the children.
+   */
+  endIcon: PropTypes.node,
+  /**
+   * @ignore
+   */
+  focusVisibleClassName: PropTypes.string,
+  /**
+   * If `true`, the button will take up the full width of its container.
+   * @default false
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * The URL to link to when the button is clicked.
+   * If defined, an `a` element will be used as the root node.
+   */
+  href: PropTypes.string,
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * The size of the component.
+   * `small` is equivalent to the dense button styling.
+   * @default 'medium'
+   */
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * Element placed before the children.
+   */
+  startIcon: PropTypes.node,
+  /**
+   * @ignore
+   */
+  type: PropTypes.oneOfType([PropTypes.oneOf(['button', 'reset', 'submit']), PropTypes.string]),
+  /**
+   * The variant to use.
+   * @default 'text'
+   */
+  variant: PropTypes.oneOf(['contained', 'outlined', 'text']),
+};
 
 export default Button;

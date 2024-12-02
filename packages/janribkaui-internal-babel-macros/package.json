@@ -4,7 +4,7 @@
   "author": "Jan Ribka",
   "description": "JanRibka Babel macros. This is an internal package not meant for general use.",
   "license": "MIT",
-  "main": "./JRError.macro.js",
+  "main": "./JrError.macro.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/janribkaui/material-ui-tailwind.git",

@@ -1,3 +1,62 @@
+## v1.5.0
+
+<!-- generated comparing v1.4.0..master -->
+
+_Nov 24, 2024_
+
+A big thanks to the 1 contributors who made this release possible. Here are some highlights ✨:
+
+### @janribkaui/material-ui-tailwind@1.5.0
+
+- &#8203;<!-- 1 -->[Switch] Create component Switch (#73) @JanRibka
+- &#8203;<!-- 2 -->Create a helper function for merging base and Tailwind configuration (#75) @JanRibka
+- &#8203;<!-- 3 -->Add all colors from material-ui-tailwind/colors to tailwind config (#76) @JanRibka
+
+All contributors of this release in alphabetical order: @JanRibka
+
+## v1.4.0
+
+<!-- generated comparing v1.3.2..master -->
+
+_Nov 12, 2024_
+
+A big thanks to the 2 contributors who made this release possible. Here are some highlights ✨:
+
+### @janribkaui/material-ui-tailwind@1.4.0
+
+- &#8203;<!-- 48 -->[janribkaui/material-ui-tailwind][FormHelperText] Create component FormHelperText (#67) @JanRibka
+- &#8203;<!-- 45 -->[janribkaui/material-ui-tailwind][Checkbox] Create component Checkbox (#61) @JanRibka
+- &#8203;<!-- 41 -->[janribkaui/material-ui-tailwind][FormLabel] Create component FormLabel (#66) @JanRibka
+- &#8203;<!-- 35 -->[janribkaui/material-ui-tailwind][FormGroup] Create component FormGroup (#62) @JanRibka
+- &#8203;<!-- 32 -->[janribkaui/material-ui-tailwind][FormControlLabel] Create component FormControlLabel (#59) @JanRibka
+- &#8203;<!-- 29 -->[janribkaui/material-ui-tailwind][Typography] Create component Typography (#56) @JanRibka
+
+### @janribkaui/envinfo@1.4.0
+
+- &#8203;<!-- 17 -->[janribkaui/envinfo] Create project (#52) @JanRibka
+
+### @janribkaui/utils@1.4.0
+
+- &#8203;<!-- 17 -->[janribkaui/utils] Create appendOwnerState (#61) @JanRibka
+- &#8203;<!-- 17 -->[janribkaui/utils] Create extractEventHandler (#61) @JanRibka
+- &#8203;<!-- 17 -->[janribkaui/utils] Create isHostComponent (#61) @JanRibka
+- &#8203;<!-- 17 -->[janribkaui/utils] Create isJrElement (#61) @JanRibka
+- &#8203;<!-- 17 -->[janribkaui/utils] Create mergeSlotProps (#61) @JanRibka
+- &#8203;<!-- 17 -->[janribkaui/utils] Create omitEventHandlers (#61) @JanRibka
+- &#8203;<!-- 17 -->[janribkaui/utils] Create ownerDocument (#61) @JanRibka
+- &#8203;<!-- 17 -->[janribkaui/utils] Create ownerWindow (#61) @JanRibka
+- &#8203;<!-- 17 -->[janribkaui/utils] Create resolveComponentProps (#61) @JanRibka
+- &#8203;<!-- 17 -->[janribkaui/utils] Create useControlled (#61) @JanRibka
+
+### Core
+
+- &#8203;<!-- 04 -->[Core] Add build ci scripts (#47) @JanRibka
+- &#8203;<!-- 03 -->[Core] Fix issue templates (#44) @JanRibka
+- &#8203;<!-- 02 -->[Core] Change keyword janribka to janribkaui (#41) @JanRibka
+- &#8203;<!-- 01 -->[Core] Button line height must be 1.533rem, not 1.75 rem (#49) @JanRibka
+
+All contributors of this release in alphabetical order: @JanRibka, @WebyRibka
+
 ## 1.3.2
 
 <!-- generated comparing v1.3.0..master -->

@@ -1,7 +1,7 @@
 // Follow https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves
 
 // to learn the context in which each easing should be used.
-const easing = {
+export const easing = {
   // This is the most common easing curve.
   'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
   // Objects enter the screen at full velocity from off-screen and
@@ -17,7 +17,7 @@ const easing = {
 
 // Follow https://m2.material.io/guidelines/motion/duration-easing.html#duration-easing-common-durations
 // to learn when use what timing
-const duration = {
+export const duration = {
   shortest: '150ms',
   shorter: '200ms',
   short: '250ms',

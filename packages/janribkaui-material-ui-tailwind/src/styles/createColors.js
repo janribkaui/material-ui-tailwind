@@ -7,6 +7,18 @@ import blue from '../colors/blue';
 import lightBlue from '../colors/lightBlue';
 import green from '../colors/green';
 import { getContrastRatio } from '@janribkaui/system/colorManipulator';
+import amber from '../colors/amber';
+import blueGrey from '../colors/blueGrey';
+import brown from '../colors/brown';
+import cyan from '../colors/cyan';
+import deepOrange from '../colors/deepOrange';
+import deepPurple from '../colors/deepPurple';
+import indigo from '../colors/indigo';
+import lightGreen from '../colors/lightGreen';
+import lime from '../colors/lime';
+import pink from '../colors/pink';
+import teal from '../colors/teal';
+import yellow from '../colors/yellow';
 
 const light = {
   // The colors used to represent primary interface elements for a user.
@@ -182,5 +194,23 @@ export default function createColors() {
     inherit: 'inherit',
     current: 'currentColor',
     transparent: 'transparent',
+    amber: { ...amber },
+    blue: { ...blue },
+    blueGrey: { ...blueGrey },
+    brown: { ...brown },
+    cyan: { ...cyan },
+    deepOrange: { ...deepOrange },
+    deepPurple: { ...deepPurple },
+    green: { ...green },
+    indigo: { ...indigo },
+    lightBlue: { ...lightBlue },
+    lightGreen: { ...lightGreen },
+    lime: { ...lime },
+    orange: { ...orange },
+    pink: { ...pink },
+    purple: { ...purple },
+    red: { ...red },
+    teal: { ...teal },
+    yellow: { ...yellow },
   };
 }

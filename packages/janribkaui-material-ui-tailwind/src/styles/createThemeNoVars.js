@@ -3,8 +3,8 @@ import deepmerge from '@janribkaui/utils/deepmerge';
 //   unstable_defaultSxConfig as defaultSxConfig,
 // } from '@mui/system/styleFunctionSx';
 import systemCreateTheme from '@janribkaui/system/createTheme';
-import JRError from '@janribkaui/internal-babel-macros/JRError.macro';
-import generateUtilityClass from '#janribkaui/utils/generateUtilityClass';
+import JrError from '@janribkaui/internal-babel-macros/JrError.macro';
+// import generateUtilityClass from '#janribkaui/utils/generateUtilityClass';
 // import createMixins from './createMixins';
 import createPalette from './createColors';
 // import createTypography from './createTypography';
@@ -25,7 +25,7 @@ function createThemeNoVars(options = {}, ...args) {
   } = options;
 
   if (options.vars) {
-    throw new JRError(
+    throw new JrError(
       'JR: `vars` is a private field used for CSS variables support.\n' +
         'Please use another name.',
     );
@@ -70,7 +70,8 @@ function createThemeNoVars(options = {}, ...args) {
         const child = node[key];
         if (stateClasses.includes(key) && Object.keys(child).length > 0) {
           if (process.env.NODE_ENV !== 'production') {
-            const stateClass = generateUtilityClass('', key);
+            // const stateClass = generateUtilityClass('', key);
+            const stateClass = '';
             console.error(
               [
                 `JR: The \`${component}\` component increases ` +

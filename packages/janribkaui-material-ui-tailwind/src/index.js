@@ -19,6 +19,21 @@ export * from './ButtonBase';
 export { default as CircularProgress } from './CircularProgress';
 export * from './CircularProgress';
 
+export { default as FormControl } from './FormControl';
+export * from './FormControl';
+
+export { default as FormControlLabel } from './FormControlLabel';
+export * from './FormControlLabel';
+
+export { default as FormGroup } from './FormGroup';
+export * from './FormGroup';
+
+export { default as FormHelperText } from './FormHelperText';
+export * from './FormHelperText';
+
+export { default as FormLabel } from './FormLabel';
+export * from './FormLabel';
+
 export { default as IconButton } from './IconButton';
 export * from './IconButton';
 
@@ -27,6 +42,15 @@ export * from './LinearProgress';
 
 export { default as LoadingButton } from './LoadingButton';
 export * from './LoadingButton';
+
+export { default as Switch } from './Switch';
+export * from './Switch';
+
+export { default as TextareaAutosize } from './TextareaAutosize';
+export * from './TextareaAutosize';
+
+export { default as Typography } from './Typography';
+export * from './Typography';
 
 // createFilterOptions is exported from Autocomplete
 

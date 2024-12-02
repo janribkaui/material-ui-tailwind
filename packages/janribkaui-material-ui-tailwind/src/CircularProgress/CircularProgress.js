@@ -1,5 +1,6 @@
 'use client';
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import { useDefaultProps } from '../DefaultPropsProvider';
 import { mergeStyles } from '../utils';
 import { tv } from 'tailwind-variants';
@@ -174,5 +175,65 @@ const CircularProgress = React.forwardRef(function CircularProgress(inProps, ref
     </CircularProgressRoot>
   );
 });
+
+CircularProgress.propTypes /* remove-proptypes */ = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'primary'
+   */
+  color: PropTypes.oneOf([
+    'error',
+    'info',
+    'inherit',
+    'primary',
+    'secondary',
+    'success',
+    'warning',
+  ]),
+  /**
+   * If `true`, the shrink animation is disabled.
+   * This only works if variant is `indeterminate`.
+   * @default false
+   */
+  disableShrink: PropTypes.bool,
+  /**
+   * The size of the component.
+   * If using a number, the pixel unit is assumed.
+   * If using a string, you need to provide the CSS unit, for example '3rem'.
+   * @default 40
+   */
+  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * @ignore
+   */
+  style: PropTypes.object,
+  /**
+   * The thickness of the circle.
+   * @default 3.6
+   */
+  thickness: PropTypes.number,
+  /**
+   * The value of the progress indicator for the determinate variant.
+   * Value between 0 and 100.
+   * @default 0
+   */
+  value: PropTypes.number,
+  /**
+   * The variant to use.
+   * Use indeterminate when there is no progress value.
+   * @default 'indeterminate'
+   */
+  variant: PropTypes.oneOf(['determinate', 'indeterminate']),
+};
 
 export default CircularProgress;

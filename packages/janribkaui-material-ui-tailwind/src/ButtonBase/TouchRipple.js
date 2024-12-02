@@ -178,7 +178,7 @@ const TouchRipple = React.forwardRef(function TouchRipple(props, ref) {
   );
 
   const touchRippleClassName = mergeStyles(
-    'JRTouchRipple-root',
+    'JrTouchRipple-root',
     'overflow-hidden pointer-events-none absolute z-0 top-0 right-0 bottom-0 left-0 rounded-[inherit]',
     className,
   );

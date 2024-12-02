@@ -1,5 +1,6 @@
 'use client';
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import { unstable_useId as useId, mergeStyles } from '@janribkaui/material-ui-tailwind/utils';
 import { useDefaultProps } from '@janribkaui/material-ui-tailwind/DefaultPropsProvider';
 import Button from '@janribkaui/material-ui-tailwind/Button';
@@ -190,5 +191,58 @@ const LoadingButton = React.forwardRef(function LoadingButton(inProps, ref) {
     </LoadingButtonRoot>
   );
 });
+
+LoadingButton.propTypes /* remove-proptypes */ = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the button will take up the full width of its container.
+   * @default false
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * @ignore
+   */
+  id: PropTypes.string,
+  /**
+   * If `true`, the loading indicator is shown and the button becomes disabled.
+   * @default false
+   */
+  loading: PropTypes.bool,
+  /**
+   * Element placed before the children if the button is in loading state.
+   * The node should contain an element with `role="progressbar"` with an accessible name.
+   * By default we render a `CircularProgress` that is labelled by the button itself.
+   * @default <CircularProgress color="inherit" size={16} />
+   */
+  loadingIndicator: PropTypes.node,
+  /**
+   * The loading indicator can be positioned on the start, end, or the center of the button.
+   * @default 'center'
+   */
+  loadingPosition: PropTypes.oneOf(['center', 'end', 'start']),
+  /**
+   * The size of the component.
+   * `small` is equivalent to the dense button styling.
+   * @default 'medium'
+   */
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * The variant to use.
+   * @default 'text'
+   */
+  variant: PropTypes.oneOf(['contained', 'outlined', 'text']),
+};
 
 export default LoadingButton;

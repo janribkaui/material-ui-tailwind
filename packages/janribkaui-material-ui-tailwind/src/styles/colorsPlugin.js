@@ -4,7 +4,15 @@ import createColors from './createColors';
 
 const colorsPlugin = plugin.withOptions(
   () => {
-    return () => {};
+    return ({ addUtilities, theme }) => {
+      const newUtilities = {
+        '.webkit-text-fill-text-disabled': {
+          '-webkit-text-fill-color': theme('colors.text-disabled'),
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    };
   },
   () => {
     return { theme: { colors: createColors() } };
