@@ -46,8 +46,8 @@
   },
   "devDependencies": {
     "@janribkaui/internal-babel-macros": "workspace:^",
-    "@types/react": "^18.3.12",
-    "react": "19.0.0-rc-f6cce072-20240723",
+    "@types/react": "catalog:",
+    "react": "catalog:",
     "typescript": "^5.5.3"
   },
   "peerDependencies": {
