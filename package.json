@@ -30,7 +30,8 @@
     "size:why": "pnpm size:snapshot --analyze",
     "start": "pnpm install && pnpm docs:dev",
     "test": "node scripts/test.mjs",
-    "typescript": "lerna run --no-bail --parallel typescript"
+    "typescript": "lerna run --no-bail --parallel typescript",
+    "validate-declarations": "tsx scripts/validateTypescriptDeclarations.mts"
   },
   "dependencies": {
     "execa": "^9.3.0"
@@ -68,6 +69,7 @@
     "eslint": "^9.7.0",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
+    "globby": "^14.0.2",
     "lerna": "^8.1.6",
     "lodash": "^4.17.21",
     "nx": "^19.7.2",
