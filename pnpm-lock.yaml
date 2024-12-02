@@ -689,6 +689,9 @@ importers:
       '@janribkaui/internal-babel-macros':
         specifier: workspace:^
         version: link:../janribkaui-internal-babel-macros
+      '@janribkaui/internal-test-utils':
+        specifier: workspace:^
+        version: link:../../packages-internal/test-utils
       '@types/node':
         specifier: 'catalog:'
         version: 20.17.9
