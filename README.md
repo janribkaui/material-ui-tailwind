@@ -7,6 +7,8 @@ JanRibka UI is an open-source React component library for react projects with ta
 [![npm downloads](https://img.shields.io/npm/dt/@janribkaui/material-ui-tailwind.svg)](https://www.npmjs.com/package/@janribkaui/material-ui-tailwind)
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/janribkaui/material-ui-tailwind.svg)](https://isitmaintained.com/project/janribkaui/material-ui-tailwind 'Average time to resolve an issue')
 
+<!-- [![Coverage Status](https://img.shields.io/codecov/c/github/janribkaui/material-ui-tailwind.svg)](https://app.codecov.io/gh/janribkaui/material-ui-tailwind/) -->
+
 ## Community
 
 For help, discussion about best practices, or any other conversation that would benefit from being searchable:

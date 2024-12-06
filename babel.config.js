@@ -19,7 +19,7 @@ function resolveAliasPath(relativeToBabelConf) {
 
 /** @type {babel.PluginItem[]} */
 const productionPlugins = [
-  ['babel-plugin-react-remove-properties', { properties: ['data-mui-test'] }],
+  ['babel-plugin-react-remove-properties', { properties: ['data-jr-test'] }],
 ];
 
 /** @type {babel.ConfigFunction} */
@@ -34,8 +34,8 @@ module.exports = function getBabelConfig(api) {
     '@janribkaui/styled-engine': resolveAliasPath('./packages/janribkaui-styled-engine/src'),
     '@janribkaui/system': resolveAliasPath('./packages/janribkaui-system/src'),
     '@janribkaui/utils': resolveAliasPath('./packages/janribkaui-utils/src'),
-    docs: resolveAliasPath('./docs'),
-    test: resolveAliasPath('./test'),
+    // docs: resolveAliasPath('./docs'),
+    // test: resolveAliasPath('./test'),
   };
 
   const presets = [
