@@ -1,6 +1,6 @@
 {
   "name": "@janribkaui/internal-babel-macros",
-  "version": "1.3.2",
+  "version": "1.5.1",
   "author": "Jan Ribka",
   "description": "JanRibka Babel macros. This is an internal package not meant for general use.",
   "license": "MIT",
