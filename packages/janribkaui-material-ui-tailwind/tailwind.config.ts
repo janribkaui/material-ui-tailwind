@@ -7,6 +7,7 @@ import transitionsPlugin from '@janribkaui/material-ui-tailwind/styles/transitio
 // TODO: Dát zde výchozí font roboto podle mui
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   // mode: 'jit',
   theme: {
     extend: {

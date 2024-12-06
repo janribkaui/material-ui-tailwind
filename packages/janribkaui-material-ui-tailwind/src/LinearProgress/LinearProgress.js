@@ -95,6 +95,8 @@ const linearProgressRootVariants = tv({
     'block',
     'h-1',
     'z-0', // Fix Safari's bug during composition of different paint.
+    "before:absolute before:content-[''] before:inset-0 before:bg-common-white",
+    "after:absolute after:content-[''] after:inset-0 after:bg-inherit", // After is above before
   ],
   variants: {
     color: {
@@ -109,7 +111,9 @@ const linearProgressRootVariants = tv({
     variant: {
       determinate: '',
       indeterminate: '',
-      buffer: 'bg-transparent',
+      buffer: [
+        'bg-transparent before:bg-transparent dark:bg-transparent dark:before:bg-transparent',
+      ],
       query: 'rotate-180',
     },
   },
@@ -158,9 +162,30 @@ const linearProgressRootVariants = tv({
     },
   ],
 });
-
+// TODO:
 const LinearProgressDashed =
   styled.span`
+    // &::before {
+    //   position: absolute;
+    //   inset: 0;
+    //   content: '';
+    //   background-size: inherit;
+    //   background-position: inherit;
+    //   background-image: inherit;
+    //   background-color: white;
+    //   animation: inherit;
+    // }
+    // &::after {
+    //   position: absolute;
+    //   inset: 0;
+    //   content: '';
+    //   background-size: inherit;
+    //   background-position: inherit;
+    //   background-image: inherit;
+    //   background-color: white;
+    //   animation: inherit;
+    // }
+
     background-size: 10px 10px;
     background-position: 0 -23px;
     background-image: radial-gradient(currentColor 0%, currentColor 16%, transparent 42%);
@@ -248,6 +273,8 @@ const linearProgressBar2Variants = tv({
     'transition-transform',
     'ease-linear',
     'origin-left',
+    "before:absolute before:content-[''] before:inset-0 before:bg-common-white",
+    "after:absolute after:content-[''] after:inset-0 after:bg-inherit", // After is above before
   ],
   variants: {
     color: {

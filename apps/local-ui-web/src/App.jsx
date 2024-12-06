@@ -87,9 +87,10 @@ function App() {
   }, []);
 
   const progressBufferRef = React.useRef(() => {});
+
   React.useEffect(() => {
     progressBufferRef.current = () => {
-      if (progress === 100) {
+      if (progressBuffer === 100) {
         setProgressBuffer(0);
         setBuffer(10);
       } else {
