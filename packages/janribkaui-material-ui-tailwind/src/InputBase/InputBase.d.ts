@@ -3,7 +3,6 @@ import * as React from 'react';
 import { OverridableStringUnion } from '@janribkaui/types';
 
 import { InternalStandardProps as StandardProps } from '../';
-import { Theme } from '../styles';
 
 export interface InputBasePropsSizeOverrides {}
 
