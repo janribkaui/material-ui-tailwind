@@ -200,6 +200,10 @@ const App = () => {
 
 ```ts
 import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
+import { FaRegBookmark } from 'react-icons/fa';
+import { FaBookmark } from 'react-icons/fa';
+import { MdOutlineFavoriteBorder } from 'react-icons/md';
+import { MdOutlineFavorite } from 'react-icons/md';
 
 const App = () => {
     const labelCheckbox = { inputProps: { 'aria-label': 'Basic checkbox' } };
@@ -210,6 +214,17 @@ const App = () => {
             <Checkbox {...labelCheckbox} />
             <Checkbox {...labelCheckbox} disabled />
             <Checkbox {...labelCheckbox} disabled checked />
+            <Checkbox {...labelCheckbox} defaultChecked size="small" />
+            <Checkbox {...labelCheckbox} defaultChecked className="[&_.JrSvgIcon-root]:!text-3xl" />
+            <Checkbox {...labelCheckbox} defaultChecked size="large" />
+            <Checkbox {...labelCheckbox} defaultChecked color="secondary" />
+            <Checkbox {...labelCheckbox} defaultChecked color="success" />
+            <Checkbox {...labelCheckbox} defaultChecked color="default" />
+            <Checkbox {...labelCheckbox} defaultChecked
+              className="text-dark-secondary has-[input:checked]:text-dark-secondary-dark"
+            />
+            <Checkbox {...labelCheckbox} icon={<MdOutlineFavoriteBorder className="relative" />} checkedIcon={<MdOutlineFavorite />} />
+            <Checkbox {...labelCheckbox} icon={<FaRegBookmark />} checkedIcon={<FaBookmark />} />
         </>
     )
 }
@@ -231,68 +246,6 @@ const App = () => {
             <FormControlLabel required control={<Checkbox />} label="Required" />
             <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
         </FormGroup>
-    )
-}
-```
-
-#### Size
-
-```ts
-import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
-
-const App = () => {
-    const labelCheckbox = { inputProps: { 'aria-label': 'Size checkbox' } };
-
-    return (
-        <>
-            <Checkbox {...labelCheckbox} defaultChecked size="small" />
-            <Checkbox {...labelCheckbox} defaultChecked />
-            <Checkbox {...labelCheckbox} defaultChecked className="[&_.JrSvgIcon-root]:!text-3xl" />
-            <Checkbox {...labelCheckbox} defaultChecked size="large" />
-        </>
-    )
-}
-```
-
-#### Color
-
-```ts
-import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
-
-const App = () => {
-    const labelCheckbox = { inputProps: { 'aria-label': 'Colored checkbox' } };
-
-    return (
-        <>
-            <Checkbox {...labelCheckbox} defaultChecked />
-            <Checkbox {...labelCheckbox} defaultChecked color="secondary" />
-            <Checkbox {...labelCheckbox} defaultChecked color="success" />
-            <Checkbox {...labelCheckbox} defaultChecked color="default" />
-            <Checkbox {...labelCheckbox} defaultChecked
-              className="text-dark-secondary has-[input:checked]:text-dark-secondary-dark"
-            />
-        </>
-    )
-}
-```
-
-#### Icon
-
-```ts
-import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
-import { FaRegBookmark } from 'react-icons/fa';
-import { FaBookmark } from 'react-icons/fa';
-import { MdOutlineFavoriteBorder } from 'react-icons/md';
-import { MdOutlineFavorite } from 'react-icons/md';
-
-const App = () => {
-    const labelCheckbox = { inputProps: { 'aria-label': 'Icon Checkbox' } };
-
-    return (
-        <>
-            <Checkbox {...labelCheckbox} icon={<MdOutlineFavoriteBorder className="relative" />} checkedIcon={<MdOutlineFavorite />} />
-            <Checkbox {...labelCheckbox} icon={<FaRegBookmark />} checkedIcon={<FaBookmark />} />
-        </>
     )
 }
 ```
@@ -505,6 +458,15 @@ const App = () => {
             <Switch {...labelSwitch} />
             <Switch {...labelSwitch} disabled />
             <Switch {...labelSwitch} disabled defaultChecked />
+            <Switch {...labelSwitch} defaultChecked size="small" />
+            <Switch {...labelSwitch} defaultChecked color="secondary" />
+            <Switch {...labelSwitch} defaultChecked color="warning" />
+            <Switch {...labelSwitch} defaultChecked color="default" />
+            <Switch
+                className="[&_.JrSwitch-switchBase]:has-[input:checked]:text-yellow-600 [&_.JrSwitch-switchBase]:has-[input:checked]:hover:bg-yellow-600/hover [&_.JrSwitch-track]:has-[input:checked]:bg-yellow-600"
+                {...labelSwitch}
+                defaultChecked
+            />
         </>
     )
 }
@@ -526,47 +488,6 @@ const App = () => {
             <FormControlLabel required control={<Switch />} label="Required" />
             <FormControlLabel disabled control={<Switch />} label="Disabled" />
         </FormGroup>
-    )
-}
-```
-
-#### Size
-
-```ts
-import Switch from '@janribkaui/material-ui-tailwind/Switch';
-
-const App = () => {
-    const labelSwitch = { inputProps: { 'aria-label': 'Size switch' } };
-
-    return (
-        <>
-            <Switch {...labelSwitch} defaultChecked size="small" />
-            <Switch {...labelSwitch} defaultChecked />
-        </>
-    )
-}
-```
-
-#### Color
-
-```ts
-import Checkbox from '@janribkaui/material-ui-tailwind/Checkbox';
-
-const App = () => {
-    const labelCheckbox = { inputProps: { 'aria-label': 'Colored checkbox' } };
-
-    return (
-        <>
-            <Switch {...labelSwitch} defaultChecked />
-            <Switch {...labelSwitch} defaultChecked color="secondary" />
-            <Switch {...labelSwitch} defaultChecked color="warning" />
-            <Switch {...labelSwitch} defaultChecked color="default" />
-            <Switch
-                className="[&_.JrSwitch-switchBase]:has-[input:checked]:text-yellow-600 [&_.JrSwitch-switchBase]:has-[input:checked]:hover:bg-yellow-600/hover [&_.JrSwitch-track]:has-[input:checked]:bg-yellow-600"
-                {...labelSwitch}
-                defaultChecked
-            />
-        </>
     )
 }
 ```
