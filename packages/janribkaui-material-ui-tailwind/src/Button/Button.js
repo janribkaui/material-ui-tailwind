@@ -10,7 +10,7 @@ import ButtonGroupContext from '../ButtonGroup/ButtonGroupContext';
 
 // Styles
 const commonIconStyleVariants = tv({
-  base: ['display-inherit', 'duration-short', 'transition-opacity'],
+  base: ['JrButton-icon', 'display-inherit', 'duration-short', 'transition-opacity'],
   variants: {
     size: {
       small: 'text-lg',
@@ -80,11 +80,13 @@ const buttonVariants = tv({
       inherit: [],
     },
     size: {
-      small: [],
-      large: [],
+      small: ['JrButton-small'],
+      medium: ['JrButton-medium'],
+      large: ['JrButton-large'],
     },
     disableElevation: {
       true: [
+        "JrButton-disableElevation",
         'shadow-none',
         'hover:shadow-none',
         'active:shadow-none',

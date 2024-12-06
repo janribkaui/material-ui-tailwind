@@ -789,7 +789,7 @@ function App() {
 
       <div className="ml-3 mt-3 flex gap-3">
         <div>
-          <Button size="small">Small</Button>
+          <Button size="small">Small2</Button>
           <Button size="medium">Medium</Button>
           <Button size="large">Large</Button>
         </div>
