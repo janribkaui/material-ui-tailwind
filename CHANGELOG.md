@@ -1,3 +1,30 @@
+## v1.5.1
+
+<!-- generated comparing v1.5.0..master -->
+
+_Dec 6, 2024_
+
+A big thanks to the 1 contributors who made this release possible. Here are some highlights ✨:
+
+### @janribkaui/material-ui-tailwind@1.5.1
+
+- &#8203;<!-- 4 -->[Button] Create a test for button component (#90) @JanRibka
+- &#8203;<!-- 7 -->[LinearProgress] Make bar2 background opaque (#96) @JanRibka
+
+### Docs
+
+- &#8203;<!-- 1 -->Fix errors in readme files (#85) @JanRibka
+- &#8203;<!-- 5 -->Make common versions of packages using pnpm-workspaces (#91) @JanRibka
+- &#8203;<!-- 6 -->Add validateTypescriptDeclarations command (#95) @JanRibka
+- &#8203;<!-- 8 -->Update readme file and make it shorter (#98) @JanRibka
+
+### Core
+
+- &#8203;<!-- 2 -->Add more keywords so it is more easy to google it (#86) @JanRibka
+- &#8203;<!-- 3 -->Add prop types generating (#89) @JanRibka
+
+All contributors of this release in alphabetical order: @JanRibka
+
 ## v1.5.0
 
 <!-- generated comparing v1.4.0..master -->

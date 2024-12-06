@@ -1,6 +1,6 @@
 {
   "name": "@janribkaui/internal-babel-plugin-minify-errors",
-  "version": "1.0.0",
+  "version": "1.5.1",
   "author": "Jan Ribka",
   "description": "This is an internal package not meant for general use.",
   "repository": {

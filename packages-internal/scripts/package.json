@@ -1,6 +1,6 @@
 {
   "name": "@janribkaui/internal-scripts",
-  "version": "1.0.0",
+  "version": "1.5.1",
   "author": "Jan Ribka",
   "description": "Utilities supporting JR libraries build and docs generation. This is an internal package not meant for general use.",
   "main": "build/index.js",
