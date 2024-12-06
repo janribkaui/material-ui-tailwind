@@ -51,6 +51,7 @@
     "lint": "eslint src/",
     "type-check": "tsc --noEmit",
     "release": "pnpm build && pnpm publish --access public",
+    "test": "cd ../../ && cross-env NODE_ENV=test mocha 'packages/janribkaui-material-ui-tailwind/**/*.test.{js,ts,tsx}'",
     "typescript": "tsc -p tsconfig.json"
   },
   "dependencies": {
@@ -64,6 +65,7 @@
   },
   "devDependencies": {
     "@janribkaui/internal-babel-macros": "workspace:^",
+    "@janribkaui/internal-test-utils": "workspace:^",
     "@types/node": "catalog:",
     "@types/prop-types": "^15.7.13",
     "@types/react": "catalog:",
