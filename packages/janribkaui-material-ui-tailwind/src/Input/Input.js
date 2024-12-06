@@ -19,6 +19,7 @@ import {
 } from '../InputBase/InputBase';
 import { tv } from 'tailwind-variants';
 import { mergeStyles } from '../utils';
+import { color } from '@janribkaui/system';
 
 const InputRoot = styled(InputBaseRoot)``;
 
@@ -26,13 +27,14 @@ const inputRootVariants = tv({
   base: ['border-b-[rgba(0, 0, 0, 0.42)] dark:border-b-[rgba(255, 255, 255, 0.7)]', 'relative'],
   variants: {
     formControl: {
-      true: ['[&_label + &]:mt-[16px]'],
+      true: ['[&:has(+label) + &]:mt-[16px]'],
       false: [],
     },
     disableUnderline: {
       true: [],
       false: [],
     },
+    color: {},
   },
   defaultVariants: { formControl: false, disableUnderline: false },
 });
