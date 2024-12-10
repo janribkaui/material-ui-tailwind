@@ -100,13 +100,6 @@ commands:
           browsers: << parameters.browsers >>
 
       - run:
-          name: Resolve React version
-          command: |
-            pnpm use-react-version
-            # log a patch for maintainers who want to check out this change
-            git --no-pager diff HEAD
-
-      - run:
           name: Install js dependencies
           command: pnpm install
 
