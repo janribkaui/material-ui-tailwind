@@ -15,6 +15,7 @@ const config: Config = {
         'background-color': 'background-color',
         'box-shadow': 'box-shadow',
         'border-color': 'border-color',
+        'border-bottom-color': 'border-bottom-color',
         color: 'color',
         fill: 'fill',
         left: 'left',
