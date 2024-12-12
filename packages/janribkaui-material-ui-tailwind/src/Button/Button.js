@@ -86,7 +86,7 @@ const buttonVariants = tv({
     },
     disableElevation: {
       true: [
-        "JrButton-disableElevation",
+        'JrButton-disableElevation',
         'shadow-none',
         'hover:shadow-none',
         'active:shadow-none',

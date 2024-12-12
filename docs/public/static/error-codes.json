@@ -19,5 +19,9 @@
   "18": "JR: The provided shorthand %s is invalid. The format should be `@<breakpoint | number>` or `@<breakpoint | number>/<container>`.\nFor example, `@sm` or `@600` or `@40rem/sidebar`.",
   "19": "JR: The `experimental_sx` has been moved to `theme.unstable_sx`.For more details, see https://github.com/mui/material-ui/pull/35150.",
   "20": "JR: `vars` is a private field used for CSS variables support.\nPlease use another name.",
-  "21": "JR: The `colorSchemes.%s` option is either missing or invalid."
+  "21": "JR: The `colorSchemes.%s` option is either missing or invalid.",
+  "22": "JR: `getTailwindClassPrefix(string)` expects a tailwind class.",
+  "23": "JR: Expected valid input target. Did you use a custom `inputComponent` and forget to forward refs? ",
+  "24": "JR: The color%s provided to augmentColor(color) is invalid.\nThe color object needs to have a `main` property or a `%s` property.",
+  "25": "JR: The color%s provided to augmentColor(color) is invalid.\n`color.main` should be a string, but `%s` was provided instead.\n\nDid you intend to use one of the following approaches?\n\nimport { green } from \"@mui/material/colors\";\n\nconst theme1 = createTheme({ palette: {\n  primary: green,\n} });\n\nconst theme2 = createTheme({ palette: {\n  primary: { main: green[500] },\n} });"
 }
