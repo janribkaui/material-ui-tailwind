@@ -54,9 +54,9 @@ GlobalStyles.propTypes /* remove-proptypes */ = {
     }),
     PropTypes.shape({
       '__@iterator@94': PropTypes.func.isRequired,
-      '__@unscopables@2939': PropTypes.shape({
+      '__@unscopables@2940': PropTypes.shape({
         '__@iterator@94': PropTypes.bool,
-        '__@unscopables@2939': PropTypes.bool,
+        '__@unscopables@2940': PropTypes.bool,
         at: PropTypes.bool,
         concat: PropTypes.bool,
         entries: PropTypes.bool,

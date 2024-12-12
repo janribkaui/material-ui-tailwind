@@ -1,3 +1,5 @@
+# [Versions](https://github.com/janribkaui/material-ui-tailwind/releases)
+
 ## v1.5.1
 
 <!-- generated comparing v1.5.0..master -->
