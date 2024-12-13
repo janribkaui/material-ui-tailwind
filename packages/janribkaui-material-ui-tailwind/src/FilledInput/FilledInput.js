@@ -23,7 +23,7 @@ import { tv } from 'tailwind-variants';
 const FilledInputRoot = styled(InputBaseRoot)``;
 
 const filledInputRootVariants = tv({
-  base: ['relative'],
+  base: ['relative', 'bg-filledInput-bg dark:bg-filledInput-bg'],
 });
 
 const FilledInputInput = styled(InputBaseInput, {
@@ -145,6 +145,7 @@ const FilledInput = React.forwardRef(function FilledInput(inProps, ref) {
 
   return (
     <InputBase
+      className=""
       slots={{ root: RootSlot, input: InputSlot }}
       slotProps={componentsProps}
       fullWidth={fullWidth}
