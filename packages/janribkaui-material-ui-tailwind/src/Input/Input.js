@@ -12,6 +12,7 @@ const InputRoot = styled(InputBaseRoot)`
   .hover {
     // Reset on touch devices, it doesn't add specificity
     @media (hover: none) {
+      // TODO: Use tailwind hover-none instead
       border-bottom: 1px solid rgba(0, 0, 0, 0.42);
     }
   }
@@ -19,6 +20,7 @@ const InputRoot = styled(InputBaseRoot)`
   .hover-dark {
     // Reset on touch devices, it doesn't add specificity
     @media (hover: none) {
+      // TODO: Use tailwind hover-none instead
       border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     }
   }

@@ -17,13 +17,58 @@ import {
   InputBaseRoot,
   InputBaseInput,
 } from '../InputBase/InputBase';
-import { capitalize } from '../utils';
+import { capitalize, mergeStyles } from '../utils';
 import { tv } from 'tailwind-variants';
+import { error } from 'console';
 
 const FilledInputRoot = styled(InputBaseRoot)``;
 
 const filledInputRootVariants = tv({
-  base: ['relative', 'bg-filledInput-bg dark:bg-filledInput-bg'],
+  base: [
+    'relative',
+    'bg-filledInput-bg dark:bg-filledInput-bg',
+    'rounded-tl-borderRadius',
+    'rounded-tr-borderRadius',
+    ' transition-background-color duration-shorter ease-out',
+    'hover:bg-filledInput-hoverBg hover:hover-none:bg-filledInput-bg',
+    'has-[input:focused]:bg-filledInput-bg',
+    'has-[input:disabled]:bg-filledInput-disabledBg',
+  ],
+  variants: {
+    disableUnderline: {
+      true: [],
+      false: [
+        'after:left-0',
+        'after:bottom-0',
+        'after:content-[""]',
+        'after:absolute',
+        'after:right-0',
+        'after:scale-x-0',
+        'after:transition-transform after:duration-shorter after:ease-out',
+        'after:pointer-events-none',
+        'has-[input:focused]:after:scale-x-100 has-[input:focused]:after:translate-x-0',
+        'before:border-b-[1px] before:border-solid before:border-b-[rgba(0, 0, 0, 0.42) dark:before:border-b-[rgba(255, 255, 255, 0.7)',
+        'before:left-0',
+        'before:bottom-0',
+        'content-["\\00a0"]',
+        'before:absolute',
+        'before:right-0',
+        'before:transition-border-bottom-color before:duration-shorter',
+        'before:pointer-events-none',
+        'has-[input:disabled]:hover:before:border-b-[1px] has-[input:disabled]:hover:before:border-solid has-[input:disabled]:hover:before:border-b-text-primary',
+        'has-[input:disabled]:before:border-dotted',
+      ],
+    },
+    error: {
+      true: [],
+      false: [],
+    },
+  },
+  compoundVariants: {
+    disableUnderline: false,
+    error: true,
+    className: ['before:border-error', 'after:border-error'],
+  },
 });
 
 const FilledInputInput = styled(InputBaseInput, {
@@ -133,6 +178,10 @@ const FilledInput = React.forwardRef(function FilledInput(inProps, ref) {
     type,
   };
 
+  const filledInputRoot = React.cloneElement(FilledInputRoot, {
+    className: mergeStyles('JrFilledInput-root', filledInputRootVariants({})),
+  });
+
   const filledInputComponentsProps = { root: { ownerState }, input: { ownerState } };
 
   const componentsProps =
@@ -140,7 +189,7 @@ const FilledInput = React.forwardRef(function FilledInput(inProps, ref) {
       ? deepmerge(filledInputComponentsProps, slotProps ?? componentsPropsProp)
       : filledInputComponentsProps;
 
-  const RootSlot = slots.root ?? components.Root ?? FilledInputRoot;
+  const RootSlot = slots.root ?? components.Root ?? filledInputRoot;
   const InputSlot = slots.input ?? components.Input ?? FilledInputInput;
 
   return (

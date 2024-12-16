@@ -46,6 +46,9 @@ const config: Config = {
       flex: {
         noneAuto: '0 0 auto',
       },
+      borderRadius: {
+        borderRadius: '4',
+      },
     },
   },
   plugins: [basePlugin({}), colorsPlugin({}), transitionsPlugin({})],

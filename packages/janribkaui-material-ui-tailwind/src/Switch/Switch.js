@@ -44,6 +44,7 @@ const SwitchSwitchBase = styled(SwitchBase)`
   .hover {
     // Reset on touch devices, it doesn't add specificity
     @media (hover: none) {
+      // TODO: Use tailwind hover-none instead
       background-color: transparent;
     }
   }
