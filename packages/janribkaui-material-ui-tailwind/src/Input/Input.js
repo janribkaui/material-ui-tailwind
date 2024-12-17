@@ -164,7 +164,7 @@ const Input = React.forwardRef(function Input(inProps, ref) {
 });
 
 if (Input) {
-  Input.muiName = 'Input';
+  Input.jrName = 'Input';
 }
 
 export default Input;
