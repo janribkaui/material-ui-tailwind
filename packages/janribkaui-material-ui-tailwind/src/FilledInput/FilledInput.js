@@ -1,25 +1,12 @@
 'use client';
 import * as React from 'react';
-import deepmerge from '@mui/utils/deepmerge';
-import refType from '@mui/utils/refType';
-import PropTypes from 'prop-types';
-import composeClasses from '@mui/utils/composeClasses';
+import deepmerge from '@janribkaui/utils/deepmerge';
 import InputBase from '../InputBase';
-import rootShouldForwardProp from '../styles/rootShouldForwardProp';
 import { styled } from 'styled-components';
-import memoTheme from '../utils/memoTheme';
-import createSimplePaletteValueFilter from '../utils/createSimplePaletteValueFilter';
 import { useDefaultProps } from '../DefaultPropsProvider';
-import filledInputClasses, { getFilledInputUtilityClass } from './filledInputClasses';
-import {
-  rootOverridesResolver as inputBaseRootOverridesResolver,
-  inputOverridesResolver as inputBaseInputOverridesResolver,
-  InputBaseRoot,
-  InputBaseInput,
-} from '../InputBase/InputBase';
-import { capitalize, mergeStyles } from '../utils';
+import { InputBaseRoot, InputBaseInput } from '../InputBase/InputBase';
+import { mergeStyles } from '../utils';
 import { tv } from 'tailwind-variants';
-import { error } from 'console';
 
 const FilledInputRoot = styled(InputBaseRoot)``;
 
@@ -63,97 +50,130 @@ const filledInputRootVariants = tv({
       true: [],
       false: [],
     },
+    color: {
+      primary: [],
+      secondary: [],
+      error: [],
+      info: [],
+      success: [],
+      warning: [],
+    },
+    startAdornment: {
+      true: 'pl-[12px]',
+      false: '',
+    },
+    endAdornment: {
+      true: 'pr-[12px]',
+      false: '',
+    },
+    multiline: {
+      true: 'p-[25px 12px 8px]',
+      false: '',
+    },
+    size: {
+      small: '',
+    },
+    hiddenLabel: { true: '', false: '' },
+  },
+  compoundVariants: [
+    {
+      disableUnderline: false,
+      error: true,
+      className: ['before:border-error', 'after:border-error'],
+    },
+    {
+      disableUnderline: false,
+      color: 'primary',
+      className: 'after:border-b-[2px] after:border-solid after:border-b-primary',
+    },
+    {
+      disableUnderline: false,
+      color: 'secondary',
+      className: 'after:border-b-[2px] after:border-solid after:border-b-secondary',
+    },
+    {
+      disableUnderline: false,
+      color: 'error',
+      className: 'after:border-b-[2px] after:border-solid after:border-b-error',
+    },
+    {
+      disableUnderline: false,
+      color: 'info',
+      className: 'after:border-b-[2px] after:border-solid after:border-b-info',
+    },
+    {
+      disableUnderline: false,
+      color: 'success',
+      className: 'after:border-b-[2px] after:border-solid after:border-b-success',
+    },
+    {
+      disableUnderline: false,
+      color: 'warning',
+      className: 'after:border-b-[2px] after:border-solid after:border-b-warning',
+    },
+    {
+      multiline: true,
+      size: 'small',
+      className: ['pt-[21px]', 'pb-[4px]'],
+    },
+    {
+      multiline: true,
+      hiddenLabel: true,
+      className: ['pt-[16px]', 'pb-[17px]'],
+    },
+    {
+      multiline: true,
+      hiddenLabel: true,
+      size: 'small',
+      className: ['pt-[8px]', 'pb-[9px]'],
+    },
+  ],
+});
+
+const FilledInputInput = styled(InputBaseInput)``;
+
+const filledInputInputVariants = tv({
+  base: [
+    'pt-[25px]',
+    'pr-[12px]',
+    'pb-8px',
+    'pl-[12px]',
+    'autofill:rounded-t-[inherit]',
+    'autofill:rounded-tr-[inherit]',
+    'dark:[&:autofill]:shadow-[0_0_0_100px_#266798_inset]',
+    'dark:[&:autofill]:text-white',
+    'dark:[&:autofill]:caret-white',
+  ],
+  variants: {
+    size: {
+      small: ['pt-[21px]', 'pb-[4px]'],
+    },
+    hiddenLabel: {
+      true: ['pt-[16px]', 'pb-[17px]'],
+      false: '',
+    },
+    startAdornment: {
+      true: 'pl-0',
+      false: '',
+    },
+    endAdornment: {
+      true: 'pr-0',
+      false: '',
+    },
+    multiline: {
+      true: ['pt-0', 'pb-0', 'pl-0', 'pr-0'],
+      false: [],
+    },
   },
   compoundVariants: {
-    disableUnderline: false,
-    error: true,
-    className: ['before:border-error', 'after:border-error'],
+    hiddenLabel: false,
+    size: 'small',
+    className: ['pt-[8px]', 'pb-[9px]'],
   },
 });
 
-const FilledInputInput = styled(InputBaseInput, {
-  name: 'MuiFilledInput',
-  slot: 'Input',
-  overridesResolver: inputBaseInputOverridesResolver,
-})(
-  memoTheme(({ theme }) => ({
-    paddingTop: 25,
-    paddingRight: 12,
-    paddingBottom: 8,
-    paddingLeft: 12,
-    ...(!theme.vars && {
-      '&:-webkit-autofill': {
-        WebkitBoxShadow: theme.palette.mode === 'light' ? null : '0 0 0 100px #266798 inset',
-        WebkitTextFillColor: theme.palette.mode === 'light' ? null : '#fff',
-        caretColor: theme.palette.mode === 'light' ? null : '#fff',
-        borderTopLeftRadius: 'inherit',
-        borderTopRightRadius: 'inherit',
-      },
-    }),
-    ...(theme.vars && {
-      '&:-webkit-autofill': {
-        borderTopLeftRadius: 'inherit',
-        borderTopRightRadius: 'inherit',
-      },
-      [theme.getColorSchemeSelector('dark')]: {
-        '&:-webkit-autofill': {
-          WebkitBoxShadow: '0 0 0 100px #266798 inset',
-          WebkitTextFillColor: '#fff',
-          caretColor: '#fff',
-        },
-      },
-    }),
-    variants: [
-      {
-        props: {
-          size: 'small',
-        },
-        style: {
-          paddingTop: 21,
-          paddingBottom: 4,
-        },
-      },
-      {
-        props: ({ ownerState }) => ownerState.hiddenLabel,
-        style: {
-          paddingTop: 16,
-          paddingBottom: 17,
-        },
-      },
-      {
-        props: ({ ownerState }) => ownerState.startAdornment,
-        style: {
-          paddingLeft: 0,
-        },
-      },
-      {
-        props: ({ ownerState }) => ownerState.endAdornment,
-        style: {
-          paddingRight: 0,
-        },
-      },
-      {
-        props: ({ ownerState }) => ownerState.hiddenLabel && ownerState.size === 'small',
-        style: {
-          paddingTop: 8,
-          paddingBottom: 9,
-        },
-      },
-      {
-        props: ({ ownerState }) => ownerState.multiline,
-        style: {
-          paddingTop: 0,
-          paddingBottom: 0,
-          paddingLeft: 0,
-          paddingRight: 0,
-        },
-      },
-    ],
-  })),
-);
-
 const FilledInput = React.forwardRef(function FilledInput(inProps, ref) {
-  const props = useDefaultProps({ props: inProps, name: 'MuiFilledInput' });
+  const props = useDefaultProps({ props: inProps, name: 'JrFilledInput' });
 
   const {
     disableUnderline = false,
@@ -179,7 +199,32 @@ const FilledInput = React.forwardRef(function FilledInput(inProps, ref) {
   };
 
   const filledInputRoot = React.cloneElement(FilledInputRoot, {
-    className: mergeStyles('JrFilledInput-root', filledInputRootVariants({})),
+    className: mergeStyles(
+      'JrFilledInput-root',
+      filledInputRootVariants({
+        disableUnderline,
+        error: props.error,
+        color: props.color,
+        startAdornment: props.startAdornment,
+        endAdornment: props.endAdornment,
+        multiline,
+        size: props.size,
+        hiddenLabel,
+      }),
+    ),
+  });
+
+  const filledInputInput = React.cloneElement(FilledInputInput, {
+    className: mergeStyles(
+      'JrFilledInput-input',
+      filledInputInputVariants({
+        size: props.size,
+        hiddenLabel,
+        startAdornment: props.startAdornment,
+        endAdornment: props.endAdornment,
+        multiline,
+      }),
+    ),
   });
 
   const filledInputComponentsProps = { root: { ownerState }, input: { ownerState } };
@@ -190,7 +235,7 @@ const FilledInput = React.forwardRef(function FilledInput(inProps, ref) {
       : filledInputComponentsProps;
 
   const RootSlot = slots.root ?? components.Root ?? filledInputRoot;
-  const InputSlot = slots.input ?? components.Input ?? FilledInputInput;
+  const InputSlot = slots.input ?? components.Input ?? filledInputInput;
 
   return (
     <InputBase
