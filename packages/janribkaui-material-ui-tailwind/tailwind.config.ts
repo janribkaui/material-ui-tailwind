@@ -21,6 +21,7 @@ const config: Config = {
         left: 'left',
         button: 'background-color, color, box-shadow, border-color',
         'stroke-dashoffset': 'stroke-dashoffset',
+        'max-width': 'max-width',
       },
       lineHeight: {
         h1: '1.167',

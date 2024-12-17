@@ -239,7 +239,6 @@ const FilledInput = React.forwardRef(function FilledInput(inProps, ref) {
 
   return (
     <InputBase
-      className=""
       slots={{ root: RootSlot, input: InputSlot }}
       slotProps={componentsProps}
       fullWidth={fullWidth}

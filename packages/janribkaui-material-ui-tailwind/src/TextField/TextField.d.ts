@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { SxProps } from '@janribkaui/system';
 import { OverridableStringUnion } from '@janribkaui/types';
 
 import { InternalStandardProps as StandardProps } from '../';
@@ -12,9 +11,7 @@ import { InputBaseProps } from '../InputBase';
 import { InputLabelProps } from '../InputLabel';
 import { OutlinedInputProps } from '../OutlinedInput';
 import { SelectProps } from '../Select';
-import { Theme } from '../styles';
 import { CreateSlotsAndSlotProps, SlotProps } from '../utils/types';
-import { TextFieldClasses } from './textFieldClasses';
 
 export interface TextFieldPropsColorOverrides {}
 export interface TextFieldPropsSizeOverrides {}
@@ -79,10 +76,6 @@ export interface BaseTextFieldProps
    * @ignore
    */
   children?: FormControlProps['children'];
-  /**
-   * Override or extend the styles applied to the component.
-   */
-  classes?: Partial<TextFieldClasses>;
   /**
    * The color of the component.
    * It supports both default and custom theme colors, which can be added as shown in the
@@ -192,10 +185,6 @@ export interface BaseTextFieldProps
    * The size of the component.
    */
   size?: OverridableStringUnion<'small' | 'medium', TextFieldPropsSizeOverrides>;
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx?: SxProps<Theme>;
   /**
    * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
    */
