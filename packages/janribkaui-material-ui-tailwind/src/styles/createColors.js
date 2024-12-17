@@ -88,6 +88,11 @@ const light = {
     DEFAULT: '#ed6c02', // closest to orange[800] that pass 3:1.
     dark: orange[900],
   },
+  filledInput: {
+    bg: 'rgba(0, 0, 0, 0.06)',
+    hoverBg: 'rgba(0, 0, 0, 0.09)',
+    disabledBg: 'rgba(0, 0, 0, 0.12)',
+  },
 };
 
 const dark = {
@@ -141,6 +146,11 @@ const dark = {
     light: orange[300],
     DEFAULT: orange[400],
     dark: orange[700],
+  },
+  filledInput: {
+    bg: 'rgba(255, 255, 255, 0.09)',
+    hoverBg: 'rgba(255, 255, 255, 0.13)',
+    disabledBg: 'rgba(255, 255, 255, 0.12)',
   },
 };
 

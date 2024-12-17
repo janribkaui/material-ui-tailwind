@@ -16,7 +16,7 @@ const CheckboxRoot = styled(SwitchBase)`
   &.disable-ripple {
     // Reset on touch devices, it doesn't add specificity
     &:hover {
-      @media (hover: none) {
+      @media (hover: none) { // TODO: Use tailwind hover-none instead
         background-color: transparent;
       },
     },

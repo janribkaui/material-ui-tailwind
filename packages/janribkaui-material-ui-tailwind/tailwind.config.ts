@@ -15,11 +15,14 @@ const config: Config = {
         'background-color': 'background-color',
         'box-shadow': 'box-shadow',
         'border-color': 'border-color',
+        'border-bottom-color': 'border-bottom-color',
         color: 'color',
         fill: 'fill',
         left: 'left',
         button: 'background-color, color, box-shadow, border-color',
         'stroke-dashoffset': 'stroke-dashoffset',
+        'max-width': 'max-width',
+        width: 'width',
       },
       lineHeight: {
         h1: '1.167',
@@ -44,6 +47,9 @@ const config: Config = {
       },
       flex: {
         noneAuto: '0 0 auto',
+      },
+      borderRadius: {
+        borderRadius: '4',
       },
     },
   },

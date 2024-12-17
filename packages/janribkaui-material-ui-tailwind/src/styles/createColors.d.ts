@@ -1,6 +1,5 @@
 import { RecursiveKeyValuePair, ResolvableTo } from 'tailwindcss/types/config';
 
-// export type PaletteMode = 'light' | 'dark';
 export interface Color {
   50: string;
   100: string;
@@ -71,6 +70,13 @@ export interface PaletteColor {
   contrastText: string;
 }
 
+export interface FilledInput {
+  bg: string;
+  hoverBg: string;
+  disabledBg: string;
+  bottomLine: string;
+}
+
 export interface TypeObject {
   primary: PaletteColor;
   secondary: PaletteColor;
@@ -82,14 +88,8 @@ export interface TypeObject {
   info: PaletteColor;
   success: PaletteColor;
   warning: PaletteColor;
+  filledInput: PaletteColor;
 }
-
-// export type PaletteTonalOffset =
-//   | number
-//   | {
-//       light: number;
-//       dark: number;
-//     };
 
 export const light: TypeObject;
 export const dark: TypeObject;
@@ -104,21 +104,17 @@ export interface PaletteAugmentColorOptions {
 
 export interface Palette {
   common: CommonColors;
-  // contrastThreshold: number;
-  // tonalOffset: PaletteTonalOffset;
+  grey: Color;
   primary: PaletteColor;
   secondary: PaletteColor;
   error: PaletteColor;
   warning: PaletteColor;
   info: PaletteColor;
   success: PaletteColor;
-  grey: Color;
   text: TypeText;
   divider: TypeDivider;
   action: TypeAction;
   background: TypeBackground;
-  // getContrastText: (background: string) => string;
-  // augmentColor: (options: PaletteAugmentColorOptions) => PaletteColor;
 }
 
 export interface Channels {
@@ -147,8 +143,6 @@ export interface PaletteOptions {
   background?: Partial<TypeBackground>;
   // getContrastText?: (background: string) => string;
 }
-
-export function getContrastText(background: string, contrastThreshold?: number): string;
 
 // TODO: V modelu palette chybí dark
 export default function createColors(): ResolvableTo<RecursiveKeyValuePair<keyof Palette, string>>;
